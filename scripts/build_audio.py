@@ -109,6 +109,8 @@ def chunks(text, maxlen=26):
     out, cur = [], []
     for tk in toks:
         trial = " ".join(cur + [tk])
+        if tk in ("—", "-", ",") and cur:
+            cur.append(tk); continue
         if cur and len(trial.replace("*", "")) > maxlen:
             out.append(" ".join(cur)); cur = [tk]
         else:

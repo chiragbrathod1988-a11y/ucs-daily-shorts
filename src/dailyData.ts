@@ -26,61 +26,61 @@ export const DAILY = {
   {
    "tag": "intro",
    "start": 0.35,
-   "end": 3.196,
+   "end": 3.129,
    "text": "Namaste traders! *30 October* ke *Nifty levels*"
   },
   {
    "tag": "prev",
-   "start": 3.536,
-   "end": 8.199,
+   "start": 3.469,
+   "end": 8.143,
    "text": "Kal Nifty *238 points upar* — *22,937* par close"
   },
   {
    "tag": "pivot",
-   "start": 8.539,
-   "end": 11.429,
+   "start": 8.483,
+   "end": 11.45,
    "text": "Aaj ka *pivot* hai *22,852*"
   },
   {
    "tag": "r1",
-   "start": 11.769,
-   "end": 14.941,
+   "start": 11.79,
+   "end": 14.895,
    "text": "Upar pehla *resistance* — *23,047*"
   },
   {
    "tag": "r2",
-   "start": 15.121,
-   "end": 17.663,
+   "start": 15.075,
+   "end": 17.549,
    "text": "aur phir *23,157*"
   },
   {
    "tag": "s1",
-   "start": 18.003,
-   "end": 21.522,
+   "start": 17.889,
+   "end": 21.211,
    "text": "Neeche pehla *support* — *22,742*"
   },
   {
    "tag": "s2",
-   "start": 21.702,
-   "end": 24.372,
+   "start": 21.391,
+   "end": 23.991,
    "text": "aur phir *22,547*"
   },
   {
    "tag": "bull",
-   "start": 24.712,
-   "end": 32.708,
+   "start": 24.331,
+   "end": 32.419,
    "text": "*22,894* ke upar tike toh bias *positive* — *23,047* test ho sakta hai"
   },
   {
    "tag": "bear",
-   "start": 33.048,
-   "end": 38.558,
+   "start": 32.759,
+   "end": 38.29,
    "text": "*22,852* ke neeche gaya toh *22,742* tak dabaav"
   },
   {
    "tag": "cta",
-   "start": 38.898,
-   "end": 43.513,
+   "start": 38.63,
+   "end": 43.105,
    "text": "Levels *save* karo — roz subah *follow* karo *UpperCircuitStocks*"
   }
  ],
@@ -88,98 +88,98 @@ export const DAILY = {
   {
    "text": "Namaste traders!",
    "start": 0.35,
-   "end": 1.434
+   "end": 1.409
   },
   {
    "text": "*30 October* ke *Nifty levels*",
-   "start": 1.434,
-   "end": 3.316
+   "start": 1.409,
+   "end": 3.249
   },
   {
-   "text": "Kal Nifty *238 points upar*",
-   "start": 3.536,
-   "end": 6.247
+   "text": "Kal Nifty *238 points upar* —",
+   "start": 3.469,
+   "end": 6.404
   },
   {
-   "text": "— *22,937* par close",
-   "start": 6.247,
-   "end": 8.319
+   "text": "*22,937* par close",
+   "start": 6.404,
+   "end": 8.263
   },
   {
    "text": "Aaj ka *pivot* hai *22,852*",
-   "start": 8.539,
-   "end": 11.549
+   "start": 8.483,
+   "end": 11.57
   },
   {
    "text": "Upar pehla *resistance* —",
-   "start": 11.769,
-   "end": 14.285
+   "start": 11.79,
+   "end": 14.253
   },
   {
    "text": "*23,047*",
-   "start": 14.285,
-   "end": 15.061
+   "start": 14.253,
+   "end": 15.015
   },
   {
    "text": "aur phir *23,157*",
-   "start": 15.121,
-   "end": 17.783
+   "start": 15.075,
+   "end": 17.669
   },
   {
    "text": "Neeche pehla *support* —",
-   "start": 18.003,
-   "end": 20.768
+   "start": 17.889,
+   "end": 20.499
   },
   {
    "text": "*22,742*",
-   "start": 20.768,
-   "end": 21.642
+   "start": 20.499,
+   "end": 21.331
   },
   {
    "text": "aur phir *22,547*",
-   "start": 21.702,
-   "end": 24.492
+   "start": 21.391,
+   "end": 24.111
   },
   {
    "text": "*22,894* ke upar tike toh",
-   "start": 24.712,
-   "end": 27.678
+   "start": 24.331,
+   "end": 27.331
   },
   {
    "text": "bias *positive* — *23,047*",
-   "start": 27.678,
-   "end": 30.516
+   "start": 27.331,
+   "end": 30.201
   },
   {
    "text": "test ho sakta hai",
-   "start": 30.516,
-   "end": 32.828
+   "start": 30.201,
+   "end": 32.539
   },
   {
    "text": "*22,852* ke neeche gaya toh",
-   "start": 33.048,
-   "end": 36.328
+   "start": 32.759,
+   "end": 36.051
   },
   {
    "text": "*22,742* tak dabaav",
-   "start": 36.328,
-   "end": 38.678
+   "start": 36.051,
+   "end": 38.41
   },
   {
    "text": "Levels *save* karo — roz",
-   "start": 38.898,
-   "end": 40.679
+   "start": 38.63,
+   "end": 40.357
   },
   {
    "text": "subah *follow* karo",
-   "start": 40.679,
-   "end": 42.056
+   "start": 40.357,
+   "end": 41.692
   },
   {
    "text": "*UpperCircuitStocks*",
-   "start": 42.056,
-   "end": 43.633
+   "start": 41.692,
+   "end": 43.225
   }
  ],
- "duration": 46.253
+ "duration": 45.845
 } as const;
