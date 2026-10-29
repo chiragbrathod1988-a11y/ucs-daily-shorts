@@ -277,7 +277,75 @@ const ChartStage: React.FC<{ t: number }> = ({ t }) => {
   );
 };
 
-// ---------- AI Dashboard promo (~10 s before the outro) ----------
+// ---------- AI Dashboard promo: YouTube-safe feature showcase (no signals / trade calls) ----------
+const MK = (DAILY.timeline.find((x) => x.tag === "dash") as { marks?: Record<string, number> } | undefined)?.marks ?? {};
+const FeatureCard: React.FC<{ t: number; at: number; next: number; title: string; sub: string; children: React.ReactNode }> = ({ t, at, next, title, sub, children }) => {
+  const s = interpolate(t, [at, at + 0.4], [0, 1], { ...clamp, easing: Easing.spring({ damping: 12 }) });
+  const active = t >= at && t < next;
+  return (
+    <div style={{ width: 460, height: 350, borderRadius: 26, padding: "22px 24px", boxSizing: "border-box", background: "linear-gradient(180deg,#191207 0%,#070604 100%)", border: `${active ? 4 : 2}px solid ${active ? GOLD : "rgba(245,196,81,0.45)"}`, boxShadow: active ? "0 0 60px rgba(245,196,81,0.45)" : "0 10px 30px rgba(0,0,0,0.6)", opacity: s, scale: `${(0.85 + 0.15 * s) * (active ? 1.03 : 1)}` }}>
+      <div style={{ fontFamily: SANS, fontWeight: 800, fontSize: 34, color: active ? GOLD : CREAM, lineHeight: 1.1 }}>{title}</div>
+      <div style={{ fontFamily: SANS, fontWeight: 600, fontSize: 22, color: CREAM, opacity: 0.75, marginTop: 4, marginBottom: 14 }}>{sub}</div>
+      {children}
+    </div>
+  );
+};
+const Screener = () => (
+  <div>
+    <div style={{ display: "flex", gap: 8, marginBottom: 12 }}>
+      {["Breakout", "Volume", "52W High"].map((c) => (
+        <span key={c} style={{ padding: "5px 12px", borderRadius: 999, border: `2px solid ${GOLD}`, color: GOLD, fontFamily: SANS, fontWeight: 700, fontSize: 18 }}>{c}</span>
+      ))}
+    </div>
+    {[0.9, 0.7, 0.8, 0.6].map((w, i) => (
+      <div key={i} style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12 }}>
+        <div style={{ width: 26, height: 26, borderRadius: 6, backgroundColor: "rgba(245,196,81,0.25)" }} />
+        <div style={{ height: 14, width: `${w * 60}%`, borderRadius: 7, backgroundColor: "rgba(255,241,201,0.28)" }} />
+        <div style={{ marginLeft: "auto", height: 14, width: 54, borderRadius: 7, backgroundColor: i % 3 === 1 ? "rgba(240,77,77,0.6)" : "rgba(43,212,106,0.6)" }} />
+      </div>
+    ))}
+  </div>
+);
+const HEAT = [["IT", 0.6], ["BANK", 0.9], ["AUTO", -0.4], ["FMCG", 0.3], ["PHARMA", -0.7], ["METAL", 0.8], ["ENERGY", -0.2], ["REALTY", 1], ["MEDIA", -0.5]] as const;
+const Heatmap = () => (
+  <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 8 }}>
+    {HEAT.map(([n, v]) => (
+      <div key={n} style={{ height: 62, borderRadius: 10, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: SANS, fontWeight: 800, fontSize: 19, color: "white", backgroundColor: v >= 0 ? `rgba(43,212,106,${0.25 + 0.55 * v})` : `rgba(240,77,77,${0.25 + 0.55 * -v})` }}>{n}</div>
+    ))}
+  </div>
+);
+const Overview = () => (
+  <div>
+    <div style={{ display: "flex", alignItems: "baseline", gap: 12 }}>
+      <Gold size={54} font={SANS}>{fmt(L.close, 2)}</Gold>
+    </div>
+    <div style={{ fontFamily: SANS, fontWeight: 800, fontSize: 28, color: DAILY.up ? GREEN : RED, marginTop: 2 }}>
+      {DAILY.up ? "▲ +" : "▼ −"}{fmt(Math.abs(L.change), 2)} ({DAILY.up ? "+" : "−"}{Math.abs(L.changePct)}%)
+    </div>
+    <svg width={410} height={80} style={{ marginTop: 10 }}>
+      <polyline fill="none" stroke={DAILY.up ? GREEN : RED} strokeWidth={4} points={DAILY.up ? "0,62 50,58 95,66 140,48 190,52 240,34 290,40 340,22 410,14" : "0,14 50,22 95,18 140,36 190,30 240,48 290,44 340,60 410,66"} />
+    </svg>
+    <div style={{ fontFamily: SANS, fontWeight: 700, fontSize: 22, color: CREAM, opacity: 0.85 }}>Pivot {fmt(L.P)} · CPR {fmt(L.CPRlo)}–{fmt(L.CPRhi)}</div>
+  </div>
+);
+const Research = () => (
+  <div>
+    <div style={{ display: "flex", gap: 8, marginBottom: 12 }}>
+      {["Technicals", "Fundamentals", "News"].map((c, i) => (
+        <span key={c} style={{ padding: "5px 12px", borderRadius: 10, backgroundColor: i === 0 ? GOLD : "rgba(245,196,81,0.12)", color: i === 0 ? "#0A0A0A" : GOLD, fontFamily: SANS, fontWeight: 700, fontSize: 18 }}>{c}</span>
+      ))}
+    </div>
+    <svg width={410} height={150}>
+      {[[20, 90, 120, 60, 1], [60, 70, 110, 50, 1], [100, 60, 100, 75, 0], [140, 50, 95, 40, 1], [180, 35, 80, 30, 1], [220, 40, 90, 55, 0], [260, 25, 70, 20, 1], [300, 18, 60, 15, 1], [340, 10, 50, 12, 1]].map(([x, top, bot, body, upc], i) => (
+        <g key={i}>
+          <line x1={x} x2={x} y1={top - 8} y2={bot + 8} stroke={upc ? GREEN : RED} strokeWidth={3} />
+          <rect x={x - 11} y={top + 4} width={22} height={Math.max(12, bot - top - 8)} fill={upc ? GREEN : RED} rx={3} />
+        </g>
+      ))}
+    </svg>
+  </div>
+);
+
 const DashPromo: React.FC<{ t: number }> = ({ t }) => {
   const a = T.dash;
   const b = T.dash2;
@@ -285,16 +353,8 @@ const DashPromo: React.FC<{ t: number }> = ({ t }) => {
   const p = fade(t, a - 0.1, end, 0.45, 0.4);
   if (p <= 0) return null;
   const title = interpolate(t, [a, a + 0.6], [0, 1], { ...clamp, easing: Easing.spring({ damping: 12 }) });
-  const swap = interpolate(t, [b - 0.3, b + 0.3], [0, 1], clamp);
-  const kb1 = interpolate(t, [a, b], [1.0, 1.08], clamp);
-  const pan2 = interpolate(t, [b, end], [0, 100], { ...clamp, easing: ease });
-  const chips: { at: number; text: string }[] = [
-    { at: a + 1.0, text: "LIVE INTRADAY SIGNALS" },
-    { at: a + 2.6, text: "INTRADAY TRAP · 15 MIN & 1 HOUR" },
-    { at: a + 4.4, text: "ENTRY · TARGET · STOP-LOSS" },
-    { at: b + 0.1, text: "1-CLICK: FYERS · ZERODHA · DHAN" },
-  ];
-  const url = interpolate(t, [b + 1.2, b + 1.6], [0, 1], { ...clamp, easing: Easing.spring({ damping: 11 }) });
+  const m1 = MK.screener ?? a + 1.5, m2 = MK.heatmap ?? a + 2.5, m3 = MK.overview ?? a + 3.5, m4 = MK.research ?? a + 5;
+  const url = interpolate(t, [b, b + 0.4], [0, 1], { ...clamp, easing: Easing.spring({ damping: 11 }) });
   const pulse = 1 + 0.03 * Math.sin((t - b) * Math.PI * 2);
   return (
     <div style={{ position: "absolute", left: 0, right: 0, top: 350, height: 1000, opacity: p }}>
@@ -304,23 +364,13 @@ const DashPromo: React.FC<{ t: number }> = ({ t }) => {
           <Gold size={96}>AI DASHBOARD</Gold>
         </div>
       </div>
-      <div style={{ position: "absolute", left: 70, right: 70, top: 160, height: 520, borderRadius: 28, overflow: "hidden", border: `4px solid ${GOLD}`, boxShadow: "0 0 80px rgba(245,196,81,0.35)", backgroundColor: "#000" }}>
-        <Img src={staticFile("daily/dash1.jpg")} style={{ position: "absolute", width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 0%", scale: `${kb1}`, opacity: 1 - swap }} />
-        <Img src={staticFile("daily/dash2.jpg")} style={{ position: "absolute", width: "100%", height: "100%", objectFit: "cover", objectPosition: `50% ${pan2}%`, opacity: swap }} />
-        <div style={{ position: "absolute", inset: 0, boxShadow: "inset 0 0 60px rgba(0,0,0,0.6)" }} />
+      <div style={{ position: "absolute", left: 60, right: 60, top: 160, display: "grid", gridTemplateColumns: "460px 460px", gap: 20, justifyContent: "center" }}>
+        <FeatureCard t={t} at={m1} next={m2} title="Stock Screeners" sub="Filter stocks in seconds"><Screener /></FeatureCard>
+        <FeatureCard t={t} at={m2} next={m3} title="Heat Map" sub="Sector-wise market view"><Heatmap /></FeatureCard>
+        <FeatureCard t={t} at={m3} next={m4} title="Nifty Overview" sub="Index at a glance"><Overview /></FeatureCard>
+        <FeatureCard t={t} at={m4} next={b} title="Stock Research" sub="Detailed analysis per stock"><Research /></FeatureCard>
       </div>
-      <div style={{ position: "absolute", left: 60, right: 60, top: 740, display: "flex", flexWrap: "wrap", justifyContent: "center", gap: 12 }}>
-        {chips.map((c) => {
-          const s = interpolate(t, [c.at, c.at + 0.35], [0, 1], { ...clamp, easing: Easing.spring({ damping: 12 }) });
-          return (
-            <div key={c.text} style={{ scale: `${s}`, opacity: s, display: "flex", alignItems: "center", gap: 10, padding: "12px 22px", borderRadius: 14, backgroundColor: "#0B0905", border: `2px solid ${GOLD}`, fontFamily: SANS, fontWeight: 800, fontSize: 28, color: "white" }}>
-              <span style={{ width: 12, height: 12, borderRadius: 6, backgroundColor: GOLD, boxShadow: `0 0 10px ${GOLD}` }} />
-              {c.text}
-            </div>
-          );
-        })}
-      </div>
-      <div style={{ position: "absolute", left: 0, right: 0, top: 645, display: "flex", justifyContent: "center", opacity: url }}>
+      <div style={{ position: "absolute", left: 0, right: 0, top: 905, display: "flex", justifyContent: "center", opacity: url }}>
         <div style={{ scale: `${url * pulse}`, padding: "16px 38px", borderRadius: 999, backgroundImage: GOLD_GRAD, color: "#0A0A0A", fontFamily: SANS, fontWeight: 800, fontSize: 40, boxShadow: "0 0 50px rgba(245,196,81,0.5)" }}>
           app.uppercircuitstocks.com
         </div>

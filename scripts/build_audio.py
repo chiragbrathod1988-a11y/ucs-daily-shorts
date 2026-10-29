@@ -9,9 +9,7 @@ import numpy as np, soundfile as sf
 sys.path.insert(0, os.path.dirname(__file__))
 from hindi_num import words as hw
 
-VOICE_DIR = os.environ.get("PIPER_DIR", os.path.join(os.path.dirname(__file__), "..", ".piper", "vits-piper-hi_IN-pratham-medium"))
-VOICE = "hi_IN-pratham-medium"
-SR = 22050
+SR = 24000
 
 lv = json.load(open(sys.argv[1]))
 out_dir = sys.argv[2]
@@ -44,8 +42,8 @@ fmt = lambda n: f"{n:,}"
 
 # (tag, devanagari for TTS, roman caption — *word* = gold highlight)
 bull = ("bull",
-        f"अगर निफ़्टी {hw(lev['CPRhi'])} के ऊपर टिकता है, तो बायस पॉज़िटिव रहेगा, और {hw(lev['R1'])} का लेवल टेस्ट हो सकता है।",
-        f"*{fmt(lev['CPRhi'])}* ke upar tike toh bias *positive* — *{fmt(lev['R1'])}* test ho sakta hai")
+        f"अगर निफ़्टी {hw(lev['CPRhi'])} के ऊपर टिकता है, तो {hw(lev['R1'])} टेस्ट हो सकता है।",
+        f"*{fmt(lev['CPRhi'])}* ke upar tike toh *{fmt(lev['R1'])}* test ho sakta hai")
 bear = ("bear",
         f"और अगर {hw(lev['P'])} के नीचे गया, तो {hw(lev['S1'])} तक दबाव आ सकता है।",
         f"*{fmt(lev['P'])}* ke neeche gaya toh *{fmt(lev['S1'])}* tak dabaav")
@@ -57,49 +55,58 @@ if below_cpr:
             f"और अगर {hw(lev['CPRhi'])} के ऊपर निकला, तो {hw(lev['R1'])} तक रिकवरी आ सकती है।",
             f"*{fmt(lev['CPRhi'])}* ke upar nikla toh *{fmt(lev['R1'])}* tak recovery")
 
+MARKS = {"dash": [("screener", "स्क्रीनर्स"), ("heatmap", "हीट मैप"), ("overview", "ओवरव्यू"), ("research", "रिसर्च")]}
+
 S = [
     ("intro", f"नमस्ते ट्रेडर्स! {hw(td.day)} {MONTH_HI[td.month-1]} के निफ़्टी लेवल्स।",
      f"Namaste traders! *{td.day} {MONTH_EN[td.month-1]}* ke *Nifty levels*"),
     ("prev", f"{prev_word} निफ़्टी {hw(abs(lev['change']))} पॉइंट्स {'ऊपर' if up else 'नीचे'}, {hw(lev['closeR'])} पर बंद हुआ।",
      f"{prev_word_en} Nifty *{fmt(r(abs(lev['change'])))} points {'upar' if up else 'neeche'}* — *{fmt(lev['closeR'])}* par close"),
     ("pivot", f"आज का पिवट है, {hw(lev['P'])}।", f"Aaj ka *pivot* hai *{fmt(lev['P'])}*"),
-    ("r1", f"ऊपर की तरफ़ पहला रेज़िस्टेंस, {hw(lev['R1'])},", f"Upar pehla *resistance* — *{fmt(lev['R1'])}*"),
+    ("r1", f"पहला रेज़िस्टेंस, {hw(lev['R1'])},", f"Upar pehla *resistance* — *{fmt(lev['R1'])}*"),
     ("r2", f"और फिर, {hw(lev['R2'])}।", f"aur phir *{fmt(lev['R2'])}*"),
-    ("s1", f"नीचे की तरफ़ पहला सपोर्ट, {hw(lev['S1'])},", f"Neeche pehla *support* — *{fmt(lev['S1'])}*"),
+    ("s1", f"पहला सपोर्ट, {hw(lev['S1'])},", f"Neeche pehla *support* — *{fmt(lev['S1'])}*"),
     ("s2", f"और फिर, {hw(lev['S2'])}।", f"aur phir *{fmt(lev['S2'])}*"),
     *( [bear, bull] if below_cpr else [bull, bear] ),
-    ("dash", "लाइव सिग्नल्स के लिए देखिए, अपर सर्किट स्टॉक्स का ए आई डैशबोर्ड, एंट्री, टारगेट और स्टॉप लॉस के साथ।",
-     "Live signals ke liye *UpperCircuitStocks AI Dashboard* — *entry, target & SL* ke saath"),
-    ("dash2", "फ़ायर्स, ज़ेरोधा या धन से एक क्लिक में ट्रेड, लिंक डिस्क्रिप्शन में।",
-     "*Fyers, Zerodha, Dhan* se *1-click trade* — link *description* mein"),
+    ("dash", "अपर सर्किट स्टॉक्स के ए आई डैशबोर्ड पर पाइए, स्टॉक स्क्रीनर्स, हीट मैप, निफ़्टी ओवरव्यू, और डिटेल्ड स्टॉक रिसर्च।",
+     "*UpperCircuitStocks AI Dashboard* par — *Stock Screeners* *Heat Map* *Nifty Overview* aur *detailed research*"),
+    ("dash2", "लिंक डिस्क्रिप्शन में है, आज ही जॉइन कीजिए।", "Link *description* mein — *aaj hi join karo*"),
     ("cta", "लेवल्स सेव कर लीजिए, और रोज़ सुबह के लिए फ़ॉलो कीजिए, अपर सर्किट स्टॉक्स।",
      "Levels *save* karo — roz subah *follow* karo *UpperCircuitStocks*"),
 ]
 
-from piper import PiperVoice
-from piper.config import SynthesisConfig
-pv = PiperVoice.load(f"{VOICE_DIR}/{VOICE}.onnx", config_path=f"{VOICE_DIR}/{VOICE}.onnx.json")
-syn = SynthesisConfig(length_scale=0.9, noise_scale=0.6, noise_w_scale=0.8)
+from kokoro_onnx import Kokoro
+KDIR = os.environ.get("KOKORO_DIR", os.path.join(os.path.dirname(__file__), "..", ".kokoro"))
+kk = Kokoro(os.path.join(KDIR, "kokoro-v1.0.int8.onnx"), os.path.join(KDIR, "voices-v1.0.bin"))
+KVOICE, KSPEED = "hm_psi", 1.15
 
-LEAD = 0.35
-GAP_COMMA, GAP_STOP = 0.18, 0.34
+LEAD = 0.30
+GAP_COMMA, GAP_STOP = 0.10, 0.22   # short natural pauses so the voice flows unbroken
 pieces, timeline, t = [np.zeros(int(LEAD * SR), np.float32)], [], LEAD
 for tag, dev, rom in S:
-    tmp = os.path.join(out_dir, "_s.wav")
-    with wave.open(tmp, "wb") as w:
-        pv.synthesize_wav(dev, w, syn_config=syn)
-    a, sr = sf.read(tmp, dtype="float32")
+    a, sr = kk.create(dev, voice=KVOICE, speed=KSPEED, lang="hi")
+    a = np.asarray(a, np.float32)
     assert sr == SR, sr
-    # trim leading/trailing silence
-    nz = np.where(np.abs(a) > 0.01)[0]
-    a = a[max(0, nz[0] - 200): nz[-1] + 400] if len(nz) else a
+    # gentle trim: keep soft word endings (no clipping), only drop long silence
+    env = np.convolve(np.abs(a), np.ones(240) / 240, "same")
+    nz = np.where(env > 0.004)[0]
+    if len(nz):
+        a = a[max(0, nz[0] - 480): min(len(a), nz[-1] + 1800)]
+    fade = int(0.012 * SR)
+    a[:fade] *= np.linspace(0, 1, fade); a[-fade:] *= np.linspace(1, 0, fade)
     d = len(a) / SR
-    timeline.append({"tag": tag, "start": round(t, 3), "end": round(t + d, 3), "text": rom})
+    seg = {"tag": tag, "start": round(t, 3), "end": round(t + d, 3), "text": rom}
+    # sub-marks inside a sentence (e.g. each dashboard feature) by character position
+    for key, word in MARKS.get(tag, []):
+        pos = dev.find(word)
+        if pos >= 0:
+            seg.setdefault("marks", {})[key] = round(t + d * pos / max(1, len(dev)), 3)
+    timeline.append(seg)
     pieces.append(a)
     gap = GAP_COMMA if dev.rstrip().endswith(",") else GAP_STOP
     pieces.append(np.zeros(int(gap * SR), np.float32))
     t += d + gap
-os.remove(os.path.join(out_dir, "_s.wav"))
+
 END_HOLD = 2.4
 pieces.append(np.zeros(int(END_HOLD * SR), np.float32))
 voice = np.concatenate(pieces)
@@ -113,7 +120,9 @@ def chunks(text, maxlen=26):
     out, cur = [], []
     for tk in toks:
         trial = " ".join(cur + [tk])
-        if tk in ("—", "-", ",") and cur:
+        if tk == "," and cur:
+            cur[-1] += ","; continue
+        if tk in ("—", "-") and cur:
             cur.append(tk); continue
         if cur and len(trial.replace("*", "")) > maxlen:
             out.append(" ".join(cur)); cur = [tk]
@@ -134,18 +143,18 @@ here = os.path.dirname(__file__)
 subprocess.run([sys.executable, os.path.join(here, "music.py"), os.path.join(out_dir, "music.wav"), str(total + 0.5)], check=True)
 ev = {s["tag"]: s["start"] for s in timeline}
 sfx_events = [(0.05, "whoosh"), (ev["prev"], "coin"), (ev["pivot"], "pop"), (ev["r1"], "pop"), (ev["r2"], "pop"),
-              (ev["s1"], "pop"), (ev["s2"], "pop"), (ev["bull"], "whoosh"), (ev["bear"], "whoosh"), (ev["dash"], "whoosh"), (ev["dash2"] + 0.9, "click"), (ev["dash2"] + 1.0, "ding"), (ev["cta"], "whoosh"),
+              (ev["s1"], "pop"), (ev["s2"], "pop"), (ev["bull"], "whoosh"), (ev["bear"], "whoosh"), (ev["dash"], "whoosh"), *[(v, "pop") for v in timeline[[x["tag"] for x in timeline].index("dash")].get("marks", {}).values()],  (ev["cta"], "whoosh"),
               (total - END_HOLD + 0.1, "whoosh")]
 json.dump(sfx_events, open(os.path.join(out_dir, "sfx.json"), "w"))
 subprocess.run([sys.executable, os.path.join(here, "sfx.py"), os.path.join(out_dir, "sfx.json"), os.path.join(out_dir, "sfx.wav"), str(total + 0.5)], check=True)
 
 D = f"{total:.3f}"
 subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", os.path.join(out_dir, "voice_raw.wav"),
-                "-af", "highpass=f=70,acompressor=threshold=-20dB:ratio=2.5:attack=8:release=120:makeup=2,loudnorm=I=-16:TP=-1.5:LRA=8",
+                "-af", "highpass=f=80,equalizer=f=250:t=q:w=1:g=-1.5,equalizer=f=3200:t=q:w=1.2:g=2,acompressor=threshold=-22dB:ratio=2:attack=15:release=200:makeup=1.5,loudnorm=I=-15:TP=-1.5:LRA=7",
                 "-ar", "48000", "-ac", "1", os.path.join(out_dir, "voice.wav")], check=True)
 subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", os.path.join(out_dir, "music.wav"), "-i", os.path.join(out_dir, "voice.wav"),
                 "-i", os.path.join(out_dir, "sfx.wav"), "-filter_complex",
-                f"[0:a]atrim=0:{D},highpass=f=60,equalizer=f=2500:t=q:w=1.2:g=-4,volume=0.6[m];"
+                f"[0:a]atrim=0:{D},highpass=f=60,lowpass=f=9000,equalizer=f=2800:t=q:w=1.4:g=-6,volume=0.42[m];"
                 f"[1:a]aformat=channel_layouts=stereo,apad=whole_dur={D},asplit=2[v1][v2];"
                 f"[m][v1]sidechaincompress=threshold=0.03:ratio=4:attack=40:release=450:makeup=1[md];"
                 f"[md][v2][2:a]amix=inputs=3:weights='1 1 1':normalize=0,afade=t=out:st={total-1.2:.2f}:d=1.2,loudnorm=I=-14:TP=-1.0:LRA=11[out]",

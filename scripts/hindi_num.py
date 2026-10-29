@@ -7,8 +7,7 @@ U = ("शून्य एक दो तीन चार पाँच छह स�
      "अठहत्तर उन्यासी अस्सी इक्यासी बयासी तिरासी चौरासी पचासी छियासी सत्तासी अट्ठासी नवासी नब्बे इक्यानवे "
      "बानवे तिरानवे चौरानवे पचानवे छियानवे सत्तानवे अट्ठानवे निन्यानवे").split()
 assert len(U) == 100
-# Piper tends to swallow the middle of तेईस so it sounds like तीस (30); a hyphen keeps both syllables.
-U[23] = "ते-ईस"
+
 
 def words(n: int) -> str:
     n = int(round(n))

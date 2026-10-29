@@ -51,7 +51,7 @@ https://www.upsurge.club/course/btst-trading-in-stock-options-and-futures?invite
 LINKS = """📲 FREE Telegram Channel — daily levels & market updates:
 https://t.me/uppercircuitstocksbychiragrathod
 
-🤖 AI DASHBOARD — live signals & 1-click trade:
+🤖 AI DASHBOARD — Stock Screeners, Heat Map, Nifty Overview & detailed Stock Research:
 https://app.uppercircuitstocks.com"""
 
 DISCLAIMER = ("⚠️ For educational purposes only. Not investment advice. Levels are calculated pivot points, "

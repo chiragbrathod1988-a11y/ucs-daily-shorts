@@ -4,7 +4,6 @@
 set -euo pipefail
 cd "$(dirname "$0")"
 D="$1"
-export PIPER_DIR="$PWD/.piper/vits-piper-hi_IN-pratham-medium"
 python3 scripts/build_audio.py "data/$D.json" public/daily src/dailyData.ts | tail -1
 BROWSER=$(ls -d /opt/pw-browsers/chromium_headless_shell-*/chrome-linux/headless_shell 2>/dev/null | head -1 || true)
 BARG=""; [ -n "$BROWSER" ] && BARG="--browser-executable=$BROWSER"
