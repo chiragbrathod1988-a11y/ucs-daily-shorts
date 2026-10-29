@@ -172,7 +172,7 @@ const PrevClose: React.FC<{ t: number }> = ({ t }) => {
 const CH = { x: 60, y: 360, w: 960, h: 960 };
 const ChartStage: React.FC<{ t: number }> = ({ t }) => {
   const start = T.pivot - 0.15;
-  const end = T.cta + 0.25;
+  const end = T.dash + 0.25;
   const p = fade(t, start, end, 0.45, 0.45);
   if (p <= 0) return null;
   const lo = Math.min(L.S2, L.low) - (L.R2 - L.S2) * 0.12;
@@ -277,6 +277,58 @@ const ChartStage: React.FC<{ t: number }> = ({ t }) => {
   );
 };
 
+// ---------- AI Dashboard promo (~10 s before the outro) ----------
+const DashPromo: React.FC<{ t: number }> = ({ t }) => {
+  const a = T.dash;
+  const b = T.dash2;
+  const end = T.cta + 0.2;
+  const p = fade(t, a - 0.1, end, 0.45, 0.4);
+  if (p <= 0) return null;
+  const title = interpolate(t, [a, a + 0.6], [0, 1], { ...clamp, easing: Easing.spring({ damping: 12 }) });
+  const swap = interpolate(t, [b - 0.3, b + 0.3], [0, 1], clamp);
+  const kb1 = interpolate(t, [a, b], [1.0, 1.08], clamp);
+  const pan2 = interpolate(t, [b, end], [0, 100], { ...clamp, easing: ease });
+  const chips: { at: number; text: string }[] = [
+    { at: a + 1.0, text: "LIVE INTRADAY SIGNALS" },
+    { at: a + 2.6, text: "INTRADAY TRAP · 15 MIN & 1 HOUR" },
+    { at: a + 4.4, text: "ENTRY · TARGET · STOP-LOSS" },
+    { at: b + 0.1, text: "1-CLICK: FYERS · ZERODHA · DHAN" },
+  ];
+  const url = interpolate(t, [b + 1.2, b + 1.6], [0, 1], { ...clamp, easing: Easing.spring({ damping: 11 }) });
+  const pulse = 1 + 0.03 * Math.sin((t - b) * Math.PI * 2);
+  return (
+    <div style={{ position: "absolute", left: 0, right: 0, top: 350, height: 1000, opacity: p }}>
+      <div style={{ textAlign: "center", scale: `${title}` }}>
+        <span style={{ fontFamily: SERIF, fontWeight: 700, color: CREAM, fontSize: 30, letterSpacing: 6 }}>UPPERCIRCUITSTOCKS</span>
+        <div style={{ marginTop: -6 }}>
+          <Gold size={96}>AI DASHBOARD</Gold>
+        </div>
+      </div>
+      <div style={{ position: "absolute", left: 70, right: 70, top: 160, height: 520, borderRadius: 28, overflow: "hidden", border: `4px solid ${GOLD}`, boxShadow: "0 0 80px rgba(245,196,81,0.35)", backgroundColor: "#000" }}>
+        <Img src={staticFile("daily/dash1.jpg")} style={{ position: "absolute", width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 0%", scale: `${kb1}`, opacity: 1 - swap }} />
+        <Img src={staticFile("daily/dash2.jpg")} style={{ position: "absolute", width: "100%", height: "100%", objectFit: "cover", objectPosition: `50% ${pan2}%`, opacity: swap }} />
+        <div style={{ position: "absolute", inset: 0, boxShadow: "inset 0 0 60px rgba(0,0,0,0.6)" }} />
+      </div>
+      <div style={{ position: "absolute", left: 60, right: 60, top: 740, display: "flex", flexWrap: "wrap", justifyContent: "center", gap: 12 }}>
+        {chips.map((c) => {
+          const s = interpolate(t, [c.at, c.at + 0.35], [0, 1], { ...clamp, easing: Easing.spring({ damping: 12 }) });
+          return (
+            <div key={c.text} style={{ scale: `${s}`, opacity: s, display: "flex", alignItems: "center", gap: 10, padding: "12px 22px", borderRadius: 14, backgroundColor: "#0B0905", border: `2px solid ${GOLD}`, fontFamily: SANS, fontWeight: 800, fontSize: 28, color: "white" }}>
+              <span style={{ width: 12, height: 12, borderRadius: 6, backgroundColor: GOLD, boxShadow: `0 0 10px ${GOLD}` }} />
+              {c.text}
+            </div>
+          );
+        })}
+      </div>
+      <div style={{ position: "absolute", left: 0, right: 0, top: 645, display: "flex", justifyContent: "center", opacity: url }}>
+        <div style={{ scale: `${url * pulse}`, padding: "16px 38px", borderRadius: 999, backgroundImage: GOLD_GRAD, color: "#0A0A0A", fontFamily: SANS, fontWeight: 800, fontSize: 40, boxShadow: "0 0 50px rgba(245,196,81,0.5)" }}>
+          app.uppercircuitstocks.com
+        </div>
+      </div>
+    </div>
+  );
+};
+
 // ---------- outro with the human touch ----------
 const Outro: React.FC<{ t: number }> = ({ t }) => {
   const a = T.cta;
@@ -335,6 +387,7 @@ export const NiftyShort: React.FC = () => {
       <Intro t={t} />
       <PrevClose t={t} />
       <ChartStage t={t} />
+      <DashPromo t={t} />
       <Outro t={t} />
       <Captions t={t} />
       <div style={{ position: "absolute", left: 80, right: 80, top: 1640, textAlign: "center", fontFamily: SANS, fontWeight: 500, fontSize: 23, lineHeight: 1.35, color: CREAM, opacity: 0.6 }}>

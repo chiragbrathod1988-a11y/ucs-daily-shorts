@@ -13,5 +13,5 @@ npx remotion render NiftyShort out/silent.mp4 --muted --concurrency="$(nproc)" -
 ffmpeg -v error -y -i out/silent.mp4 -i public/daily/mix.wav -map 0:v -map 1:a -c:v libx264 -preset slow -crf 21 \
   -pix_fmt yuv420p -r 30 -c:a aac -b:a 160k -shortest -movflags +faststart "videos/$D.mp4"
 rm -rf out/check && mkdir -p out/check
-for t in 1.5 7 15 28 36 44; do ffmpeg -v error -ss $t -i "videos/$D.mp4" -frames:v 1 -vf scale=360:640 "out/check/$t.jpg" || true; done
+for t in 1.5 7 15 28 36 42 48 54; do ffmpeg -v error -ss $t -i "videos/$D.mp4" -frames:v 1 -vf scale=360:640 "out/check/$t.jpg" || true; done
 ffprobe -v error -show_entries format=duration,size -of compact=p=0:nk=1 "videos/$D.mp4"

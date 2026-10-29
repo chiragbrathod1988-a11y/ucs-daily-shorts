@@ -68,6 +68,10 @@ S = [
     ("s1", f"नीचे की तरफ़ पहला सपोर्ट, {hw(lev['S1'])},", f"Neeche pehla *support* — *{fmt(lev['S1'])}*"),
     ("s2", f"और फिर, {hw(lev['S2'])}।", f"aur phir *{fmt(lev['S2'])}*"),
     *( [bear, bull] if below_cpr else [bull, bear] ),
+    ("dash", "लाइव सिग्नल्स के लिए देखिए, अपर सर्किट स्टॉक्स का ए आई डैशबोर्ड, एंट्री, टारगेट और स्टॉप लॉस के साथ।",
+     "Live signals ke liye *UpperCircuitStocks AI Dashboard* — *entry, target & SL* ke saath"),
+    ("dash2", "फ़ायर्स, ज़ेरोधा या धन से एक क्लिक में ट्रेड, लिंक डिस्क्रिप्शन में।",
+     "*Fyers, Zerodha, Dhan* se *1-click trade* — link *description* mein"),
     ("cta", "लेवल्स सेव कर लीजिए, और रोज़ सुबह के लिए फ़ॉलो कीजिए, अपर सर्किट स्टॉक्स।",
      "Levels *save* karo — roz subah *follow* karo *UpperCircuitStocks*"),
 ]
@@ -130,7 +134,7 @@ here = os.path.dirname(__file__)
 subprocess.run([sys.executable, os.path.join(here, "music.py"), os.path.join(out_dir, "music.wav"), str(total + 0.5)], check=True)
 ev = {s["tag"]: s["start"] for s in timeline}
 sfx_events = [(0.05, "whoosh"), (ev["prev"], "coin"), (ev["pivot"], "pop"), (ev["r1"], "pop"), (ev["r2"], "pop"),
-              (ev["s1"], "pop"), (ev["s2"], "pop"), (ev["bull"], "whoosh"), (ev["bear"], "whoosh"), (ev["cta"], "ding"),
+              (ev["s1"], "pop"), (ev["s2"], "pop"), (ev["bull"], "whoosh"), (ev["bear"], "whoosh"), (ev["dash"], "whoosh"), (ev["dash2"] + 0.9, "click"), (ev["dash2"] + 1.0, "ding"), (ev["cta"], "whoosh"),
               (total - END_HOLD + 0.1, "whoosh")]
 json.dump(sfx_events, open(os.path.join(out_dir, "sfx.json"), "w"))
 subprocess.run([sys.executable, os.path.join(here, "sfx.py"), os.path.join(out_dir, "sfx.json"), os.path.join(out_dir, "sfx.wav"), str(total + 0.5)], check=True)

@@ -26,61 +26,73 @@ export const DAILY = {
   {
    "tag": "intro",
    "start": 0.35,
-   "end": 3.129,
+   "end": 3.094,
    "text": "Namaste traders! *30 October* ke *Nifty levels*"
   },
   {
    "tag": "prev",
-   "start": 3.469,
-   "end": 8.143,
+   "start": 3.434,
+   "end": 8.136,
    "text": "Kal Nifty *238 points upar* — *22,937* par close"
   },
   {
    "tag": "pivot",
-   "start": 8.483,
-   "end": 11.45,
+   "start": 8.476,
+   "end": 11.413,
    "text": "Aaj ka *pivot* hai *22,852*"
   },
   {
    "tag": "r1",
-   "start": 11.79,
-   "end": 14.895,
+   "start": 11.753,
+   "end": 14.884,
    "text": "Upar pehla *resistance* — *23,047*"
   },
   {
    "tag": "r2",
-   "start": 15.075,
-   "end": 17.549,
+   "start": 15.064,
+   "end": 17.515,
    "text": "aur phir *23,157*"
   },
   {
    "tag": "s1",
-   "start": 17.889,
-   "end": 21.211,
+   "start": 17.855,
+   "end": 21.418,
    "text": "Neeche pehla *support* — *22,742*"
   },
   {
    "tag": "s2",
-   "start": 21.391,
-   "end": 23.991,
+   "start": 21.598,
+   "end": 24.087,
    "text": "aur phir *22,547*"
   },
   {
    "tag": "bull",
-   "start": 24.331,
-   "end": 32.419,
+   "start": 24.427,
+   "end": 32.717,
    "text": "*22,894* ke upar tike toh bias *positive* — *23,047* test ho sakta hai"
   },
   {
    "tag": "bear",
-   "start": 32.759,
-   "end": 38.29,
+   "start": 33.057,
+   "end": 38.493,
    "text": "*22,852* ke neeche gaya toh *22,742* tak dabaav"
   },
   {
+   "tag": "dash",
+   "start": 38.833,
+   "end": 45.435,
+   "text": "Live signals ke liye *UpperCircuitStocks AI Dashboard* — *entry, target & SL* ke saath"
+  },
+  {
+   "tag": "dash2",
+   "start": 45.775,
+   "end": 49.654,
+   "text": "*Fyers, Zerodha, Dhan* se *1-click trade* — link *description* mein"
+  },
+  {
    "tag": "cta",
-   "start": 38.63,
-   "end": 43.105,
+   "start": 49.994,
+   "end": 54.714,
    "text": "Levels *save* karo — roz subah *follow* karo *UpperCircuitStocks*"
   }
  ],
@@ -88,98 +100,133 @@ export const DAILY = {
   {
    "text": "Namaste traders!",
    "start": 0.35,
-   "end": 1.409
+   "end": 1.395
   },
   {
    "text": "*30 October* ke *Nifty levels*",
-   "start": 1.409,
-   "end": 3.249
+   "start": 1.395,
+   "end": 3.214
   },
   {
    "text": "Kal Nifty *238 points upar* —",
-   "start": 3.469,
-   "end": 6.404
+   "start": 3.434,
+   "end": 6.386
   },
   {
    "text": "*22,937* par close",
-   "start": 6.404,
-   "end": 8.263
+   "start": 6.386,
+   "end": 8.256
   },
   {
    "text": "Aaj ka *pivot* hai *22,852*",
-   "start": 8.483,
-   "end": 11.57
+   "start": 8.476,
+   "end": 11.533
   },
   {
    "text": "Upar pehla *resistance* —",
-   "start": 11.79,
-   "end": 14.253
+   "start": 11.753,
+   "end": 14.236
   },
   {
    "text": "*23,047*",
-   "start": 14.253,
-   "end": 15.015
+   "start": 14.236,
+   "end": 15.004
   },
   {
    "text": "aur phir *23,157*",
-   "start": 15.075,
-   "end": 17.669
+   "start": 15.064,
+   "end": 17.635
   },
   {
    "text": "Neeche pehla *support* —",
-   "start": 17.889,
-   "end": 20.499
+   "start": 17.855,
+   "end": 20.654
   },
   {
    "text": "*22,742*",
-   "start": 20.499,
-   "end": 21.331
+   "start": 20.654,
+   "end": 21.538
   },
   {
    "text": "aur phir *22,547*",
-   "start": 21.391,
-   "end": 24.111
+   "start": 21.598,
+   "end": 24.207
   },
   {
    "text": "*22,894* ke upar tike toh",
-   "start": 24.331,
-   "end": 27.331
+   "start": 24.427,
+   "end": 27.502
   },
   {
    "text": "bias *positive* — *23,047*",
-   "start": 27.331,
-   "end": 30.201
+   "start": 27.502,
+   "end": 30.444
   },
   {
    "text": "test ho sakta hai",
-   "start": 30.201,
-   "end": 32.539
+   "start": 30.444,
+   "end": 32.837
   },
   {
    "text": "*22,852* ke neeche gaya toh",
-   "start": 32.759,
-   "end": 36.051
+   "start": 33.057,
+   "end": 36.293
   },
   {
    "text": "*22,742* tak dabaav",
-   "start": 36.051,
-   "end": 38.41
+   "start": 36.293,
+   "end": 38.613
+  },
+  {
+   "text": "Live signals ke liye",
+   "start": 38.833,
+   "end": 40.504
+  },
+  {
+   "text": "*UpperCircuitStocks AI Dashboard* —",
+   "start": 40.504,
+   "end": 43.262
+  },
+  {
+   "text": "*entry, target & SL* ke",
+   "start": 43.262,
+   "end": 45.017
+  },
+  {
+   "text": "saath",
+   "start": 45.017,
+   "end": 45.555
+  },
+  {
+   "text": "*Fyers, Zerodha, Dhan* se",
+   "start": 45.775,
+   "end": 47.287
+  },
+  {
+   "text": "*1-click trade* — link",
+   "start": 47.287,
+   "end": 48.602
+  },
+  {
+   "text": "*description* mein",
+   "start": 48.602,
+   "end": 49.774
   },
   {
    "text": "Levels *save* karo — roz",
-   "start": 38.63,
-   "end": 40.357
+   "start": 49.994,
+   "end": 51.816
   },
   {
    "text": "subah *follow* karo",
-   "start": 40.357,
-   "end": 41.692
+   "start": 51.816,
+   "end": 53.223
   },
   {
    "text": "*UpperCircuitStocks*",
-   "start": 41.692,
-   "end": 43.225
+   "start": 53.223,
+   "end": 54.834
   }
  ],
- "duration": 45.845
+ "duration": 57.454
 } as const;
