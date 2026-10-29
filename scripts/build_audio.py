@@ -40,45 +40,47 @@ prev_word = "कल" if (td - datetime.date.fromisoformat(lv["prevDate"])).days 
 prev_word_en = "Kal" if prev_word == "कल" else "Pichhle session mein"
 fmt = lambda n: f"{n:,}"
 
-# (tag, devanagari for TTS, roman caption — *word* = gold highlight)
+# (tag, spoken text for TTS in Devanagari — casual Hinglish, all numbers spoken in English — , roman caption; *word* = gold)
+from english_num import words as ew
 bull = ("bull",
-        f"अगर निफ़्टी {hw(lev['CPRhi'])} के ऊपर टिकता है, तो {hw(lev['R1'])} टेस्ट हो सकता है।",
-        f"*{fmt(lev['CPRhi'])}* ke upar tike toh *{fmt(lev['R1'])}* test ho sakta hai")
+        f"अगर निफ़्टी {ew(lev['CPRhi'])} के ऊपर होल्ड करता है, तो {ew(lev['R1'])} टेस्ट हो सकता है।",
+        f"*{fmt(lev['CPRhi'])}* ke upar hold kiya toh *{fmt(lev['R1'])}* test ho sakta hai")
 bear = ("bear",
-        f"और अगर {hw(lev['P'])} के नीचे गया, तो {hw(lev['S1'])} तक दबाव आ सकता है।",
-        f"*{fmt(lev['P'])}* ke neeche gaya toh *{fmt(lev['S1'])}* tak dabaav")
+        f"लेकिन अगर {ew(lev['P'])} के नीचे फिसला, तो {ew(lev['S1'])} तक प्रेशर आ सकता है।",
+        f"*{fmt(lev['P'])}* ke neeche fisla toh *{fmt(lev['S1'])}* tak pressure")
 if below_cpr:
     bear = ("bear",
-            f"अगर निफ़्टी {hw(lev['P'])} के नीचे रहता है, तो दबाव बना रह सकता है, और {hw(lev['S1'])} का लेवल टेस्ट हो सकता है।",
+            f"अगर निफ़्टी {ew(lev['P'])} के नीचे ही रहता है, तो प्रेशर बना रहेगा, और {ew(lev['S1'])} टेस्ट हो सकता है।",
             f"*{fmt(lev['P'])}* ke neeche raha toh *pressure* — *{fmt(lev['S1'])}* test ho sakta hai")
     bull = ("bull",
-            f"और अगर {hw(lev['CPRhi'])} के ऊपर निकला, तो {hw(lev['R1'])} तक रिकवरी आ सकती है।",
+            f"लेकिन अगर {ew(lev['CPRhi'])} के ऊपर निकला, तो {ew(lev['R1'])} तक रिकवरी आ सकती है।",
             f"*{fmt(lev['CPRhi'])}* ke upar nikla toh *{fmt(lev['R1'])}* tak recovery")
 
 MARKS = {"dash": [("screener", "स्क्रीनर्स"), ("heatmap", "हीट मैप"), ("overview", "ओवरव्यू"), ("research", "रिसर्च")]}
+prev_hi = "कल" if prev_word == "कल" else "लास्ट सेशन में"
 
 S = [
-    ("intro", f"नमस्ते ट्रेडर्स! {hw(td.day)} {MONTH_HI[td.month-1]} के निफ़्टी लेवल्स।",
-     f"Namaste traders! *{td.day} {MONTH_EN[td.month-1]}* ke *Nifty levels*"),
-    ("prev", f"{prev_word} निफ़्टी {hw(abs(lev['change']))} पॉइंट्स {'ऊपर' if up else 'नीचे'}, {hw(lev['closeR'])} पर बंद हुआ।",
-     f"{prev_word_en} Nifty *{fmt(r(abs(lev['change'])))} points {'upar' if up else 'neeche'}* — *{fmt(lev['closeR'])}* par close"),
-    ("pivot", f"आज का पिवट है, {hw(lev['P'])}।", f"Aaj ka *pivot* hai *{fmt(lev['P'])}*"),
-    ("r1", f"पहला रेज़िस्टेंस, {hw(lev['R1'])},", f"Upar pehla *resistance* — *{fmt(lev['R1'])}*"),
-    ("r2", f"और फिर, {hw(lev['R2'])}।", f"aur phir *{fmt(lev['R2'])}*"),
-    ("s1", f"पहला सपोर्ट, {hw(lev['S1'])},", f"Neeche pehla *support* — *{fmt(lev['S1'])}*"),
-    ("s2", f"और फिर, {hw(lev['S2'])}।", f"aur phir *{fmt(lev['S2'])}*"),
+    ("intro", f"हेलो ट्रेडर्स! {ew(td.day)} {MONTH_HI[td.month-1]} के निफ़्टी लेवल्स, चलो देखते हैं।",
+     f"Hello traders! *{td.day} {MONTH_EN[td.month-1]}* ke *Nifty levels* — chalo dekhte hain"),
+    ("prev", f"{prev_hi} निफ़्टी {ew(abs(lev['change']))} पॉइंट्स {'ऊपर' if up else 'नीचे'}, {ew(lev['closeR'])} पे क्लोज़ हुआ।",
+     f"{prev_word_en} Nifty *{fmt(r(abs(lev['change'])))} points {'upar' if up else 'neeche'}* — *{fmt(lev['closeR'])}* pe close"),
+    ("pivot", f"आज का पिवट है, {ew(lev['P'])}।", f"Aaj ka *pivot* hai *{fmt(lev['P'])}*"),
+    ("r1", f"ऊपर फर्स्ट रेज़िस्टेंस, {ew(lev['R1'])},", f"Upar first *resistance* — *{fmt(lev['R1'])}*"),
+    ("r2", f"उसके बाद, {ew(lev['R2'])}।", f"uske baad *{fmt(lev['R2'])}*"),
+    ("s1", f"नीचे फर्स्ट सपोर्ट, {ew(lev['S1'])},", f"Neeche first *support* — *{fmt(lev['S1'])}*"),
+    ("s2", f"और फिर, {ew(lev['S2'])}।", f"aur phir *{fmt(lev['S2'])}*"),
     *( [bear, bull] if below_cpr else [bull, bear] ),
-    ("dash", "अपर सर्किट स्टॉक्स के ए आई डैशबोर्ड पर पाइए, स्टॉक स्क्रीनर्स, हीट मैप, निफ़्टी ओवरव्यू, और डिटेल्ड स्टॉक रिसर्च।",
-     "*UpperCircuitStocks AI Dashboard* par — *Stock Screeners* *Heat Map* *Nifty Overview* aur *detailed research*"),
-    ("dash2", "लिंक डिस्क्रिप्शन में है, आज ही जॉइन कीजिए।", "Link *description* mein — *aaj hi join karo*"),
-    ("cta", "लेवल्स सेव कर लीजिए, और रोज़ सुबह के लिए फ़ॉलो कीजिए, अपर सर्किट स्टॉक्स।",
+    ("dash", "और हाँ, अपर सर्किट स्टॉक्स के ए आई डैशबोर्ड पे मिलेंगे, स्टॉक स्क्रीनर्स, हीट मैप, निफ़्टी ओवरव्यू, और डिटेल्ड स्टॉक रिसर्च।",
+     "*UpperCircuitStocks AI Dashboard* pe — *Stock Screeners* *Heat Map* *Nifty Overview* aur *detailed research*"),
+    ("dash2", "लिंक डिस्क्रिप्शन में है, एक बार ज़रूर चेक करो।", "Link *description* mein — *ek baar zaroor check karo*"),
+    ("cta", "लेवल्स सेव कर लो, और रोज़ सुबह के लिए फॉलो करो, अपर सर्किट स्टॉक्स।",
      "Levels *save* karo — roz subah *follow* karo *UpperCircuitStocks*"),
 ]
 
 from kokoro_onnx import Kokoro
 KDIR = os.environ.get("KOKORO_DIR", os.path.join(os.path.dirname(__file__), "..", ".kokoro"))
 kk = Kokoro(os.path.join(KDIR, "kokoro-v1.0.int8.onnx"), os.path.join(KDIR, "voices-v1.0.bin"))
-KVOICE, KSPEED = "hm_psi", 1.15
+KVOICE, KSPEED = os.environ.get("UCS_VOICE", "hf_beta"), 1.2
 
 LEAD = 0.30
 GAP_COMMA, GAP_STOP = 0.10, 0.22   # short natural pauses so the voice flows unbroken
@@ -107,7 +109,7 @@ for tag, dev, rom in S:
     pieces.append(np.zeros(int(gap * SR), np.float32))
     t += d + gap
 
-END_HOLD = 2.4
+END_HOLD = 1.9
 pieces.append(np.zeros(int(END_HOLD * SR), np.float32))
 voice = np.concatenate(pieces)
 total = len(voice) / SR

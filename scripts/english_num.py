@@ -1,0 +1,35 @@
+"""Spoken English numbers the way Indian traders say them, written in Devanagari so the Hindi
+voice pronounces them naturally (Hinglish).  e.g. 22852 -> "ट्वेंटी टू थाउज़ेंड एट हंड्रेड फिफ्टी टू"
+(= "twenty two thousand eight hundred fifty two"), 23047 -> "ट्वेंटी थ्री थाउज़ेंड फोर्टी सेवन".
+"""
+ONES = ["ज़ीरो", "वन", "टू", "थ्री", "फोर", "फाइव", "सिक्स", "सेवन", "एट", "नाइन", "टेन",
+        "इलेवन", "ट्वेल्व", "थर्टीन", "फोर्टीन", "फिफ्टीन", "सिक्सटीन", "सेवनटीन", "एटीन", "नाइनटीन"]
+TENS = {2: "ट्वेंटी", 3: "थर्टी", 4: "फोर्टी", 5: "फिफ्टी", 6: "सिक्सटी", 7: "सेवेंटी", 8: "एटी", 9: "नाइंटी"}
+
+def two(n: int) -> str:
+    if n < 20:
+        return ONES[n]
+    t, o = divmod(n, 10)
+    return TENS[t] + ("" if o == 0 else " " + ONES[o])
+
+def words(n) -> str:
+    n = int(round(n))
+    if n < 0:
+        return "माइनस " + words(-n)
+    if n < 100:
+        return two(n)
+    if n < 1000:                       # 238 -> "two hundred thirty eight" (full form is clearest in the voice)
+        h, r = divmod(n, 100)
+        return ONES[h] + " हंड्रेड" + ("" if r == 0 else " " + two(r))
+    th, r = divmod(n, 1000)
+    out = two(th) + " थाउज़ेंड" if th < 100 else words(th) + " थाउज़ेंड"
+    if r == 0:
+        return out
+    if r < 100:                        # 23047 -> "twenty three thousand forty seven"
+        return out + " " + two(r)
+    h, rr = divmod(r, 100)             # 22852 -> "... thousand eight hundred fifty two"
+    return out + " " + ONES[h] + " हंड्रेड" + ("" if rr == 0 else " " + two(rr))
+
+if __name__ == "__main__":
+    for x in (22852, 23047, 23157, 22742, 22547, 22894, 22937, 238, 30, 22605, 23000):
+        print(x, words(x))
