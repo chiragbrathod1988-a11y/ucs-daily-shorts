@@ -8,7 +8,8 @@ Everything runs in IST (Asia/Kolkata). `D` = today's date (the trading day the l
 
 ## 0. Should today run?
 1. Get today's date (`current_time` tool).
-2. If `posted/D.json` already exists in this repo → already done today, stop silently.
+2. If `posted/D.json` already exists and lists both a YouTube and an Instagram result → already done today, stop
+   silently. If it lists only one, do just the missing platform in step 4.
 3. Web-search the NSE trading-holiday list for the current year. Weekend or NSE holiday → stop silently.
 
 ## 1. Verified data for the previous trading session
@@ -28,6 +29,7 @@ Write `data/D.json`:
 (change is signed: negative on a down day).
 
 ## 2. Build the video
+If `data/D.json` and `videos/D.mp4` already exist in the repo (built ahead of time), skip steps 1–3 and go to 4.
 ```
 ./setup.sh            # first time on this machine
 ./make_video.sh D     # writes videos/D.mp4 and check frames in out/check/
