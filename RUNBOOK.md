@@ -46,41 +46,26 @@ Public URL: `https://raw.githubusercontent.com/chiragbrathod1988-a11y/ucs-daily-
 (wait ~30 s after the push; it must return HTTP 200).
 
 ## 4. Post
-Levels come from `src/dailyData.ts` (`DAILY.levels`). Use `{DD Mon YYYY}` for the trading day.
+Generate the exact post text — never write it by hand:
+```
+python3 scripts/post_text.py > out/post.json   # title, description, instagram_caption, tags
+```
+`post.json` already contains everything Chirag requires: the engaging hook title built from today's levels, the
+levels, Telegram channel link, AI Dashboard link, the four Upsurge course links (exact text), subscribe CTA,
+disclaimer and hashtags. Use its fields verbatim. (If `src/dailyData.ts` is not today's, run `./make_video.sh D` first.)
 
 **YouTube Shorts — Metricool** (`mcp__Metricool_Social_Media_Management__createScheduledPost`)
 - blogId `7738599` (brand linked to YouTube channel Upper circuit Stocks, UCvcxTPpZiYBtJ8UaxTR3VVQ), timezone Asia/Calcutta.
 - date: now + 5 minutes (ISO with +05:30). info JSON:
   - providers `[{"network":"youtube"}]`, media `[<public URL>]`, autoPublish true, draft false
-  - text = description (below)
-  - youtubeData `{"title": "Nifty Levels Today {DD Mon YYYY} | Support & Resistance | Pivot Levels #shorts", "type":"short", "privacy":"public", "madeForKids": false, "category":"EDUCATION", "tags":["nifty levels today","nifty support and resistance","nifty prediction","nifty 50","pivot points","stock market india","intraday trading","uppercircuitstocks"], "isAiGeneratedContent": false}`
-- Description:
-  ```
-  Aaj ke Nifty 50 levels ({DD Mon YYYY}) 📊
-  Pivot {P} | R1 {R1} | R2 {R2} | S1 {S1} | S2 {S2}
-  CPR zone {CPRlo}–{CPRhi}. {bias line in Hinglish: above CPR → R1 possible; below pivot → S1 possible}
-
-  Roz subah Nifty levels ke liye subscribe karein — UpperCircuitStocks by Chirag Rathod.
-  For educational purposes only. Not investment advice. Levels are calculated pivot points, not buy/sell recommendations. Market risks apply.
-
-  #nifty #nifty50 #stockmarketindia #shorts
-  ```
+  - text = `post.json.description`
+  - youtubeData `{"title": post.json.title, "type":"short", "privacy":"public", "madeForKids": false, "category":"EDUCATION", "tags": post.json.tags, "isAiGeneratedContent": false}`
 
 **Instagram Reel — vidIQ**
 1. `vidiq_video_upload` with `url` = public URL (title "Nifty Short D") → hosted `videoUrl`.
 2. `vidiq_instagram_publish_reel` with platformAccountId `27871127732565506` (@uppercircuitstocks), that `videoUrl`,
-   and the caption below; follow its mcpJobId / containerId continuation until PUBLISHED. Do not set isAiGenerated.
-   Caption:
-   ```
-   Aaj Nifty kya karega? 👇
-   📊 Nifty 50 levels — {DD Mon YYYY}
-   🔴 R2 {R2} | R1 {R1}
-   🟡 Pivot {P} (CPR {CPRlo}–{CPRhi})
-   🟢 S1 {S1} | S2 {S2}
-   Save karo & follow @uppercircuitstocks — roz subah levels.
-   Educational purpose only. Not investment advice. Market risks apply.
-   #nifty50 #stockmarketindia #intradaytrading #niftylevels #uppercircuitstocks
-   ```
+   and caption = `post.json.instagram_caption`; follow its mcpJobId / containerId continuation until PUBLISHED.
+   Do not set isAiGenerated.
 
 ## 5. Record and report
 Write `posted/D.json` with `{"youtube": <Metricool plannerUrl or error>, "instagram": <permalink or error>}`,
