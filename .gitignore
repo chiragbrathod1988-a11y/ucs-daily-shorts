@@ -1,0 +1,5 @@
+node_modules/
+out/
+.piper/
+public/daily/*.wav
+public/daily/sfx.json
