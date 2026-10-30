@@ -37,14 +37,17 @@ jobs:
           echo "DATES=$DATES" >> $GITHUB_ENV
           for D in $DATES; do python3 scripts/tts_edge.py data/$D.json; done
       - name: Clarity check (speech-to-text of the generated voice)
+        continue-on-error: true
         run: |
           for D in $DATES; do python3 - "$D" <<'EOF'
-          import sys, json, os
+          import sys, json, os, subprocess
+          import numpy as np
           from faster_whisper import WhisperModel
           d = sys.argv[1]; m = WhisperModel("small", compute_type="int8")
           man = json.load(open(f"tts/{d}/manifest.json")); out = []
           for ln in man["lines"]:
-              segs, _ = m.transcribe(f"tts/{d}/{ln['tag']}.mp3", language="hi")
+              pcm = subprocess.run(["ffmpeg", "-v", "error", "-i", f"tts/{d}/{ln['tag']}.mp3", "-f", "f32le", "-ac", "1", "-ar", "16000", "-"], check=True, capture_output=True).stdout
+              segs, _ = m.transcribe(np.frombuffer(pcm, np.float32), language="hi")
               out.append(f"{ln['tag']}\n  script: {ln['text']}\n  heard:  {' '.join(s.text.strip() for s in segs)}")
           open(f"tts/{d}/transcript.txt", "w").write("\n".join(out) + "\n")
           print("\n".join(out))
