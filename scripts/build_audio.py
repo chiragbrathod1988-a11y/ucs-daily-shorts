@@ -1,4 +1,4 @@
-"""Build voice (Piper hi_IN-pratham), captions timing, music and SFX for the daily Nifty Short.
+"""Build voice (Microsoft neural TTS files from tts/D/, made by GitHub Actions), captions timing, music and SFX for the daily Nifty Short.
 
 Usage: python3 build_audio.py levels.json OUT_PUBLIC_DIR OUT_TS_FILE
 levels.json: {"tradeDate":"2026-10-30","prevDate":"2026-10-29","open":..,"high":..,"low":..,"close":..,"change":..,"changePct":..}
@@ -12,9 +12,11 @@ from hindi_num import words as hw
 SR = 24000
 
 lv = json.load(open(sys.argv[1]))
-out_dir = sys.argv[2]
-ts_out = sys.argv[3]
-os.makedirs(out_dir, exist_ok=True)
+DUMP = len(sys.argv) > 2 and sys.argv[2] == "--dump-script"
+if not DUMP:
+    out_dir = sys.argv[2]
+    ts_out = sys.argv[3]
+    os.makedirs(out_dir, exist_ok=True)
 
 H, L, C = lv["high"], lv["low"], lv["close"]
 P = (H + L + C) / 3
@@ -77,18 +79,27 @@ S = [
      "Levels *save* karo — roz subah *follow* karo *UpperCircuitStocks*"),
 ]
 
-from kokoro_onnx import Kokoro
-KDIR = os.environ.get("KOKORO_DIR", os.path.join(os.path.dirname(__file__), "..", ".kokoro"))
-kk = Kokoro(os.path.join(KDIR, "kokoro-v1.0.int8.onnx"), os.path.join(KDIR, "voices-v1.0.bin"))
-KVOICE, KSPEED = os.environ.get("UCS_VOICE", "hf_beta"), 1.2
+if DUMP:
+    print(json.dumps([{"tag": tag, "text": dev} for tag, dev, _ in S], ensure_ascii=False))
+    sys.exit(0)
+
+# Voice: per-line MP3s from Microsoft neural TTS (scripts/tts_edge.py, run by .github/workflows/tts.yml).
+# The text in the manifest must match today's script exactly — never fall back to a different voice.
+TTS_DIR = os.path.join(os.path.dirname(__file__), "..", "tts", lv["tradeDate"])
+man = json.load(open(os.path.join(TTS_DIR, "manifest.json")))
+want = [{"tag": tag, "text": dev} for tag, dev, _ in S]
+assert man["lines"] == want, "tts/<date>/manifest.json does not match today's script — re-run the TTS workflow"
+
+def synth(tag):
+    raw = subprocess.run(["ffmpeg", "-v", "error", "-i", os.path.join(TTS_DIR, tag + ".mp3"), "-f", "f32le",
+                          "-ac", "1", "-ar", str(SR), "-"], check=True, capture_output=True).stdout
+    return np.frombuffer(raw, np.float32).copy()
 
 LEAD = 0.30
 GAP_COMMA, GAP_STOP = 0.10, 0.22   # short natural pauses so the voice flows unbroken
 pieces, timeline, t = [np.zeros(int(LEAD * SR), np.float32)], [], LEAD
 for tag, dev, rom in S:
-    a, sr = kk.create(dev, voice=KVOICE, speed=KSPEED, lang="hi")
-    a = np.asarray(a, np.float32)
-    assert sr == SR, sr
+    a = synth(tag)
     # gentle trim: keep soft word endings (no clipping), only drop long silence
     env = np.convolve(np.abs(a), np.ones(240) / 240, "same")
     nz = np.where(env > 0.004)[0]

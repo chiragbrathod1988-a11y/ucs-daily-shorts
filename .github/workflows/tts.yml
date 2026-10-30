@@ -1,0 +1,58 @@
+name: Voice-over (Microsoft neural TTS)
+# Makes tts/<date>/*.mp3 for the daily Short. Runs when data/<date>.json is pushed, or by hand.
+on:
+  push:
+    branches: [main]
+    paths: ["data/*.json"]
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "Trade date YYYY-MM-DD"
+        required: true
+      voice:
+        description: "edge-tts voice"
+        default: "hi-IN-SwaraNeural"
+
+permissions:
+  contents: write
+
+concurrency: tts
+
+jobs:
+  tts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+      - run: pip install -q edge-tts numpy soundfile faster-whisper
+      - name: Generate voice
+        env:
+          UCS_EDGE_VOICE: ${{ github.event.inputs.voice || 'hi-IN-SwaraNeural' }}
+        run: |
+          if [ -n "${{ github.event.inputs.date }}" ]; then DATES="${{ github.event.inputs.date }}";
+          else DATES=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} -- 'data/*.json' 2>/dev/null | sed -n 's#data/\(.*\)\.json#\1#p'); fi
+          [ -n "$DATES" ] || DATES=$(ls data/*.json | tail -1 | sed 's#data/\(.*\)\.json#\1#')
+          echo "DATES=$DATES" >> $GITHUB_ENV
+          for D in $DATES; do python3 scripts/tts_edge.py data/$D.json; done
+      - name: Clarity check (speech-to-text of the generated voice)
+        run: |
+          for D in $DATES; do python3 - "$D" <<'EOF'
+          import sys, json, os
+          from faster_whisper import WhisperModel
+          d = sys.argv[1]; m = WhisperModel("small", compute_type="int8")
+          man = json.load(open(f"tts/{d}/manifest.json")); out = []
+          for ln in man["lines"]:
+              segs, _ = m.transcribe(f"tts/{d}/{ln['tag']}.mp3", language="hi")
+              out.append(f"{ln['tag']}\n  script: {ln['text']}\n  heard:  {' '.join(s.text.strip() for s in segs)}")
+          open(f"tts/{d}/transcript.txt", "w").write("\n".join(out) + "\n")
+          print("\n".join(out))
+          EOF
+          done
+      - name: Commit
+        run: |
+          git config user.name "ucs-tts-bot"; git config user.email "actions@users.noreply.github.com"
+          git add tts/
+          git diff --cached --quiet || git commit -m "Voice-over for $DATES"
+          for i in 1 2 3; do git pull --rebase -q origin main && git push -q origin HEAD:main && break; sleep 5; done
