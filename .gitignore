@@ -4,3 +4,4 @@ out/
 public/daily/*.wav
 public/daily/sfx.json
 .kokoro/
+__pycache__/

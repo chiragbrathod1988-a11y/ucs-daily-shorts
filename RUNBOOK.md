@@ -30,9 +30,18 @@ Write `data/D.json`:
 
 ## 2. Build the video
 If `data/D.json` and `videos/D.mp4` already exist in the repo (built ahead of time), skip steps 1–3 and go to 4.
+
+**Voice (Microsoft neural TTS, hi-IN-SwaraNeural — clear adult AI voice).** The sandbox cannot reach the TTS
+service, so the voice is made by GitHub Actions (`.github/workflows/tts.yml`):
+1. `git add data/D.json && git commit -m "Data D" && git push origin HEAD:main` — this push triggers the workflow
+   (or trigger it with `actions_run_trigger`, workflow `tts.yml`, inputs `{"date":"D"}`).
+2. Wait (git fetch every ~15 s, up to ~6 min) until `tts/D/manifest.json` is on origin/main, then `git pull`.
+3. Read `tts/D/transcript.txt` (speech-to-text of the voice): every level number should be heard correctly
+   (speech-to-text is imperfect on English words; numbers are what matter). If the workflow failed, re-trigger once;
+   if it fails again → Failure. Never fall back to another voice.
 ```
 ./setup.sh            # first time on this machine
-./make_video.sh D     # writes videos/D.mp4 and check frames in out/check/
+./make_video.sh D     # writes videos/D.mp4 and check frames in out/check/ (fails if tts/D does not match the script)
 ```
 Then **look at every image in `out/check/`** with the Read tool. Confirm: logo intro, previous close card with the
 right close, chart with PIVOT/R1/R2/S1/S2 labels that match the levels printed by the script, captions readable,
@@ -40,7 +49,7 @@ nothing overlapping or cut off. If something is wrong, fix it (data or code) and
 
 ## 3. Publish the file
 ```
-git add data/D.json videos/D.mp4 && git commit -m "Nifty Short D" && git push origin HEAD:main
+git add data/D.json videos/D.mp4 tts/D && git commit -m "Nifty Short D" && git push origin HEAD:main
 ```
 Public URL: `https://raw.githubusercontent.com/chiragbrathod1988-a11y/ucs-daily-shorts/main/videos/D.mp4`
 (wait ~30 s after the push; it must return HTTP 200).
@@ -76,4 +85,4 @@ If data can't be verified, a build fails twice, or a post fails: post nothing mo
 saying what failed today (no questions, no action needed from him). Don't retry paid steps in a loop.
 
 ## Housekeeping
-Keep only the last 30 videos in `videos/` (git rm older ones in the daily commit) so the repo stays small.
+Keep only the last 30 videos in `videos/` and voice folders in `tts/` (git rm older ones in the daily commit) so the repo stays small.

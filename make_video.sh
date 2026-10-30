@@ -5,7 +5,7 @@ set -euo pipefail
 cd "$(dirname "$0")"
 D="$1"
 python3 scripts/build_audio.py "data/$D.json" public/daily src/dailyData.ts | tail -1
-BROWSER=$(ls -d /opt/pw-browsers/chromium_headless_shell-*/chrome-linux/headless_shell 2>/dev/null | head -1 || true)
+BROWSER=$(ls -d /opt/pw-browsers/chromium_headless_shell-*/chrome-linux/headless_shell /opt/pw-browsers/chromium_headless_shell-*/chrome-headless-shell-linux64/chrome-headless-shell 2>/dev/null | head -1 || true)
 BARG=""; [ -n "$BROWSER" ] && BARG="--browser-executable=$BROWSER"
 mkdir -p out videos
 npx remotion render NiftyShort out/silent.mp4 --muted --concurrency="$(nproc)" --crf=18 $BARG --log=error
