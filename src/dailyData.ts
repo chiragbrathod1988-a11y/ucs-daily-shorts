@@ -26,79 +26,79 @@ export const DAILY = {
   {
    "tag": "intro",
    "start": 0.3,
-   "end": 3.794,
+   "end": 5.542,
    "text": "Hello traders! *30 October* ke *Nifty levels* — chalo dekhte hain"
   },
   {
    "tag": "prev",
-   "start": 4.014,
-   "end": 9.989,
+   "start": 5.762,
+   "end": 11.816,
    "text": "Kal Nifty *238 points upar* — *22,937* pe close"
   },
   {
    "tag": "pivot",
-   "start": 10.209,
-   "end": 13.484,
+   "start": 12.036,
+   "end": 15.752,
    "text": "Aaj ka *pivot* hai *22,852*"
   },
   {
    "tag": "r1",
-   "start": 13.704,
-   "end": 16.973,
+   "start": 15.972,
+   "end": 19.541,
    "text": "Upar first *resistance* — *23,047*"
   },
   {
    "tag": "r2",
-   "start": 17.073,
-   "end": 20.315,
+   "start": 19.641,
+   "end": 23.26,
    "text": "uske baad *23,157*"
   },
   {
    "tag": "s1",
-   "start": 20.535,
-   "end": 24.344,
+   "start": 23.48,
+   "end": 27.424,
    "text": "Neeche first *support* — *22,742*"
   },
   {
    "tag": "s2",
-   "start": 24.444,
-   "end": 27.446,
+   "start": 27.524,
+   "end": 30.811,
    "text": "aur phir *22,547*"
   },
   {
    "tag": "bull",
-   "start": 27.666,
-   "end": 35.394,
+   "start": 31.031,
+   "end": 38.521,
    "text": "*22,894* ke upar hold kiya toh *23,047* test ho sakta hai"
   },
   {
    "tag": "bear",
-   "start": 35.614,
-   "end": 43.601,
+   "start": 38.741,
+   "end": 46.637,
    "text": "*22,852* ke neeche fisla toh *22,742* tak pressure"
   },
   {
    "tag": "dash",
-   "start": 43.821,
-   "end": 50.669,
+   "start": 46.857,
+   "end": 56.585,
    "text": "*UpperCircuitStocks AI Dashboard* pe — *Stock Screeners* *Heat Map* *Nifty Overview* aur *detailed research*",
    "marks": {
-    "screener": 47.245,
-    "heatmap": 47.908,
-    "overview": 48.847,
-    "research": 50.283
+    "screener": 51.683,
+    "heatmap": 52.525,
+    "overview": 53.751,
+    "research": 55.896
    }
   },
   {
    "tag": "dash2",
-   "start": 50.889,
-   "end": 53.603,
+   "start": 56.805,
+   "end": 59.871,
    "text": "Link *description* mein — *ek baar zaroor check karo*"
   },
   {
    "tag": "cta",
-   "start": 53.823,
-   "end": 57.764,
+   "start": 60.091,
+   "end": 65.236,
    "text": "Levels *save* karo — roz subah *follow* karo *UpperCircuitStocks*"
   }
  ],
@@ -106,133 +106,133 @@ export const DAILY = {
   {
    "text": "Hello traders! *30 October*",
    "start": 0.3,
-   "end": 1.781
+   "end": 2.521
   },
   {
    "text": "ke *Nifty levels* — chalo",
-   "start": 1.781,
-   "end": 3.143
+   "start": 2.521,
+   "end": 4.565
   },
   {
    "text": "dekhte hain",
-   "start": 3.143,
-   "end": 3.914
+   "start": 4.565,
+   "end": 5.662
   },
   {
    "text": "Kal Nifty *238 points upar* —",
-   "start": 4.014,
-   "end": 7.855
+   "start": 5.762,
+   "end": 9.654
   },
   {
    "text": "*22,937* pe close",
-   "start": 7.855,
-   "end": 10.109
+   "start": 9.654,
+   "end": 11.936
   },
   {
    "text": "Aaj ka *pivot* hai *22,852*",
-   "start": 10.209,
-   "end": 13.604
+   "start": 12.036,
+   "end": 15.872
   },
   {
    "text": "Upar first *resistance* —",
-   "start": 13.704,
-   "end": 16.297
+   "start": 15.972,
+   "end": 18.803
   },
   {
    "text": "*23,047*",
-   "start": 16.297,
-   "end": 17.093
+   "start": 18.803,
+   "end": 19.661
   },
   {
    "text": "uske baad *23,157*",
-   "start": 17.073,
-   "end": 20.435
+   "start": 19.641,
+   "end": 23.38
   },
   {
    "text": "Neeche first *support* —",
-   "start": 20.535,
-   "end": 23.528
+   "start": 23.48,
+   "end": 26.579
   },
   {
    "text": "*22,742*",
-   "start": 23.528,
-   "end": 24.464
+   "start": 26.579,
+   "end": 27.544
   },
   {
    "text": "aur phir *22,547*",
-   "start": 24.444,
-   "end": 27.566
+   "start": 27.524,
+   "end": 30.931
   },
   {
    "text": "*22,894* ke upar hold kiya",
-   "start": 27.666,
-   "end": 31.233
+   "start": 31.031,
+   "end": 34.488
   },
   {
    "text": "toh *23,047* test ho sakta",
-   "start": 31.233,
-   "end": 34.8
+   "start": 34.488,
+   "end": 37.945
   },
   {
    "text": "hai",
-   "start": 34.8,
-   "end": 35.514
+   "start": 37.945,
+   "end": 38.641
   },
   {
    "text": "*22,852* ke neeche fisla toh",
-   "start": 35.614,
-   "end": 40.229
+   "start": 38.741,
+   "end": 43.303
   },
   {
    "text": "*22,742* tak pressure",
-   "start": 40.229,
-   "end": 43.721
+   "start": 43.303,
+   "end": 46.757
   },
   {
    "text": "*UpperCircuitStocks AI Dashboard*",
-   "start": 43.821,
-   "end": 46.056
+   "start": 46.857,
+   "end": 50.031
   },
   {
    "text": "pe — *Stock Screeners*",
-   "start": 46.056,
-   "end": 47.497
+   "start": 50.031,
+   "end": 52.079
   },
   {
    "text": "*Heat Map* *Nifty Overview*",
-   "start": 47.497,
-   "end": 49.155
+   "start": 52.079,
+   "end": 54.435
   },
   {
    "text": "aur *detailed research*",
-   "start": 49.155,
-   "end": 50.789
+   "start": 54.435,
+   "end": 56.705
   },
   {
    "text": "Link *description* mein —",
-   "start": 50.889,
-   "end": 52.189
+   "start": 56.805,
+   "end": 58.274
   },
   {
    "text": "*ek baar zaroor check karo*",
-   "start": 52.189,
-   "end": 53.723
+   "start": 58.274,
+   "end": 59.991
   },
   {
    "text": "Levels *save* karo — roz",
-   "start": 53.823,
-   "end": 55.344
+   "start": 60.091,
+   "end": 62.077
   },
   {
    "text": "subah *follow* karo",
-   "start": 55.344,
-   "end": 56.519
+   "start": 62.077,
+   "end": 63.611
   },
   {
    "text": "*UpperCircuitStocks*",
-   "start": 56.519,
-   "end": 57.884
+   "start": 63.611,
+   "end": 65.356
   }
  ],
- "duration": 59.884
+ "duration": 67.356
 } as const;
