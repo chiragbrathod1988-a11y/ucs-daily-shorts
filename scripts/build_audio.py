@@ -43,39 +43,39 @@ prev_word_en = "Kal" if prev_word == "कल" else "Pichhle session mein"
 fmt = lambda n: f"{n:,}"
 
 # (tag, spoken text for TTS in Devanagari — casual Hinglish, all numbers spoken in English — , roman caption; *word* = gold)
-from english_num import words as ew
+from english_num import latin as ew
 bull = ("bull",
-        f"अगर निफ़्टी {ew(lev['CPRhi'])} के ऊपर होल्ड करता है, तो {ew(lev['R1'])} टेस्ट हो सकता है।",
+        f"अगर Nifty {ew(lev['CPRhi'])} के ऊपर hold करता है, तो {ew(lev['R1'])} test हो सकता है।",
         f"*{fmt(lev['CPRhi'])}* ke upar hold kiya toh *{fmt(lev['R1'])}* test ho sakta hai")
 bear = ("bear",
-        f"लेकिन अगर {ew(lev['P'])} के नीचे फिसला, तो {ew(lev['S1'])} तक प्रेशर आ सकता है।",
+        f"लेकिन अगर {ew(lev['P'])} के नीचे फिसला, तो {ew(lev['S1'])} तक pressure आ सकता है।",
         f"*{fmt(lev['P'])}* ke neeche fisla toh *{fmt(lev['S1'])}* tak pressure")
 if below_cpr:
     bear = ("bear",
-            f"अगर निफ़्टी {ew(lev['P'])} के नीचे ही रहता है, तो प्रेशर बना रहेगा, और {ew(lev['S1'])} टेस्ट हो सकता है।",
+            f"अगर Nifty {ew(lev['P'])} के नीचे ही रहता है, तो pressure बना रहेगा, और {ew(lev['S1'])} test हो सकता है।",
             f"*{fmt(lev['P'])}* ke neeche raha toh *pressure* — *{fmt(lev['S1'])}* test ho sakta hai")
     bull = ("bull",
-            f"लेकिन अगर {ew(lev['CPRhi'])} के ऊपर निकला, तो {ew(lev['R1'])} तक रिकवरी आ सकती है।",
+            f"लेकिन अगर {ew(lev['CPRhi'])} के ऊपर निकला, तो {ew(lev['R1'])} तक recovery आ सकती है।",
             f"*{fmt(lev['CPRhi'])}* ke upar nikla toh *{fmt(lev['R1'])}* tak recovery")
 
-MARKS = {"dash": [("screener", "स्क्रीनर्स"), ("heatmap", "हीट मैप"), ("overview", "ओवरव्यू"), ("research", "रिसर्च")]}
+MARKS = {"dash": [("screener", "Screeners"), ("heatmap", "Heat Map"), ("overview", "Overview"), ("research", "Research")]}
 prev_hi = "कल" if prev_word == "कल" else "लास्ट सेशन में"
 
 S = [
-    ("intro", f"हेलो ट्रेडर्स! {ew(td.day)} {MONTH_HI[td.month-1]} के निफ़्टी लेवल्स, चलो देखते हैं।",
+    ("intro", f"Hello traders! {ew(td.day)} {MONTH_EN[td.month-1]} के Nifty levels, चलो देखते हैं।",
      f"Hello traders! *{td.day} {MONTH_EN[td.month-1]}* ke *Nifty levels* — chalo dekhte hain"),
-    ("prev", f"{prev_hi} निफ़्टी {ew(abs(lev['change']))} पॉइंट्स {'ऊपर' if up else 'नीचे'}, {ew(lev['closeR'])} पे क्लोज़ हुआ।",
+    ("prev", f"{prev_hi} Nifty {ew(abs(lev['change']))} points {'ऊपर' if up else 'नीचे'}, {ew(lev['closeR'])} पे close हुआ।",
      f"{prev_word_en} Nifty *{fmt(r(abs(lev['change'])))} points {'upar' if up else 'neeche'}* — *{fmt(lev['closeR'])}* pe close"),
-    ("pivot", f"आज का पिवट है, {ew(lev['P'])}।", f"Aaj ka *pivot* hai *{fmt(lev['P'])}*"),
-    ("r1", f"ऊपर फर्स्ट रेज़िस्टेंस, {ew(lev['R1'])},", f"Upar first *resistance* — *{fmt(lev['R1'])}*"),
+    ("pivot", f"आज का pivot है, {ew(lev['P'])}।", f"Aaj ka *pivot* hai *{fmt(lev['P'])}*"),
+    ("r1", f"ऊपर first resistance, {ew(lev['R1'])},", f"Upar first *resistance* — *{fmt(lev['R1'])}*"),
     ("r2", f"उसके बाद, {ew(lev['R2'])}।", f"uske baad *{fmt(lev['R2'])}*"),
-    ("s1", f"नीचे फर्स्ट सपोर्ट, {ew(lev['S1'])},", f"Neeche first *support* — *{fmt(lev['S1'])}*"),
+    ("s1", f"नीचे first support, {ew(lev['S1'])},", f"Neeche first *support* — *{fmt(lev['S1'])}*"),
     ("s2", f"और फिर, {ew(lev['S2'])}।", f"aur phir *{fmt(lev['S2'])}*"),
     *( [bear, bull] if below_cpr else [bull, bear] ),
-    ("dash", "और हाँ, अपर सर्किट स्टॉक्स के ए आई डैशबोर्ड पे मिलेंगे, स्टॉक स्क्रीनर्स, हीट मैप, निफ़्टी ओवरव्यू, और डिटेल्ड स्टॉक रिसर्च।",
+    ("dash", "और हाँ, Upper Circuit Stocks के AI Dashboard पे मिलेंगे, Stock Screeners, Heat Map, Nifty Overview, और detailed Stock Research।",
      "*UpperCircuitStocks AI Dashboard* pe — *Stock Screeners* *Heat Map* *Nifty Overview* aur *detailed research*"),
-    ("dash2", "लिंक डिस्क्रिप्शन में है, एक बार ज़रूर चेक करो।", "Link *description* mein — *ek baar zaroor check karo*"),
-    ("cta", "लेवल्स सेव कर लो, और रोज़ सुबह के लिए फॉलो करो, अपर सर्किट स्टॉक्स।",
+    ("dash2", "Link description में है, एक बार ज़रूर check करो।", "Link *description* mein — *ek baar zaroor check karo*"),
+    ("cta", "Levels save कर लो, और रोज़ सुबह के लिए follow करो, Upper Circuit Stocks।",
      "Levels *save* karo — roz subah *follow* karo *UpperCircuitStocks*"),
 ]
 

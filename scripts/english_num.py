@@ -33,3 +33,33 @@ def words(n) -> str:
 if __name__ == "__main__":
     for x in (22852, 23047, 23157, 22742, 22547, 22894, 22937, 238, 30, 22605, 23000):
         print(x, words(x))
+
+
+# Latin-script version for the Microsoft neural voice, which reads English words in Latin script most clearly.
+_O = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve",
+      "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"]
+_T = {2: "twenty", 3: "thirty", 4: "forty", 5: "fifty", 6: "sixty", 7: "seventy", 8: "eighty", 9: "ninety"}
+
+def _two(n):
+    if n < 20:
+        return _O[n]
+    t, o = divmod(n, 10)
+    return _T[t] + ("" if o == 0 else " " + _O[o])
+
+def latin(n) -> str:
+    n = int(round(n))
+    if n < 0:
+        return "minus " + latin(-n)
+    if n < 100:
+        return _two(n)
+    if n < 1000:
+        h, r = divmod(n, 100)
+        return _O[h] + " hundred" + ("" if r == 0 else " " + _two(r))
+    th, r = divmod(n, 1000)
+    out = (_two(th) if th < 100 else latin(th)) + " thousand"
+    if r == 0:
+        return out
+    if r < 100:
+        return out + " " + _two(r)
+    h, rr = divmod(r, 100)
+    return out + " " + _O[h] + " hundred" + ("" if rr == 0 else " " + _two(rr))
