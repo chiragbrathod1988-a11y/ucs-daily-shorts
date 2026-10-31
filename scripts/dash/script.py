@@ -130,7 +130,7 @@ if slot == "morning":
          "stats": [["NIFTY 50", fmt(ni["ltp"]), pct(ni["chp"])], ["BANK NIFTY", fmt(bn["ltp"]), pct(bn["chp"])], ["INDIA VIX", f"{vix['ltp']:.2f}", pct(vix["chp"])]]})
     say("breadth", f"Market breadth रहा {br['mood_label']}, {ew(br['advancing'])} stocks ऊपर, और {ew(br['declining'])} नीचे।",
         f"Breadth: {br['mood_label']} — {br['advancing']:,} up, {br['declining']:,} down.",
-        {"kind": "screen", "shot": s_snap, "scroll": [0.30, 0.45],
+        {"kind": "screen", "shot": s_snap, "scroll": [0.12, 0.26],
          "badge": [br["mood_label"].upper(), f"{br['advancing']:,} ▲  ·  {br['declining']:,} ▼"]})
     say("sectors", f"सबसे strong sector रहा {strong['sector']}, और सबसे weak रहा {weak['sector']}।",
         f"Strongest: {strong['sector']} ({pct(strong['today_pct'])}) · Weakest: {weak['sector']} ({pct(weak['today_pct'])}).",
