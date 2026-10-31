@@ -1,0 +1,11 @@
+{"mode": "morning", "lines": 8, "shots": ["snapshot", "heatmap", "feature"], "meta": {"nifty": {"ltp": 23053.1, "chp": 0.51, "ch": 116.35}, "bankNifty": {"ltp": 54686.95, "chp": -0.41, "ch": -222.7}, "vix": {"ltp": 15.3, "chp": 1.19}, "breadth": {"advancing": 449, "declining": 1682, "mood_label": "Very Bearish"}, "strong": ["Utilities", "0.18"], "weak": ["Financial Services", "-1.79"], "feature": "Mutual Funds", "marketDate": "2026-10-30"}}
+no token: screenshots skipped
+ok hook
+ok nifty
+ok breadth
+ok sectors
+ok ahead
+ok feat1
+ok feat2
+ok cta
+OK 2026-10-30:morning

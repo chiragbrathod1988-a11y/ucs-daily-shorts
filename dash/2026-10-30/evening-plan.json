@@ -1,0 +1,326 @@
+{
+ "date": "2026-10-30",
+ "slot": "evening",
+ "mode": "evening",
+ "feature": "Index Options",
+ "lines": [
+  {
+   "tag": "hook",
+   "text": "आज AI Dashboard ने कौन से signals पकड़े? चलो, कुछ selected signals देखते हैं।",
+   "en": "What did the AI Dashboard catch today? Let's look at a few selected signals."
+  },
+  {
+   "tag": "s1a",
+   "text": "नाइन फोर्टी फाइव बजे, Bajaj Finserv वन थाउज़ेंड सिक्स हंड्रेड एटी Call का signal आया। Logic था, पंद्रह minute chart पे Bear Trap, नीचे का breakdown fail हुआ।",
+   "en": "09:45 — BAJAJFINSV 1,680 CE signal. Logic: Bear Trap on 15-min — breakdown failed."
+  },
+  {
+   "tag": "s1b",
+   "text": "trailing stop के साथ पूरा move पकड़ा।",
+   "en": "Rode the move with a trailing stop."
+  },
+  {
+   "tag": "s2a",
+   "text": "नाइन फोर्टी फाइव बजे, Pidilite Industries वन थाउज़ेंड फोर हंड्रेड फोर्टी Call का signal आया। Logic था, पंद्रह minute chart पे Bear Trap, नीचे का breakdown fail हुआ।",
+   "en": "09:45 — PIDILITIND 1,440 CE signal. Logic: Bear Trap on 15-min — breakdown failed."
+  },
+  {
+   "tag": "s2b",
+   "text": "trailing stop के साथ पूरा move पकड़ा।",
+   "en": "Rode the move with a trailing stop."
+  },
+  {
+   "tag": "s3a",
+   "text": "इलेवन फिफ्टीन बजे, HDFC Asset Management Company टू थाउज़ेंड थ्री हंड्रेड Call का signal आया। Logic था, एक घंटे chart पे Bear Trap, नीचे का breakdown fail हुआ।",
+   "en": "11:15 — HDFCAMC 2,300 CE signal. Logic: Bear Trap on 1-hour — breakdown failed."
+  },
+  {
+   "tag": "s3b",
+   "text": "trailing stop के साथ पूरा move पकड़ा।",
+   "en": "Rode the move with a trailing stop."
+  },
+  {
+   "tag": "s4a",
+   "text": "नाइन फोर्टी फाइव बजे, Hitachi Energy India ट्वेंटी एट थाउज़ेंड Call का signal आया। Logic था, पंद्रह minute chart पे Bear Trap, नीचे का breakdown fail हुआ।",
+   "en": "09:45 — POWERINDIA 28,000 CE signal. Logic: Bear Trap on 15-min — breakdown failed."
+  },
+  {
+   "tag": "s4b",
+   "text": "ये stop loss hit हुआ। हर signal काम नहीं करता, इसलिए SL ज़रूरी है।",
+   "en": "This one hit SL. Not every signal works — that's why SL matters."
+  },
+  {
+   "tag": "ahead",
+   "text": "Signal आते ही phone पे alert आता है, और एक tap में अपने broker पे order, Fyers, Zerodha या Dhan।",
+   "en": "Instant phone alert the moment a signal appears — one tap to your broker: Fyers, Zerodha or Dhan."
+  },
+  {
+   "tag": "cta",
+   "text": "बाकी traders से आगे रहना है? AI Dashboard का link description में है। Follow करो, Upper Circuit Stocks।",
+   "en": "Want to stay ahead? AI Dashboard link in the description. Follow UpperCircuitStocks!"
+  }
+ ],
+ "scenes": [
+  {
+   "kind": "hook",
+   "title": "AAJ KE SIGNALS",
+   "sub": "Selected signals · 30 Oct",
+   "chips": [
+    "✅",
+    "✅",
+    "✅",
+    "❌"
+   ],
+   "tags": [
+    "hook"
+   ]
+  },
+  {
+   "kind": "signal",
+   "shot": "sig1.png",
+   "n": 1,
+   "name": "BAJAJFINSV",
+   "contract": "BAJAJFINSV 1,680 CE",
+   "time": "09:45",
+   "logic": "Bear Trap on 15-min — breakdown failed",
+   "label": "TRAILING EXIT ✅",
+   "win": true,
+   "scanner": "Intraday Trap",
+   "entry": "43.3",
+   "sl": "1658",
+   "tgt": [],
+   "tags": [
+    "s1a"
+   ]
+  },
+  {
+   "kind": "signal",
+   "shot": "sig1.png",
+   "n": 1,
+   "name": "BAJAJFINSV",
+   "contract": "BAJAJFINSV 1,680 CE",
+   "time": "09:45",
+   "logic": "Bear Trap on 15-min — breakdown failed",
+   "label": "TRAILING EXIT ✅",
+   "win": true,
+   "scanner": "Intraday Trap",
+   "entry": "43.3",
+   "sl": "1658",
+   "tgt": [],
+   "phase": "result",
+   "tags": [
+    "s1b"
+   ]
+  },
+  {
+   "kind": "signal",
+   "shot": "sig2.png",
+   "n": 2,
+   "name": "PIDILITIND",
+   "contract": "PIDILITIND 1,440 CE",
+   "time": "09:45",
+   "logic": "Bear Trap on 15-min — breakdown failed",
+   "label": "TRAILING EXIT ✅",
+   "win": true,
+   "scanner": "Intraday Trap",
+   "entry": "30.3",
+   "sl": "1400.2",
+   "tgt": [],
+   "tags": [
+    "s2a"
+   ]
+  },
+  {
+   "kind": "signal",
+   "shot": "sig2.png",
+   "n": 2,
+   "name": "PIDILITIND",
+   "contract": "PIDILITIND 1,440 CE",
+   "time": "09:45",
+   "logic": "Bear Trap on 15-min — breakdown failed",
+   "label": "TRAILING EXIT ✅",
+   "win": true,
+   "scanner": "Intraday Trap",
+   "entry": "30.3",
+   "sl": "1400.2",
+   "tgt": [],
+   "phase": "result",
+   "tags": [
+    "s2b"
+   ]
+  },
+  {
+   "kind": "signal",
+   "shot": "sig3.png",
+   "n": 3,
+   "name": "HDFCAMC",
+   "contract": "HDFCAMC 2,300 CE",
+   "time": "11:15",
+   "logic": "Bear Trap on 1-hour — breakdown failed",
+   "label": "TRAILING EXIT ✅",
+   "win": true,
+   "scanner": "Intraday Trap",
+   "entry": "63.75",
+   "sl": "2271.6",
+   "tgt": [],
+   "tags": [
+    "s3a"
+   ]
+  },
+  {
+   "kind": "signal",
+   "shot": "sig3.png",
+   "n": 3,
+   "name": "HDFCAMC",
+   "contract": "HDFCAMC 2,300 CE",
+   "time": "11:15",
+   "logic": "Bear Trap on 1-hour — breakdown failed",
+   "label": "TRAILING EXIT ✅",
+   "win": true,
+   "scanner": "Intraday Trap",
+   "entry": "63.75",
+   "sl": "2271.6",
+   "tgt": [],
+   "phase": "result",
+   "tags": [
+    "s3b"
+   ]
+  },
+  {
+   "kind": "signal",
+   "shot": "sig4.png",
+   "n": 4,
+   "name": "POWERINDIA",
+   "contract": "POWERINDIA 28,000 CE",
+   "time": "09:45",
+   "logic": "Bear Trap on 15-min — breakdown failed",
+   "label": "SL HIT ❌",
+   "win": false,
+   "scanner": "Intraday Trap",
+   "entry": "1067.5",
+   "sl": "27450",
+   "tgt": [],
+   "tags": [
+    "s4a"
+   ]
+  },
+  {
+   "kind": "signal",
+   "shot": "sig4.png",
+   "n": 4,
+   "name": "POWERINDIA",
+   "contract": "POWERINDIA 28,000 CE",
+   "time": "09:45",
+   "logic": "Bear Trap on 15-min — breakdown failed",
+   "label": "SL HIT ❌",
+   "win": false,
+   "scanner": "Intraday Trap",
+   "entry": "1067.5",
+   "sl": "27450",
+   "tgt": [],
+   "phase": "result",
+   "tags": [
+    "s4b"
+   ]
+  },
+  {
+   "kind": "ahead",
+   "shot": "brokers.png",
+   "tags": [
+    "ahead"
+   ]
+  },
+  {
+   "kind": "cta",
+   "tags": [
+    "cta"
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "name": "brokers",
+   "url": "https://app.uppercircuitstocks.com/home.html",
+   "kind": "match",
+   "match": [
+    "TRADE FROM SIGNAL CARDS"
+   ],
+   "clip": null
+  },
+  {
+   "name": "sig1",
+   "url": "https://app.uppercircuitstocks.com/research.html?page=trap",
+   "kind": "card",
+   "match": [
+    "BAJAJFINSV"
+   ],
+   "clip": null
+  },
+  {
+   "name": "sig2",
+   "url": "https://app.uppercircuitstocks.com/research.html?page=trap",
+   "kind": "card",
+   "match": [
+    "PIDILITIND"
+   ],
+   "clip": null
+  },
+  {
+   "name": "sig3",
+   "url": "https://app.uppercircuitstocks.com/research.html?page=trap",
+   "kind": "card",
+   "match": [
+    "HDFCAMC"
+   ],
+   "clip": null
+  },
+  {
+   "name": "sig4",
+   "url": "https://app.uppercircuitstocks.com/research.html?page=trap",
+   "kind": "card",
+   "match": [
+    "POWERINDIA"
+   ],
+   "clip": null
+  }
+ ],
+ "meta": {
+  "poolSize": 7,
+  "winners": 3,
+  "slHits": 2,
+  "picks": [
+   {
+    "src": "trap",
+    "name": "BAJAJFINSV",
+    "side": "CE",
+    "strike": "1680",
+    "outcome": "TRAIL",
+    "ts": "2026-10-30T04:15:00.000Z"
+   },
+   {
+    "src": "trap",
+    "name": "PIDILITIND",
+    "side": "CE",
+    "strike": "1440",
+    "outcome": "TRAIL",
+    "ts": "2026-10-30T04:15:00.000Z"
+   },
+   {
+    "src": "trap",
+    "name": "HDFCAMC",
+    "side": "CE",
+    "strike": "2300",
+    "outcome": "TRAIL",
+    "ts": "2026-10-30T05:45:00.000Z"
+   },
+   {
+    "src": "trap",
+    "name": "POWERINDIA",
+    "side": "CE",
+    "strike": "28000",
+    "outcome": "SL",
+    "ts": "2026-10-30T04:15:00.000Z"
+   }
+  ]
+ }
+}

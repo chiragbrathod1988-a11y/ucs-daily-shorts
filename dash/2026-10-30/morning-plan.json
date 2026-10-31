@@ -1,0 +1,217 @@
+{
+ "date": "2026-10-30",
+ "slot": "morning",
+ "mode": "morning",
+ "feature": "Mutual Funds",
+ "lines": [
+  {
+   "tag": "hook",
+   "text": "Market खुलने से पहले, ये एक screen देख लो, बाकी traders से आगे रहोगे।",
+   "en": "Check this ONE screen before 9:15 — stay ahead of other traders."
+  },
+  {
+   "tag": "nifty",
+   "text": "पिछले session में Nifty ट्वेंटी थ्री थाउज़ेंड फिफ्टी थ्री पे close हुआ, और Bank Nifty फिफ्टी फोर थाउज़ेंड सिक्स हंड्रेड एटी सेवन पे।",
+   "en": "Last session: Nifty closed at 23,053, Bank Nifty at 54,687."
+  },
+  {
+   "tag": "breadth",
+   "text": "Market breadth रहा Very Bearish, फोर हंड्रेड फोर्टी नाइन stocks ऊपर, और वन थाउज़ेंड सिक्स हंड्रेड एटी टू नीचे।",
+   "en": "Breadth: Very Bearish — 449 up, 1,682 down."
+  },
+  {
+   "tag": "sectors",
+   "text": "सबसे strong sector रहा Utilities, और सबसे weak रहा Financial Services।",
+   "en": "Strongest: Utilities (+0.18%) · Weakest: Financial Services (-1.79%)."
+  },
+  {
+   "tag": "ahead",
+   "text": "नौ पंद्रह के बाद यही सब live update होता है, तो आप market के साथ नहीं, market से आगे चलते हो।",
+   "en": "After 9:15 it all updates live — you move ahead of the market, not behind it."
+  },
+  {
+   "tag": "feat1",
+   "text": "आज का feature: Mutual Funds section में, सत्रह सौ से ज़्यादा schemes का data।",
+   "en": "Feature of the day — Mutual Funds: 1,700+ schemes."
+  },
+  {
+   "tag": "feat2",
+   "text": "Returns, risk, holdings, और SIP calculator।",
+   "en": "Returns, risk, holdings and a SIP calculator."
+  },
+  {
+   "tag": "cta",
+   "text": "बाकी traders से आगे रहना है? AI Dashboard का link description में है। Follow करो, Upper Circuit Stocks।",
+   "en": "Want to stay ahead? AI Dashboard link in the description. Follow UpperCircuitStocks!"
+  }
+ ],
+ "scenes": [
+  {
+   "kind": "hook",
+   "title": "9:15 SE PEHLE",
+   "sub": "Nifty + Sectors · ek screen",
+   "tags": [
+    "hook"
+   ]
+  },
+  {
+   "kind": "screen",
+   "shot": "snapshot.png",
+   "scroll": [
+    0.18,
+    0.3
+   ],
+   "stats": [
+    [
+     "NIFTY 50",
+     "23,053",
+     "+0.51%"
+    ],
+    [
+     "BANK NIFTY",
+     "54,687",
+     "-0.41%"
+    ],
+    [
+     "INDIA VIX",
+     "15.30",
+     "+1.19%"
+    ]
+   ],
+   "tags": [
+    "nifty"
+   ]
+  },
+  {
+   "kind": "screen",
+   "shot": "snapshot.png",
+   "scroll": [
+    0.3,
+    0.45
+   ],
+   "badge": [
+    "VERY BEARISH",
+    "449 ▲  ·  1,682 ▼"
+   ],
+   "tags": [
+    "breadth"
+   ]
+  },
+  {
+   "kind": "screen",
+   "shot": "heatmap.png",
+   "scroll": [
+    0.1,
+    0.35
+   ],
+   "sectors": [
+    [
+     "Utilities",
+     "+0.18%"
+    ],
+    [
+     "Financial Services",
+     "-1.79%"
+    ]
+   ],
+   "tags": [
+    "sectors"
+   ]
+  },
+  {
+   "kind": "screen",
+   "shot": "heatmap.png",
+   "scroll": [
+    0.35,
+    0.55
+   ],
+   "tags": [
+    "ahead"
+   ]
+  },
+  {
+   "kind": "feature",
+   "shot": "feature.png",
+   "name": "Mutual Funds",
+   "scroll": [
+    0.0,
+    0.25
+   ],
+   "tags": [
+    "feat1"
+   ]
+  },
+  {
+   "kind": "feature",
+   "shot": "feature.png",
+   "name": "Mutual Funds",
+   "scroll": [
+    0.25,
+    0.45
+   ],
+   "tags": [
+    "feat2"
+   ]
+  },
+  {
+   "kind": "cta",
+   "tags": [
+    "cta"
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "name": "snapshot",
+   "url": "https://app.uppercircuitstocks.com/snapshot.html",
+   "kind": "page",
+   "match": [],
+   "clip": null
+  },
+  {
+   "name": "heatmap",
+   "url": "https://app.uppercircuitstocks.com/research.html?p=heatmap",
+   "kind": "page",
+   "match": [],
+   "clip": null
+  },
+  {
+   "name": "feature",
+   "url": "https://app.uppercircuitstocks.com/mf.html",
+   "kind": "page",
+   "match": [],
+   "clip": null
+  }
+ ],
+ "meta": {
+  "nifty": {
+   "ltp": 23053.1,
+   "chp": 0.51,
+   "ch": 116.35
+  },
+  "bankNifty": {
+   "ltp": 54686.95,
+   "chp": -0.41,
+   "ch": -222.7
+  },
+  "vix": {
+   "ltp": 15.3,
+   "chp": 1.19
+  },
+  "breadth": {
+   "advancing": 449,
+   "declining": 1682,
+   "mood_label": "Very Bearish"
+  },
+  "strong": [
+   "Utilities",
+   "0.18"
+  ],
+  "weak": [
+   "Financial Services",
+   "-1.79"
+  ],
+  "feature": "Mutual Funds",
+  "marketDate": "2026-10-30"
+ }
+}
