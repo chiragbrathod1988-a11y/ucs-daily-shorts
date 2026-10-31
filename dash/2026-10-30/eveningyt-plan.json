@@ -1,0 +1,101 @@
+{
+ "date": "2026-10-30",
+ "slot": "eveningyt",
+ "mode": "spotlight",
+ "feature": "OI Spikes",
+ "lines": [
+  {
+   "tag": "hook",
+   "text": "आज AI Dashboard का एक खास feature देखते हैं, OI Spikes।",
+   "en": "Today's AI Dashboard spotlight: OI Spikes."
+  },
+  {
+   "tag": "feat1",
+   "text": "OI Spikes, index और stock options में अचानक बढ़ा open interest दिखाता है।",
+   "en": "OI Spikes: sudden open-interest jumps in options."
+  },
+  {
+   "tag": "feat2",
+   "text": "बड़े players कहाँ position बना रहे हैं, live पता चलता है।",
+   "en": "See where big players are building positions — live."
+  },
+  {
+   "tag": "ahead",
+   "text": "Dashboard आपके phone पे भी चलता है, price alerts के साथ, और Fyers, Zerodha या Dhan, अपना broker एक tap में connect करो।",
+   "en": "Runs on your phone too — price alerts, and connect Fyers, Zerodha or Dhan in one tap."
+  },
+  {
+   "tag": "cta",
+   "text": "बाकी traders से आगे रहना है? AI Dashboard का link description में है। Follow करो, Upper Circuit Stocks।",
+   "en": "Want to stay ahead? AI Dashboard link in the description. Follow UpperCircuitStocks!"
+  }
+ ],
+ "scenes": [
+  {
+   "kind": "hook",
+   "title": "OI SPIKES",
+   "sub": "AI Dashboard spotlight",
+   "tags": [
+    "hook"
+   ]
+  },
+  {
+   "kind": "feature",
+   "shot": "feature.png",
+   "name": "OI Spikes",
+   "scroll": [
+    0.0,
+    0.25
+   ],
+   "clip": "14.mp4",
+   "clipStart": 3,
+   "tags": [
+    "feat1"
+   ]
+  },
+  {
+   "kind": "feature",
+   "shot": "feature.png",
+   "name": "OI Spikes",
+   "scroll": [
+    0.25,
+    0.5
+   ],
+   "clip": "14.mp4",
+   "clipStart": 3,
+   "tags": [
+    "feat2"
+   ]
+  },
+  {
+   "kind": "clipscreen",
+   "clip": "18.mp4",
+   "clipStart": 4,
+   "label": "ON YOUR PHONE",
+   "tags": [
+    "ahead"
+   ]
+  },
+  {
+   "kind": "cta",
+   "tags": [
+    "cta"
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "name": "feature",
+   "url": "https://app.uppercircuitstocks.com/oi-spikes.html",
+   "kind": "page",
+   "match": [],
+   "clip": null
+  }
+ ],
+ "charts": [],
+ "meta": {
+  "poolSize": 42,
+  "winners": 3,
+  "slHits": 7
+ }
+}

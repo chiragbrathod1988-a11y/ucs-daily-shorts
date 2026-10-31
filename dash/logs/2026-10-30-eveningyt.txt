@@ -1,0 +1,3 @@
+{"mode": "spotlight", "lines": 5, "shots": ["feature"], "meta": {"poolSize": 42, "winners": 3, "slHits": 7}}
+ok feature
+OK 2026-10-30:eveningyt
