@@ -547,58 +547,58 @@ export const DASH = {
    ]
   }
  },
- "date": "2026-10-30",
+ "date": "2026-11-02",
  "slot": "morning",
  "mode": "morning",
- "feature": "Charts",
- "duration": 55.164,
+ "feature": "Star Setup",
+ "duration": 52.99,
  "timeline": [
   {
    "tag": "hook",
    "start": 0.45,
-   "end": 5.977,
+   "end": 5.39,
    "en": "Check this ONE screen before 9:15 — stay ahead of other traders."
   },
   {
    "tag": "nifty",
-   "start": 6.297,
-   "end": 14.936,
+   "start": 5.71,
+   "end": 13.93,
    "en": "Last session: Nifty closed at 23,053, Bank Nifty at 54,687."
   },
   {
    "tag": "breadth",
-   "start": 15.256,
-   "end": 22.599,
+   "start": 14.25,
+   "end": 21.49,
    "en": "Breadth: Very Bearish — 449 up, 1,682 down."
   },
   {
    "tag": "sectors",
-   "start": 22.919,
-   "end": 27.901,
+   "start": 21.81,
+   "end": 26.84,
    "en": "Strongest: Utilities (+0.18%) · Weakest: Financial Services (-1.79%)."
   },
   {
    "tag": "ahead",
-   "start": 28.221,
-   "end": 35.376,
+   "start": 27.16,
+   "end": 33.8,
    "en": "After 9:15 it all updates live — you move ahead of the market, not behind it."
   },
   {
    "tag": "feat1",
-   "start": 35.696,
-   "end": 41.037,
-   "en": "Feature of the day — Charts: any stock, multiple timeframes."
+   "start": 34.12,
+   "end": 38.84,
+   "en": "Feature of the day — Star Setup — a live scanner for stock options."
   },
   {
    "tag": "feat2",
-   "start": 41.197,
-   "end": 44.643,
-   "en": "With indicators, in one click."
+   "start": 39.0,
+   "end": 43.79,
+   "en": "Entry, SL and both targets show on the card instantly."
   },
   {
    "tag": "cta",
-   "start": 44.963,
-   "end": 53.364,
+   "start": 44.11,
+   "end": 51.19,
    "en": "Want to stay ahead? AI Dashboard link in the description. Follow UpperCircuitStocks!"
   }
  ],
@@ -641,8 +641,8 @@ export const DASH = {
    "kind": "screen",
    "shot": "snapshot.png",
    "scroll": [
-    0.3,
-    0.45
+    0.12,
+    0.26
    ],
    "badge": [
     "VERY BEARISH",
@@ -685,12 +685,12 @@ export const DASH = {
   {
    "kind": "feature",
    "shot": "feature.png",
-   "name": "Charts",
+   "name": "Star Setup",
    "scroll": [
     0.0,
     0.25
    ],
-   "clip": "22.mp4",
+   "clip": "05.mp4",
    "clipStart": 3,
    "tags": [
     "feat1"
@@ -699,12 +699,12 @@ export const DASH = {
   {
    "kind": "feature",
    "shot": "feature.png",
-   "name": "Charts",
+   "name": "Star Setup",
    "scroll": [
     0.25,
     0.45
    ],
-   "clip": "22.mp4",
+   "clip": "05.mp4",
    "clipStart": 3,
    "tags": [
     "feat2"
@@ -721,100 +721,123 @@ export const DASH = {
   {
    "text": "Check this ONE screen before",
    "start": 0.45,
-   "end": 2.946
+   "end": 2.681
   },
   {
    "text": "9:15 — stay ahead of other",
-   "start": 2.946,
-   "end": 5.264
+   "start": 2.681,
+   "end": 4.753
   },
   {
    "text": "traders.",
-   "start": 5.264,
-   "end": 6.127
+   "start": 4.753,
+   "end": 5.54
   },
   {
    "text": "Last session: Nifty closed at",
-   "start": 6.297,
-   "end": 10.616
+   "start": 5.71,
+   "end": 9.82
   },
   {
    "text": "23,053, Bank Nifty at 54,687.",
-   "start": 10.616,
-   "end": 15.086
+   "start": 9.82,
+   "end": 14.08
   },
   {
    "text": "Breadth: Very Bearish — 449 up,",
-   "start": 15.256,
-   "end": 20.676
+   "start": 14.25,
+   "end": 19.594
   },
   {
    "text": "1,682 down.",
-   "start": 20.676,
-   "end": 22.749
+   "start": 19.594,
+   "end": 21.64
   },
   {
    "text": "Strongest: Utilities (+0.18%) ·",
-   "start": 22.919,
-   "end": 25.224
+   "start": 21.81,
+   "end": 24.137
   },
   {
    "text": "Weakest: Financial Services",
-   "start": 25.224,
-   "end": 27.232
+   "start": 24.137,
+   "end": 26.164
   },
   {
    "text": "(-1.79%).",
-   "start": 27.232,
-   "end": 28.051
+   "start": 26.164,
+   "end": 26.99
   },
   {
    "text": "After 9:15 it all updates live —",
-   "start": 28.221,
-   "end": 31.274
+   "start": 27.16,
+   "end": 29.993
   },
   {
    "text": "you move ahead of the market,",
-   "start": 31.274,
-   "end": 34.04
+   "start": 29.993,
+   "end": 32.561
   },
   {
    "text": "not behind it.",
-   "start": 34.04,
-   "end": 35.526
+   "start": 32.561,
+   "end": 33.95
   },
   {
-   "text": "Feature of the day — Charts: any",
-   "start": 35.696,
-   "end": 38.593
+   "text": "Feature of the day — Star Setup",
+   "start": 34.12,
+   "end": 36.371
   },
   {
-   "text": "stock, multiple timeframes.",
-   "start": 38.593,
-   "end": 41.187
+   "text": "— a live scanner for stock",
+   "start": 36.371,
+   "end": 38.259
   },
   {
-   "text": "With indicators, in one click.",
-   "start": 41.197,
-   "end": 44.793
+   "text": "options.",
+   "start": 38.259,
+   "end": 38.99
+  },
+  {
+   "text": "Entry, SL and both targets show",
+   "start": 39.0,
+   "end": 41.802
+  },
+  {
+   "text": "on the card instantly.",
+   "start": 41.802,
+   "end": 43.94
   },
   {
    "text": "Want to stay ahead? AI Dashboard",
-   "start": 44.963,
-   "end": 48.241
+   "start": 44.11,
+   "end": 46.873
   },
   {
    "text": "link in the description. Follow",
-   "start": 48.241,
-   "end": 51.417
+   "start": 46.873,
+   "end": 49.55
   },
   {
    "text": "UpperCircuitStocks!",
-   "start": 51.417,
-   "end": 53.514
+   "start": 49.55,
+   "end": 51.34
   }
  ],
- "shots": {},
+ "shots": {
+  "snapshot.png": {
+   "w": 1080,
+   "h": 11631
+  },
+  "heatmap.png": {
+   "w": 1080,
+   "h": 8756
+  },
+  "feature.png": {
+   "w": 1080,
+   "h": 9958
+  }
+ },
  "meta": {
   "nifty": {
    "ltp": 23053.1,
@@ -843,7 +866,7 @@ export const DASH = {
    "Financial Services",
    "-1.79"
   ],
-  "feature": "Charts",
+  "feature": "Star Setup",
   "marketDate": "2026-10-30"
  }
 } as const;
