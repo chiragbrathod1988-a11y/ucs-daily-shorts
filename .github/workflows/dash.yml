@@ -1,4 +1,4 @@
-name: AI Dashboard video data (signals, screenshots, Hindi voice)
+name: AI Dashboard video data (signals, screenshots, charts)
 # Push dash/requests/<D>-<slot>.json ({"date":"D","slot":"morning|evening"}) or run by hand.
 # Produces dash/<D>/<slot>-raw.json, -plan.json, -<shot>.png, -tts/*.mp3, -transcript.txt
 on:
@@ -34,7 +34,7 @@ jobs:
             for f in dash/requests/*.json; do
               DS=$(python3 -c "import json;j=json.load(open('$f'));print(j['date']+':'+j['slot'])")
               D=${DS%%:*}; S=${DS##*:}
-              [ -f "dash/$D/$S-tts/manifest.json" ] || R="$R $DS"
+              [ -f "dash/$D/$S-plan.json" ] || R="$R $DS"
             done
             echo "REQS=$R" >> $GITHUB_ENV
           fi
@@ -57,8 +57,7 @@ jobs:
                 node /tmp/pw/fetch.mjs $D $S
               fi
               python3 scripts/dash/script.py dash/$D/$S-raw.json
-              if [ -n "$UCS_DASH_TOKEN" ]; then node /tmp/pw/shots.mjs dash/$D/$S-plan.json; else echo "no token: screenshots skipped"; fi
-              python3 scripts/dash/tts.py dash/$D/$S-plan.json
+              if [ -n "$UCS_DASH_TOKEN" ]; then node /tmp/pw/shots.mjs dash/$D/$S-plan.json; node /tmp/pw/charts.mjs dash/$D/$S-plan.json; else echo "no token: screenshots and charts skipped"; fi
             ) > dash/logs/$D-$S.txt 2>&1 && echo "OK $R" >> dash/logs/$D-$S.txt || echo "FAILED $R" >> dash/logs/$D-$S.txt
             tail -5 dash/logs/$D-$S.txt
           done

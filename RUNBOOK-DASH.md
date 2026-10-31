@@ -1,7 +1,7 @@
 # Daily AI Dashboard videos — runbook (morning + evening)
 
 Fully automatic; never ask Chirag to approve. He is **not** a SEBI-registered RA — never say so. Content is
-information/education only. Never speak or write profit / ₹ amounts. Hindi voice (hi-IN-SwaraNeural), English subtitles.
+information/education only. Never speak or write profit / ₹ amounts. Voice: ElevenLabs **Matilda** via vidIQ (Chirag's choice — openly an AI voice), Hindi/Hinglish script, English subtitles.
 `D` = today (IST, YYYY-MM-DD), `S` = `morning` or `evening`.
 
 ## 0. Should it run?
@@ -13,8 +13,8 @@ information/education only. Never speak or write profit / ₹ amounts. Hindi voi
 git clone https://github.com/chiragbrathod1988-a11y/ucs-daily-shorts.git && cd ucs-daily-shorts && ./setup.sh
 ```
 
-## 2. Data, screenshots and voice (GitHub Actions, workflow dash.yml)
-The sandbox cannot reach the dashboard or the TTS service, so Actions does it:
+## 2. Data, screenshots and charts (GitHub Actions, workflow dash.yml)
+The sandbox cannot reach the dashboard, so Actions does it:
 ```
 mkdir -p dash/requests && echo '{"date":"D","slot":"S"}' > dash/requests/D-S.json
 git add dash/requests/D-S.json && git commit -m "Dash request D S" && git push origin HEAD:main
@@ -23,10 +23,24 @@ Then `git pull` every ~20 s (up to 12 min) until `dash/logs/D-S.txt` ends with `
 - `FAILED` and the log mentions the token (401 / not set) → send Chirag ONE message: "Dashboard video skipped: the
   dashboard login key (GitHub secret UCS_DASH_TOKEN) has expired — please copy a fresh one (F12 → Console →
   copy(localStorage.pt_token)) into GitHub → Settings → Secrets → Actions → UCS_DASH_TOKEN." Stop.
-- Other `FAILED` → delete `dash/D/S-tts` if present, re-push the request once (change a field like `"try":2`); fails again → Failure.
-- Read `dash/D/S-transcript.txt`: the stock / sector names and numbers should be recognisable (speech-to-text is rough on English words).
-- Read `dash/D/S-shots.json`: screenshots marked `missing` fall back to branded cards — acceptable, but note it in the status message.
-- Evening `mode` (in `dash/D/evening-plan.json`) is `spotlight` when fewer than 2 real target hits exist — that is correct behaviour; never invent winners.
+- Other `FAILED` → delete `dash/D/S-plan.json` if present, re-push the request once (change a field like `"try":2`); fails again → Failure.
+- Read `dash/D/S-shots.json` (screenshots marked `missing` fall back to branded cards) and `dash/D/S-charts.json` (real 5-min candles).
+- Evening `mode` (in `dash/D/evening-plan.json`) is `spotlight` when fewer than 2 real target hits exist — correct; never invent winners.
+
+## 2b. Voice — Matilda (vidIQ / ElevenLabs), one call per video
+1. Script = the `text` of every line in `dash/D/S-plan.json` in order, joined with a newline (do not edit the text).
+2. `vidiq_voiceover_generate` with voiceId `XrExE9yKIg1WjnnlVkGX` (Matilda) and that script; poll `vidiq_job_poll` until completed → `audioUrl`.
+3. The sandbox cannot download it and the signed URL must never be committed in plain text. Encrypt it and let Actions fetch it:
+```
+python3 - <<'PY'
+import json, subprocess
+blob = json.loads(subprocess.check_output(["python3", "scripts/dash/seal.py", AUDIO_URL]))   # AUDIO_URL = the audioUrl string
+json.dump([{"sealed": blob, "path": "dash/D/S-voice.mp3"}], open("fetch/D-S-voice.json", "w"))
+PY
+git add fetch/D-S-voice.json && git commit -m "Voice D S" && git push origin HEAD:main
+```
+4. `git pull` every ~15 s (up to 6 min) until `dash/D/S-voice.mp3` exists (log: `fetch/done/D-S-voice.log`). If it fails twice → Failure
+   (if the log says UCS_FETCH_KEY is missing, tell Chirag that secret needs adding).
 
 ## 3. Build and check
 ```

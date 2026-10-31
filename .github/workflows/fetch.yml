@@ -14,8 +14,10 @@ jobs:
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
-      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg && pip install -q edge-tts yt-dlp
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg && pip install -q edge-tts yt-dlp cryptography
       - name: Download
+        env:
+          UCS_FETCH_KEY: ${{ secrets.UCS_FETCH_KEY }}
         run: |
           mkdir -p fetch/done
           for f in fetch/*.json; do
@@ -27,6 +29,9 @@ jobs:
               if os.path.exists(p) and not it.get("force"):
                   log.append(f"skip {p}"); continue
               try:
+                  if "sealed" in it:
+                      sys.path.insert(0, "scripts/dash"); import seal
+                      it["url"] = seal.unseal(it["sealed"])
                   if "yt" in it:
                       tmp = p + ".dl.mp4"
                       subprocess.run(["yt-dlp", "-q", "-f", "bv*[height<=1080][ext=mp4]/bv*[height<=1080]/b", "-o", tmp, it["yt"]], check=True)

@@ -63,3 +63,27 @@ def latin(n) -> str:
         return out + " " + _two(r)
     h, rr = divmod(r, 100)
     return out + " " + _O[h] + " hundred" + ("" if rr == 0 else " " + _two(rr))
+
+# Latin-script version (for the ElevenLabs voice, which reads English words in Latin script most naturally)
+L_ONES = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve",
+          "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"]
+L_TENS = {2: "twenty", 3: "thirty", 4: "forty", 5: "fifty", 6: "sixty", 7: "seventy", 8: "eighty", 9: "ninety"}
+
+def _l2(n):
+    if n < 20: return L_ONES[n]
+    t, o = divmod(n, 10)
+    return L_TENS[t] + ("" if o == 0 else " " + L_ONES[o])
+
+def words_latin(n) -> str:
+    n = int(round(float(n)))
+    if n < 0: return "minus " + words_latin(-n)
+    if n < 100: return _l2(n)
+    if n < 1000:
+        h, r = divmod(n, 100)
+        return L_ONES[h] + " hundred" + ("" if r == 0 else " " + _l2(r))
+    th, r = divmod(n, 1000)
+    out = (_l2(th) if th < 100 else words_latin(th)) + " thousand"
+    if r == 0: return out
+    if r < 100: return out + " " + _l2(r)
+    h, rr = divmod(r, 100)
+    return out + " " + L_ONES[h] + " hundred" + ("" if rr == 0 else " " + _l2(rr))

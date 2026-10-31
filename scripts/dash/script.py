@@ -10,7 +10,7 @@ video becomes a feature spotlight instead. Nothing is invented: every number com
 import json, os, sys, datetime, re
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
-from english_num import words as ew  # spoken English numbers in Devanagari (verified clear with the Hindi voice)
+from english_num import words_latin as ew  # spoken English numbers in Latin script (ElevenLabs Matilda reads these cleanly)
 
 raw_path = sys.argv[1]
 raw = json.load(open(raw_path))
@@ -81,7 +81,7 @@ FEATURES = [
 day_no = (td - datetime.date(2026, 11, 2)).days
 feature = FEATURES[(day_no if slot == "morning" else day_no + 7) % len(FEATURES)]
 
-lines, scenes, shots = [], [], []
+lines, scenes, shots, charts = [], [], [], []
 def say(tag, hi, en, scene=None):
     lines.append({"tag": tag, "text": hi, "en": en})
     if scene is not None:
@@ -103,6 +103,7 @@ if slot == "morning":
     weak, strong = secs[0], secs[-1]
     upn = ni["ch"] >= 0
     s_snap = shot("snapshot", "/snapshot.html")
+    charts.append({"key": "nifty", "symbol": "NIFTYFUT", "when": "prev"})
     s_heat = shot("heatmap", "/research.html?p=heatmap")
     s_feat = shot("feature", feature["url"])
     say("hook", "Market खुलने से पहले, ये एक screen देख लो, बाकी traders से आगे रहोगे।",
@@ -110,7 +111,7 @@ if slot == "morning":
         {"kind": "hook", "title": "9:15 SE PEHLE", "sub": "Nifty + Sectors · ek screen"})
     say("nifty", f"पिछले session में Nifty {ew(ni['ltp'])} पे close हुआ, और Bank Nifty {ew(bn['ltp'])} पे।",
         f"Last session: Nifty closed at {fmt(ni['ltp'])}, Bank Nifty at {fmt(bn['ltp'])}.",
-        {"kind": "screen", "shot": s_snap, "scroll": [0.18, 0.30],
+        {"kind": "chart", "chart": "nifty", "title": "NIFTY FUTURES · 5 MIN", "mode": "session",
          "stats": [["NIFTY 50", fmt(ni["ltp"]), pct(ni["chp"])], ["BANK NIFTY", fmt(bn["ltp"]), pct(bn["chp"])], ["INDIA VIX", f"{vix['ltp']:.2f}", pct(vix["chp"])]]})
     say("breadth", f"Market breadth रहा {br['mood_label']}, {ew(br['advancing'])} stocks ऊपर, और {ew(br['declining'])} नीचे।",
         f"Breadth: {br['mood_label']} — {br['advancing']:,} up, {br['declining']:,} down.",
@@ -172,7 +173,7 @@ else:
     for s in raw["options"].get("signals", []):
         pool.append(dict(src="star", page="/research.html?page=star", name=s["underlying"], side=s["side"], strike=s["strike"],
                          ts=s["ts"], reason=s.get("reason"), outcome=s.get("outcome") or "", t1=s.get("t1_hit"),
-                         entry=s["entry_premium"], sl=s["stop_loss"], tgt=[s["t1"], s["t2"]], exitp=s.get("exit_premium")))
+                         entry=s["entry_premium"], sl=s["stop_loss"], tgt=[s["t1"], s["t2"]], exitp=s.get("exit_premium"), xts=s.get("closed_at")))
     for a in (raw["trap"].get("algos") or {}).values():
         for s in a.get("closed", []):
             if s.get("trade_date") != raw["tradeDate"]:
@@ -180,13 +181,13 @@ else:
             win = s.get("exit_reason") in ("TRAIL", "TARGET", "T1", "T2") and float(s.get("pnl_gross") or 0) > 0
             pool.append(dict(src="trap", page="/research.html?page=trap", name=s["underlying"], side=s["side"], strike=s["strike"],
                              ts=s["entry_time"], setup=s.get("setup"), tf=s.get("tf"), outcome=("TRAIL" if win else s.get("exit_reason") or ""),
-                             entry=s["entry_premium"], sl=s.get("sl_level"), tgt=[], exitp=s.get("exit_premium")))
+                             entry=s["entry_premium"], sl=s.get("sl_level"), tgt=[], exitp=s.get("exit_premium"), xts=s.get("exit_time")))
     for s in raw["index"].get("signals", []):
         if (s.get("trade_date") or "")[:10] != raw["tradeDate"] or s.get("status") != "closed":
             continue
         pool.append(dict(src="index", page="/research.html?page=idx", name=s["index_name"], side=s["side"], strike=s["strike"],
                          ts=s.get("activated_at") or s["ts"], reason=s.get("reason"), outcome=s.get("outcome") or "",
-                         entry=s.get("entry_premium"), sl=s.get("sl_px"), tgt=[s.get("t1_index"), s.get("t2_index")], exitp=s.get("exit_premium")))
+                         entry=s.get("entry_premium"), sl=s.get("sl_px"), tgt=[s.get("t1_index"), s.get("t2_index")], exitp=s.get("exit_premium"), xts=s.get("closed_at")))
     NAMES = raw.get("names", {})
     IDX = {"NIFTY": "Nifty", "BANKNIFTY": "Bank Nifty", "FINNIFTY": "Fin Nifty", "MIDCPNIFTY": "Midcap Nifty", "SENSEX": "Sensex"}
     def spoken_name(t):
@@ -245,9 +246,12 @@ else:
             sc = {"kind": "signal", "shot": card, "n": i, "name": p["name"], "contract": f"{p['name']} {sk} {p['side']}",
                   "time": tm, "logic": len_, "label": label, "win": p["outcome"] != "SL", "scanner": {"star": "Star Setup", "trap": "Intraday Trap", "index": "Index Options"}[p["src"]],
                   "entry": p.get("entry"), "sl": p.get("sl"), "tgt": [t for t in p.get("tgt", []) if t]}
-            say(f"s{i}a", f"{spoken_name(p['name'])} {opt_hi}, {lhi}।",
-                f"{p['name']} {sk} {p['side']} — {len_}.", sc)
-            say(f"s{i}b", out_hi, out_en, dict(sc, phase="result"))
+            sym = p["name"] + "FUT" if p["src"] == "index" else p["name"]
+            charts.append({"key": f"sig{i}", "symbol": sym, "when": "day"})
+            cs = dict(sc, kind="chart", chart=f"sig{i}", mode="signal", title=f"SIGNAL {i} · {sc['scanner'].upper()} · {tm}",
+                      sigTs=p["ts"], exitTs=p.get("xts"), side=p["side"])
+            say(f"s{i}a", f"{spoken_name(p['name'])} {opt_hi}, {lhi}।", f"{p['name']} {sk} {p['side']} — {len_}.", cs)
+            say(f"s{i}b", out_hi, out_en, dict(cs, phase="result"))
         say("ahead", "Signal आते ही phone पे alert आता है, और एक tap में अपने broker पे order, Fyers, Zerodha या Dhan।",
             "Instant phone alert the moment a signal appears — one tap to your broker: Fyers, Zerodha or Dhan.",
             {"kind": "ahead", "shot": s_home})
@@ -257,6 +261,6 @@ say("cta", "बाकी traders से आगे रहना है? AI Dashbo
     "Want to stay ahead? AI Dashboard link in the description. Follow UpperCircuitStocks!",
     {"kind": "cta"})
 
-plan = {"date": D, "slot": slot, "mode": mode, "feature": feature["name"], "lines": lines, "scenes": scenes, "shots": shots, "meta": meta}
+plan = {"date": D, "slot": slot, "mode": mode, "feature": feature["name"], "lines": lines, "scenes": scenes, "shots": shots, "charts": charts, "meta": meta}
 json.dump(plan, open(out_path, "w"), ensure_ascii=False, indent=1)
 print(json.dumps({"mode": mode, "lines": len(lines), "shots": [s["name"] for s in shots], "meta": meta}, ensure_ascii=False))
