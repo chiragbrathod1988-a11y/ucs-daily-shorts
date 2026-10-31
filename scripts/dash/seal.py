@@ -15,8 +15,16 @@ def seal(text):
     key, nonce = AESGCM.generate_key(bit_length=256), os.urandom(12)
     return {"k": b64(pub.encrypt(key, OAEP)), "n": b64(nonce), "c": b64(AESGCM(key).encrypt(nonce, text.encode(), None))}
 
+def _load_key(txt):
+    # tolerate pasted keys whose line breaks were lost or changed: rebuild a clean PEM from the base64 body
+    import re, textwrap
+    body = re.sub(r"-----(BEGIN|END)[A-Z ]*-----", "", txt)
+    body = re.sub(r"[^A-Za-z0-9+/=]", "", body)
+    pem = "-----BEGIN PRIVATE KEY-----\n" + "\n".join(textwrap.wrap(body, 64)) + "\n-----END PRIVATE KEY-----\n"
+    return serialization.load_pem_private_key(pem.encode(), password=None)
+
 def unseal(blob):
-    priv = serialization.load_pem_private_key(os.environ["UCS_FETCH_KEY"].encode(), password=None)
+    priv = _load_key(os.environ["UCS_FETCH_KEY"])
     key = priv.decrypt(base64.b64decode(blob["k"]), OAEP)
     return AESGCM(key).decrypt(base64.b64decode(blob["n"]), base64.b64decode(blob["c"]), None).decode()
 
