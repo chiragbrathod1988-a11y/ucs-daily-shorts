@@ -31,8 +31,10 @@ jobs:
             echo "REQS=${{ github.event.inputs.date }}:${{ github.event.inputs.slot }}" >> $GITHUB_ENV
           else
             R=""
-            for f in $(git diff --name-only ${{ github.event.before }} ${{ github.sha }} -- 'dash/requests/*.json' 2>/dev/null); do
-              [ -f "$f" ] && R="$R $(python3 -c "import json,sys;j=json.load(open('$f'));print(j['date']+':'+j['slot'])")"
+            for f in dash/requests/*.json; do
+              DS=$(python3 -c "import json;j=json.load(open('$f'));print(j['date']+':'+j['slot'])")
+              D=${DS%%:*}; S=${DS##*:}
+              [ -f "dash/$D/$S-tts/manifest.json" ] || R="$R $DS"
             done
             echo "REQS=$R" >> $GITHUB_ENV
           fi
