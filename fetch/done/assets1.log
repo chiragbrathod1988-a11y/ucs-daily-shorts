@@ -1,0 +1,13 @@
+FAIL assets/tutorials/snapshot.mp4 Command '['yt-dlp', '-q', '-f', 'bv*[height<=1080][ext=mp4]/bv*[height<=1080]/b', '-o', 'assets/tutorials/snapshot.mp4.dl.mp4', 'https://youtu.be/95VW1peZZfA']' returned non-zero exit status 1.
+FAIL assets/tutorials/market.mp4 Command '['yt-dlp', '-q', '-f', 'bv*[height<=1080][ext=mp4]/bv*[height<=1080]/b', '-o', 'assets/tutorials/market.mp4.dl.mp4', 'https://youtu.be/HNMqlGy4bG4']' returned non-zero exit status 1.
+FAIL assets/tutorials/heatmap.mp4 Command '['yt-dlp', '-q', '-f', 'bv*[height<=1080][ext=mp4]/bv*[height<=1080]/b', '-o', 'assets/tutorials/heatmap.mp4.dl.mp4', 'https://youtu.be/T_3WL_54buY']' returned non-zero exit status 1.
+FAIL assets/tutorials/equity.mp4 Command '['yt-dlp', '-q', '-f', 'bv*[height<=1080][ext=mp4]/bv*[height<=1080]/b', '-o', 'assets/tutorials/equity.mp4.dl.mp4', 'https://youtu.be/xuy91pvIg8Q']' returned non-zero exit status 1.
+FAIL assets/tutorials/star.mp4 Command '['yt-dlp', '-q', '-f', 'bv*[height<=1080][ext=mp4]/bv*[height<=1080]/b', '-o', 'assets/tutorials/star.mp4.dl.mp4', 'https://youtu.be/AeVDU0k-2yQ']' returned non-zero exit status 1.
+FAIL assets/tutorials/idx.mp4 Command '['yt-dlp', '-q', '-f', 'bv*[height<=1080][ext=mp4]/bv*[height<=1080]/b', '-o', 'assets/tutorials/idx.mp4.dl.mp4', 'https://youtu.be/wZw2vFIhMxA']' returned non-zero exit status 1.
+FAIL assets/tutorials/futures-cas.mp4 Command '['yt-dlp', '-q', '-f', 'bv*[height<=1080][ext=mp4]/bv*[height<=1080]/b', '-o', 'assets/tutorials/futures-cas.mp4.dl.mp4', 'https://youtu.be/fGmBiwgO1OY']' returned non-zero exit status 1.
+FAIL assets/tutorials/btst-track.mp4 Command '['yt-dlp', '-q', '-f', 'bv*[height<=1080][ext=mp4]/bv*[height<=1080]/b', '-o', 'assets/tutorials/btst-track.mp4.dl.mp4', 'https://youtu.be/V_QhuBPTb9E']' returned non-zero exit status 1.
+FAIL assets/tutorials/algo.mp4 Command '['yt-dlp', '-q', '-f', 'bv*[height<=1080][ext=mp4]/bv*[height<=1080]/b', '-o', 'assets/tutorials/algo.mp4.dl.mp4', 'https://youtu.be/hI9OHBtqHAg']' returned non-zero exit status 1.
+ok assets/voice-samples/D-madhur.mp3 102528
+ok assets/voice-samples/E-ava.mp3 80640
+ok assets/voice-samples/F-andrew.mp3 88128
+ok assets/voice-samples/G-swara.mp3 103824
