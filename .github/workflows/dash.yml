@@ -52,10 +52,12 @@ jobs:
           for R in $REQS; do
             D=${R%%:*}; S=${R##*:}
             ( set -e
-              [ -n "$UCS_DASH_TOKEN" ] || { echo "UCS_DASH_TOKEN secret is not set"; exit 1; }
-              node /tmp/pw/fetch.mjs $D $S
+              if [ ! -f dash/$D/$S-raw.json ]; then
+                [ -n "$UCS_DASH_TOKEN" ] || { echo "UCS_DASH_TOKEN secret is not set"; exit 1; }
+                node /tmp/pw/fetch.mjs $D $S
+              fi
               python3 scripts/dash/script.py dash/$D/$S-raw.json
-              node /tmp/pw/shots.mjs dash/$D/$S-plan.json
+              if [ -n "$UCS_DASH_TOKEN" ]; then node /tmp/pw/shots.mjs dash/$D/$S-plan.json; else echo "no token: screenshots skipped"; fi
               python3 scripts/dash/tts.py dash/$D/$S-plan.json
             ) > dash/logs/$D-$S.txt 2>&1 && echo "OK $R" >> dash/logs/$D-$S.txt || echo "FAILED $R" >> dash/logs/$D-$S.txt
             tail -5 dash/logs/$D-$S.txt

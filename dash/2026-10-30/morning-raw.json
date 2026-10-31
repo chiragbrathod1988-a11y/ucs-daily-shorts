@@ -1,0 +1,93 @@
+{
+ "date": "2026-10-30",
+ "slot": "morning",
+ "tradeDate": "2026-10-30",
+ "snapshot": {
+  "indices": {
+   "nifty": {
+    "ltp": 23053.1,
+    "chp": 0.51,
+    "ch": 116.35
+   },
+   "bankNifty": {
+    "ltp": 54686.95,
+    "chp": -0.41,
+    "ch": -222.7
+   },
+   "vix": {
+    "ltp": 15.3,
+    "chp": 1.19
+   }
+  }
+ },
+ "market": {
+  "date": "2026-10-30T00:00:00.000Z",
+  "breadth": {
+   "advancing": 449,
+   "declining": 1682,
+   "mood_label": "Very Bearish"
+  },
+  "sectors": [
+   {
+    "sector": "Information Technology",
+    "total_stocks": 19,
+    "today_pct": "-1.01"
+   },
+   {
+    "sector": "Communication Services",
+    "total_stocks": 6,
+    "today_pct": "-0.92"
+   },
+   {
+    "sector": "Aerospace & Defence",
+    "total_stocks": 4,
+    "today_pct": "-0.83"
+   },
+   {
+    "sector": "Healthcare",
+    "total_stocks": 28,
+    "today_pct": "-0.08"
+   },
+   {
+    "sector": "Utilities",
+    "total_stocks": 9,
+    "today_pct": "0.18"
+   },
+   {
+    "sector": "Consumer Discretionary",
+    "total_stocks": 16,
+    "today_pct": "-0.97"
+   },
+   {
+    "sector": "Industrials",
+    "total_stocks": 10,
+    "today_pct": "-1.49"
+   },
+   {
+    "sector": "Financial Services",
+    "total_stocks": 49,
+    "today_pct": "-1.79"
+   },
+   {
+    "sector": "Automobile",
+    "total_stocks": 12,
+    "today_pct": "-1.34"
+   },
+   {
+    "sector": "Consumer Staples",
+    "total_stocks": 9,
+    "today_pct": "-0.96"
+   },
+   {
+    "sector": "Materials",
+    "total_stocks": 29,
+    "today_pct": "-0.72"
+   },
+   {
+    "sector": "Energy",
+    "total_stocks": 10,
+    "today_pct": "-0.40"
+   }
+  ]
+ }
+}
