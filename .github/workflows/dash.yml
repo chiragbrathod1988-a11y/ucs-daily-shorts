@@ -1,0 +1,77 @@
+name: AI Dashboard video data (signals, screenshots, Hindi voice)
+# Push dash/requests/<D>-<slot>.json ({"date":"D","slot":"morning|evening"}) or run by hand.
+# Produces dash/<D>/<slot>-raw.json, -plan.json, -<shot>.png, -tts/*.mp3, -transcript.txt
+on:
+  push:
+    branches: [main]
+    paths: ["dash/requests/*.json"]
+  workflow_dispatch:
+    inputs:
+      date: { description: "YYYY-MM-DD", required: true }
+      slot: { description: "morning or evening", required: true, default: "evening" }
+
+permissions:
+  contents: write
+
+concurrency: dash
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: "20" }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Which request
+        run: |
+          if [ -n "${{ github.event.inputs.date }}" ]; then
+            echo "REQS=${{ github.event.inputs.date }}:${{ github.event.inputs.slot }}" >> $GITHUB_ENV
+          else
+            R=""
+            for f in $(git diff --name-only ${{ github.event.before }} ${{ github.sha }} -- 'dash/requests/*.json' 2>/dev/null); do
+              [ -f "$f" ] && R="$R $(python3 -c "import json,sys;j=json.load(open('$f'));print(j['date']+':'+j['slot'])")"
+            done
+            echo "REQS=$R" >> $GITHUB_ENV
+          fi
+      - name: Tools
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-noto-color-emoji
+          mkdir -p /tmp/pw && cd /tmp/pw && npm init -y >/dev/null && npm i -s playwright@1.48.2 && npx playwright install --with-deps chromium >/dev/null
+          pip install -q edge-tts numpy faster-whisper
+      - name: Fetch, plan, screenshots, voice
+        env:
+          UCS_DASH_TOKEN: ${{ secrets.UCS_DASH_TOKEN }}
+        run: |
+          cp scripts/dash/*.mjs /tmp/pw/
+          for R in $REQS; do
+            D=${R%%:*}; S=${R##*:}
+            node /tmp/pw/fetch.mjs $D $S
+            python3 scripts/dash/script.py dash/$D/$S-raw.json
+            node /tmp/pw/shots.mjs dash/$D/$S-plan.json
+            python3 scripts/dash/tts.py dash/$D/$S-plan.json
+          done
+      - name: Clarity check (speech-to-text)
+        continue-on-error: true
+        run: |
+          for R in $REQS; do D=${R%%:*}; S=${R##*:}; python3 - "$D" "$S" <<'EOF'
+          import sys, json, subprocess, numpy as np
+          from faster_whisper import WhisperModel
+          d, s = sys.argv[1], sys.argv[2]; m = WhisperModel("small", compute_type="int8")
+          man = json.load(open(f"dash/{d}/{s}-tts/manifest.json")); out = []
+          for ln in man["lines"]:
+              pcm = subprocess.run(["ffmpeg", "-v", "error", "-i", f"dash/{d}/{s}-tts/{ln['tag']}.mp3", "-f", "f32le", "-ac", "1", "-ar", "16000", "-"], check=True, capture_output=True).stdout
+              segs, _ = m.transcribe(np.frombuffer(pcm, np.float32), language="hi")
+              out.append(f"{ln['tag']}\n  script: {ln['text']}\n  heard:  {' '.join(x.text.strip() for x in segs)}")
+          open(f"dash/{d}/{s}-transcript.txt", "w").write("\n".join(out) + "\n")
+          EOF
+          done
+      - name: Commit
+        run: |
+          git config user.name "ucs-dash-bot"; git config user.email "actions@users.noreply.github.com"
+          git add dash/
+          git diff --cached --quiet && exit 0
+          git commit -m "Dashboard video data: $REQS"
+          for i in 1 2 3; do git pull --rebase -q origin main && git push origin HEAD:main && break; sleep 5; done
