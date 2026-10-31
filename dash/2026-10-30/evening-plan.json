@@ -1,0 +1,398 @@
+{
+ "date": "2026-10-30",
+ "slot": "evening",
+ "mode": "evening",
+ "feature": "Index Options",
+ "lines": [
+  {
+   "tag": "hook",
+   "text": "आज AI Dashboard ने क्या पकड़ा? कुछ selected signals देखो।",
+   "en": "What did the AI Dashboard catch today? A few selected signals."
+  },
+  {
+   "tag": "s1a",
+   "text": "Bajaj Finserv Call, पंद्रह minute पे Bear Trap, breakdown fail हुआ।",
+   "en": "BAJAJFINSV 1,680 CE — Bear Trap on 15-min — breakdown failed."
+  },
+  {
+   "tag": "s1b",
+   "text": "Trailing stop से move पकड़ा।",
+   "en": "Move captured with a trailing stop."
+  },
+  {
+   "tag": "s2a",
+   "text": "Pidilite Industries Call, पंद्रह minute पे Bear Trap, breakdown fail हुआ।",
+   "en": "PIDILITIND 1,440 CE — Bear Trap on 15-min — breakdown failed."
+  },
+  {
+   "tag": "s2b",
+   "text": "Trailing stop से move पकड़ा।",
+   "en": "Move captured with a trailing stop."
+  },
+  {
+   "tag": "s3a",
+   "text": "HDFC Asset Management Company Call, एक घंटे पे Bear Trap, breakdown fail हुआ।",
+   "en": "HDFCAMC 2,300 CE — Bear Trap on 1-hour — breakdown failed."
+  },
+  {
+   "tag": "s3b",
+   "text": "Trailing stop से move पकड़ा।",
+   "en": "Move captured with a trailing stop."
+  },
+  {
+   "tag": "s4a",
+   "text": "Infosys Put, पंद्रह minute पे Bull Trap, breakout fail हुआ।",
+   "en": "INFY 1,160 PE — Bull Trap on 15-min — breakout failed."
+  },
+  {
+   "tag": "s4b",
+   "text": "ये वाला स्टॉप लॉस हिट हुआ, इसीलिए स्टॉप लॉस हमेशा ज़रूरी है।",
+   "en": "This one hit SL — that's why SL always matters."
+  },
+  {
+   "tag": "ahead",
+   "text": "Signal आते ही phone पे alert आता है, और एक tap में अपने broker पे order, Fyers, Zerodha या Dhan।",
+   "en": "Instant phone alert the moment a signal appears — one tap to your broker: Fyers, Zerodha or Dhan."
+  },
+  {
+   "tag": "cta",
+   "text": "बाकी traders से आगे रहना है? AI Dashboard का link description में है। Follow करो, Upper Circuit Stocks।",
+   "en": "Want to stay ahead? AI Dashboard link in the description. Follow UpperCircuitStocks!"
+  }
+ ],
+ "scenes": [
+  {
+   "kind": "hook",
+   "title": "AAJ KE SIGNALS",
+   "sub": "Selected signals · 30 Oct",
+   "chips": [
+    "✅",
+    "✅",
+    "✅",
+    "❌"
+   ],
+   "tags": [
+    "hook"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig1.png",
+   "n": 1,
+   "name": "BAJAJFINSV",
+   "contract": "BAJAJFINSV 1,680 CE",
+   "time": "09:45",
+   "logic": "Bear Trap on 15-min — breakdown failed",
+   "label": "TRAILING EXIT ✅",
+   "win": true,
+   "scanner": "Intraday Trap",
+   "entry": "43.3",
+   "sl": "1658",
+   "tgt": [],
+   "chart": "sig1",
+   "mode": "signal",
+   "title": "SIGNAL 1 · INTRADAY TRAP · 09:45",
+   "sigTs": "2026-10-30T04:15:00.000Z",
+   "exitTs": "2026-10-30T06:20:00.000Z",
+   "side": "CE",
+   "tags": [
+    "s1a"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig1.png",
+   "n": 1,
+   "name": "BAJAJFINSV",
+   "contract": "BAJAJFINSV 1,680 CE",
+   "time": "09:45",
+   "logic": "Bear Trap on 15-min — breakdown failed",
+   "label": "TRAILING EXIT ✅",
+   "win": true,
+   "scanner": "Intraday Trap",
+   "entry": "43.3",
+   "sl": "1658",
+   "tgt": [],
+   "chart": "sig1",
+   "mode": "signal",
+   "title": "SIGNAL 1 · INTRADAY TRAP · 09:45",
+   "sigTs": "2026-10-30T04:15:00.000Z",
+   "exitTs": "2026-10-30T06:20:00.000Z",
+   "side": "CE",
+   "phase": "result",
+   "tags": [
+    "s1b"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig2.png",
+   "n": 2,
+   "name": "PIDILITIND",
+   "contract": "PIDILITIND 1,440 CE",
+   "time": "09:45",
+   "logic": "Bear Trap on 15-min — breakdown failed",
+   "label": "TRAILING EXIT ✅",
+   "win": true,
+   "scanner": "Intraday Trap",
+   "entry": "30.3",
+   "sl": "1400.2",
+   "tgt": [],
+   "chart": "sig2",
+   "mode": "signal",
+   "title": "SIGNAL 2 · INTRADAY TRAP · 09:45",
+   "sigTs": "2026-10-30T04:15:00.000Z",
+   "exitTs": "2026-10-30T06:05:00.000Z",
+   "side": "CE",
+   "tags": [
+    "s2a"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig2.png",
+   "n": 2,
+   "name": "PIDILITIND",
+   "contract": "PIDILITIND 1,440 CE",
+   "time": "09:45",
+   "logic": "Bear Trap on 15-min — breakdown failed",
+   "label": "TRAILING EXIT ✅",
+   "win": true,
+   "scanner": "Intraday Trap",
+   "entry": "30.3",
+   "sl": "1400.2",
+   "tgt": [],
+   "chart": "sig2",
+   "mode": "signal",
+   "title": "SIGNAL 2 · INTRADAY TRAP · 09:45",
+   "sigTs": "2026-10-30T04:15:00.000Z",
+   "exitTs": "2026-10-30T06:05:00.000Z",
+   "side": "CE",
+   "phase": "result",
+   "tags": [
+    "s2b"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig3.png",
+   "n": 3,
+   "name": "HDFCAMC",
+   "contract": "HDFCAMC 2,300 CE",
+   "time": "11:15",
+   "logic": "Bear Trap on 1-hour — breakdown failed",
+   "label": "TRAILING EXIT ✅",
+   "win": true,
+   "scanner": "Intraday Trap",
+   "entry": "63.75",
+   "sl": "2271.6",
+   "tgt": [],
+   "chart": "sig3",
+   "mode": "signal",
+   "title": "SIGNAL 3 · INTRADAY TRAP · 11:15",
+   "sigTs": "2026-10-30T05:45:00.000Z",
+   "exitTs": "2026-10-30T08:10:00.000Z",
+   "side": "CE",
+   "tags": [
+    "s3a"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig3.png",
+   "n": 3,
+   "name": "HDFCAMC",
+   "contract": "HDFCAMC 2,300 CE",
+   "time": "11:15",
+   "logic": "Bear Trap on 1-hour — breakdown failed",
+   "label": "TRAILING EXIT ✅",
+   "win": true,
+   "scanner": "Intraday Trap",
+   "entry": "63.75",
+   "sl": "2271.6",
+   "tgt": [],
+   "chart": "sig3",
+   "mode": "signal",
+   "title": "SIGNAL 3 · INTRADAY TRAP · 11:15",
+   "sigTs": "2026-10-30T05:45:00.000Z",
+   "exitTs": "2026-10-30T08:10:00.000Z",
+   "side": "CE",
+   "phase": "result",
+   "tags": [
+    "s3b"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig4.png",
+   "n": 4,
+   "name": "INFY",
+   "contract": "INFY 1,160 PE",
+   "time": "09:45",
+   "logic": "Bull Trap on 15-min — breakout failed",
+   "label": "SL HIT ❌",
+   "win": false,
+   "scanner": "Intraday Trap",
+   "entry": "33",
+   "sl": "1169.9",
+   "tgt": [],
+   "chart": "sig4",
+   "mode": "signal",
+   "title": "SIGNAL 4 · INTRADAY TRAP · 09:45",
+   "sigTs": "2026-10-30T04:15:00.000Z",
+   "exitTs": "2026-10-30T05:00:00.000Z",
+   "side": "PE",
+   "tags": [
+    "s4a"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig4.png",
+   "n": 4,
+   "name": "INFY",
+   "contract": "INFY 1,160 PE",
+   "time": "09:45",
+   "logic": "Bull Trap on 15-min — breakout failed",
+   "label": "SL HIT ❌",
+   "win": false,
+   "scanner": "Intraday Trap",
+   "entry": "33",
+   "sl": "1169.9",
+   "tgt": [],
+   "chart": "sig4",
+   "mode": "signal",
+   "title": "SIGNAL 4 · INTRADAY TRAP · 09:45",
+   "sigTs": "2026-10-30T04:15:00.000Z",
+   "exitTs": "2026-10-30T05:00:00.000Z",
+   "side": "PE",
+   "phase": "result",
+   "tags": [
+    "s4b"
+   ]
+  },
+  {
+   "kind": "ahead",
+   "shot": "brokers.png",
+   "clip": "21.mp4",
+   "clipStart": 8,
+   "tags": [
+    "ahead"
+   ]
+  },
+  {
+   "kind": "cta",
+   "tags": [
+    "cta"
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "name": "brokers",
+   "url": "https://app.uppercircuitstocks.com/home.html",
+   "kind": "match",
+   "match": [
+    "TRADE FROM SIGNAL CARDS"
+   ],
+   "clip": null
+  },
+  {
+   "name": "sig1",
+   "url": "https://app.uppercircuitstocks.com/research.html?page=trap",
+   "kind": "card",
+   "match": [
+    "BAJAJFINSV"
+   ],
+   "clip": null
+  },
+  {
+   "name": "sig2",
+   "url": "https://app.uppercircuitstocks.com/research.html?page=trap",
+   "kind": "card",
+   "match": [
+    "PIDILITIND"
+   ],
+   "clip": null
+  },
+  {
+   "name": "sig3",
+   "url": "https://app.uppercircuitstocks.com/research.html?page=trap",
+   "kind": "card",
+   "match": [
+    "HDFCAMC"
+   ],
+   "clip": null
+  },
+  {
+   "name": "sig4",
+   "url": "https://app.uppercircuitstocks.com/research.html?page=trap",
+   "kind": "card",
+   "match": [
+    "INFY"
+   ],
+   "clip": null
+  }
+ ],
+ "charts": [
+  {
+   "key": "sig1",
+   "symbol": "BAJAJFINSV",
+   "when": "day"
+  },
+  {
+   "key": "sig2",
+   "symbol": "PIDILITIND",
+   "when": "day"
+  },
+  {
+   "key": "sig3",
+   "symbol": "HDFCAMC",
+   "when": "day"
+  },
+  {
+   "key": "sig4",
+   "symbol": "INFY",
+   "when": "day"
+  }
+ ],
+ "meta": {
+  "poolSize": 7,
+  "winners": 3,
+  "slHits": 2,
+  "picks": [
+   {
+    "src": "trap",
+    "name": "BAJAJFINSV",
+    "side": "CE",
+    "strike": "1680",
+    "outcome": "TRAIL",
+    "ts": "2026-10-30T04:15:00.000Z"
+   },
+   {
+    "src": "trap",
+    "name": "PIDILITIND",
+    "side": "CE",
+    "strike": "1440",
+    "outcome": "TRAIL",
+    "ts": "2026-10-30T04:15:00.000Z"
+   },
+   {
+    "src": "trap",
+    "name": "HDFCAMC",
+    "side": "CE",
+    "strike": "2300",
+    "outcome": "TRAIL",
+    "ts": "2026-10-30T05:45:00.000Z"
+   },
+   {
+    "src": "trap",
+    "name": "INFY",
+    "side": "PE",
+    "strike": "1160",
+    "outcome": "SL",
+    "ts": "2026-10-30T04:15:00.000Z"
+   }
+  ]
+ }
+}

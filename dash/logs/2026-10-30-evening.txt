@@ -1,14 +1,3 @@
 {"mode": "evening", "lines": 11, "shots": ["brokers", "sig1", "sig2", "sig3", "sig4"], "meta": {"poolSize": 7, "winners": 3, "slHits": 2, "picks": [{"src": "trap", "name": "BAJAJFINSV", "side": "CE", "strike": "1680", "outcome": "TRAIL", "ts": "2026-10-30T04:15:00.000Z"}, {"src": "trap", "name": "PIDILITIND", "side": "CE", "strike": "1440", "outcome": "TRAIL", "ts": "2026-10-30T04:15:00.000Z"}, {"src": "trap", "name": "HDFCAMC", "side": "CE", "strike": "2300", "outcome": "TRAIL", "ts": "2026-10-30T05:45:00.000Z"}, {"src": "trap", "name": "INFY", "side": "PE", "strike": "1160", "outcome": "SL", "ts": "2026-10-30T04:15:00.000Z"}]}}
-no token: screenshots skipped
-ok hook
-ok s1a
-ok s1b
-ok s2a
-ok s2b
-ok s3a
-ok s3b
-ok s4a
-ok s4b
-ok ahead
-ok cta
+no token: screenshots and charts skipped
 OK 2026-10-30:evening
