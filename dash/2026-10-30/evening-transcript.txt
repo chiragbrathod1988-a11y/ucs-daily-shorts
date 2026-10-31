@@ -1,0 +1,33 @@
+hook
+  script: आज AI Dashboard ने क्या पकड़ा? कुछ selected signals देखो।
+  heard:  आज A.I. dashboard ने क्या पक्डा? कुट सेलेक्टिट सिँनल्स देखो.
+s1a
+  script: Bajaj Finserv Call, पंद्रह minute पे Bear Trap, breakdown fail हुआ।
+  heard:  बजाज फिंसर्फ कोल, पन्द्रह मिनेट पे भेर्ट्राप, ब्रेक्टाउन फेल हुँँँँँ.
+s1b
+  script: Trailing stop से move पकड़ा।
+  heard:  त्रेलिंग स्तोप से मुव पक्डा
+s2a
+  script: Pidilite Industries Call, पंद्रह minute पे Bear Trap, breakdown fail हुआ।
+  heard:  पिटलाईट अंदास्टीश कोल, पन्द्रह मिनित पे भेर ट्राप, ब्रेक्डाउन फेल हुए.
+s2b
+  script: Trailing stop से move पकड़ा।
+  heard:  त्रेलिंग स्तोब से मुव पक्डा
+s3a
+  script: HDFC Asset Management Company Call, एक घंटे पे Bear Trap, breakdown fail हुआ।
+  heard:  इज्दिएट्व्सी आ सेट नजमी ढिर्गेतु Room ल्दिया ज्दएद्द्दिददाद्ध बरत्रीए गहुख।
+s3b
+  script: Trailing stop से move पकड़ा।
+  heard:  त्रेलिंग स्तोप से मुव पक्डा
+s4a
+  script: Infosys Put, पंद्रह minute पे Bull Trap, breakout fail हुआ।
+  heard:  इं अपोच़िश पूट पंद्रह मिनेत पे भूल्ट्राप, ब्रेखाूछ फेल हूँँँँँँ.
+s4b
+  script: ये वाला stop loss hit हुआ, इसीलिए SL हमेशा ज़रूरी है।
+  heard:  येवाला फोट्ड़ा करनीवा, इसे लिए S.L. हमेशा ज़ोरी है
+ahead
+  script: Signal आते ही phone पे alert आता है, और एक tap में अपने broker पे order, Fyers, Zerodha या Dhan।
+  heard:  सिگनल आते ही फोन पे अलर्ट आता है और एक ताप में अपने ब्रोकर पे अड़, फायर्स, जीरोदा याद्धन.
+cta
+  script: बाकी traders से आगे रहना है? AI Dashboard का link description में है। Follow करो, Upper Circuit Stocks।
+  heard:  बाखी ट्रेटर से आगे रहना है आई दाष्बोट का लिंक दिस्क्रिष्टन में है फोलो करो अपर सर्किट स्टोक्स
