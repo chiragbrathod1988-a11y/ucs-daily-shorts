@@ -246,7 +246,7 @@ else:
         say("feat2", feature["hi"][1], feature["en"][1], {"kind": "feature", "shot": s_feat, "name": feature["name"], "scroll": [0.25, 0.5], "clip": (feature.get("tut") or "") and feature["tut"] + ".mp4", "clipStart": 3})
         say("ahead", "Dashboard आपके phone पे भी चलता है, price alerts के साथ, और Fyers, Zerodha या Dhan, अपना broker एक tap में connect करो।",
             "Runs on your phone too — price alerts, and connect Fyers, Zerodha or Dhan in one tap.",
-            {"kind": "clipscreen", "clip": "18.mp4", "clipStart": 4, "label": "ON YOUR PHONE"})
+            {"kind": "clipscreen", "clip": "18.mp4", "clipStart": 17, "label": "ON YOUR PHONE", "pan": [0.5, 0.56]})
         picks = []
     else:
         picks = winners + ([loser] if loser else [])

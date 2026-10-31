@@ -98,12 +98,13 @@ const Phone: React.FC<{ shot?: string; t: number; start: number; end: number; sc
 
 
 // Real dashboard footage from Chirag's tutorial recordings (subtitle band cropped), panned inside a gold monitor frame
-const ClipPanel: React.FC<{ clip: string; t: number; start: number; end: number; from?: number; top?: number; height?: number; label?: string }> = ({ clip, t, start, end, from = 3, top = 330, height = 820, label }) => {
+const ClipPanel: React.FC<{ clip: string; t: number; start: number; end: number; from?: number; top?: number; height?: number; label?: string; pan?: number[] }> = ({ clip, t, start, end, from = 3, top = 330, height = 820, label, pan: panR }) => {
   const W = 1000;
   const vidW = (height - 16) * (960 / 454);
   const p = interpolate(t, [start, start + 0.45], [0, 1], { ...clamp, easing: outExpo });
   const pan = interpolate(t, [start, end], [0, 1], { ...clamp, easing: Easing.inOut(Easing.quad) });
-  const x = -(vidW - (W - 16)) * (0.08 + 0.6 * pan);
+  const [pa, pb] = panR ?? [0.08, 0.68];
+  const x = -(vidW - (W - 16)) * (pa + (pb - pa) * pan);
   const zoom = 1 + 0.06 * pan;
   return (
     <div style={{ position: "absolute", left: 40, top, width: W, height, borderRadius: 28, overflow: "hidden", border: `4px solid ${GOLD}`, boxShadow: "0 24px 70px rgba(0,0,0,0.75), 0 0 50px rgba(245,196,81,0.25)", backgroundColor: "#000", opacity: p, transform: `translateY(${(1 - p) * 60}px)` }}>
@@ -459,7 +460,7 @@ export const DashShort: React.FC = () => {
         {k === "ahead" ? <AheadScene b={b} t={t} /> : null}
         {k === "cta" ? <CtaScene b={b} t={t} /> : null}
         {k === "chart" ? <ChartScene b={b} t={t} /> : null}
-        {k === "clipscreen" && b.sc.clip ? <ClipPanel clip={b.sc.clip} t={t} start={b.start} end={b.end} from={b.sc.clipStart} top={300} height={880} label={b.sc.label} /> : null}
+        {k === "clipscreen" && b.sc.clip ? <ClipPanel clip={b.sc.clip} t={t} start={b.start} end={b.end} from={b.sc.clipStart} top={300} height={880} label={b.sc.label} pan={b.sc.pan} /> : null}
       </div>
       <Subs t={t} />
       <div style={{ position: "absolute", left: 60, right: 60, top: 1622, textAlign: "center", color: CREAM, opacity: 0.6, fontFamily: SANS, fontSize: 21, fontWeight: 500, lineHeight: 1.3 }}>

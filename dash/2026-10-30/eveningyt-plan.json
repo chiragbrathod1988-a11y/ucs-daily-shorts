@@ -70,10 +70,14 @@
   {
    "kind": "clipscreen",
    "clip": "18.mp4",
-   "clipStart": 4,
+   "clipStart": 17,
    "label": "ON YOUR PHONE",
    "tags": [
     "ahead"
+   ],
+   "pan": [
+    0.5,
+    0.56
    ]
   },
   {

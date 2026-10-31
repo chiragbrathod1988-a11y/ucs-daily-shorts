@@ -64,6 +64,8 @@ else:
 👇 Comment karo — aap kaunsa setup trade karte ho?"""
     tags = ["ai dashboard", "option signals", "intraday trap", "star setup", "stock options", "stock market india", "intraday trading", "uppercircuitstocks", "chirag rathod"]
     hashtags = "#optionstrading #intradaytrading #stockmarketindia #aidashboard #shorts"
+if d["mode"] != "evening":
+    DIS = "⚠️ For information and education only. Not investment advice. Market risks apply — do your own research."
 if len(title) > 100:
     title = title.replace(" | Support & Resistance", "")[:97].rstrip() + "…"
 
