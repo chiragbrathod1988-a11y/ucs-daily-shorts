@@ -48,17 +48,22 @@ jobs:
           UCS_DASH_TOKEN: ${{ secrets.UCS_DASH_TOKEN }}
         run: |
           cp scripts/dash/*.mjs /tmp/pw/
+          mkdir -p dash/logs
           for R in $REQS; do
             D=${R%%:*}; S=${R##*:}
-            node /tmp/pw/fetch.mjs $D $S
-            python3 scripts/dash/script.py dash/$D/$S-raw.json
-            node /tmp/pw/shots.mjs dash/$D/$S-plan.json
-            python3 scripts/dash/tts.py dash/$D/$S-plan.json
+            ( set -e
+              [ -n "$UCS_DASH_TOKEN" ] || { echo "UCS_DASH_TOKEN secret is not set"; exit 1; }
+              node /tmp/pw/fetch.mjs $D $S
+              python3 scripts/dash/script.py dash/$D/$S-raw.json
+              node /tmp/pw/shots.mjs dash/$D/$S-plan.json
+              python3 scripts/dash/tts.py dash/$D/$S-plan.json
+            ) > dash/logs/$D-$S.txt 2>&1 && echo "OK $R" >> dash/logs/$D-$S.txt || echo "FAILED $R" >> dash/logs/$D-$S.txt
+            tail -5 dash/logs/$D-$S.txt
           done
       - name: Clarity check (speech-to-text)
         continue-on-error: true
         run: |
-          for R in $REQS; do D=${R%%:*}; S=${R##*:}; python3 - "$D" "$S" <<'EOF'
+          for R in $REQS; do D=${R%%:*}; S=${R##*:}; [ -f dash/$D/$S-tts/manifest.json ] || continue; python3 - "$D" "$S" <<'EOF'
           import sys, json, subprocess, numpy as np
           from faster_whisper import WhisperModel
           d, s = sys.argv[1], sys.argv[2]; m = WhisperModel("small", compute_type="int8")
