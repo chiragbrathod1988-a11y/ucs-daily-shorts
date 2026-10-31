@@ -38,7 +38,7 @@ FEATURES = [
     dict(key="idx", tut="06", name="Index Options", url="/research.html?page=idx",
          hi=["Index Options में Nifty और Bank Nifty के setups, trigger level के साथ मिलते हैं।", "Signal armed होते ही, आपको पता होता है कहाँ entry और कहाँ SL।"],
          en=["Index Options: NIFTY & BANKNIFTY setups with trigger levels.", "Know the entry and SL the moment it's armed."]),
-    dict(key="report", tut="04", name="AI Stock Reports", url="/equity-report.html",
+    dict(key="report", name="AI Stock Reports", url="/equity-report.html",
          hi=["AI Stock Report में, किसी भी NSE stock के fundamentals, technicals, shareholding और peers, एक ही page पे।", "AI सब कुछ आसान भाषा में summarise करता है।"],
          en=["AI Stock Reports: fundamentals, technicals, shareholding & peers.", "Summarised by AI in plain language."]),
     dict(key="cas", tut="07", name="CAS Expiry", url="/research.html?page=cas",
@@ -94,7 +94,15 @@ FEATURES = [
          en=["Equity Scanner: Daily Top Picks, 52-week highs, volume surges.", "Every pick's record is tracked."]),
 ]
 day_no = (td - datetime.date(2026, 11, 2)).days
-feature = FEATURES[(day_no if slot == "morning" else day_no + 7) % len(FEATURES)]
+# YouTube-safe features: their pages / tutorial clips show no individual signals, entries, targets, SL or results.
+SIGNAL_FEATURES = {"star", "trap", "ohl", "idx", "cas", "btst", "track", "futrev", "equity"}
+SAFE = [f for f in FEATURES if f["key"] not in SIGNAL_FEATURES]
+if slot == "morning":
+    feature = SAFE[day_no % len(SAFE)]
+elif slot == "eveningyt":            # YouTube evening video: feature spotlight only, never signals
+    feature = SAFE[(day_no + 5) % len(SAFE)]
+else:                                # Instagram evening video (signals); spotlight fallback may use any feature
+    feature = FEATURES[(day_no + 7) % len(FEATURES)]
 
 lines, scenes, shots, charts = [], [], [], []
 def say(tag, hi, en, scene=None):
@@ -229,14 +237,17 @@ else:
     loser = sorted(sls, key=lambda p: ((p.get("setup") or p["side"]) in {w.get("setup") or w["side"] for w in winners}, p["ts"]))[0] if sls else None
     meta = {"poolSize": len(pool), "winners": len(winners), "slHits": len(sls)}
 
-    if len(winners) < 2:
+    if len(winners) < 2 or slot == "eveningyt":
         mode = "spotlight"
         s_feat = shot("feature", feature["url"])
-        s_home = shot("brokers", "/home.html", kind="match", match=["TRADE FROM SIGNAL CARDS"])
         say("hook", f"आज AI Dashboard का एक खास feature देखते हैं, {feature['name']}।",
             f"Today's AI Dashboard spotlight: {feature['name']}.", {"kind": "hook", "title": feature["name"].upper(), "sub": "AI Dashboard spotlight"})
         say("feat1", feature["hi"][0], feature["en"][0], {"kind": "feature", "shot": s_feat, "name": feature["name"], "scroll": [0.0, 0.25], "clip": (feature.get("tut") or "") and feature["tut"] + ".mp4", "clipStart": 3})
         say("feat2", feature["hi"][1], feature["en"][1], {"kind": "feature", "shot": s_feat, "name": feature["name"], "scroll": [0.25, 0.5], "clip": (feature.get("tut") or "") and feature["tut"] + ".mp4", "clipStart": 3})
+        say("ahead", "Dashboard आपके phone पे भी चलता है, price alerts के साथ, और Fyers, Zerodha या Dhan, अपना broker एक tap में connect करो।",
+            "Runs on your phone too — price alerts, and connect Fyers, Zerodha or Dhan in one tap.",
+            {"kind": "clipscreen", "clip": "18.mp4", "clipStart": 4, "label": "ON YOUR PHONE"})
+        picks = []
     else:
         picks = winners + ([loser] if loser else [])
         s_home = shot("brokers", "/home.html", kind="match", match=["TRADE FROM SIGNAL CARDS"])
