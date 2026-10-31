@@ -23,60 +23,75 @@ pct = lambda x: f"{float(x):+.2f}%"
 
 # ---------------------------------------------------------------- features (one a day, rotating)
 FEATURES = [
-    dict(key="star", name="Star Setup", url="/research.html?page=star",
+    dict(key="star", tut="05", name="Star Setup", url="/research.html?page=star",
          hi=["Star Setup, stock options के लिए live scanner है।", "Entry, stop loss और दोनों targets, signal के साथ ही card पे दिखते हैं।"],
          en=["Star Setup — a live scanner for stock options.", "Entry, SL and both targets show on the card instantly."]),
-    dict(key="trap", name="Intraday Trap", url="/research.html?page=trap",
+    dict(key="trap", tut="19", name="Intraday Trap", url="/research.html?page=trap",
          hi=["Intraday Trap scanner, fake breakout और fake breakdown पकड़ता है।", "जहाँ बाकी traders फँसते हैं, वहाँ से reversal का setup मिलता है।"],
          en=["Intraday Trap catches fake breakouts and breakdowns.", "Where others get trapped, you see the reversal setup."]),
-    dict(key="heatmap", name="Sector Heat Map", url="/research.html?p=heatmap",
+    dict(key="heatmap", tut="03", name="Sector Heat Map", url="/research.html?p=heatmap",
          hi=["Heat Map में एक नज़र में दिखता है, कौन सा sector strong है और कौन सा weak।", "Sector rotation, बाकी traders से पहले पकड़ो।"],
          en=["Heat Map: strong and weak sectors at a glance.", "Spot sector rotation before others do."]),
-    dict(key="ohl", name="Open High / Low", url="/research.html?page=ohl",
+    dict(key="ohl", tut="20", name="Open High / Low", url="/research.html?page=ohl",
          hi=["Open High Low screen, सुबह नौ बीस से दस बजे तक चलता है।", "Open equals high या open equals low वाले stocks, अपने आप list हो जाते हैं।"],
          en=["Open High/Low screen runs 9:20 to 10:00 AM.", "Open = High / Open = Low stocks, listed automatically."]),
-    dict(key="idx", name="Index Options", url="/research.html?page=idx",
+    dict(key="idx", tut="06", name="Index Options", url="/research.html?page=idx",
          hi=["Index Options में Nifty और Bank Nifty के setups, trigger level के साथ मिलते हैं।", "Signal armed होते ही, आपको पता होता है कहाँ entry और कहाँ SL।"],
          en=["Index Options: NIFTY & BANKNIFTY setups with trigger levels.", "Know the entry and SL the moment it's armed."]),
-    dict(key="report", name="AI Stock Reports", url="/equity-report.html",
+    dict(key="report", tut="04", name="AI Stock Reports", url="/equity-report.html",
          hi=["AI Stock Report में, किसी भी NSE stock के fundamentals, technicals, shareholding और peers, एक ही page पे।", "AI सब कुछ आसान भाषा में summarise करता है।"],
          en=["AI Stock Reports: fundamentals, technicals, shareholding & peers.", "Summarised by AI in plain language."]),
-    dict(key="cas", name="CAS Expiry", url="/research.html?page=cas",
+    dict(key="cas", tut="07", name="CAS Expiry", url="/research.html?page=cas",
          hi=["Expiry के दिन, CAS Expiry बताता है किस strike में premium तेज़ी से भाग सकता है।", "Spot driven move है या gamma spike, ये भी दिखता है।"],
          en=["CAS Expiry: strikes where premium can ignite on expiry day.", "Shows spot-driven move vs gamma spike."]),
-    dict(key="btst", name="BTST / STBT", url="/research.html?page=btst",
+    dict(key="btst", tut="08", name="BTST / STBT", url="/research.html?page=btst",
          hi=["BTST और STBT screen, overnight setups देता है।", "अगली सुबह, हर setup का result भी track होता है।"],
          en=["BTST/STBT: overnight setups.", "Every setup is tracked the next morning."]),
-    dict(key="oi", name="OI Spikes", url="/oi-spikes.html",
+    dict(key="oi", tut="14", name="OI Spikes", url="/oi-spikes.html",
          hi=["OI Spikes, index और stock options में अचानक बढ़ा open interest दिखाता है।", "बड़े players कहाँ position बना रहे हैं, live पता चलता है।"],
          en=["OI Spikes: sudden open-interest jumps in options.", "See where big players are building positions — live."]),
-    dict(key="optan", name="Options Analytics", url="/options-analytics.html",
+    dict(key="optan", tut="14", name="Options Analytics", url="/options-analytics.html",
          hi=["Options Analytics में option chain, OI build up और PCR, सब एक screen पे।", "Support और resistance, option data से समझो।"],
          en=["Options Analytics: option chain, OI build-up, PCR.", "Read support & resistance from option data."]),
-    dict(key="futrev", name="Futures Reversal Breakout", url="/research.html?page=futrev",
+    dict(key="futrev", tut="07", name="Futures Reversal Breakout", url="/research.html?page=futrev",
          hi=["Futures Trade section में, Reversal Breakout और Momentum scanners live चलते हैं।", "Futures के setups, बिना chart खोले मिल जाते हैं।"],
          en=["Futures: Reversal Breakout & Momentum scanners, live.", "Futures setups without opening a single chart."]),
-    dict(key="track", name="Track Record", url="/research.html?page=track",
+    dict(key="track", tut="08", name="Track Record", url="/research.html?page=track",
          hi=["Track Record में, हर signal का result public रहता है — जीत भी, और loss भी।", "भरोसा, data से बनता है।"],
          en=["Track Record: every signal's result stays visible — wins and losses.", "Trust built on data."]),
-    dict(key="algo", name="Build Your Algo", url="/research.html?p=algo",
+    dict(key="algo", tut="09", name="Build Your Algo", url="/research.html?p=algo",
          hi=["Algo Trade में, अपनी strategy simple English में लिखो।", "Backtest seconds में, फिर paper पे forward test।"],
          en=["Algo Trade: describe your strategy in plain English.", "Backtest in seconds, then forward-test on paper."]),
-    dict(key="terminal", name="Paper Trading Terminal", url="/terminal.html",
+    dict(key="terminal", tut="16", name="Paper Trading Terminal", url="/terminal.html",
          hi=["Terminal में, live NSE prices पे virtual capital से F and O practice करो।", "Zero risk, पर experience असली।"],
          en=["Terminal: practise F&O on live NSE prices with virtual capital.", "Zero risk, real experience."]),
-    dict(key="ipo", name="IPO Centre", url="/ipo.html",
+    dict(key="ipo", tut="24", name="IPO Centre", url="/ipo.html",
          hi=["IPO Centre में हर Mainboard और SME IPO, GMP trend और subscription के साथ।", "RHP financials और AI view भी।"],
          en=["IPO Centre: every Mainboard & SME IPO with GMP & subscription.", "Plus RHP financials and an AI view."]),
-    dict(key="mf", name="Mutual Funds", url="/mf.html",
+    dict(key="mf", tut="25", name="Mutual Funds", url="/mf.html",
          hi=["Mutual Funds section में, सत्रह सौ से ज़्यादा schemes का data।", "Returns, risk, holdings, और SIP calculator।"],
          en=["Mutual Funds: 1,700+ schemes.", "Returns, risk, holdings and a SIP calculator."]),
-    dict(key="commod", name="Commodities Scanner", url="/commodities.html",
+    dict(key="commod", tut="15", name="Commodities Scanner", url="/commodities.html",
          hi=["Commodities scanner में MCX crude, gold, silver और natural gas के setups।", "Hourly volume spurt भी तुरंत दिखता है।"],
          en=["Commodities scanner: MCX crude, gold, silver, natural gas.", "Hourly volume spurts flagged instantly."]),
-    dict(key="journal", name="Trade Journal", url="/journal.html",
+    dict(key="journal", tut="16", name="Trade Journal", url="/journal.html",
          hi=["Trade Journal में हर trade का mood, setup और rating लिखो।", "अपनी गलतियाँ, data में दिखने लगती हैं।"],
          en=["Trade Journal: log mood, setup and rating for every trade.", "Your mistakes become visible in the data."]),
+    dict(key="myscan", tut="11", name="My Scanners", url="/scanners.html",
+         hi=["My Scanners में अपना खुद का scanner बनाओ, simple English में।", "Conditions लिखो, और dashboard पूरे market में stocks ढूँढ देता है।"],
+         en=["My Scanners: build your own scanner in plain English.", "Write the conditions — the dashboard scans the whole market."]),
+    dict(key="myalgo", tut="10", name="My Algos", url="/research.html?p=algo",
+         hi=["My Algos में अपनी strategy save करो, backtest करो, और paper पे चलाओ।", "पहले test, फिर trade, यही सही तरीका है।"],
+         en=["My Algos: save, backtest and paper-run your strategy.", "Test first, trade later — the right way."]),
+    dict(key="charts", tut="22", name="Charts", url="/charts.html",
+         hi=["Charts section में किसी भी stock का chart, अलग अलग timeframe पे।", "Indicators के साथ, एक ही click में।"],
+         en=["Charts: any stock, multiple timeframes.", "With indicators, in one click."]),
+    dict(key="market", tut="02", name="Market Dashboard", url="/research.html?p=market",
+         hi=["Market Dashboard में पूरा market एक screen पे, index gauges, sectors और top movers।", "Market का mood, एक नज़र में।"],
+         en=["Market Dashboard: index gauges, sectors and top movers.", "The market's mood at a glance."]),
+    dict(key="equity", tut="04", name="Equity Scanner", url="/research.html?page=picks",
+         hi=["Equity Scanner में Daily Top Picks, fifty two week high और volume surge।", "हर pick का record भी track होता है।"],
+         en=["Equity Scanner: Daily Top Picks, 52-week highs, volume surges.", "Every pick's record is tracked."]),
 ]
 day_no = (td - datetime.date(2026, 11, 2)).days
 feature = FEATURES[(day_no if slot == "morning" else day_no + 7) % len(FEATURES)]
@@ -123,10 +138,10 @@ if slot == "morning":
          "sectors": [[strong["sector"], pct(strong["today_pct"])], [weak["sector"], pct(weak["today_pct"])]]})
     say("ahead", "नौ पंद्रह के बाद यही सब live update होता है, तो आप market के साथ नहीं, market से आगे चलते हो।",
         "After 9:15 it all updates live — you move ahead of the market, not behind it.",
-        {"kind": "screen", "shot": s_heat, "scroll": [0.35, 0.55]})
+        {"kind": "clipscreen", "clip": "03.mp4", "clipStart": 6, "label": "LIVE AFTER 9:15"})
     say("feat1", f"आज का feature: {feature['hi'][0]}", f"Feature of the day — {feature['en'][0]}",
-        {"kind": "feature", "shot": s_feat, "name": feature["name"], "scroll": [0.0, 0.25]})
-    say("feat2", feature["hi"][1], feature["en"][1], {"kind": "feature", "shot": s_feat, "name": feature["name"], "scroll": [0.25, 0.45]})
+        {"kind": "feature", "shot": s_feat, "name": feature["name"], "scroll": [0.0, 0.25], "clip": (feature.get("tut") or "") and feature["tut"] + ".mp4", "clipStart": 3})
+    say("feat2", feature["hi"][1], feature["en"][1], {"kind": "feature", "shot": s_feat, "name": feature["name"], "scroll": [0.25, 0.45], "clip": (feature.get("tut") or "") and feature["tut"] + ".mp4", "clipStart": 3})
     meta = {"nifty": ni, "bankNifty": bn, "vix": vix, "breadth": {k: br[k] for k in ("advancing", "declining", "mood_label")},
             "strong": [strong["sector"], strong["today_pct"]], "weak": [weak["sector"], weak["today_pct"]], "feature": feature["name"],
             "marketDate": mkt.get("date", "")[:10]}
@@ -220,8 +235,8 @@ else:
         s_home = shot("brokers", "/home.html", kind="match", match=["TRADE FROM SIGNAL CARDS"])
         say("hook", f"आज AI Dashboard का एक खास feature देखते हैं, {feature['name']}।",
             f"Today's AI Dashboard spotlight: {feature['name']}.", {"kind": "hook", "title": feature["name"].upper(), "sub": "AI Dashboard spotlight"})
-        say("feat1", feature["hi"][0], feature["en"][0], {"kind": "feature", "shot": s_feat, "name": feature["name"], "scroll": [0.0, 0.25]})
-        say("feat2", feature["hi"][1], feature["en"][1], {"kind": "feature", "shot": s_feat, "name": feature["name"], "scroll": [0.25, 0.5]})
+        say("feat1", feature["hi"][0], feature["en"][0], {"kind": "feature", "shot": s_feat, "name": feature["name"], "scroll": [0.0, 0.25], "clip": (feature.get("tut") or "") and feature["tut"] + ".mp4", "clipStart": 3})
+        say("feat2", feature["hi"][1], feature["en"][1], {"kind": "feature", "shot": s_feat, "name": feature["name"], "scroll": [0.25, 0.5], "clip": (feature.get("tut") or "") and feature["tut"] + ".mp4", "clipStart": 3})
     else:
         picks = winners + ([loser] if loser else [])
         s_home = shot("brokers", "/home.html", kind="match", match=["TRADE FROM SIGNAL CARDS"])
@@ -254,7 +269,7 @@ else:
             say(f"s{i}b", out_hi, out_en, dict(cs, phase="result"))
         say("ahead", "Signal आते ही phone पे alert आता है, और एक tap में अपने broker पे order, Fyers, Zerodha या Dhan।",
             "Instant phone alert the moment a signal appears — one tap to your broker: Fyers, Zerodha or Dhan.",
-            {"kind": "ahead", "shot": s_home})
+            {"kind": "ahead", "shot": s_home, "clip": "21.mp4", "clipStart": 8})
         meta["picks"] = [{k: p[k] for k in ("src", "name", "side", "strike", "outcome", "ts")} for p in picks]
 
 say("cta", "बाकी traders से आगे रहना है? AI Dashboard का link description में है। Follow करो, Upper Circuit Stocks।",

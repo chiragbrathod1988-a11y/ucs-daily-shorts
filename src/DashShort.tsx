@@ -1,4 +1,4 @@
-import { AbsoluteFill, Audio, Composition, Easing, Img, interpolate, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
+import { AbsoluteFill, Audio, Composition, Easing, Img, OffthreadVideo, Sequence, interpolate, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import { loadFont } from "@remotion/fonts";
 import { DASH } from "./dashData";
 
@@ -96,6 +96,29 @@ const Phone: React.FC<{ shot?: string; t: number; start: number; end: number; sc
   );
 };
 
+
+// Real dashboard footage from Chirag's tutorial recordings (subtitle band cropped), panned inside a gold monitor frame
+const ClipPanel: React.FC<{ clip: string; t: number; start: number; end: number; from?: number; top?: number; height?: number; label?: string }> = ({ clip, t, start, end, from = 3, top = 330, height = 820, label }) => {
+  const W = 1000;
+  const vidW = (height - 16) * (960 / 454);
+  const p = interpolate(t, [start, start + 0.45], [0, 1], { ...clamp, easing: outExpo });
+  const pan = interpolate(t, [start, end], [0, 1], { ...clamp, easing: Easing.inOut(Easing.quad) });
+  const x = -(vidW - (W - 16)) * (0.08 + 0.6 * pan);
+  const zoom = 1 + 0.06 * pan;
+  return (
+    <div style={{ position: "absolute", left: 40, top, width: W, height, borderRadius: 28, overflow: "hidden", border: `4px solid ${GOLD}`, boxShadow: "0 24px 70px rgba(0,0,0,0.75), 0 0 50px rgba(245,196,81,0.25)", backgroundColor: "#000", opacity: p, transform: `translateY(${(1 - p) * 60}px)` }}>
+      <div style={{ position: "absolute", left: x, top: 0, width: vidW, height: height - 8, transform: `scale(${zoom})`, transformOrigin: "50% 40%" }}>
+        <Sequence from={Math.round(start * FPS)} layout="none">
+          <OffthreadVideo src={staticFile("dash/clips/" + clip)} muted startFrom={Math.round(from * FPS)} style={{ width: vidW, height: height - 8, objectFit: "cover" }} />
+        </Sequence>
+      </div>
+      <div style={{ position: "absolute", left: 18, top: 16, padding: "6px 16px", borderRadius: 999, backgroundColor: "rgba(0,0,0,0.75)", border: `2px solid ${GOLD}`, color: GOLD, fontFamily: SANS, fontWeight: 800, fontSize: 22, letterSpacing: 2 }}>
+        {label ?? "AI DASHBOARD · SCREEN"}
+      </div>
+    </div>
+  );
+};
+
 const Hook: React.FC<{ b: Block; t: number }> = ({ b, t }) => {
   const sc = b.sc;
   const s = interpolate(t, [0, 0.5], [0.6, 1], { ...clamp, easing: spring(10) });
@@ -170,7 +193,15 @@ const ScreenScene: React.FC<{ b: Block; t: number }> = ({ b, t }) => (
   </>
 );
 
-const FeatureScene: React.FC<{ b: Block; t: number }> = ({ b, t }) => (
+const FeatureScene: React.FC<{ b: Block; t: number }> = ({ b, t }) => (b.sc.clip ? (
+  <>
+    <ClipPanel clip={b.sc.clip} t={t} start={b.start} end={b.end} from={b.sc.clipStart} top={360} height={840} label={b.sc.name.toUpperCase()} />
+    <Pill t={t} at={b.start + 0.1} top={238}>
+      <span style={{ color: CREAM, fontSize: 26, letterSpacing: 3 }}>FEATURE OF THE DAY</span>
+      <div><Gold size={44}>{b.sc.name}</Gold></div>
+    </Pill>
+  </>
+) : (
   <>
     <Phone shot={b.sc.shot} t={t} start={b.start} end={b.end} scroll={[b.parts[0].sc.scroll?.[0] ?? 0, b.parts[b.parts.length - 1].sc.scroll?.[1] ?? 0.4]} top={330} height={1070} />
     <Pill t={t} at={b.start + 0.1} top={238}>
@@ -178,7 +209,7 @@ const FeatureScene: React.FC<{ b: Block; t: number }> = ({ b, t }) => (
       <div><Gold size={44}>{b.sc.name}</Gold></div>
     </Pill>
   </>
-);
+));
 
 const SignalScene: React.FC<{ b: Block; t: number }> = ({ b, t }) => {
   const sc = b.sc;
@@ -228,7 +259,7 @@ const AheadScene: React.FC<{ b: Block; t: number }> = ({ b, t }) => {
   const n = interpolate(t, [b.start + 0.5, b.start + 0.9], [-260, 0], { ...clamp, easing: spring(12) });
   return (
     <>
-      <Phone shot={b.sc.shot} t={t} start={b.start} end={b.end} scroll={[0, 0]} top={300} height={1100} />
+      {b.sc.clip ? <ClipPanel clip={b.sc.clip} t={t} start={b.start} end={b.end} from={b.sc.clipStart} top={300} height={900} label="TRADE FROM SIGNAL CARD" /> : <Phone shot={b.sc.shot} t={t} start={b.start} end={b.end} scroll={[0, 0]} top={300} height={1100} />}
       <div style={{ position: "absolute", left: 230, right: 230, top: 340, transform: `translateY(${n}px)`, opacity: n > -250 ? 1 : 0 }}>
         <div style={{ display: "flex", gap: 16, alignItems: "center", padding: "18px 22px", borderRadius: 26, backgroundColor: "rgba(28,28,30,0.97)", boxShadow: "0 18px 40px rgba(0,0,0,0.7)", border: "1px solid rgba(255,255,255,0.15)" }}>
           <Img src={staticFile("dash/logo.png")} style={{ width: 64, height: 64, borderRadius: 14 }} />
@@ -359,7 +390,8 @@ const ChartScene: React.FC<{ b: Block; t: number }> = ({ b, t }) => {
           <div style={{ position: "absolute", left: 0, right: 0, bottom: 0, padding: "4px 0", textAlign: "center", backgroundColor: "rgba(0,0,0,0.75)", color: GOLD, fontFamily: SANS, fontWeight: 800, fontSize: 18, letterSpacing: 2 }}>LIVE CARD · AI DASHBOARD</div>
         </div>
       ) : null}
-      <div style={{ position: "absolute", right: 70, top: 330, color: CREAM, opacity: 0.45, fontFamily: SANS, fontSize: 18 }}>Data: UpperCircuit AI Dashboard</div>
+      <div style={{ position: "absolute", left: 70, top: 330, color: CREAM, opacity: 0.45, fontFamily: SANS, fontSize: 18 }}>Data: UpperCircuit AI Dashboard</div>
+      {sc.stats ? <StatRow stats={sc.stats} t={t} at={b.start + 0.6} /> : null}
     </div>
   );
 };
@@ -427,6 +459,7 @@ export const DashShort: React.FC = () => {
         {k === "ahead" ? <AheadScene b={b} t={t} /> : null}
         {k === "cta" ? <CtaScene b={b} t={t} /> : null}
         {k === "chart" ? <ChartScene b={b} t={t} /> : null}
+        {k === "clipscreen" && b.sc.clip ? <ClipPanel clip={b.sc.clip} t={t} start={b.start} end={b.end} from={b.sc.clipStart} top={300} height={880} label={b.sc.label} /> : null}
       </div>
       <Subs t={t} />
       <div style={{ position: "absolute", left: 60, right: 60, top: 1622, textAlign: "center", color: CREAM, opacity: 0.6, fontFamily: SANS, fontSize: 21, fontWeight: 500, lineHeight: 1.3 }}>

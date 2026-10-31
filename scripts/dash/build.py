@@ -108,6 +108,13 @@ for s in plan["shots"]:
         shutil.copy(src, os.path.join(pub, s["name"] + ".png"))
         w, h = png_size(src)
         shots[s["name"] + ".png"] = {"w": w, "h": h}
+os.makedirs(os.path.join(pub, "clips"), exist_ok=True)
+for sc in plan["scenes"]:
+    c = sc.get("clip")
+    if c and os.path.exists(os.path.join(root, "assets", "tutorials", c)):
+        shutil.copy(os.path.join(root, "assets", "tutorials", c), os.path.join(pub, "clips", c))
+    elif c:
+        sc["clip"] = ""
 for f in ("logo.png", "chirag.png"):
     shutil.copy(os.path.join(root, "public", "daily", f), os.path.join(pub, f))
 
