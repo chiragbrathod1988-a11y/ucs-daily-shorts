@@ -87,7 +87,7 @@ const Phone: React.FC<{ shot?: string; t: number; start: number; end: number; sc
         ) : (
           <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column", gap: 20 }}>
             <Img src={staticFile("dash/logo.png")} style={{ width: 220, borderRadius: 30 }} />
-            <Gold size={52}>app.uppercircuitstocks.com</Gold>
+            <Gold size={40}>app.uppercircuitstocks.com</Gold>
           </div>
         )}
         <div style={{ position: "absolute", top: 12, left: "50%", width: 120, height: 30, marginLeft: -60, borderRadius: 20, backgroundColor: "#000" }} />
@@ -187,7 +187,7 @@ const SignalScene: React.FC<{ b: Block; t: number }> = ({ b, t }) => {
   const p = interpolate(t, [b.start, b.start + 0.45], [0, 1], { ...clamp, easing: outExpo });
   const stamp = res ? interpolate(t, [res.start, res.start + 0.4], [0, 1], { ...clamp, easing: spring(8) }) : 0;
   const W = 900;
-  const H = info ? Math.min(760, (info.h * W) / info.w) : 640;
+  const H = info ? Math.min(760, (info.h * W) / info.w) : 150 + 110 * [sc.entry, sc.sl, (sc.tgt ?? []).length ? 1 : null].filter(Boolean).length;
   const col = sc.win ? GREEN : RED;
   return (
     <>

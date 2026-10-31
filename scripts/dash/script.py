@@ -156,8 +156,8 @@ else:
             tf = "पंद्रह minute" if str(sig.get("tf")) == "15" else "एक घंटे"
             tfe = "15-min" if str(sig.get("tf")) == "15" else "1-hour"
             if "Bull" in setup:
-                return f"{tf} chart पे Bull Trap, ऊपर का breakout fail हुआ", f"Bull Trap on {tfe} — breakout failed"
-            return f"{tf} chart पे Bear Trap, नीचे का breakdown fail हुआ", f"Bear Trap on {tfe} — breakdown failed"
+                return f"{tf} पे Bull Trap, breakout fail हुआ", f"Bull Trap on {tfe} — breakout failed"
+            return f"{tf} पे Bear Trap, breakdown fail हुआ", f"Bear Trap on {tfe} — breakdown failed"
         if sig["src"] == "index":
             return "gap के बाद candle और volume में mismatch", "Gap + candle/volume mismatch"
         hi, en = [], []
@@ -210,7 +210,7 @@ else:
         if p not in winners: winners.append(p)
     winners = sorted(winners[:3], key=lambda p: p["ts"])
     sls = [p for p in pool if p["outcome"] == "SL"]
-    loser = sorted(sls, key=lambda p: p["ts"])[0] if sls else None
+    loser = sorted(sls, key=lambda p: ((p.get("setup") or p["side"]) in {w.get("setup") or w["side"] for w in winners}, p["ts"]))[0] if sls else None
     meta = {"poolSize": len(pool), "winners": len(winners), "slHits": len(sls)}
 
     if len(winners) < 2:
@@ -225,14 +225,14 @@ else:
         picks = winners + ([loser] if loser else [])
         s_home = shot("brokers", "/home.html", kind="match", match=["TRADE FROM SIGNAL CARDS"])
         n_ok = len(winners)
-        say("hook", "आज AI Dashboard ने कौन से signals पकड़े? चलो, कुछ selected signals देखते हैं।",
-            "What did the AI Dashboard catch today? Let's look at a few selected signals.",
+        say("hook", "आज AI Dashboard ने क्या पकड़ा? कुछ selected signals देखो।",
+            "What did the AI Dashboard catch today? A few selected signals.",
             {"kind": "hook", "title": "AAJ KE SIGNALS", "sub": "Selected signals · " + td.strftime("%-d %b"),
              "chips": ["✅"] * n_ok + (["❌"] if loser else [])})
-        OUT = {"T1": ("TARGET 1 HIT ✅", "ये target one तक पहुँचा।", "Reached Target 1."),
-               "T2": ("TARGET 2 HIT ✅", "ये target two तक पहुँचा।", "Reached Target 2."),
-               "TRAIL": ("TRAILING EXIT ✅", "trailing stop के साथ पूरा move पकड़ा।", "Rode the move with a trailing stop."),
-               "SL": ("SL HIT ❌", "ये stop loss hit हुआ। हर signal काम नहीं करता, इसलिए SL ज़रूरी है।", "This one hit SL. Not every signal works — that's why SL matters.")}
+        OUT = {"T1": ("TARGET 1 HIT ✅", "Target one hit हुआ।", "Target 1 hit."),
+               "T2": ("TARGET 2 HIT ✅", "Target two तक गया।", "Target 2 hit."),
+               "TRAIL": ("TRAILING EXIT ✅", "Trailing stop से move पकड़ा।", "Move captured with a trailing stop."),
+               "SL": ("SL HIT ❌", "ये वाला stop loss hit हुआ, इसीलिए SL हमेशा ज़रूरी है।", "This one hit SL — that's why SL always matters.")}
         for i, p in enumerate(picks, 1):
             tm, h, m = hhmm(p["ts"])
             sw = strike_words(p["strike"])
@@ -245,8 +245,8 @@ else:
             sc = {"kind": "signal", "shot": card, "n": i, "name": p["name"], "contract": f"{p['name']} {sk} {p['side']}",
                   "time": tm, "logic": len_, "label": label, "win": p["outcome"] != "SL", "scanner": {"star": "Star Setup", "trap": "Intraday Trap", "index": "Index Options"}[p["src"]],
                   "entry": p.get("entry"), "sl": p.get("sl"), "tgt": [t for t in p.get("tgt", []) if t]}
-            say(f"s{i}a", f"{spoken_time(h, m)} बजे, {spoken_name(p['name'])}{' ' + sw if sw else ''} {opt_hi} का signal आया। Logic था, {lhi}।",
-                f"{tm} — {p['name']} {sk} {p['side']} signal. Logic: {len_}.", sc)
+            say(f"s{i}a", f"{spoken_name(p['name'])} {opt_hi}, {lhi}।",
+                f"{p['name']} {sk} {p['side']} — {len_}.", sc)
             say(f"s{i}b", out_hi, out_en, dict(sc, phase="result"))
         say("ahead", "Signal आते ही phone पे alert आता है, और एक tap में अपने broker पे order, Fyers, Zerodha या Dhan।",
             "Instant phone alert the moment a signal appears — one tap to your broker: Fyers, Zerodha or Dhan.",

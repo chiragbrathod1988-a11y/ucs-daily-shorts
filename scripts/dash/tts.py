@@ -4,7 +4,7 @@ Usage: python3 scripts/dash/tts.py dash/D/<slot>-plan.json  ->  dash/D/<slot>-tt
 import asyncio, json, os, sys
 import edge_tts
 
-VOICE, RATE, PITCH = "hi-IN-SwaraNeural", "+6%", "-2Hz"
+VOICE, RATE, PITCH = "hi-IN-SwaraNeural", "+10%", "-2Hz"
 plan_path = sys.argv[1]
 plan = json.load(open(plan_path))
 out = plan_path.replace("-plan.json", "-tts")
