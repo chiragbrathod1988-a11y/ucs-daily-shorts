@@ -550,8 +550,8 @@ export const DASH = {
  "date": "2026-10-30",
  "slot": "morning",
  "mode": "morning",
- "feature": "Mutual Funds",
- "duration": 55.004,
+ "feature": "Charts",
+ "duration": 55.164,
  "timeline": [
   {
    "tag": "hook",
@@ -579,26 +579,26 @@ export const DASH = {
   },
   {
    "tag": "ahead",
-   "start": 28.061,
-   "end": 35.216,
+   "start": 28.221,
+   "end": 35.376,
    "en": "After 9:15 it all updates live — you move ahead of the market, not behind it."
   },
   {
    "tag": "feat1",
-   "start": 35.536,
-   "end": 40.877,
-   "en": "Feature of the day — Mutual Funds: 1,700+ schemes."
+   "start": 35.696,
+   "end": 41.037,
+   "en": "Feature of the day — Charts: any stock, multiple timeframes."
   },
   {
    "tag": "feat2",
-   "start": 41.037,
-   "end": 44.483,
-   "en": "Returns, risk, holdings and a SIP calculator."
+   "start": 41.197,
+   "end": 44.643,
+   "en": "With indicators, in one click."
   },
   {
    "tag": "cta",
-   "start": 44.803,
-   "end": 53.204,
+   "start": 44.963,
+   "end": 53.364,
    "en": "Want to stay ahead? AI Dashboard link in the description. Follow UpperCircuitStocks!"
   }
  ],
@@ -674,12 +674,10 @@ export const DASH = {
    ]
   },
   {
-   "kind": "screen",
-   "shot": "heatmap.png",
-   "scroll": [
-    0.35,
-    0.55
-   ],
+   "kind": "clipscreen",
+   "clip": "03.mp4",
+   "clipStart": 6,
+   "label": "LIVE AFTER 9:15",
    "tags": [
     "ahead"
    ]
@@ -687,11 +685,13 @@ export const DASH = {
   {
    "kind": "feature",
    "shot": "feature.png",
-   "name": "Mutual Funds",
+   "name": "Charts",
    "scroll": [
     0.0,
     0.25
    ],
+   "clip": "22.mp4",
+   "clipStart": 3,
    "tags": [
     "feat1"
    ]
@@ -699,11 +699,13 @@ export const DASH = {
   {
    "kind": "feature",
    "shot": "feature.png",
-   "name": "Mutual Funds",
+   "name": "Charts",
    "scroll": [
     0.25,
     0.45
    ],
+   "clip": "22.mp4",
+   "clipStart": 3,
    "tags": [
     "feat2"
    ]
@@ -768,53 +770,48 @@ export const DASH = {
   },
   {
    "text": "After 9:15 it all updates live —",
-   "start": 28.061,
-   "end": 31.114
+   "start": 28.221,
+   "end": 31.274
   },
   {
    "text": "you move ahead of the market,",
-   "start": 31.114,
-   "end": 33.88
+   "start": 31.274,
+   "end": 34.04
   },
   {
    "text": "not behind it.",
-   "start": 33.88,
-   "end": 35.366
+   "start": 34.04,
+   "end": 35.526
   },
   {
-   "text": "Feature of the day — Mutual",
-   "start": 35.536,
-   "end": 38.479
+   "text": "Feature of the day — Charts: any",
+   "start": 35.696,
+   "end": 38.593
   },
   {
-   "text": "Funds: 1,700+ schemes.",
-   "start": 38.479,
-   "end": 41.027
+   "text": "stock, multiple timeframes.",
+   "start": 38.593,
+   "end": 41.187
   },
   {
-   "text": "Returns, risk, holdings and a",
-   "start": 41.037,
-   "end": 43.308
-  },
-  {
-   "text": "SIP calculator.",
-   "start": 43.308,
-   "end": 44.633
+   "text": "With indicators, in one click.",
+   "start": 41.197,
+   "end": 44.793
   },
   {
    "text": "Want to stay ahead? AI Dashboard",
-   "start": 44.803,
-   "end": 48.081
+   "start": 44.963,
+   "end": 48.241
   },
   {
    "text": "link in the description. Follow",
-   "start": 48.081,
-   "end": 51.257
+   "start": 48.241,
+   "end": 51.417
   },
   {
    "text": "UpperCircuitStocks!",
-   "start": 51.257,
-   "end": 53.354
+   "start": 51.417,
+   "end": 53.514
   }
  ],
  "shots": {},
@@ -846,7 +843,7 @@ export const DASH = {
    "Financial Services",
    "-1.79"
   ],
-  "feature": "Mutual Funds",
+  "feature": "Charts",
   "marketDate": "2026-10-30"
  }
 } as const;
