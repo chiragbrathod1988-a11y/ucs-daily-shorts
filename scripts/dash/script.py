@@ -232,7 +232,7 @@ else:
         OUT = {"T1": ("TARGET 1 HIT ✅", "Target one hit हुआ।", "Target 1 hit."),
                "T2": ("TARGET 2 HIT ✅", "Target two तक गया।", "Target 2 hit."),
                "TRAIL": ("TRAILING EXIT ✅", "Trailing stop से move पकड़ा।", "Move captured with a trailing stop."),
-               "SL": ("SL HIT ❌", "ये वाला stop loss hit हुआ, इसीलिए SL हमेशा ज़रूरी है।", "This one hit SL — that's why SL always matters.")}
+               "SL": ("SL HIT ❌", "ये वाला स्टॉप लॉस हिट हुआ, इसीलिए स्टॉप लॉस हमेशा ज़रूरी है।", "This one hit SL — that's why SL always matters.")}
         for i, p in enumerate(picks, 1):
             tm, h, m = hhmm(p["ts"])
             sw = strike_words(p["strike"])

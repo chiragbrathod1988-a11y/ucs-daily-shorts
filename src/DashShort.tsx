@@ -187,7 +187,7 @@ const SignalScene: React.FC<{ b: Block; t: number }> = ({ b, t }) => {
   const p = interpolate(t, [b.start, b.start + 0.45], [0, 1], { ...clamp, easing: outExpo });
   const stamp = res ? interpolate(t, [res.start, res.start + 0.4], [0, 1], { ...clamp, easing: spring(8) }) : 0;
   const W = 900;
-  const H = info ? Math.min(760, (info.h * W) / info.w) : 150 + 110 * [sc.entry, sc.sl, (sc.tgt ?? []).length ? 1 : null].filter(Boolean).length;
+  const H = info ? Math.min(760, (info.h * W) / info.w) : 200 + 110 * [sc.entry, sc.sl, (sc.tgt ?? []).length ? 1 : null].filter(Boolean).length;
   const col = sc.win ? GREEN : RED;
   return (
     <>
