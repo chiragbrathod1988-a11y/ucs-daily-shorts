@@ -1,0 +1,12 @@
+saved dash/2026-10-30/evening-raw.json
+{"mode": "evening", "lines": 11, "shots": ["brokers", "sig1", "sig2", "sig3", "sig4"], "meta": {"poolSize": 42, "winners": 3, "slHits": 7, "picks": [{"src": "trap", "name": "BAJAJFINSV", "side": "CE", "strike": "1680", "outcome": "TRAIL", "ts": "2026-10-30T04:15:00.000Z"}, {"src": "trap", "name": "HINDUNILVR", "side": "CE", "strike": "1860", "outcome": "TRAIL", "ts": "2026-10-30T04:15:00.000Z"}, {"src": "trap", "name": "SRF", "side": "CE", "strike": "2340", "outcome": "TRAIL", "ts": "2026-10-30T05:45:00.000Z"}, {"src": "trap", "name": "LTM", "side": "PE", "strike": "4100", "outcome": "SL", "ts": "2026-10-30T04:15:00.000Z"}]}}
+ok brokers
+miss sig1 Error: not found: BAJAJFINSV
+miss sig2 Error: not found: HINDUNILVR
+miss sig3 Error: not found: SRF
+miss sig4 Error: not found: LTM
+chart ok sig1 BAJAJFINSV 2026-10-30 75
+chart ok sig2 HINDUNILVR 2026-10-30 75
+chart ok sig3 SRF 2026-10-30 75
+chart ok sig4 LTM 2026-10-30 75
+OK 2026-10-30:evening
