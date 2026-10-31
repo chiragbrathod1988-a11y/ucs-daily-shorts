@@ -1,0 +1,60 @@
+name: Fetch media (downloads the sandbox cannot reach)
+# Push fetch/<name>.json: [{"url": "...", "path": "assets/x.mp3"} | {"edge": "voice", "text": "...", "path": "..."}]
+# Videos (.mp4) are re-encoded to 1280px wide, muted, crf 26 to keep the repo small.
+on:
+  push:
+    branches: [main]
+    paths: ["fetch/*.json"]
+permissions:
+  contents: write
+concurrency: fetch
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg && pip install -q edge-tts yt-dlp
+      - name: Download
+        run: |
+          mkdir -p fetch/done
+          for f in fetch/*.json; do
+            python3 - "$f" <<'EOF'
+          import json, os, sys, subprocess, urllib.request, asyncio
+          f = sys.argv[1]; items = json.load(open(f)); log = []
+          for it in items:
+              p = it["path"]; os.makedirs(os.path.dirname(p) or ".", exist_ok=True)
+              if os.path.exists(p) and not it.get("force"):
+                  log.append(f"skip {p}"); continue
+              try:
+                  if "yt" in it:
+                      tmp = p + ".dl.mp4"
+                      subprocess.run(["yt-dlp", "-q", "-f", "bv*[height<=1080][ext=mp4]/bv*[height<=1080]/b", "-o", tmp, it["yt"]], check=True)
+                      subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", tmp, "-an", "-vf", "scale=1280:-2,fps=30", "-c:v", "libx264", "-crf", "26", "-preset", "veryfast", "-movflags", "+faststart", p], check=True)
+                      os.remove(tmp)
+                  elif "edge" in it:
+                      import edge_tts
+                      asyncio.run(edge_tts.Communicate(it["text"], it["edge"], rate=it.get("rate", "+0%")).save(p))
+                  else:
+                      tmp = p + ".part"
+                      urllib.request.urlretrieve(it["url"], tmp)
+                      if p.endswith(".mp4") and it.get("reencode", True):
+                          subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", tmp, "-an", "-vf", "scale=1280:-2,fps=30", "-c:v", "libx264", "-crf", "26", "-preset", "veryfast", "-movflags", "+faststart", p], check=True)
+                          os.remove(tmp)
+                      else:
+                          os.replace(tmp, p)
+                  log.append(f"ok {p} {os.path.getsize(p)}")
+              except Exception as e:
+                  log.append(f"FAIL {p} {e}")
+          open("fetch/done/" + os.path.basename(f).replace(".json", ".log"), "w").write("\n".join(log) + "\n")
+          print("\n".join(log))
+          EOF
+            git rm -q "$f"
+          done
+      - name: Commit
+        run: |
+          git config user.name "ucs-fetch-bot"; git config user.email "actions@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet && exit 0
+          git commit -m "Fetched media"
+          for i in 1 2 3; do git pull --rebase -q origin main && git push origin HEAD:main && break; sleep 5; done
