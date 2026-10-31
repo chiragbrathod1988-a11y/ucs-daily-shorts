@@ -2,11 +2,17 @@
 
 Fully automatic; never ask Chirag to approve. He is **not** a SEBI-registered RA — never say so. Content is
 information/education only. Never speak or write profit / ₹ amounts. Voice: ElevenLabs **Matilda** via vidIQ (Chirag's choice — openly an AI voice), Hindi/Hinglish script, English subtitles.
-`D` = today (IST, YYYY-MM-DD), `S` = `morning` or `evening`.
+`D` = today (IST, YYYY-MM-DD), `S` = `morning`, `evening` or `eveningyt`.
+
+**YouTube rule (Chirag): YouTube must never show individual signals, entries, targets, SL, exits or results.**
+- Morning run: one video (`S=morning`, features are signal-free) → YouTube + Instagram.
+- Evening run: TWO videos. `S=eveningyt` (feature spotlight, no signals) → **YouTube only**.
+  `S=evening` (selected signals with charts) → **Instagram only**. Never post the `evening` video to YouTube.
+  Run steps 2–4 for both (two requests can go in one push; voice = one Matilda call each).
 
 ## 0. Should it run?
 - Weekend or NSE trading holiday (web-search this year's NSE holiday list) → stop silently.
-- `posted/dash/D-S.json` exists with both platforms → stop silently (if one platform is missing, do only that one in step 5).
+- `posted/dash/D-S.json` exists with every platform that slot posts to (morning: both; evening: instagram; eveningyt: youtube) → skip that slot.
 
 ## 1. Setup
 ```
@@ -58,12 +64,12 @@ URLs: `https://raw.githubusercontent.com/chiragbrathod1988-a11y/ucs-daily-shorts
 
 ## 5. Post (use the generated text verbatim)
 `python3 scripts/dash/post_text.py > out/dash-post.json`
-- **YouTube Short — Metricool** `createScheduledPost`, blogId `7738599`, timezone Asia/Calcutta. date: morning → now + 5 min;
+- **YouTube Short — Metricool** (morning video, or the `eveningyt` video in the evening — never `evening`) `createScheduledPost`, blogId `7738599`, timezone Asia/Calcutta. date: morning → now + 5 min;
   evening → 19:00 IST today (now + 5 min if already past 18:55). info: providers `[{"network":"youtube"}]`, media `[mp4 URL]`,
   `videoThumbnailUrl` = thumb URL, autoPublish true, draft false, text = description,
   youtubeData `{"title": title, "type":"short", "privacy":"public", "madeForKids": false, "category":"EDUCATION", "tags": tags, "isAiGeneratedContent": false}`.
   If rejected with VIDEO_THUMBNAIL_NOT_APPLICABLE, send again without `videoThumbnailUrl`.
-- **Instagram Reel — vidIQ**: `vidiq_video_upload` (url = mp4 URL) → `vidiq_instagram_publish_reel` with platformAccountId
+- **Instagram Reel — vidIQ** (morning video, or the `evening` signals video in the evening): `vidiq_video_upload` (url = mp4 URL) → `vidiq_instagram_publish_reel` with platformAccountId
   `27871127732565506`, caption = instagram_caption; follow containerId / mcpJobId continuation until PUBLISHED. Evening:
   run this at/after 19:00 IST. If vidIQ needs re-authorisation, post YouTube only and say so in the status message.
 
