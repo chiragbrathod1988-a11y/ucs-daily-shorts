@@ -46,7 +46,7 @@
   },
   {
    "tag": "s4b",
-   "text": "ये वाला stop loss hit हुआ, इसीलिए SL हमेशा ज़रूरी है।",
+   "text": "ये वाला स्टॉप लॉस हिट हुआ, इसीलिए स्टॉप लॉस हमेशा ज़रूरी है।",
    "en": "This one hit SL — that's why SL always matters."
   },
   {
@@ -76,7 +76,7 @@
    ]
   },
   {
-   "kind": "signal",
+   "kind": "chart",
    "shot": "sig1.png",
    "n": 1,
    "name": "BAJAJFINSV",
@@ -89,12 +89,18 @@
    "entry": "43.3",
    "sl": "1658",
    "tgt": [],
+   "chart": "sig1",
+   "mode": "signal",
+   "title": "SIGNAL 1 · INTRADAY TRAP · 09:45",
+   "sigTs": "2026-10-30T04:15:00.000Z",
+   "exitTs": "2026-10-30T06:20:00.000Z",
+   "side": "CE",
    "tags": [
     "s1a"
    ]
   },
   {
-   "kind": "signal",
+   "kind": "chart",
    "shot": "sig1.png",
    "n": 1,
    "name": "BAJAJFINSV",
@@ -107,13 +113,19 @@
    "entry": "43.3",
    "sl": "1658",
    "tgt": [],
+   "chart": "sig1",
+   "mode": "signal",
+   "title": "SIGNAL 1 · INTRADAY TRAP · 09:45",
+   "sigTs": "2026-10-30T04:15:00.000Z",
+   "exitTs": "2026-10-30T06:20:00.000Z",
+   "side": "CE",
    "phase": "result",
    "tags": [
     "s1b"
    ]
   },
   {
-   "kind": "signal",
+   "kind": "chart",
    "shot": "sig2.png",
    "n": 2,
    "name": "PIDILITIND",
@@ -126,12 +138,18 @@
    "entry": "30.3",
    "sl": "1400.2",
    "tgt": [],
+   "chart": "sig2",
+   "mode": "signal",
+   "title": "SIGNAL 2 · INTRADAY TRAP · 09:45",
+   "sigTs": "2026-10-30T04:15:00.000Z",
+   "exitTs": "2026-10-30T06:05:00.000Z",
+   "side": "CE",
    "tags": [
     "s2a"
    ]
   },
   {
-   "kind": "signal",
+   "kind": "chart",
    "shot": "sig2.png",
    "n": 2,
    "name": "PIDILITIND",
@@ -144,13 +162,19 @@
    "entry": "30.3",
    "sl": "1400.2",
    "tgt": [],
+   "chart": "sig2",
+   "mode": "signal",
+   "title": "SIGNAL 2 · INTRADAY TRAP · 09:45",
+   "sigTs": "2026-10-30T04:15:00.000Z",
+   "exitTs": "2026-10-30T06:05:00.000Z",
+   "side": "CE",
    "phase": "result",
    "tags": [
     "s2b"
    ]
   },
   {
-   "kind": "signal",
+   "kind": "chart",
    "shot": "sig3.png",
    "n": 3,
    "name": "HDFCAMC",
@@ -163,12 +187,18 @@
    "entry": "63.75",
    "sl": "2271.6",
    "tgt": [],
+   "chart": "sig3",
+   "mode": "signal",
+   "title": "SIGNAL 3 · INTRADAY TRAP · 11:15",
+   "sigTs": "2026-10-30T05:45:00.000Z",
+   "exitTs": "2026-10-30T08:10:00.000Z",
+   "side": "CE",
    "tags": [
     "s3a"
    ]
   },
   {
-   "kind": "signal",
+   "kind": "chart",
    "shot": "sig3.png",
    "n": 3,
    "name": "HDFCAMC",
@@ -181,13 +211,19 @@
    "entry": "63.75",
    "sl": "2271.6",
    "tgt": [],
+   "chart": "sig3",
+   "mode": "signal",
+   "title": "SIGNAL 3 · INTRADAY TRAP · 11:15",
+   "sigTs": "2026-10-30T05:45:00.000Z",
+   "exitTs": "2026-10-30T08:10:00.000Z",
+   "side": "CE",
    "phase": "result",
    "tags": [
     "s3b"
    ]
   },
   {
-   "kind": "signal",
+   "kind": "chart",
    "shot": "sig4.png",
    "n": 4,
    "name": "INFY",
@@ -200,12 +236,18 @@
    "entry": "33",
    "sl": "1169.9",
    "tgt": [],
+   "chart": "sig4",
+   "mode": "signal",
+   "title": "SIGNAL 4 · INTRADAY TRAP · 09:45",
+   "sigTs": "2026-10-30T04:15:00.000Z",
+   "exitTs": "2026-10-30T05:00:00.000Z",
+   "side": "PE",
    "tags": [
     "s4a"
    ]
   },
   {
-   "kind": "signal",
+   "kind": "chart",
    "shot": "sig4.png",
    "n": 4,
    "name": "INFY",
@@ -218,6 +260,12 @@
    "entry": "33",
    "sl": "1169.9",
    "tgt": [],
+   "chart": "sig4",
+   "mode": "signal",
+   "title": "SIGNAL 4 · INTRADAY TRAP · 09:45",
+   "sigTs": "2026-10-30T04:15:00.000Z",
+   "exitTs": "2026-10-30T05:00:00.000Z",
+   "side": "PE",
    "phase": "result",
    "tags": [
     "s4b"
@@ -282,6 +330,28 @@
     "INFY"
    ],
    "clip": null
+  }
+ ],
+ "charts": [
+  {
+   "key": "sig1",
+   "symbol": "BAJAJFINSV",
+   "when": "day"
+  },
+  {
+   "key": "sig2",
+   "symbol": "PIDILITIND",
+   "when": "day"
+  },
+  {
+   "key": "sig3",
+   "symbol": "HDFCAMC",
+   "when": "day"
+  },
+  {
+   "key": "sig4",
+   "symbol": "INFY",
+   "when": "day"
   }
  ],
  "meta": {

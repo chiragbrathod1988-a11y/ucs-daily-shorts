@@ -11,12 +11,12 @@
   },
   {
    "tag": "nifty",
-   "text": "पिछले session में Nifty ट्वेंटी थ्री थाउज़ेंड फिफ्टी थ्री पे close हुआ, और Bank Nifty फिफ्टी फोर थाउज़ेंड सिक्स हंड्रेड एटी सेवन पे।",
+   "text": "पिछले session में Nifty twenty three thousand fifty three पे close हुआ, और Bank Nifty fifty four thousand six hundred eighty seven पे।",
    "en": "Last session: Nifty closed at 23,053, Bank Nifty at 54,687."
   },
   {
    "tag": "breadth",
-   "text": "Market breadth रहा Very Bearish, फोर हंड्रेड फोर्टी नाइन stocks ऊपर, और वन थाउज़ेंड सिक्स हंड्रेड एटी टू नीचे।",
+   "text": "Market breadth रहा Very Bearish, four hundred forty nine stocks ऊपर, और one thousand six hundred eighty two नीचे।",
    "en": "Breadth: Very Bearish — 449 up, 1,682 down."
   },
   {
@@ -55,12 +55,10 @@
    ]
   },
   {
-   "kind": "screen",
-   "shot": "snapshot.png",
-   "scroll": [
-    0.18,
-    0.3
-   ],
+   "kind": "chart",
+   "chart": "nifty",
+   "title": "NIFTY FUTURES · 5 MIN",
+   "mode": "session",
    "stats": [
     [
      "NIFTY 50",
@@ -181,6 +179,13 @@
    "kind": "page",
    "match": [],
    "clip": null
+  }
+ ],
+ "charts": [
+  {
+   "key": "nifty",
+   "symbol": "NIFTYFUT",
+   "when": "prev"
   }
  ],
  "meta": {

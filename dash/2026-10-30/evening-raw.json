@@ -50,7 +50,8 @@
       "pnl_gross": "555",
       "entry_premium": "43.3",
       "sl_level": "1658",
-      "exit_premium": "45.15"
+      "exit_premium": "45.15",
+      "exit_time": "2026-10-30T06:20:00.000Z"
      },
      {
       "trade_date": "2026-10-30",
@@ -64,7 +65,8 @@
       "pnl_gross": "-2787.5",
       "entry_premium": "1067.5",
       "sl_level": "27450",
-      "exit_premium": "956"
+      "exit_premium": "956",
+      "exit_time": "2026-10-30T04:40:00.000Z"
      },
      {
       "trade_date": "2026-10-30",
@@ -78,7 +80,8 @@
       "pnl_gross": "1450",
       "entry_premium": "30.3",
       "sl_level": "1400.2",
-      "exit_premium": "33.2"
+      "exit_premium": "33.2",
+      "exit_time": "2026-10-30T06:05:00.000Z"
      },
      {
       "trade_date": "2026-10-30",
@@ -92,7 +95,8 @@
       "pnl_gross": "-1900",
       "entry_premium": "33",
       "sl_level": "1169.9",
-      "exit_premium": "28.25"
+      "exit_premium": "28.25",
+      "exit_time": "2026-10-30T05:00:00.000Z"
      }
     ]
    },
@@ -110,7 +114,8 @@
       "pnl_gross": "2235",
       "entry_premium": "63.75",
       "sl_level": "2271.6",
-      "exit_premium": "71.2"
+      "exit_premium": "71.2",
+      "exit_time": "2026-10-30T08:10:00.000Z"
      }
     ]
    }

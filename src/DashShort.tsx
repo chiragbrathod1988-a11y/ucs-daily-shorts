@@ -36,9 +36,9 @@ type Block = { sc: any; start: number; end: number; parts: { sc: any; start: num
 const BLOCKS: Block[] = [];
 TL.forEach((l, i) => {
   const sc = SC[i];
-  const key = `${sc.kind}|${sc.shot ?? ""}|${sc.n ?? ""}`;
+  const key = `${sc.kind}|${sc.shot ?? sc.chart ?? ""}|${sc.n ?? ""}`;
   const last = BLOCKS[BLOCKS.length - 1];
-  if (last && `${last.sc.kind}|${last.sc.shot ?? ""}|${last.sc.n ?? ""}` === key) {
+  if (last && `${last.sc.kind}|${last.sc.shot ?? last.sc.chart ?? ""}|${last.sc.n ?? ""}` === key) {
     last.end = l.end;
     last.parts.push({ sc, start: l.start, end: l.end });
   } else BLOCKS.push({ sc, start: l.start, end: l.end, parts: [{ sc, start: l.start, end: l.end }] });
@@ -247,6 +247,123 @@ const AheadScene: React.FC<{ b: Block; t: number }> = ({ b, t }) => {
   );
 };
 
+
+const IST = (t: number) => { const d = new Date((t + 19800) * 1000); return `${String(d.getUTCHours()).padStart(2, "0")}:${String(d.getUTCMinutes()).padStart(2, "0")}`; };
+const isoToSec = (iso?: string) => (iso ? Math.floor(new Date(iso).getTime() / 1000) : 0);
+const fmtP = (n: number) => n >= 1000 ? Math.round(n).toLocaleString("en-IN") : n.toFixed(n >= 100 ? 1 : 2);
+
+const ChartScene: React.FC<{ b: Block; t: number }> = ({ b, t }) => {
+  const sc = b.sc;
+  const ch = DATA.charts?.[sc.chart];
+  const X0 = 70, X1 = 930, Y0 = 360, Y1 = 1140;
+  const p = interpolate(t, [b.start, b.start + 0.4], [0, 1], { ...clamp, easing: outExpo });
+  if (!ch) {
+    if (sc.mode === "signal") return <SignalScene b={b} t={t} />;
+    return <Pill t={t} at={b.start} top={700}>{sc.title}</Pill>;
+  }
+  const cs: number[][] = ch.candles;
+  const n = cs.length;
+  const hi = Math.max(...cs.map((c) => c[2])), lo = Math.min(...cs.map((c) => c[3]));
+  const pad = (hi - lo) * 0.08;
+  const yv = (v: number) => Y1 - ((v - (lo - pad)) / (hi - lo + 2 * pad)) * (Y1 - Y0);
+  const step = (X1 - X0) / n;
+  const res = b.parts.find((q) => q.sc.phase === "result");
+  const revealEnd = res ? res.start : b.start + 0.3 + Math.max(1.6, (b.end - b.start) * 0.62);
+  const reveal = interpolate(t, [b.start + 0.3, revealEnd], [0, n], { ...clamp, easing: Easing.inOut(Easing.quad) });
+  const shown = Math.floor(reveal);
+  const last = cs[Math.max(0, Math.min(n - 1, shown - 1))];
+  const ticks = [0, 0.25, 0.5, 0.75, 1].map((k) => lo - pad + k * (hi - lo + 2 * pad));
+  const idxOf = (sec: number) => { if (!sec) return -1; let k = cs.findIndex((c) => c[0] > sec) - 1; if (k < -1) k = n - 1; return Math.max(0, k === -2 ? n - 1 : k); };
+  const si = sc.mode === "signal" ? idxOf(isoToSec(sc.sigTs)) : -1;
+  const xi = sc.mode === "signal" ? idxOf(isoToSec(sc.exitTs)) : -1;
+  const done = shown >= n;
+  const col = sc.win ? GREEN : RED;
+  const stamp = sc.mode === "signal" ? interpolate(t, [revealEnd, revealEnd + 0.4], [0, 1], { ...clamp, easing: spring(8) }) : 0;
+  const card = sc.shot ? SHOTS[sc.shot] : undefined;
+  const inset = card ? interpolate(t, [b.start + 0.4, b.start + 0.8, revealEnd - 0.3, revealEnd], [0, 1, 1, 0], clamp) : 0;
+  const hiI = cs.findIndex((c) => c[2] === hi), loI = cs.findIndex((c) => c[3] === lo);
+  return (
+    <div style={{ opacity: p }}>
+      <div style={{ position: "absolute", left: 0, right: 0, top: 245, textAlign: "center" }}>
+        <span style={{ padding: "10px 28px", borderRadius: 999, border: `2px solid ${GOLD}`, color: GOLD, fontFamily: SANS, fontWeight: 800, fontSize: 30, letterSpacing: 2 }}>
+          {sc.mode === "signal" ? sc.title : `${sc.title} · ${new Date(ch.date + "T00:00:00").toLocaleDateString("en-GB", { day: "numeric", month: "short" }).toUpperCase()}`}
+        </span>
+      </div>
+      <div style={{ position: "absolute", left: 40, top: 320, width: 1000, height: 860, borderRadius: 30, background: "linear-gradient(180deg,#0e0b06,#050403)", border: `3px solid rgba(245,196,81,0.55)`, boxShadow: "0 20px 60px rgba(0,0,0,0.7)" }} />
+      <svg width={1080} height={1920} style={{ position: "absolute", left: 0, top: 0 }}>
+        {ticks.map((v, k) => (
+          <g key={k}>
+            <line x1={X0} x2={X1} y1={yv(v)} y2={yv(v)} stroke="rgba(255,241,201,0.10)" strokeWidth={2} />
+            <text x={X1 + 12} y={yv(v) + 9} fill={CREAM} opacity={0.7} fontFamily={SANS} fontSize={24} fontWeight={600}>{fmtP(v)}</text>
+          </g>
+        ))}
+        {[0, Math.floor(n / 3), Math.floor((2 * n) / 3), n - 1].map((k) => (
+          <text key={k} x={X0 + k * step} y={Y1 + 34} fill={CREAM} opacity={0.6} fontFamily={SANS} fontSize={22} textAnchor="middle">{IST(cs[k][0])}</text>
+        ))}
+        {si >= 0 && xi >= 0 && shown > si ? (
+          <rect x={X0 + si * step} y={Y0} width={Math.max(step, (Math.min(xi, shown - 1) - si + 1) * step)} height={Y1 - Y0} fill={shown > xi && done ? col : GOLD} opacity={0.10} />
+        ) : null}
+        {cs.slice(0, shown).map((c, k) => {
+          const up = c[4] >= c[1];
+          const x = X0 + k * step + step / 2;
+          const bw = Math.max(3, step * 0.62);
+          return (
+            <g key={k}>
+              <line x1={x} x2={x} y1={yv(c[2])} y2={yv(c[3])} stroke={up ? GREEN : RED} strokeWidth={Math.max(1.5, step * 0.12)} />
+              <rect x={x - bw / 2} y={yv(Math.max(c[1], c[4]))} width={bw} height={Math.max(2, Math.abs(yv(c[1]) - yv(c[4])))} fill={up ? GREEN : RED} rx={1.5} />
+            </g>
+          );
+        })}
+        {shown > 0 ? (
+          <g>
+            <line x1={X0} x2={X1} y1={yv(last[4])} y2={yv(last[4])} stroke={GOLD} strokeWidth={2} strokeDasharray="10 8" />
+            <rect x={X1 - 8} y={yv(last[4]) - 22} width={138} height={44} rx={8} fill={GOLD} />
+            <text x={X1 + 61} y={yv(last[4]) + 9} fill="#0a0a0a" fontFamily={SANS} fontSize={24} fontWeight={800} textAnchor="middle">{fmtP(last[4])}</text>
+          </g>
+        ) : null}
+        {sc.mode === "session" && done ? (
+          <g fontFamily={SANS} fontWeight={800} fontSize={26}>
+            <text x={X0 + hiI * step + step / 2} y={yv(hi) - 16} fill={GREEN} textAnchor="middle">H {fmtP(hi)}</text>
+            <text x={X0 + loI * step + step / 2} y={yv(lo) + 40} fill={RED} textAnchor="middle">L {fmtP(lo)}</text>
+          </g>
+        ) : null}
+        {si >= 0 && shown > si ? (
+          <g fontFamily={SANS} fontWeight={800}>
+            <line x1={X0 + si * step + step / 2} x2={X0 + si * step + step / 2} y1={Y0} y2={Y1} stroke={GOLD} strokeWidth={3} />
+            <rect x={X0 + si * step + step / 2 - 90} y={Y0 + 8} width={180} height={46} rx={10} fill={GOLD} />
+            <text x={X0 + si * step + step / 2} y={Y0 + 40} fill="#0a0a0a" fontSize={24} textAnchor="middle">SIGNAL {IST(cs[si][0])}</text>
+          </g>
+        ) : null}
+        {xi >= 0 && shown > xi ? (
+          <g fontFamily={SANS} fontWeight={800}>
+            <line x1={X0 + xi * step + step / 2} x2={X0 + xi * step + step / 2} y1={Y0 + 60} y2={Y1} stroke={col} strokeWidth={3} strokeDasharray="8 6" />
+            <rect x={X0 + xi * step + step / 2 - 70} y={Y1 - 56} width={140} height={46} rx={10} fill={col} />
+            <text x={X0 + xi * step + step / 2} y={Y1 - 24} fill="#fff" fontSize={24} textAnchor="middle">EXIT {IST(cs[xi][0])}</text>
+          </g>
+        ) : null}
+      </svg>
+      {stamp > 0 ? (
+        <div style={{ position: "absolute", left: 0, right: 0, top: 620, display: "flex", justifyContent: "center" }}>
+          <div style={{ scale: `${0.4 + 0.6 * stamp}`, rotate: "-7deg", padding: "20px 44px", borderRadius: 26, border: `8px solid ${col}`, backgroundColor: "rgba(5,5,5,0.9)", color: col, fontFamily: SANS, fontWeight: 800, fontSize: 66 }}>{sc.label}</div>
+        </div>
+      ) : null}
+      {sc.mode === "signal" ? (
+        <div style={{ position: "absolute", left: 50, right: 50, top: 1196, display: "flex", flexDirection: "column", alignItems: "center", gap: 8 }}>
+          <div style={{ color: "white", fontFamily: SANS, fontWeight: 800, fontSize: 40 }}><Gold size={40}>{sc.contract}</Gold></div>
+          <div style={{ padding: "10px 24px", borderRadius: 18, backgroundColor: "rgba(8,8,8,0.94)", border: `3px solid ${GOLD}`, fontFamily: SANS, fontWeight: 800, fontSize: 30, color: "white" }}><span style={{ color: GOLD }}>LOGIC · </span>{sc.logic}</div>
+        </div>
+      ) : null}
+      {inset > 0 && card ? (
+        <div style={{ position: "absolute", left: 90, top: 380, width: 470, borderRadius: 20, overflow: "hidden", border: `3px solid ${GOLD}`, boxShadow: "0 18px 50px rgba(0,0,0,0.8)", opacity: inset, transform: `translateY(${(1 - inset) * -30}px)` }}>
+          <Img src={staticFile("dash/" + sc.shot)} style={{ width: 470, height: (card.h * 470) / card.w, display: "block" }} />
+          <div style={{ position: "absolute", left: 0, right: 0, bottom: 0, padding: "4px 0", textAlign: "center", backgroundColor: "rgba(0,0,0,0.75)", color: GOLD, fontFamily: SANS, fontWeight: 800, fontSize: 18, letterSpacing: 2 }}>LIVE CARD · AI DASHBOARD</div>
+        </div>
+      ) : null}
+      <div style={{ position: "absolute", right: 70, top: 330, color: CREAM, opacity: 0.45, fontFamily: SANS, fontSize: 18 }}>Data: UpperCircuit AI Dashboard</div>
+    </div>
+  );
+};
+
 const CtaScene: React.FC<{ b: Block; t: number }> = ({ b, t }) => {
   const p = interpolate(t, [b.start, b.start + 0.5], [0, 1], { ...clamp, easing: spring(12) });
   const pulse = 1 + 0.03 * Math.sin((t - b.start) * Math.PI * 2);
@@ -309,6 +426,7 @@ export const DashShort: React.FC = () => {
         {k === "signal" ? <SignalScene b={b} t={t} /> : null}
         {k === "ahead" ? <AheadScene b={b} t={t} /> : null}
         {k === "cta" ? <CtaScene b={b} t={t} /> : null}
+        {k === "chart" ? <ChartScene b={b} t={t} /> : null}
       </div>
       <Subs t={t} />
       <div style={{ position: "absolute", left: 60, right: 60, top: 1622, textAlign: "center", color: CREAM, opacity: 0.6, fontFamily: SANS, fontSize: 21, fontWeight: 500, lineHeight: 1.3 }}>
