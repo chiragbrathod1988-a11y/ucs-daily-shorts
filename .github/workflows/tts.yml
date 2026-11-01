@@ -8,7 +8,10 @@ on:
     inputs:
       date:
         description: "Trade date YYYY-MM-DD"
-        required: true
+        required: false
+      lines:
+        description: "Or: path to a lines JSON for a custom voice-over (e.g. edits/x/lines.json)"
+        required: false
       voice:
         description: "edge-tts voice"
         default: "hi-IN-SwaraNeural"
@@ -31,6 +34,11 @@ jobs:
         env:
           UCS_EDGE_VOICE: ${{ github.event.inputs.voice || 'hi-IN-SwaraNeural' }}
         run: |
+          if [ -n "${{ github.event.inputs.lines }}" ]; then
+            python3 scripts/tts_edge.py "${{ github.event.inputs.lines }}"
+            echo "DATES=$(python3 -c 'import json,sys;print(json.load(open(sys.argv[1]))["name"])' "${{ github.event.inputs.lines }}")" >> $GITHUB_ENV
+            exit 0
+          fi
           if [ -n "${{ github.event.inputs.date }}" ]; then DATES="${{ github.event.inputs.date }}";
           else DATES=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} -- 'data/*.json' 2>/dev/null | sed -n 's#data/\(.*\)\.json#\1#p'); fi
           [ -n "$DATES" ] || DATES=$(ls data/*.json | tail -1 | sed 's#data/\(.*\)\.json#\1#')

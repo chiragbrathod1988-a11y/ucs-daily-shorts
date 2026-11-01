@@ -13,11 +13,15 @@ RATE = os.environ.get("UCS_EDGE_RATE", "+4%")
 PITCH = os.environ.get("UCS_EDGE_PITCH", "-2Hz")
 
 src = sys.argv[1]
-D = json.load(open(src))["tradeDate"]
+spec = json.load(open(src))
+if "lines" in spec:            # free-form voice-over: {"name": ..., "lines": [{tag, text}]}  -> tts/<name>/
+    D, lines = spec["name"], spec["lines"]
+else:                          # daily Short: data/<date>.json -> tts/<date>/
+    D = spec["tradeDate"]
+    lines = json.loads(subprocess.run([sys.executable, "scripts/build_audio.py", src, "--dump-script"],
+                                      check=True, capture_output=True, text=True).stdout)
 out = os.path.join("tts", D)
 os.makedirs(out, exist_ok=True)
-lines = json.loads(subprocess.run([sys.executable, "scripts/build_audio.py", src, "--dump-script"],
-                                  check=True, capture_output=True, text=True).stdout)
 
 
 async def main():
