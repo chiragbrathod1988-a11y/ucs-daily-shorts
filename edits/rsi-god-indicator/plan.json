@@ -1,0 +1,7 @@
+{"name": "rsi-god-indicator", "dashUrl": "app.uppercircuitstocks.com", "telegram": "https://t.me/uppercircuitstocksbychiragrathod",
+ "inserts": [
+  {"kind": "intro", "at": 52.7, "lines": ["a1", "a2", "a3"]},
+  {"kind": "screener", "at": 681.9, "lines": ["b1", "b2"]},
+  {"kind": "signals", "at": 1243.7, "lines": ["c1", "c2", "c3"]},
+  {"kind": "end", "at": "end", "lines": ["d1", "d2"], "tail": 2.5}
+ ]}
