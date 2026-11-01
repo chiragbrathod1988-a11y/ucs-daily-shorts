@@ -27,9 +27,10 @@ https://t.me/uppercircuitstocksbychiragrathod"""
 DIS = "⚠️ For information and education only. Not investment advice. Signals shown are selected examples from the dashboard, not recommendations; past results do not guarantee future results. Market risks apply — do your own research."
 
 if d["slot"] == "morning":
-    title = f"9:15 Se Pehle Ye Screen Dekho! 📊 Nifty + Sectors Ek Jagah | {feat} | {dm} #shorts"
+    title = f"9:15 Se Pehle Ye Screen Dekho! 📊 {feat}"
     sec = f"💪 Strongest: {m['strong'][0]}  |  🩸 Weakest: {m['weak'][0]}"
-    body = f"""📊 Market khulne se pehle — Nifty, Bank Nifty, VIX, breadth aur sectors, sab EK dashboard pe!
+    body = f"""Stock market analysis before 9:15 — Nifty, sectors and {feat.lower()} on one AI trading dashboard.
+📊 Market khulne se pehle — Nifty, Bank Nifty, VIX, breadth aur sectors, sab EK dashboard pe!
 
 Last session: Nifty {m['nifty']['ltp']:,.0f} · Bank Nifty {m['bankNifty']['ltp']:,.0f} · VIX {m['vix']['ltp']:.2f}
 Breadth: {m['breadth']['mood_label']} ({m['breadth']['advancing']:,} ▲ / {m['breadth']['declining']:,} ▼)
@@ -38,32 +39,32 @@ Breadth: {m['breadth']['mood_label']} ({m['breadth']['advancing']:,} ▲ / {m['b
 ⭐ Feature of the day: {feat}
 
 👇 Comment karo — aap market se pehle kya check karte ho?"""
-    tags = ["ai dashboard", "nifty today", "sector heat map", "stock market india", "market breadth", "trading tools", "nifty bank nifty", "uppercircuitstocks", "chirag rathod", feat.lower()]
-    hashtags = "#nifty #stockmarketindia #trading #aidashboard #shorts"
+    tags = ["stock market", "share market", "trading for beginners", "ai trading", "ai dashboard", "nifty today", "sector heat map", "stock market india", "market breadth", "trading tools", "nifty bank nifty", "uppercircuitstocks", "chirag rathod", feat.lower()]
+    hashtags = "#stockmarket #trading #nifty"
 elif d["mode"] == "spotlight":
-    title = f"Ye Feature Traders Ko Aage Rakhta Hai! 🚀 {feat} | AI Dashboard #shorts"
-    body = f"""🚀 AI Dashboard Spotlight: {feat}
+    title = f"{feat} — Traders Ka Secret Tool 🚀"
+    body = f"""{feat} explained — AI trading tool for Indian stock market traders.
+🚀 AI Dashboard Spotlight: {feat}
 
 Har din ek naya feature — dekho kaise ye aapko baaki traders se aage rakhta hai.
 
 👇 Comment karo — kaunsa feature aapko sabse useful laga?"""
-    tags = ["ai dashboard", "trading tools", "stock market india", "options trading", "uppercircuitstocks", "chirag rathod", feat.lower()]
-    hashtags = "#stockmarketindia #trading #aidashboard #shorts"
+    tags = ["trading tools", "best trading app", "ai trading", "trading for beginners", "stock market", "ai dashboard", "stock market india", "options trading", "uppercircuitstocks", "chirag rathod", feat.lower()]
+    hashtags = "#trading #stockmarket #tradingtools"
 else:
     picks = m.get("picks", [])
     names = ", ".join(p["name"] for p in picks)
-    title = f"Aaj AI Dashboard Ne Kya Pakda? ✅ {len([p for p in picks if p['outcome']!='SL'])} Targets + 1 SL | {dm} #shorts"
-    if not any(p["outcome"] == "SL" for p in picks):
-        title = f"Aaj AI Dashboard Ne Kya Pakda? ✅ Signal Review | {dm} #shorts"
-    body = f"""⚡ Aaj ke selected AI Dashboard signals — logic ke saath!
+    title = f"AI Dashboard Ne Aaj Kya Pakda? ✅ {dm}"
+    body = f"""AI trading signals review {dm} — stock options intraday setups with logic.
+⚡ Aaj ke selected AI Dashboard signals — logic ke saath!
 📌 {names}
 
 ✅ Target hit · ❌ SL hit — har signal kaam nahi karta, isliye SL zaroori hai.
 🔔 Signal aate hi phone pe alert + one-tap order (Fyers / Zerodha / Dhan).
 
 👇 Comment karo — aap kaunsa setup trade karte ho?"""
-    tags = ["ai dashboard", "option signals", "intraday trap", "star setup", "stock options", "stock market india", "intraday trading", "uppercircuitstocks", "chirag rathod"]
-    hashtags = "#optionstrading #intradaytrading #stockmarketindia #aidashboard #shorts"
+    tags = ["ai trading", "option trading", "intraday trading for beginners", "trading strategy", "ai dashboard", "option signals", "intraday trap", "star setup", "stock options", "stock market india", "intraday trading", "uppercircuitstocks", "chirag rathod"]
+    hashtags = "#optionstrading #intradaytrading #trading"
 if d["mode"] != "evening":
     DIS = "⚠️ For information and education only. Not investment advice. Market risks apply — do your own research."
 if len(title) > 100:
@@ -90,6 +91,7 @@ caption = f"""{body}
 
 {DIS}
 
-{hashtags.replace(' #shorts', ' #uppercircuitstocks')}"""
-assert len(title) <= 100 and len(description) <= 5000 and len(caption) <= 2200
+{hashtags} #stockmarketindia #uppercircuitstocks"""
+assert len(title) <= 60, title
+assert len(description) <= 5000 and len(caption) <= 2200
 print(json.dumps({"title": title, "description": description, "instagram_caption": caption, "tags": tags}, ensure_ascii=False, indent=1))

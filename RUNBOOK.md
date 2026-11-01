@@ -1,5 +1,7 @@
 # Daily Nifty Levels Short — runbook
 
+> Titles/descriptions/hashtags follow GROWTH.md (short keyword-first titles, exactly 3 hashtags, 15–20 tags).
+
 Fully automatic. Chirag does not review or approve; never ask him to. He is **not** a SEBI-registered
 Research Analyst: never call him one or add RA wording. All content is educational: calculated pivot
 levels, never buy/sell calls, targets or guarantees.

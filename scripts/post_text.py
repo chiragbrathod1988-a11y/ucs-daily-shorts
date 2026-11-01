@@ -17,14 +17,9 @@ weekday = td.strftime("%A")
 up = d["up"]
 bear_first = d["bearFirst"]
 
-# Title: a question built from today's real levels (hook), date, keywords. YouTube max 100 chars.
-if bear_first:
-    hook = f"Nifty {f(L['S1'])} Todega ya {f(L['R1'])} Wapas? 🔥"
-else:
-    hook = f"Nifty {f(L['R1'])} Todega ya {f(L['S1'])} Aayega? 🔥"
-title = f"{hook} Nifty Levels {day_mon} | Support & Resistance #shorts"
-if len(title) > 100:
-    title = f"{hook} Nifty Levels {day_mon} #shorts"
+# Title (GROWTH.md): short, searched keyword first, one curiosity hook, one emoji, no hashtag clutter (<= 60 chars).
+a, b = (L['S1'], L['R1']) if bear_first else (L['R1'], L['S1'])
+title = f"Nifty Prediction {day_mon} 🔥 {f(a)} Todega ya {f(b)}?"
 
 move = f"{'+' if up else '−'}{abs(L['change']):,.2f} ({'+' if up else '−'}{abs(L['changePct'])}%)"
 bull = f"📈 Bullish: {f(L['CPRhi'])} ke upar tike → {f(L['R1'])} test ho sakta hai"
@@ -57,7 +52,8 @@ https://app.uppercircuitstocks.com"""
 DISCLAIMER = ("⚠️ For educational purposes only. Not investment advice. Levels are calculated pivot points, "
               "not buy/sell recommendations. Market risks apply — do your own research.")
 
-body = f"""🔥 Aaj Nifty kya karega? Market khulne se pehle ye levels SAVE kar lo! 📌
+body = f"""Nifty prediction for today — support & resistance levels {full}.
+🔥 Aaj Nifty kya karega? Market khulne se pehle ye levels SAVE kar lo! 📌
 
 📊 NIFTY 50 LEVELS — {full} ({weekday})
 Previous close: {L['close']:,.2f} {move}
@@ -84,7 +80,7 @@ UpperCircuitStocks by Chirag Rathod
 
 {DISCLAIMER}
 
-#nifty #nifty50 #niftylevels #stockmarketindia #intradaytrading #shorts"""
+#nifty #niftyprediction #stockmarket"""
 
 instagram_caption = f"""{body}
 👉 Save karo & follow @uppercircuitstocks — roz subah levels!
@@ -97,10 +93,12 @@ instagram_caption = f"""{body}
 
 #nifty50 #stockmarketindia #intradaytrading #niftylevels #uppercircuitstocks"""
 
-tags = ["nifty levels today", "nifty support and resistance", "nifty prediction", "nifty 50", "nifty analysis",
-        "pivot points", "cpr", "stock market india", "intraday trading", "uppercircuitstocks", "chirag rathod"]
+tags = ["nifty prediction", "nifty prediction for tomorrow", "nifty levels today", "nifty support and resistance",
+        "nifty 50", "nifty analysis", "nifty kal kya karega", "nifty tomorrow", "stock market", "share market",
+        "intraday trading", "trading for beginners", "pivot points", "cpr trading", "stock market india",
+        "uppercircuitstocks", "chirag rathod"]
 
-assert len(title) <= 100, len(title)
+assert len(title) <= 60, len(title)
 assert len(description) <= 5000, len(description)
 assert len(instagram_caption) <= 2200, len(instagram_caption)
 print(json.dumps({"title": title, "description": description, "instagram_caption": instagram_caption, "tags": tags},

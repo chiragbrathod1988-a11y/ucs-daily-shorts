@@ -1,5 +1,7 @@
 # Daily AI Dashboard videos — runbook (morning + evening)
 
+> Titles/descriptions/hashtags follow GROWTH.md (short keyword-first titles, exactly 3 hashtags, 15–20 tags).
+
 Fully automatic; never ask Chirag to approve. He is **not** a SEBI-registered RA — never say so. Content is
 information/education only. Never speak or write profit / ₹ amounts. Voice: ElevenLabs **Matilda** via vidIQ (Chirag's choice — openly an AI voice), Hindi/Hinglish script, English subtitles.
 `D` = today (IST, YYYY-MM-DD), `S` = `morning`, `evening` or `eveningyt`.
