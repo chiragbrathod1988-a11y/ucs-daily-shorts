@@ -1,0 +1,30 @@
+a1
+  script: एक छोटा सा break। Upper Circuit Stocks का AI Dashboard देखिए।
+  heard:  एक चोटा सा ब्रेक अपर सर्किट स्टोक्स का A.I. dashboard देखिये
+a2
+  script: यहाँ मिलेंगे Stock Screeners, sector Heat Map, Nifty Overview, और detailed Stock Research।
+  heard:  यहां मिलेंगे स्टोक स्क्रीनर्स, सेक्टर हीट माप, निप्टी अवर्व्य। अर दीटेल स्टोक रिसेच.
+a3
+  script: Link description में है। अब चलिए video पे।
+  heard:  लिंक दिस्क्रिप्षन में है, अप चली ये विट्यो पे.
+b1
+  script: Chart examples से पहले, ऐसे setups ढूँढने के लिए AI Dashboard के Stock Screeners use करो।
+  heard:  चाड्यत इजाम्पल से पहले एसे सेटटफ्स दूँडने के लिए AI-DAASHBOARD के स्टोक स्टोक स्क्रीनाज यूज करू.
+b2
+  script: Breakout, Volume, fifty two week high, stocks seconds में filter हो जाते हैं, और Heat Map पे पूरा sector view मिलता है।
+  heard:  ब्रेकाउत, वोल्युम, फिफ्टी तु वीक हाई, स्टोक सेकिन्स में फिल्टर हो जाते है, और हीट माप पे पुरा सेक्तर व्यु मिलता है.
+c1
+  script: AI Dashboard पे Options और Futures के signals, scanner rules के हिसाब से generate होते हैं।
+  heard:  AI dashboard pe options aur futures ke signals, scanner rules ke hisaab se generate hote hain.
+c2
+  script: और आप इसे अपने broker account से connect भी कर सकते हो।
+  heard:  और आप इसे अपने ब्रोकर अखाँन से कनेक्त भी कर सकते हो.
+c3
+  script: ये सब educational purpose के लिए है, investment advice नहीं।
+  heard:  ये सब एजुकेशनल पोपस के लिए है, इन्वेस्मेंट अद्वाइस नहीं
+d1
+  script: AI Dashboard try करो, link description में है। Daily updates के लिए हमारा Telegram channel join करो।
+  heard:  A.I. Dashboard try karu, link description me hai. Daily updates ke liye, hamara telegram channel join karu.
+d2
+  script: Video अच्छा लगा तो like, share और subscribe ज़रूर करो।
+  heard:  विट्व अज्टा लगादो लएक, चेर और सबस्क्र्ट्त ज्रूर करो.
