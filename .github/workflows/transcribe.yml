@@ -3,7 +3,7 @@ name: Transcribe audio (faster-whisper)
 on:
   push:
     branches: [main]
-    paths: ["transcribe/*.mp3"]
+    paths: ["transcribe/*.mp3", ".github/workflows/transcribe.yml"]
 permissions:
   contents: write
 concurrency: transcribe
@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
-      - run: pip install -q faster-whisper
+      - run: pip install -q "faster-whisper" "av<15"
       - run: |
           for f in transcribe/*.mp3; do
             t="${f%.mp3}.txt"; [ -f "$t" ] && continue
