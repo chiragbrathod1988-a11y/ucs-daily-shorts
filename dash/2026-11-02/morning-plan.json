@@ -1,0 +1,224 @@
+{
+ "date": "2026-11-02",
+ "slot": "morning",
+ "mode": "morning",
+ "feature": "Sector Heat Map",
+ "lines": [
+  {
+   "tag": "hook",
+   "text": "Market खुलने से पहले, ये एक screen देख लो, बाकी traders से आगे रहोगे।",
+   "en": "Check this ONE screen before 9:15 — stay ahead of other traders."
+  },
+  {
+   "tag": "nifty",
+   "text": "पिछले session में Nifty twenty three thousand fifty three पे close हुआ, और Bank Nifty fifty four thousand six hundred eighty seven पे।",
+   "en": "Last session: Nifty closed at 23,053, Bank Nifty at 54,687."
+  },
+  {
+   "tag": "breadth",
+   "text": "Market breadth रहा Very Bearish, four hundred forty nine stocks ऊपर, और one thousand six hundred eighty two नीचे।",
+   "en": "Breadth: Very Bearish — 449 up, 1,682 down."
+  },
+  {
+   "tag": "sectors",
+   "text": "सबसे strong sector रहा Utilities, और सबसे weak रहा Financial Services।",
+   "en": "Strongest: Utilities (+0.18%) · Weakest: Financial Services (-1.79%)."
+  },
+  {
+   "tag": "ahead",
+   "text": "नौ पंद्रह के बाद यही सब live update होता है, तो आप market के साथ नहीं, market से आगे चलते हो।",
+   "en": "After 9:15 it all updates live — you move ahead of the market, not behind it."
+  },
+  {
+   "tag": "feat1",
+   "text": "आज का feature: Heat Map में एक नज़र में दिखता है, कौन सा sector strong है और कौन सा weak।",
+   "en": "Feature of the day — Heat Map: strong and weak sectors at a glance."
+  },
+  {
+   "tag": "feat2",
+   "text": "Sector rotation, बाकी traders से पहले पकड़ो।",
+   "en": "Spot sector rotation before others do."
+  },
+  {
+   "tag": "cta",
+   "text": "बाकी traders से आगे रहना है? AI Dashboard का link description में है। Follow करो, Upper Circuit Stocks।",
+   "en": "Want to stay ahead? AI Dashboard link in the description. Follow UpperCircuitStocks!"
+  }
+ ],
+ "scenes": [
+  {
+   "kind": "hook",
+   "title": "9:15 SE PEHLE",
+   "sub": "Nifty + Sectors · ek screen",
+   "tags": [
+    "hook"
+   ]
+  },
+  {
+   "kind": "chart",
+   "chart": "nifty",
+   "title": "NIFTY FUTURES · 5 MIN",
+   "mode": "session",
+   "stats": [
+    [
+     "NIFTY 50",
+     "23,053",
+     "+0.51%"
+    ],
+    [
+     "BANK NIFTY",
+     "54,687",
+     "-0.41%"
+    ],
+    [
+     "INDIA VIX",
+     "15.30",
+     "+1.19%"
+    ]
+   ],
+   "tags": [
+    "nifty"
+   ]
+  },
+  {
+   "kind": "screen",
+   "shot": "snapshot.png",
+   "scroll": [
+    0.12,
+    0.26
+   ],
+   "badge": [
+    "VERY BEARISH",
+    "449 ▲  ·  1,682 ▼"
+   ],
+   "tags": [
+    "breadth"
+   ]
+  },
+  {
+   "kind": "screen",
+   "shot": "heatmap.png",
+   "scroll": [
+    0.1,
+    0.35
+   ],
+   "sectors": [
+    [
+     "Utilities",
+     "+0.18%"
+    ],
+    [
+     "Financial Services",
+     "-1.79%"
+    ]
+   ],
+   "tags": [
+    "sectors"
+   ]
+  },
+  {
+   "kind": "clipscreen",
+   "clip": "03.mp4",
+   "clipStart": 6,
+   "label": "LIVE AFTER 9:15",
+   "tags": [
+    "ahead"
+   ]
+  },
+  {
+   "kind": "feature",
+   "shot": "feature.png",
+   "name": "Sector Heat Map",
+   "scroll": [
+    0.0,
+    0.25
+   ],
+   "clip": "03.mp4",
+   "clipStart": 3,
+   "tags": [
+    "feat1"
+   ]
+  },
+  {
+   "kind": "feature",
+   "shot": "feature.png",
+   "name": "Sector Heat Map",
+   "scroll": [
+    0.25,
+    0.45
+   ],
+   "clip": "03.mp4",
+   "clipStart": 3,
+   "tags": [
+    "feat2"
+   ]
+  },
+  {
+   "kind": "cta",
+   "tags": [
+    "cta"
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "name": "snapshot",
+   "url": "https://app.uppercircuitstocks.com/snapshot.html",
+   "kind": "page",
+   "match": [],
+   "clip": null
+  },
+  {
+   "name": "heatmap",
+   "url": "https://app.uppercircuitstocks.com/research.html?p=heatmap",
+   "kind": "page",
+   "match": [],
+   "clip": null
+  },
+  {
+   "name": "feature",
+   "url": "https://app.uppercircuitstocks.com/research.html?p=heatmap",
+   "kind": "page",
+   "match": [],
+   "clip": null
+  }
+ ],
+ "charts": [
+  {
+   "key": "nifty",
+   "symbol": "NIFTYFUT",
+   "when": "prev"
+  }
+ ],
+ "meta": {
+  "nifty": {
+   "ltp": 23053.1,
+   "chp": 0.51,
+   "ch": 116.35
+  },
+  "bankNifty": {
+   "ltp": 54686.95,
+   "chp": -0.41,
+   "ch": -222.7
+  },
+  "vix": {
+   "ltp": 15.3,
+   "chp": 1.19
+  },
+  "breadth": {
+   "advancing": 449,
+   "declining": 1682,
+   "mood_label": "Very Bearish"
+  },
+  "strong": [
+   "Utilities",
+   "0.18"
+  ],
+  "weak": [
+   "Financial Services",
+   "-1.79"
+  ],
+  "feature": "Sector Heat Map",
+  "marketDate": "2026-10-30"
+ }
+}
