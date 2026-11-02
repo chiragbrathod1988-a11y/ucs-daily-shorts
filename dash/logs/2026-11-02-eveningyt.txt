@@ -1,0 +1,4 @@
+saved dash/2026-11-02/eveningyt-raw.json
+{"mode": "spotlight", "lines": 5, "shots": ["feature"], "meta": {"poolSize": 53, "winners": 3, "slHits": 12}}
+ok feature
+OK 2026-11-02:eveningyt
