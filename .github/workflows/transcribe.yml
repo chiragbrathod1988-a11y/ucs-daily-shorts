@@ -15,15 +15,16 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
-      - run: pip install -q "faster-whisper==1.1.1" "av==14.4.0"
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg && pip install -q faster-whisper numpy
       - run: |
           for f in transcribe/*.mp3; do
             t="${f%.mp3}.txt"; [ -f "$t" ] && continue
             python3 - "$f" "$t" <<'PY'
-          import sys
+          import sys, subprocess, numpy as np
           from faster_whisper import WhisperModel
+          pcm = subprocess.run(["ffmpeg", "-v", "error", "-i", sys.argv[1], "-f", "f32le", "-ac", "1", "-ar", "16000", "-"], check=True, capture_output=True).stdout
           m = WhisperModel("medium", compute_type="int8")
-          segs, _ = m.transcribe(sys.argv[1], language="hi", beam_size=5, vad_filter=True)
+          segs, _ = m.transcribe(np.frombuffer(pcm, np.float32), language="hi", beam_size=5)
           with open(sys.argv[2], "w") as o:
               for s in segs:
                   o.write(f"[{s.start:6.1f}-{s.end:6.1f}] {s.text.strip()}\n")
