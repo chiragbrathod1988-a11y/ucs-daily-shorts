@@ -1,0 +1,37 @@
+name: Transcribe audio (faster-whisper)
+# Push transcribe/<name>.mp3 → transcribe/<name>.txt (Hindi, word timestamps per segment)
+on:
+  push:
+    branches: [main]
+    paths: ["transcribe/*.mp3"]
+permissions:
+  contents: write
+concurrency: transcribe
+jobs:
+  stt:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -q faster-whisper
+      - run: |
+          for f in transcribe/*.mp3; do
+            t="${f%.mp3}.txt"; [ -f "$t" ] && continue
+            python3 - "$f" "$t" <<'PY'
+          import sys
+          from faster_whisper import WhisperModel
+          m = WhisperModel("medium", compute_type="int8")
+          segs, _ = m.transcribe(sys.argv[1], language="hi", beam_size=5, vad_filter=True)
+          with open(sys.argv[2], "w") as o:
+              for s in segs:
+                  o.write(f"[{s.start:6.1f}-{s.end:6.1f}] {s.text.strip()}\n")
+          PY
+          done
+      - run: |
+          git config user.name "ucs-stt-bot"; git config user.email "actions@users.noreply.github.com"
+          git add transcribe/*.txt
+          git diff --cached --quiet && exit 0
+          git commit -m "Transcript"
+          for i in 1 2 3; do git pull --rebase -q origin main && git push -q origin HEAD:main && break; sleep 5; done
