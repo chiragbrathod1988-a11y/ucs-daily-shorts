@@ -1,0 +1,7 @@
+saved dash/2026-11-02/morning-raw.json
+{"mode": "morning", "lines": 8, "shots": ["snapshot", "heatmap", "feature"], "meta": {"nifty": {"ltp": 0, "chp": 0, "ch": 0}, "bankNifty": {"ltp": 0, "chp": 0, "ch": 0}, "vix": {"ltp": 0, "chp": 0}, "breadth": {"advancing": 449, "declining": 1682, "mood_label": "Very Bearish"}, "strong": ["Utilities", "0.18"], "weak": ["Financial Services", "-1.79"], "feature": "Sector Heat Map", "marketDate": "2026-10-30"}}
+ok snapshot
+ok heatmap
+ok feature
+chart miss nifty NIFTYFUT
+OK 2026-11-02:morning
