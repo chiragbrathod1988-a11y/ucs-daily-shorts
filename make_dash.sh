@@ -2,7 +2,7 @@
 # Build a dashboard video: ./make_dash.sh YYYY-MM-DD morning|evening  ->  videos/dash/D-slot.mp4 (+ thumbnail, check frames)
 set -e
 D=$1; S=$2
-CH=$(ls -d /opt/pw-browsers/chromium_headless_shell-*/chrome-linux/headless_shell 2>/dev/null | head -1)
+CH=$(ls -d /opt/pw-browsers/chromium_headless_shell-*/chrome-linux/headless_shell /opt/pw-browsers/chromium_headless_shell-*/chrome-headless-shell-linux64/chrome-headless-shell 2>/dev/null | head -1)
 B=${CH:+--browser-executable=$CH}
 python3 scripts/dash/build.py $D $S
 mkdir -p out videos/dash out/check-$S
