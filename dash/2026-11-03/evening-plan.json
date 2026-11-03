@@ -1,0 +1,412 @@
+{
+ "date": "2026-11-03",
+ "slot": "evening",
+ "mode": "evening",
+ "feature": "OI Spikes",
+ "lines": [
+  {
+   "tag": "hook",
+   "text": "आज AI Dashboard ने क्या पकड़ा? कुछ selected signals देखो।",
+   "en": "What did the AI Dashboard catch today? A few selected signals."
+  },
+  {
+   "tag": "s1a",
+   "text": "Max Healthcare Institute Call, पंद्रह minute पे Bear Trap, breakdown fail हुआ।",
+   "en": "MAXHEALTH 890 CE — Bear Trap on 15-min — breakdown failed."
+  },
+  {
+   "tag": "s1b",
+   "text": "Trailing stop से move पकड़ा।",
+   "en": "Move captured with a trailing stop."
+  },
+  {
+   "tag": "s2a",
+   "text": "Nifty Put, gap के बाद candle और volume में mismatch।",
+   "en": "NIFTY 23,650 PE — Gap + candle/volume mismatch."
+  },
+  {
+   "tag": "s2b",
+   "text": "Target two तक गया।",
+   "en": "Target 2 hit."
+  },
+  {
+   "tag": "s3a",
+   "text": "Multi Commodity Exchange of India Call, पाँच दिन और पाँच घंटे का high break और price बीस SMA के ऊपर।",
+   "en": "MCX 3,450 CE — 5-day & 5-hour high break + price above 20 SMA."
+  },
+  {
+   "tag": "s3b",
+   "text": "Target two तक गया।",
+   "en": "Target 2 hit."
+  },
+  {
+   "tag": "s4a",
+   "text": "Prestige Estates Projects Put, पंद्रह minute पे Bull Trap, breakout fail हुआ।",
+   "en": "PRESTIGE 1,480 PE — Bull Trap on 15-min — breakout failed."
+  },
+  {
+   "tag": "s4b",
+   "text": "ये वाला स्टॉप लॉस हिट हुआ, इसीलिए स्टॉप लॉस हमेशा ज़रूरी है।",
+   "en": "This one hit SL — that's why SL always matters."
+  },
+  {
+   "tag": "ahead",
+   "text": "Signal आते ही phone पे alert आता है, और एक tap में अपने broker पे order, Fyers, Zerodha या Dhan।",
+   "en": "Instant phone alert the moment a signal appears — one tap to your broker: Fyers, Zerodha or Dhan."
+  },
+  {
+   "tag": "cta",
+   "text": "बाकी traders से आगे रहना है? AI Dashboard का link description में है। Follow करो, Upper Circuit Stocks।",
+   "en": "Want to stay ahead? AI Dashboard link in the description. Follow UpperCircuitStocks!"
+  }
+ ],
+ "scenes": [
+  {
+   "kind": "hook",
+   "title": "AAJ KE SIGNALS",
+   "sub": "Selected signals · 3 Nov",
+   "chips": [
+    "✅",
+    "✅",
+    "✅",
+    "❌"
+   ],
+   "tags": [
+    "hook"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig1.png",
+   "n": 1,
+   "name": "MAXHEALTH",
+   "contract": "MAXHEALTH 890 CE",
+   "time": "09:45",
+   "logic": "Bear Trap on 15-min — breakdown failed",
+   "label": "TRAILING EXIT ✅",
+   "win": true,
+   "scanner": "Intraday Trap",
+   "entry": "24.3",
+   "sl": "872.8",
+   "tgt": [],
+   "chart": "sig1",
+   "mode": "signal",
+   "title": "SIGNAL 1 · INTRADAY TRAP · 09:45",
+   "sigTs": "2026-11-03T04:15:00.000Z",
+   "exitTs": "2026-11-03T08:44:04.821Z",
+   "side": "CE",
+   "tags": [
+    "s1a"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig1.png",
+   "n": 1,
+   "name": "MAXHEALTH",
+   "contract": "MAXHEALTH 890 CE",
+   "time": "09:45",
+   "logic": "Bear Trap on 15-min — breakdown failed",
+   "label": "TRAILING EXIT ✅",
+   "win": true,
+   "scanner": "Intraday Trap",
+   "entry": "24.3",
+   "sl": "872.8",
+   "tgt": [],
+   "chart": "sig1",
+   "mode": "signal",
+   "title": "SIGNAL 1 · INTRADAY TRAP · 09:45",
+   "sigTs": "2026-11-03T04:15:00.000Z",
+   "exitTs": "2026-11-03T08:44:04.821Z",
+   "side": "CE",
+   "phase": "result",
+   "tags": [
+    "s1b"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig2.png",
+   "n": 2,
+   "name": "NIFTY",
+   "contract": "NIFTY 23,650 PE",
+   "time": "11:03",
+   "logic": "Gap + candle/volume mismatch",
+   "label": "TARGET 2 HIT ✅",
+   "win": true,
+   "scanner": "Index Options",
+   "entry": "54.7",
+   "sl": "23707",
+   "tgt": [
+    "23686.699999999997",
+    "23669.799999999996"
+   ],
+   "chart": "sig2",
+   "mode": "signal",
+   "title": "SIGNAL 2 · INDEX OPTIONS · 11:03",
+   "sigTs": "2026-11-03T05:33:04.632Z",
+   "exitTs": "2026-11-03T05:45:02.650Z",
+   "side": "PE",
+   "tags": [
+    "s2a"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig2.png",
+   "n": 2,
+   "name": "NIFTY",
+   "contract": "NIFTY 23,650 PE",
+   "time": "11:03",
+   "logic": "Gap + candle/volume mismatch",
+   "label": "TARGET 2 HIT ✅",
+   "win": true,
+   "scanner": "Index Options",
+   "entry": "54.7",
+   "sl": "23707",
+   "tgt": [
+    "23686.699999999997",
+    "23669.799999999996"
+   ],
+   "chart": "sig2",
+   "mode": "signal",
+   "title": "SIGNAL 2 · INDEX OPTIONS · 11:03",
+   "sigTs": "2026-11-03T05:33:04.632Z",
+   "exitTs": "2026-11-03T05:45:02.650Z",
+   "side": "PE",
+   "phase": "result",
+   "tags": [
+    "s2b"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig3.png",
+   "n": 3,
+   "name": "MCX",
+   "contract": "MCX 3,450 CE",
+   "time": "12:32",
+   "logic": "5-day & 5-hour high break + price above 20 SMA",
+   "label": "TARGET 2 HIT ✅",
+   "win": true,
+   "scanner": "Star Setup",
+   "entry": "118.35",
+   "sl": "149.98",
+   "tgt": [
+    "136.13",
+    "153.91"
+   ],
+   "chart": "sig3",
+   "mode": "signal",
+   "title": "SIGNAL 3 · STAR SETUP · 12:32",
+   "sigTs": "2026-11-03T07:02:04.604Z",
+   "exitTs": "2026-11-03T07:27:00.251Z",
+   "side": "CE",
+   "tags": [
+    "s3a"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig3.png",
+   "n": 3,
+   "name": "MCX",
+   "contract": "MCX 3,450 CE",
+   "time": "12:32",
+   "logic": "5-day & 5-hour high break + price above 20 SMA",
+   "label": "TARGET 2 HIT ✅",
+   "win": true,
+   "scanner": "Star Setup",
+   "entry": "118.35",
+   "sl": "149.98",
+   "tgt": [
+    "136.13",
+    "153.91"
+   ],
+   "chart": "sig3",
+   "mode": "signal",
+   "title": "SIGNAL 3 · STAR SETUP · 12:32",
+   "sigTs": "2026-11-03T07:02:04.604Z",
+   "exitTs": "2026-11-03T07:27:00.251Z",
+   "side": "CE",
+   "phase": "result",
+   "tags": [
+    "s3b"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig4.png",
+   "n": 4,
+   "name": "PRESTIGE",
+   "contract": "PRESTIGE 1,480 PE",
+   "time": "09:45",
+   "logic": "Bull Trap on 15-min — breakout failed",
+   "label": "SL HIT ❌",
+   "win": false,
+   "scanner": "Intraday Trap",
+   "entry": "44.8",
+   "sl": "1492.8",
+   "tgt": [],
+   "chart": "sig4",
+   "mode": "signal",
+   "title": "SIGNAL 4 · INTRADAY TRAP · 09:45",
+   "sigTs": "2026-11-03T04:15:00.000Z",
+   "exitTs": "2026-11-03T04:45:00.000Z",
+   "side": "PE",
+   "tags": [
+    "s4a"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig4.png",
+   "n": 4,
+   "name": "PRESTIGE",
+   "contract": "PRESTIGE 1,480 PE",
+   "time": "09:45",
+   "logic": "Bull Trap on 15-min — breakout failed",
+   "label": "SL HIT ❌",
+   "win": false,
+   "scanner": "Intraday Trap",
+   "entry": "44.8",
+   "sl": "1492.8",
+   "tgt": [],
+   "chart": "sig4",
+   "mode": "signal",
+   "title": "SIGNAL 4 · INTRADAY TRAP · 09:45",
+   "sigTs": "2026-11-03T04:15:00.000Z",
+   "exitTs": "2026-11-03T04:45:00.000Z",
+   "side": "PE",
+   "phase": "result",
+   "tags": [
+    "s4b"
+   ]
+  },
+  {
+   "kind": "ahead",
+   "shot": "brokers.png",
+   "clip": "21.mp4",
+   "clipStart": 8,
+   "tags": [
+    "ahead"
+   ]
+  },
+  {
+   "kind": "cta",
+   "tags": [
+    "cta"
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "name": "brokers",
+   "url": "https://app.uppercircuitstocks.com/home.html",
+   "kind": "match",
+   "match": [
+    "TRADE FROM SIGNAL CARDS"
+   ],
+   "clip": null
+  },
+  {
+   "name": "sig1",
+   "url": "https://app.uppercircuitstocks.com/research.html?page=trap",
+   "kind": "card",
+   "match": [
+    "MAXHEALTH"
+   ],
+   "clip": null
+  },
+  {
+   "name": "sig2",
+   "url": "https://app.uppercircuitstocks.com/research.html?page=idx",
+   "kind": "card",
+   "match": [
+    "NIFTY",
+    "ENTRY"
+   ],
+   "clip": null
+  },
+  {
+   "name": "sig3",
+   "url": "https://app.uppercircuitstocks.com/research.html?page=star",
+   "kind": "card",
+   "match": [
+    "MCX",
+    "ENTRY"
+   ],
+   "clip": null
+  },
+  {
+   "name": "sig4",
+   "url": "https://app.uppercircuitstocks.com/research.html?page=trap",
+   "kind": "card",
+   "match": [
+    "PRESTIGE"
+   ],
+   "clip": null
+  }
+ ],
+ "charts": [
+  {
+   "key": "sig1",
+   "symbol": "MAXHEALTH",
+   "when": "day"
+  },
+  {
+   "key": "sig2",
+   "symbol": "NIFTYFUT",
+   "when": "day"
+  },
+  {
+   "key": "sig3",
+   "symbol": "MCX",
+   "when": "day"
+  },
+  {
+   "key": "sig4",
+   "symbol": "PRESTIGE",
+   "when": "day"
+  }
+ ],
+ "meta": {
+  "poolSize": 29,
+  "winners": 3,
+  "slHits": 13,
+  "picks": [
+   {
+    "src": "trap",
+    "name": "MAXHEALTH",
+    "side": "CE",
+    "strike": "890",
+    "outcome": "TRAIL",
+    "ts": "2026-11-03T04:15:00.000Z"
+   },
+   {
+    "src": "index",
+    "name": "NIFTY",
+    "side": "PE",
+    "strike": "23650",
+    "outcome": "T2",
+    "ts": "2026-11-03T05:33:04.632Z"
+   },
+   {
+    "src": "star",
+    "name": "MCX",
+    "side": "CE",
+    "strike": "3450",
+    "outcome": "T2",
+    "ts": "2026-11-03T07:02:04.604Z"
+   },
+   {
+    "src": "trap",
+    "name": "PRESTIGE",
+    "side": "PE",
+    "strike": "1480",
+    "outcome": "SL",
+    "ts": "2026-11-03T04:15:00.000Z"
+   }
+  ]
+ }
+}
