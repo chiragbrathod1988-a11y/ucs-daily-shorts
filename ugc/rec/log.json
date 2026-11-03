@@ -1,0 +1,86 @@
+{
+ "market": {
+  "ok": true,
+  "maxY": 3095,
+  "y0": 0,
+  "y1": 1200
+ },
+ "heatmap": {
+  "ok": true,
+  "maxY": 2430,
+  "y0": 0,
+  "y1": 900
+ },
+ "report": {
+  "ok": true,
+  "maxY": 0,
+  "y0": 0,
+  "y1": 0
+ },
+ "optan": {
+  "ok": true,
+  "maxY": 1750,
+  "y0": 0,
+  "y1": 1000
+ },
+ "oi": {
+  "ok": true,
+  "maxY": 1235,
+  "y0": 0,
+  "y1": 900
+ },
+ "commod": {
+  "ok": true,
+  "maxY": 9176,
+  "y0": 0,
+  "y1": 900
+ },
+ "charts": {
+  "ok": true,
+  "maxY": 25540,
+  "y0": 0,
+  "y1": 500
+ },
+ "myscan": {
+  "ok": true,
+  "maxY": 694,
+  "y0": 0,
+  "y1": 694
+ },
+ "terminal": {
+  "ok": true,
+  "maxY": 0,
+  "y0": 0,
+  "y1": 0
+ },
+ "journal": {
+  "ok": true,
+  "maxY": 0,
+  "y0": 0,
+  "y1": 0
+ },
+ "ipo": {
+  "ok": true,
+  "maxY": 2186,
+  "y0": 0,
+  "y1": 1100
+ },
+ "mf": {
+  "ok": true,
+  "maxY": 26860,
+  "y0": 0,
+  "y1": 1100
+ },
+ "broker": {
+  "ok": true,
+  "maxY": 7537,
+  "y0": 0,
+  "y1": 380
+ },
+ "algo": {
+  "ok": true,
+  "maxY": 7407,
+  "y0": 0,
+  "y1": 250
+ }
+}
