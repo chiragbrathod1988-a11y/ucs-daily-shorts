@@ -1,5 +1,5 @@
 {"base": "https://app.uppercircuitstocks.com", "pages": [
- {"name": "market", "url": "/research.html?p=market", "to": 1200},
+ {"name": "market", "secs": 4.5, "url": "/research.html?p=market", "to": 1200},
  {"name": "heatmap", "url": "/research.html?p=heatmap", "to": 900},
  {"name": "report", "url": "/equity-report.html", "to": 1300},
  {"name": "optan", "url": "/options-analytics.html", "to": 1000},

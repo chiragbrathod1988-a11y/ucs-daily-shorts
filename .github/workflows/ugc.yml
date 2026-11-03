@@ -23,7 +23,7 @@ jobs:
         env:
           UCS_DASH_TOKEN: ${{ secrets.UCS_DASH_TOKEN }}
         run: |
-          cp scripts/ugc/rec.mjs /tmp/pw/ && rm -rf ugc/out && node /tmp/pw/rec.mjs ugc/pages.json ugc/out 2>&1 | tee ugc/rec-log.txt
+          cp scripts/ugc/rec.mjs /tmp/pw/ && rm -rf ugc/rec && node /tmp/pw/rec.mjs ugc/pages.json ugc/rec 2>&1 | tee ugc/rec-log.txt
       - name: Commit
         run: |
           git config user.name "ucs-ugc-bot"; git config user.email "actions@users.noreply.github.com"
