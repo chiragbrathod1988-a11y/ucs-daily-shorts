@@ -11,8 +11,8 @@
   },
   {
    "tag": "nifty",
-   "text": "पिछले session में Nifty zero पे close हुआ, और Bank Nifty zero पे।",
-   "en": "Last session: Nifty closed at 0, Bank Nifty at 0."
+   "text": "पिछले session में Nifty twenty three thousand four hundred forty one पे close हुआ, one point six eight percent ऊपर।",
+   "en": "Last session: Nifty closed at 23,441 (+1.68%)."
   },
   {
    "tag": "breadth",
@@ -62,18 +62,8 @@
    "stats": [
     [
      "NIFTY 50",
-     "0",
-     "+0.00%"
-    ],
-    [
-     "BANK NIFTY",
-     "0",
-     "+0.00%"
-    ],
-    [
-     "INDIA VIX",
-     "0.00",
-     "+0.00%"
+     "23,441",
+     "+1.68%"
     ]
    ],
    "tags": [
@@ -192,9 +182,9 @@
  ],
  "meta": {
   "nifty": {
-   "ltp": 0,
-   "chp": 0,
-   "ch": 0
+   "ltp": 23440.8,
+   "chp": 1.68,
+   "ch": 387.7
   },
   "bankNifty": {
    "ltp": 0,
