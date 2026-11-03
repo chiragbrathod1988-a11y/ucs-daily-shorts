@@ -1,0 +1,16 @@
+{"base": "https://app.uppercircuitstocks.com", "pages": [
+ {"name": "market", "url": "/research.html?p=market", "to": 1200},
+ {"name": "heatmap", "url": "/research.html?p=heatmap", "to": 900},
+ {"name": "report", "url": "/equity-report.html", "to": 1300},
+ {"name": "optan", "url": "/options-analytics.html", "to": 1000},
+ {"name": "oi", "url": "/oi-spikes.html", "to": 900},
+ {"name": "commod", "url": "/commodities.html", "to": 900},
+ {"name": "charts", "url": "/charts.html", "to": 500},
+ {"name": "myscan", "url": "/scanners.html", "to": 900},
+ {"name": "terminal", "url": "/terminal.html", "to": 800},
+ {"name": "journal", "url": "/journal.html", "to": 800},
+ {"name": "ipo", "url": "/ipo.html", "to": 1100},
+ {"name": "mf", "url": "/mf.html", "to": 1100},
+ {"name": "broker", "url": "/research.html?page=star", "to": 380},
+ {"name": "algo", "url": "/research.html?p=algo", "to": 250}
+]}
