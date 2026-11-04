@@ -1,0 +1,405 @@
+{
+ "date": "2026-11-04",
+ "slot": "evening",
+ "mode": "evening",
+ "feature": "Options Analytics",
+ "lines": [
+  {
+   "tag": "hook",
+   "text": "आज AI Dashboard ने क्या पकड़ा? कुछ selected signals देखो।",
+   "en": "What did the AI Dashboard catch today? A few selected signals."
+  },
+  {
+   "tag": "s1a",
+   "text": "ITC Call, पाँच दिन और पाँच घंटे का high break और price बीस SMA के ऊपर।",
+   "en": "ITC 282.5 CE — 5-day & 5-hour high break + price above 20 SMA."
+  },
+  {
+   "tag": "s1b",
+   "text": "Trailing stop से move पकड़ा।",
+   "en": "Move captured with a trailing stop."
+  },
+  {
+   "tag": "s2a",
+   "text": "Yes Bank Call, पंद्रह minute पे Bear Trap, breakdown fail हुआ।",
+   "en": "YESBANK 16 CE — Bear Trap on 15-min — breakdown failed."
+  },
+  {
+   "tag": "s2b",
+   "text": "Trailing stop से move पकड़ा।",
+   "en": "Move captured with a trailing stop."
+  },
+  {
+   "tag": "s3a",
+   "text": "State Bank of India Put, पंद्रह minute पे Bull Trap, breakout fail हुआ।",
+   "en": "SBIN 970 PE — Bull Trap on 15-min — breakout failed."
+  },
+  {
+   "tag": "s3b",
+   "text": "Trailing stop से move पकड़ा।",
+   "en": "Move captured with a trailing stop."
+  },
+  {
+   "tag": "s4a",
+   "text": "Indian Energy Exchange Put, एक घंटे पे Bull Trap, breakout fail हुआ।",
+   "en": "IEX 109 PE — Bull Trap on 1-hour — breakout failed."
+  },
+  {
+   "tag": "s4b",
+   "text": "ये वाला स्टॉप लॉस हिट हुआ, इसीलिए स्टॉप लॉस हमेशा ज़रूरी है।",
+   "en": "This one hit SL — that's why SL always matters."
+  },
+  {
+   "tag": "ahead",
+   "text": "Signal आते ही phone पे alert आता है, और एक tap में अपने broker पे order, Fyers, Zerodha या Dhan।",
+   "en": "Instant phone alert the moment a signal appears — one tap to your broker: Fyers, Zerodha or Dhan."
+  },
+  {
+   "tag": "cta",
+   "text": "बाकी traders से आगे रहना है? AI Dashboard का link description में है। Follow करो, Upper Circuit Stocks।",
+   "en": "Want to stay ahead? AI Dashboard link in the description. Follow UpperCircuitStocks!"
+  }
+ ],
+ "scenes": [
+  {
+   "kind": "hook",
+   "title": "AAJ KE SIGNALS",
+   "sub": "Selected signals · 4 Nov",
+   "chips": [
+    "✅",
+    "✅",
+    "✅",
+    "❌"
+   ],
+   "tags": [
+    "hook"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig1.png",
+   "n": 1,
+   "name": "ITC",
+   "contract": "ITC 282.5 CE",
+   "time": "09:20",
+   "logic": "5-day & 5-hour high break + price above 20 SMA",
+   "label": "TRAILING EXIT ✅",
+   "win": true,
+   "scanner": "Star Setup",
+   "entry": "3.45",
+   "sl": "4.88",
+   "tgt": [
+    "5.25",
+    "7.05"
+   ],
+   "chart": "sig1",
+   "mode": "signal",
+   "title": "SIGNAL 1 · STAR SETUP · 09:20",
+   "sigTs": "2026-11-04T03:50:09.320Z",
+   "exitTs": "2026-11-04T04:06:22.255Z",
+   "side": "CE",
+   "tags": [
+    "s1a"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig1.png",
+   "n": 1,
+   "name": "ITC",
+   "contract": "ITC 282.5 CE",
+   "time": "09:20",
+   "logic": "5-day & 5-hour high break + price above 20 SMA",
+   "label": "TRAILING EXIT ✅",
+   "win": true,
+   "scanner": "Star Setup",
+   "entry": "3.45",
+   "sl": "4.88",
+   "tgt": [
+    "5.25",
+    "7.05"
+   ],
+   "chart": "sig1",
+   "mode": "signal",
+   "title": "SIGNAL 1 · STAR SETUP · 09:20",
+   "sigTs": "2026-11-04T03:50:09.320Z",
+   "exitTs": "2026-11-04T04:06:22.255Z",
+   "side": "CE",
+   "phase": "result",
+   "tags": [
+    "s1b"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig2.png",
+   "n": 2,
+   "name": "YESBANK",
+   "contract": "YESBANK 16 CE",
+   "time": "09:45",
+   "logic": "Bear Trap on 15-min — breakdown failed",
+   "label": "TRAILING EXIT ✅",
+   "win": true,
+   "scanner": "Intraday Trap",
+   "entry": "0.34",
+   "sl": "15.22",
+   "tgt": [],
+   "chart": "sig2",
+   "mode": "signal",
+   "title": "SIGNAL 2 · INTRADAY TRAP · 09:45",
+   "sigTs": "2026-11-04T04:15:00.000Z",
+   "exitTs": "2026-11-04T04:48:33.233Z",
+   "side": "CE",
+   "tags": [
+    "s2a"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig2.png",
+   "n": 2,
+   "name": "YESBANK",
+   "contract": "YESBANK 16 CE",
+   "time": "09:45",
+   "logic": "Bear Trap on 15-min — breakdown failed",
+   "label": "TRAILING EXIT ✅",
+   "win": true,
+   "scanner": "Intraday Trap",
+   "entry": "0.34",
+   "sl": "15.22",
+   "tgt": [],
+   "chart": "sig2",
+   "mode": "signal",
+   "title": "SIGNAL 2 · INTRADAY TRAP · 09:45",
+   "sigTs": "2026-11-04T04:15:00.000Z",
+   "exitTs": "2026-11-04T04:48:33.233Z",
+   "side": "CE",
+   "phase": "result",
+   "tags": [
+    "s2b"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig3.png",
+   "n": 3,
+   "name": "SBIN",
+   "contract": "SBIN 970 PE",
+   "time": "09:45",
+   "logic": "Bull Trap on 15-min — breakout failed",
+   "label": "TRAILING EXIT ✅",
+   "win": true,
+   "scanner": "Intraday Trap",
+   "entry": "15.55",
+   "sl": "988",
+   "tgt": [],
+   "chart": "sig3",
+   "mode": "signal",
+   "title": "SIGNAL 3 · INTRADAY TRAP · 09:45",
+   "sigTs": "2026-11-04T04:15:00.000Z",
+   "exitTs": "2026-11-04T05:05:00.308Z",
+   "side": "PE",
+   "tags": [
+    "s3a"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig3.png",
+   "n": 3,
+   "name": "SBIN",
+   "contract": "SBIN 970 PE",
+   "time": "09:45",
+   "logic": "Bull Trap on 15-min — breakout failed",
+   "label": "TRAILING EXIT ✅",
+   "win": true,
+   "scanner": "Intraday Trap",
+   "entry": "15.55",
+   "sl": "988",
+   "tgt": [],
+   "chart": "sig3",
+   "mode": "signal",
+   "title": "SIGNAL 3 · INTRADAY TRAP · 09:45",
+   "sigTs": "2026-11-04T04:15:00.000Z",
+   "exitTs": "2026-11-04T05:05:00.308Z",
+   "side": "PE",
+   "phase": "result",
+   "tags": [
+    "s3b"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig4.png",
+   "n": 4,
+   "name": "IEX",
+   "contract": "IEX 109 PE",
+   "time": "11:15",
+   "logic": "Bull Trap on 1-hour — breakout failed",
+   "label": "SL HIT ❌",
+   "win": false,
+   "scanner": "Intraday Trap",
+   "entry": "2.94",
+   "sl": "110.11",
+   "tgt": [],
+   "chart": "sig4",
+   "mode": "signal",
+   "title": "SIGNAL 4 · INTRADAY TRAP · 11:15",
+   "sigTs": "2026-11-04T05:45:00.000Z",
+   "exitTs": "2026-11-04T07:45:00.000Z",
+   "side": "PE",
+   "tags": [
+    "s4a"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig4.png",
+   "n": 4,
+   "name": "IEX",
+   "contract": "IEX 109 PE",
+   "time": "11:15",
+   "logic": "Bull Trap on 1-hour — breakout failed",
+   "label": "SL HIT ❌",
+   "win": false,
+   "scanner": "Intraday Trap",
+   "entry": "2.94",
+   "sl": "110.11",
+   "tgt": [],
+   "chart": "sig4",
+   "mode": "signal",
+   "title": "SIGNAL 4 · INTRADAY TRAP · 11:15",
+   "sigTs": "2026-11-04T05:45:00.000Z",
+   "exitTs": "2026-11-04T07:45:00.000Z",
+   "side": "PE",
+   "phase": "result",
+   "tags": [
+    "s4b"
+   ]
+  },
+  {
+   "kind": "ahead",
+   "shot": "brokers.png",
+   "clip": "21.mp4",
+   "clipStart": 8,
+   "tags": [
+    "ahead"
+   ]
+  },
+  {
+   "kind": "cta",
+   "tags": [
+    "cta"
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "name": "brokers",
+   "url": "https://app.uppercircuitstocks.com/home.html",
+   "kind": "match",
+   "match": [
+    "TRADE FROM SIGNAL CARDS"
+   ],
+   "clip": null
+  },
+  {
+   "name": "sig1",
+   "url": "https://app.uppercircuitstocks.com/research.html?page=star",
+   "kind": "card",
+   "match": [
+    "ITC",
+    "ENTRY"
+   ],
+   "clip": null
+  },
+  {
+   "name": "sig2",
+   "url": "https://app.uppercircuitstocks.com/research.html?page=trap",
+   "kind": "card",
+   "match": [
+    "YESBANK"
+   ],
+   "clip": null
+  },
+  {
+   "name": "sig3",
+   "url": "https://app.uppercircuitstocks.com/research.html?page=trap",
+   "kind": "card",
+   "match": [
+    "SBIN"
+   ],
+   "clip": null
+  },
+  {
+   "name": "sig4",
+   "url": "https://app.uppercircuitstocks.com/research.html?page=trap",
+   "kind": "card",
+   "match": [
+    "IEX"
+   ],
+   "clip": null
+  }
+ ],
+ "charts": [
+  {
+   "key": "sig1",
+   "symbol": "ITC",
+   "when": "day"
+  },
+  {
+   "key": "sig2",
+   "symbol": "YESBANK",
+   "when": "day"
+  },
+  {
+   "key": "sig3",
+   "symbol": "SBIN",
+   "when": "day"
+  },
+  {
+   "key": "sig4",
+   "symbol": "IEX",
+   "when": "day"
+  }
+ ],
+ "meta": {
+  "poolSize": 49,
+  "winners": 3,
+  "slHits": 7,
+  "picks": [
+   {
+    "src": "star",
+    "name": "ITC",
+    "side": "CE",
+    "strike": "282.5",
+    "outcome": "TRAIL",
+    "ts": "2026-11-04T03:50:09.320Z"
+   },
+   {
+    "src": "trap",
+    "name": "YESBANK",
+    "side": "CE",
+    "strike": "16",
+    "outcome": "TRAIL",
+    "ts": "2026-11-04T04:15:00.000Z"
+   },
+   {
+    "src": "trap",
+    "name": "SBIN",
+    "side": "PE",
+    "strike": "970",
+    "outcome": "TRAIL",
+    "ts": "2026-11-04T04:15:00.000Z"
+   },
+   {
+    "src": "trap",
+    "name": "IEX",
+    "side": "PE",
+    "strike": "109",
+    "outcome": "SL",
+    "ts": "2026-11-04T05:45:00.000Z"
+   }
+  ]
+ }
+}
