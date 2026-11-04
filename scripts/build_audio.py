@@ -67,7 +67,7 @@ S = [
     ("prev", f"{prev_hi} Nifty {ew(abs(lev['change']))} points {'ऊपर' if up else 'नीचे'}, {ew(lev['closeR'])} पे close हुआ।",
      f"{prev_word_en} Nifty *{fmt(r(abs(lev['change'])))} points {'upar' if up else 'neeche'}* — *{fmt(lev['closeR'])}* pe close"),
     ("pivot", f"आज का pivot है, {ew(lev['P'])}।", f"Aaj ka *pivot* hai *{fmt(lev['P'])}*"),
-    ("r1", f"ऊपर first resistance, {ew(lev['R1'])},", f"Upar first *resistance* — *{fmt(lev['R1'])}*"),
+    ("r1", f"ऊपर first resistance है, {ew(lev['R1'])},", f"Upar first *resistance* — *{fmt(lev['R1'])}*"),
     ("r2", f"उसके बाद, {ew(lev['R2'])}।", f"uske baad *{fmt(lev['R2'])}*"),
     ("s1", f"नीचे first support, {ew(lev['S1'])},", f"Neeche first *support* — *{fmt(lev['S1'])}*"),
     ("s2", f"और फिर, {ew(lev['S2'])}।", f"aur phir *{fmt(lev['S2'])}*"),
