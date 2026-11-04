@@ -3,34 +3,34 @@ intro
   heard:  4 नोवेंबर के निप्टी लेविल्स, चलो देखते है.
 prev
   script: कल Nifty three hundred seventy points ऊपर, twenty three thousand eight hundred eleven पे close हुआ।
-  heard:  गल निव्टी 370 पोईं सुपर, 23,811 पे ख्लूज हूँा.
+  heard:  खल निव्टी 370 पोईं सुपर, 23,811 पे ख्लोज हूँा.
 pivot
   script: आज का pivot है, twenty three thousand seven hundred two।
   heard:  आज का पाई वोट है, 23702
 r1
   script: ऊपर first resistance, twenty three thousand nine hundred twenty,
-  heard:  उपर फर्स्ट रशिस्टन्स तुएन्ती तुएन्नाईईईईईईईईईईईईई
+  heard:  उपर फ्रिस्ड़िश्टिंस तवन्टीख्टी तवन्टीख्टी
 r2
   script: उसके बाद, twenty four thousand thirty।
-  heard:  उसके बात 24,030
+  heard:  उसके बाद 24,030
 s1
   script: नीचे first support, twenty three thousand five hundred ninety two,
-  heard:  नीचे फिर्स सबपोट, 23,592
+  heard:  नीचे फिर्स सबच्वोट, 23,592
 s2
   script: और फिर, twenty three thousand three hundred seventy three।
-  heard:  और फेर, 23373
+  heard:  और पेर 23373
 bull
   script: अगर Nifty twenty three thousand seven hundred fifty six के ऊपर hold करता है, तो twenty three thousand nine hundred twenty test हो सकता है।
-  heard:  अगर निप्ती 23756 के उपर होल करता है, तो 23920 तेस्त हो सकता है.
+  heard:  अगर निप्ती 23756 के उपर होल्ट करता है, तो 23920 तेस्त हो सकता है.
 bear
   script: लेकिन अगर twenty three thousand seven hundred two के नीचे फिसला, तो twenty three thousand five hundred ninety two तक pressure आ सकता है।
-  heard:  लेकिन अगर 23,700 तुके नीजे फिसला, तो 23,590 तुक प्रेशा आँसकता है.
+  heard:  लेकिन अगर 23700 तुके नीजे फिस्ला, तो 23590 तुक प्रेशा आँसकता है.
 dash
   script: और हाँ, Upper Circuit Stocks के AI Dashboard पे मिलेंगे, Stock Screeners, Heat Map, Nifty Overview, और detailed Stock Research।
-  heard:  और है, अपंट स्रकिट स्वivals के A.I. dashboard pe melenge stork screeners, heat map, nifty overview, and detailed stock research.
+  heard:  और हा, अपर सर्किट स्टोक्स के आई डश्भोड पे मिलेंगे, स्टोक्स्क्रीनर्स, हीट माप, निप्टी अवर्व्य।, और दीटेल स्टोक रिशच.
 dash2
   script: Link description में है, एक बार ज़रूर check करो।
-  heard:  लिंक दिस्क्रिठ्शन में है, एक बार ज़ोर चेक करो।
+  heard:  लिंक दिस्क्रिठ्ट्शन में है, एक बार ज़ोर चेख करो.
 cta
   script: Levels save कर लो, और रोज़ सुबह के लिए follow करो, Upper Circuit Stocks।
-  heard:  लेवल सेव कर लो, और रो सुभा के लिए फोलो करो, अपर सर्किट स्टोक्स.
+  heard:  लेवल सेव कर लो, और रो सुभा के लिए फोलो करो अपर सर्किट स्टोक्स
