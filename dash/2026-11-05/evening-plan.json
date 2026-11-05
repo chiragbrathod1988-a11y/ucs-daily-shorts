@@ -1,0 +1,412 @@
+{
+ "date": "2026-11-05",
+ "slot": "evening",
+ "mode": "evening",
+ "feature": "Futures Reversal Breakout",
+ "lines": [
+  {
+   "tag": "hook",
+   "text": "आज AI Dashboard ने क्या पकड़ा? कुछ selected signals देखो।",
+   "en": "What did the AI Dashboard catch today? A few selected signals."
+  },
+  {
+   "tag": "s1a",
+   "text": "Bajaj Finance Call, पाँच दिन और पाँच घंटे का high break और price बीस SMA के ऊपर।",
+   "en": "BAJFINANCE 1,040 CE — 5-day & 5-hour high break + price above 20 SMA."
+  },
+  {
+   "tag": "s1b",
+   "text": "Trailing stop से move पकड़ा।",
+   "en": "Move captured with a trailing stop."
+  },
+  {
+   "tag": "s2a",
+   "text": "PI Industries Put, पाँच दिन और पाँच घंटे का low break और price बीस SMA के नीचे।",
+   "en": "PIIND 1,880 PE — 5-day & 5-hour low break + price below 20 SMA."
+  },
+  {
+   "tag": "s2b",
+   "text": "Trailing stop से move पकड़ा।",
+   "en": "Move captured with a trailing stop."
+  },
+  {
+   "tag": "s3a",
+   "text": "UPL Put, पंद्रह minute पे Bull Trap, breakout fail हुआ।",
+   "en": "UPL 530 PE — Bull Trap on 15-min — breakout failed."
+  },
+  {
+   "tag": "s3b",
+   "text": "Trailing stop से move पकड़ा।",
+   "en": "Move captured with a trailing stop."
+  },
+  {
+   "tag": "s4a",
+   "text": "Wipro Put, एक घंटे पे Bull Trap, breakout fail हुआ।",
+   "en": "WIPRO 195 PE — Bull Trap on 1-hour — breakout failed."
+  },
+  {
+   "tag": "s4b",
+   "text": "ये वाला स्टॉप लॉस हिट हुआ, इसीलिए स्टॉप लॉस हमेशा ज़रूरी है।",
+   "en": "This one hit SL — that's why SL always matters."
+  },
+  {
+   "tag": "ahead",
+   "text": "Signal आते ही phone पे alert आता है, और एक tap में अपने broker पे order, Fyers, Zerodha या Dhan।",
+   "en": "Instant phone alert the moment a signal appears — one tap to your broker: Fyers, Zerodha or Dhan."
+  },
+  {
+   "tag": "cta",
+   "text": "बाकी traders से आगे रहना है? AI Dashboard का link description में है। Follow करो, Upper Circuit Stocks।",
+   "en": "Want to stay ahead? AI Dashboard link in the description. Follow UpperCircuitStocks!"
+  }
+ ],
+ "scenes": [
+  {
+   "kind": "hook",
+   "title": "AAJ KE SIGNALS",
+   "sub": "Selected signals · 5 Nov",
+   "chips": [
+    "✅",
+    "✅",
+    "✅",
+    "❌"
+   ],
+   "tags": [
+    "hook"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig1.png",
+   "n": 1,
+   "name": "BAJFINANCE",
+   "contract": "BAJFINANCE 1,040 CE",
+   "time": "09:32",
+   "logic": "5-day & 5-hour high break + price above 20 SMA",
+   "label": "TRAILING EXIT ✅",
+   "win": true,
+   "scanner": "Star Setup",
+   "entry": "21.15",
+   "sl": "26.65",
+   "tgt": [
+    "27.15",
+    "33.15"
+   ],
+   "chart": "sig1",
+   "mode": "signal",
+   "title": "SIGNAL 1 · STAR SETUP · 09:32",
+   "sigTs": "2026-11-05T04:02:07.127Z",
+   "exitTs": "2026-11-05T04:27:00.289Z",
+   "side": "CE",
+   "tags": [
+    "s1a"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig1.png",
+   "n": 1,
+   "name": "BAJFINANCE",
+   "contract": "BAJFINANCE 1,040 CE",
+   "time": "09:32",
+   "logic": "5-day & 5-hour high break + price above 20 SMA",
+   "label": "TRAILING EXIT ✅",
+   "win": true,
+   "scanner": "Star Setup",
+   "entry": "21.15",
+   "sl": "26.65",
+   "tgt": [
+    "27.15",
+    "33.15"
+   ],
+   "chart": "sig1",
+   "mode": "signal",
+   "title": "SIGNAL 1 · STAR SETUP · 09:32",
+   "sigTs": "2026-11-05T04:02:07.127Z",
+   "exitTs": "2026-11-05T04:27:00.289Z",
+   "side": "CE",
+   "phase": "result",
+   "tags": [
+    "s1b"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig2.png",
+   "n": 2,
+   "name": "PIIND",
+   "contract": "PIIND 1,880 PE",
+   "time": "09:41",
+   "logic": "5-day & 5-hour low break + price below 20 SMA",
+   "label": "TRAILING EXIT ✅",
+   "win": true,
+   "scanner": "Star Setup",
+   "entry": "54.85",
+   "sl": "70.78",
+   "tgt": [
+    "80.56",
+    "106.27"
+   ],
+   "chart": "sig2",
+   "mode": "signal",
+   "title": "SIGNAL 2 · STAR SETUP · 09:41",
+   "sigTs": "2026-11-05T04:11:13.310Z",
+   "exitTs": "2026-11-05T04:54:03.181Z",
+   "side": "PE",
+   "tags": [
+    "s2a"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig2.png",
+   "n": 2,
+   "name": "PIIND",
+   "contract": "PIIND 1,880 PE",
+   "time": "09:41",
+   "logic": "5-day & 5-hour low break + price below 20 SMA",
+   "label": "TRAILING EXIT ✅",
+   "win": true,
+   "scanner": "Star Setup",
+   "entry": "54.85",
+   "sl": "70.78",
+   "tgt": [
+    "80.56",
+    "106.27"
+   ],
+   "chart": "sig2",
+   "mode": "signal",
+   "title": "SIGNAL 2 · STAR SETUP · 09:41",
+   "sigTs": "2026-11-05T04:11:13.310Z",
+   "exitTs": "2026-11-05T04:54:03.181Z",
+   "side": "PE",
+   "phase": "result",
+   "tags": [
+    "s2b"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig3.png",
+   "n": 3,
+   "name": "UPL",
+   "contract": "UPL 530 PE",
+   "time": "09:45",
+   "logic": "Bull Trap on 15-min — breakout failed",
+   "label": "TRAILING EXIT ✅",
+   "win": true,
+   "scanner": "Intraday Trap",
+   "entry": "12.45",
+   "sl": "535.5",
+   "tgt": [],
+   "chart": "sig3",
+   "mode": "signal",
+   "title": "SIGNAL 3 · INTRADAY TRAP · 09:45",
+   "sigTs": "2026-11-05T04:15:00.000Z",
+   "exitTs": "2026-11-05T07:52:02.259Z",
+   "side": "PE",
+   "tags": [
+    "s3a"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig3.png",
+   "n": 3,
+   "name": "UPL",
+   "contract": "UPL 530 PE",
+   "time": "09:45",
+   "logic": "Bull Trap on 15-min — breakout failed",
+   "label": "TRAILING EXIT ✅",
+   "win": true,
+   "scanner": "Intraday Trap",
+   "entry": "12.45",
+   "sl": "535.5",
+   "tgt": [],
+   "chart": "sig3",
+   "mode": "signal",
+   "title": "SIGNAL 3 · INTRADAY TRAP · 09:45",
+   "sigTs": "2026-11-05T04:15:00.000Z",
+   "exitTs": "2026-11-05T07:52:02.259Z",
+   "side": "PE",
+   "phase": "result",
+   "tags": [
+    "s3b"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig4.png",
+   "n": 4,
+   "name": "WIPRO",
+   "contract": "WIPRO 195 PE",
+   "time": "11:15",
+   "logic": "Bull Trap on 1-hour — breakout failed",
+   "label": "SL HIT ❌",
+   "win": false,
+   "scanner": "Intraday Trap",
+   "entry": "3.37",
+   "sl": "198.92",
+   "tgt": [],
+   "chart": "sig4",
+   "mode": "signal",
+   "title": "SIGNAL 4 · INTRADAY TRAP · 11:15",
+   "sigTs": "2026-11-05T05:45:00.000Z",
+   "exitTs": "2026-11-05T08:45:00.000Z",
+   "side": "PE",
+   "tags": [
+    "s4a"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig4.png",
+   "n": 4,
+   "name": "WIPRO",
+   "contract": "WIPRO 195 PE",
+   "time": "11:15",
+   "logic": "Bull Trap on 1-hour — breakout failed",
+   "label": "SL HIT ❌",
+   "win": false,
+   "scanner": "Intraday Trap",
+   "entry": "3.37",
+   "sl": "198.92",
+   "tgt": [],
+   "chart": "sig4",
+   "mode": "signal",
+   "title": "SIGNAL 4 · INTRADAY TRAP · 11:15",
+   "sigTs": "2026-11-05T05:45:00.000Z",
+   "exitTs": "2026-11-05T08:45:00.000Z",
+   "side": "PE",
+   "phase": "result",
+   "tags": [
+    "s4b"
+   ]
+  },
+  {
+   "kind": "ahead",
+   "shot": "brokers.png",
+   "clip": "21.mp4",
+   "clipStart": 8,
+   "tags": [
+    "ahead"
+   ]
+  },
+  {
+   "kind": "cta",
+   "tags": [
+    "cta"
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "name": "brokers",
+   "url": "https://app.uppercircuitstocks.com/home.html",
+   "kind": "match",
+   "match": [
+    "TRADE FROM SIGNAL CARDS"
+   ],
+   "clip": null
+  },
+  {
+   "name": "sig1",
+   "url": "https://app.uppercircuitstocks.com/research.html?page=star",
+   "kind": "card",
+   "match": [
+    "BAJFINANCE",
+    "ENTRY"
+   ],
+   "clip": null
+  },
+  {
+   "name": "sig2",
+   "url": "https://app.uppercircuitstocks.com/research.html?page=star",
+   "kind": "card",
+   "match": [
+    "PIIND",
+    "ENTRY"
+   ],
+   "clip": null
+  },
+  {
+   "name": "sig3",
+   "url": "https://app.uppercircuitstocks.com/research.html?page=trap",
+   "kind": "card",
+   "match": [
+    "UPL"
+   ],
+   "clip": null
+  },
+  {
+   "name": "sig4",
+   "url": "https://app.uppercircuitstocks.com/research.html?page=trap",
+   "kind": "card",
+   "match": [
+    "WIPRO"
+   ],
+   "clip": null
+  }
+ ],
+ "charts": [
+  {
+   "key": "sig1",
+   "symbol": "BAJFINANCE",
+   "when": "day"
+  },
+  {
+   "key": "sig2",
+   "symbol": "PIIND",
+   "when": "day"
+  },
+  {
+   "key": "sig3",
+   "symbol": "UPL",
+   "when": "day"
+  },
+  {
+   "key": "sig4",
+   "symbol": "WIPRO",
+   "when": "day"
+  }
+ ],
+ "meta": {
+  "poolSize": 66,
+  "winners": 3,
+  "slHits": 18,
+  "picks": [
+   {
+    "src": "star",
+    "name": "BAJFINANCE",
+    "side": "CE",
+    "strike": "1040",
+    "outcome": "TRAIL",
+    "ts": "2026-11-05T04:02:07.127Z"
+   },
+   {
+    "src": "star",
+    "name": "PIIND",
+    "side": "PE",
+    "strike": "1880",
+    "outcome": "TRAIL",
+    "ts": "2026-11-05T04:11:13.310Z"
+   },
+   {
+    "src": "trap",
+    "name": "UPL",
+    "side": "PE",
+    "strike": "530",
+    "outcome": "TRAIL",
+    "ts": "2026-11-05T04:15:00.000Z"
+   },
+   {
+    "src": "trap",
+    "name": "WIPRO",
+    "side": "PE",
+    "strike": "195",
+    "outcome": "SL",
+    "ts": "2026-11-05T05:45:00.000Z"
+   }
+  ]
+ }
+}
