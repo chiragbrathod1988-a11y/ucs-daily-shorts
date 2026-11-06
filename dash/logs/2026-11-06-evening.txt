@@ -1,0 +1,12 @@
+saved dash/2026-11-06/evening-raw.json
+{"mode": "evening", "lines": 11, "shots": ["brokers", "sig1", "sig2", "sig3", "sig4"], "meta": {"poolSize": 74, "winners": 3, "slHits": 7, "picks": [{"src": "star", "name": "ASTRAL", "side": "PE", "strike": "1240", "outcome": "TRAIL", "ts": "2026-11-06T03:55:09.077Z"}, {"src": "index", "name": "FINNIFTY", "side": "CE", "strike": "26650", "outcome": "T2", "ts": "2026-11-06T04:21:07.100Z"}, {"src": "star", "name": "GLENMARK", "side": "CE", "strike": "2560", "outcome": "T2", "ts": "2026-11-06T05:08:01.513Z"}, {"src": "trap", "name": "TATAPOWER", "side": "CE", "strike": "365", "outcome": "SL", "ts": "2026-11-06T04:15:00.000Z"}]}}
+ok brokers
+ok sig1
+ok sig2
+ok sig3
+ok sig4
+chart ok sig1 ASTRAL 2026-11-06 75
+chart ok sig2 FINNIFTY26NOVFUT 2026-11-06 77
+chart ok sig3 GLENMARK 2026-11-06 75
+chart ok sig4 TATAPOWER 2026-11-06 75
+OK 2026-11-06:evening
