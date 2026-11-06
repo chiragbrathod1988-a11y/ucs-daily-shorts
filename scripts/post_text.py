@@ -3,9 +3,12 @@
 Usage: python3 scripts/post_text.py            (reads src/dailyData.ts, prints JSON)
 Output JSON: {"title": ..., "description": ..., "instagram_caption": ..., "tags": [...]}
 """
+import sys
 import json, datetime, os
 
 here = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, here)
+from channel_links import CHANNEL_BLOCK
 ts = open(os.path.join(here, "..", "src", "dailyData.ts"), encoding="utf-8").read()
 d = json.loads(ts[ts.index("{"): ts.rindex("}") + 1])
 L = d["levels"]
@@ -43,10 +46,7 @@ https://www.upsurge.club/course/advanced-swing-trading-in-stocks-and-futures?inv
 💥 BTST Trading in Stocks, Options & Futures:
 https://www.upsurge.club/course/btst-trading-in-stock-options-and-futures?invite=CHIR-RTHD"""
 
-LINKS = """📲 FREE Telegram Channel — daily levels & market updates:
-https://t.me/uppercircuitstocksbychiragrathod
-
-🤖 AI DASHBOARD — Stock Screeners, Heat Map, Nifty Overview & detailed Stock Research:
+LINKS = """🤖 AI DASHBOARD — Stock Screeners, Heat Map, Nifty Overview & detailed Stock Research:
 https://app.uppercircuitstocks.com"""
 
 DISCLAIMER = ("⚠️ For educational purposes only. Not investment advice. Levels are calculated pivot points, "
@@ -73,7 +73,7 @@ description = f"""{body}
 
 {LINKS}
 
-{COURSES}
+{CHANNEL_BLOCK}
 
 🔔 Roz subah Nifty levels — SUBSCRIBE karo & bell icon dabao!
 UpperCircuitStocks by Chirag Rathod
@@ -87,7 +87,7 @@ instagram_caption = f"""{body}
 
 {LINKS}
 
-{COURSES}
+{CHANNEL_BLOCK}
 
 {DISCLAIMER}
 

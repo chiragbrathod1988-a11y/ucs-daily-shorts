@@ -63,7 +63,9 @@ python3 scripts/post_text.py > out/post.json   # title, description, instagram_c
 ```
 `post.json` already contains everything Chirag requires: the engaging hook title built from today's levels, the
 levels, Telegram channel link, AI Dashboard link, the four Upsurge course links (exact text), subscribe CTA,
-disclaimer and hashtags. Use its fields verbatim. (If `src/dailyData.ts` is not today's, run `./make_video.sh D` first.)
+disclaimer and hashtags. Use its fields verbatim.
+**Channel links block (Chirag, standing rule):** every YouTube description and Instagram caption — daily Shorts, dashboard videos, edits and any hand-made post — must contain `CHANNEL_BLOCK` from `scripts/channel_links.py` verbatim, in addition to our own text. The post_text scripts add it automatically; for any other post, paste it.
+ (If `src/dailyData.ts` is not today's, run `./make_video.sh D` first.)
 
 **YouTube Shorts — Metricool** (`mcp__Metricool_Social_Media_Management__createScheduledPost`)
 - blogId `7738599` (brand linked to YouTube channel Upper circuit Stocks, UCvcxTPpZiYBtJ8UaxTR3VVQ), timezone Asia/Calcutta.

@@ -1,6 +1,9 @@
 """Title / description / Instagram caption / tags for a dashboard video. Reads src/dashData.ts; prints JSON."""
+import sys
 import json, os, datetime
 here = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, os.path.join(here, ".."))
+from channel_links import CHANNEL_BLOCK
 ts = open(os.path.join(here, "..", "..", "src", "dashData.ts"), encoding="utf-8").read()
 d = json.loads(ts[ts.index("{"): ts.rindex("}") + 1])
 td = datetime.date.fromisoformat(d["date"]); dm = td.strftime("%-d %b")
@@ -20,10 +23,7 @@ https://www.upsurge.club/course/advanced-swing-trading-in-stocks-and-futures?inv
 💥 BTST Trading in Stocks, Options & Futures:
 https://www.upsurge.club/course/btst-trading-in-stock-options-and-futures?invite=CHIR-RTHD"""
 LINKS = """🤖 AI DASHBOARD — Scanners, Heat Map, Nifty Overview, Stock Research (3-day free trial):
-https://app.uppercircuitstocks.com
-
-📲 FREE Telegram Channel — daily levels & market updates:
-https://t.me/uppercircuitstocksbychiragrathod"""
+https://app.uppercircuitstocks.com"""
 DIS = "⚠️ For information and education only. Not investment advice. Signals shown are selected examples from the dashboard, not recommendations; past results do not guarantee future results. Market risks apply — do your own research."
 
 if d["slot"] == "morning":
@@ -75,7 +75,7 @@ description = f"""{body}
 
 {LINKS}
 
-{COURSES}
+{CHANNEL_BLOCK}
 
 🔔 SUBSCRIBE karo & bell icon dabao — roz subah aur shaam!
 UpperCircuitStocks by Chirag Rathod
@@ -88,7 +88,7 @@ caption = f"""{body}
 
 {LINKS}
 
-{COURSES}
+{CHANNEL_BLOCK}
 
 {DIS}
 

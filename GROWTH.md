@@ -27,8 +27,9 @@ scripts already apply them; use this file for one-off reels (Zoom edits etc.).
 7. **Story / shock hooks** for reach: "Fat Finger Trade 😯", "Engineer Robs Bank For Stock Market", "Scam Alert".
 
 ## Rules for our posts
+**Channel links block (Chirag, standing rule):** every YouTube description and Instagram caption — daily Shorts, dashboard videos, edits and any hand-made post — must contain `CHANNEL_BLOCK` from `scripts/channel_links.py` verbatim, in addition to our own text. The post_text scripts add it automatically; for any other post, paste it.
 - YouTube title ≤ 60 chars, keyword first: `Nifty Prediction 3 Nov 🔥 25,900 Todega ya 25,600?`, `Gold Crash Explained 📉`.
-- Description: line 1 = plain keyword sentence. Then the hook body, Telegram, AI Dashboard, the 4 course links (verbatim), subscribe line,
+- Description: line 1 = plain keyword sentence. Then the hook body, AI Dashboard line, the channel links block (verbatim, includes Telegram ×2, websites, X, Instagram, 4 courses), subscribe line,
   disclaimer, then **exactly 3 hashtags** (broad + topic).
 - Tags: 15–20 search phrases, mixing English and Hinglish ("nifty kal kya karega", "trading for beginners").
 - Instagram: the same keyword first line (IG search reads captions) and 5 hashtags.

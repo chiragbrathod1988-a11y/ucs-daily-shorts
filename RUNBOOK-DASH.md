@@ -1,6 +1,7 @@
 # Daily AI Dashboard videos — runbook (morning + evening)
 
 > Titles/descriptions/hashtags follow GROWTH.md (short keyword-first titles, exactly 3 hashtags, 15–20 tags).
+**Channel links block (Chirag, standing rule):** every YouTube description and Instagram caption — daily Shorts, dashboard videos, edits and any hand-made post — must contain `CHANNEL_BLOCK` from `scripts/channel_links.py` verbatim, in addition to our own text. The post_text scripts add it automatically; for any other post, paste it.
 
 Fully automatic; never ask Chirag to approve. He is **not** a SEBI-registered RA — never say so. Content is
 information/education only. Never speak or write profit / ₹ amounts. Voice: ElevenLabs **Matilda** via vidIQ (Chirag's choice — openly an AI voice), Hindi/Hinglish script, English subtitles.
