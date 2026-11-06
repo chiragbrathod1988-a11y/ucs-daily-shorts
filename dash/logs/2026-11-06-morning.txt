@@ -1,0 +1,7 @@
+saved dash/2026-11-06/morning-raw.json
+{"mode": "morning", "lines": 8, "shots": ["snapshot", "heatmap", "feature"], "meta": {"nifty": {"ltp": 0, "chp": 0, "ch": 0}, "bankNifty": {"ltp": 0, "chp": 0, "ch": 0}, "vix": {"ltp": 0, "chp": 0}, "breadth": {"advancing": 1471, "declining": 666, "mood_label": "Neutral"}, "strong": ["Financial Services", "3.08"], "weak": ["Aerospace & Defence", "-2.01"], "feature": "Build Your Algo", "marketDate": "2026-11-05"}}
+ok snapshot
+ok heatmap
+ok feature
+chart miss nifty NIFTYFUT
+OK 2026-11-06:morning
