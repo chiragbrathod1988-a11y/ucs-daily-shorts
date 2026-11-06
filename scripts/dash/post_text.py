@@ -27,13 +27,14 @@ https://t.me/uppercircuitstocksbychiragrathod"""
 DIS = "⚠️ For information and education only. Not investment advice. Signals shown are selected examples from the dashboard, not recommendations; past results do not guarantee future results. Market risks apply — do your own research."
 
 if d["slot"] == "morning":
+    idx = (f"Last session: Nifty {m['nifty']['ltp']:,.0f} · Bank Nifty {m['bankNifty']['ltp']:,.0f}"
+           + (f" · VIX {m['vix']['ltp']:.2f}" if m['vix'].get('ltp') else "") + "\n") if m['nifty'].get('ltp') and m['bankNifty'].get('ltp') else ""
     title = f"9:15 Se Pehle Ye Screen Dekho! 📊 {feat}"
     sec = f"💪 Strongest: {m['strong'][0]}  |  🩸 Weakest: {m['weak'][0]}"
     body = f"""Stock market analysis before 9:15 — Nifty, sectors and {feat.lower()} on one AI trading dashboard.
 📊 Market khulne se pehle — Nifty, Bank Nifty, VIX, breadth aur sectors, sab EK dashboard pe!
 
-Last session: Nifty {m['nifty']['ltp']:,.0f} · Bank Nifty {m['bankNifty']['ltp']:,.0f} · VIX {m['vix']['ltp']:.2f}
-Breadth: {m['breadth']['mood_label']} ({m['breadth']['advancing']:,} ▲ / {m['breadth']['declining']:,} ▼)
+{idx}Breadth: {m['breadth']['mood_label']} ({m['breadth']['advancing']:,} ▲ / {m['breadth']['declining']:,} ▼)
 {sec}
 
 ⭐ Feature of the day: {feat}

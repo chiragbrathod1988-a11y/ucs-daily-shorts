@@ -11,8 +11,8 @@
   },
   {
    "tag": "nifty",
-   "text": "पिछले session में Nifty zero पे close हुआ, और Bank Nifty zero पे।",
-   "en": "Last session: Nifty closed at 0, Bank Nifty at 0."
+   "text": "पहले देखो, पिछले session का Nifty futures, five minute chart पे।",
+   "en": "First, last session's Nifty futures on the 5-minute chart."
   },
   {
    "tag": "breadth",
@@ -59,23 +59,6 @@
    "chart": "nifty",
    "title": "NIFTY FUTURES · 5 MIN",
    "mode": "session",
-   "stats": [
-    [
-     "NIFTY 50",
-     "0",
-     "+0.00%"
-    ],
-    [
-     "BANK NIFTY",
-     "0",
-     "+0.00%"
-    ],
-    [
-     "INDIA VIX",
-     "0.00",
-     "+0.00%"
-    ]
-   ],
    "tags": [
     "nifty"
    ]

@@ -132,10 +132,17 @@ if slot == "morning":
     say("hook", "Market खुलने से पहले, ये एक screen देख लो, बाकी traders से आगे रहोगे।",
         "Check this ONE screen before 9:15 — stay ahead of other traders.",
         {"kind": "hook", "title": "9:15 SE PEHLE", "sub": "Nifty + Sectors · ek screen"})
-    say("nifty", f"पिछले session में Nifty {ew(ni['ltp'])} पे close हुआ, और Bank Nifty {ew(bn['ltp'])} पे।",
-        f"Last session: Nifty closed at {fmt(ni['ltp'])}, Bank Nifty at {fmt(bn['ltp'])}.",
-        {"kind": "chart", "chart": "nifty", "title": "NIFTY FUTURES · 5 MIN", "mode": "session",
-         "stats": [["NIFTY 50", fmt(ni["ltp"]), pct(ni["chp"])], ["BANK NIFTY", fmt(bn["ltp"]), pct(bn["chp"])], ["INDIA VIX", f"{vix['ltp']:.2f}", pct(vix["chp"])]]})
+    if ni.get("ltp") and bn.get("ltp"):
+        stats = [["NIFTY 50", fmt(ni["ltp"]), pct(ni["chp"])], ["BANK NIFTY", fmt(bn["ltp"]), pct(bn["chp"])]]
+        if vix.get("ltp"):
+            stats.append(["INDIA VIX", f"{vix['ltp']:.2f}", pct(vix["chp"])])
+        say("nifty", f"पिछले session में Nifty {ew(ni['ltp'])} पे close हुआ, और Bank Nifty {ew(bn['ltp'])} पे।",
+            f"Last session: Nifty closed at {fmt(ni['ltp'])}, Bank Nifty at {fmt(bn['ltp'])}.",
+            {"kind": "chart", "chart": "nifty", "title": "NIFTY FUTURES · 5 MIN", "mode": "session", "stats": stats})
+    else:   # dashboard returned no index quotes (0) -> never speak a number; show the real candle chart only
+        say("nifty", "पहले देखो, पिछले session का Nifty futures, five minute chart पे।",
+            "First, last session's Nifty futures on the 5-minute chart.",
+            {"kind": "chart", "chart": "nifty", "title": "NIFTY FUTURES · 5 MIN", "mode": "session"})
     say("breadth", f"Market breadth रहा {br['mood_label']}, {ew(br['advancing'])} stocks ऊपर, और {ew(br['declining'])} नीचे।",
         f"Breadth: {br['mood_label']} — {br['advancing']:,} up, {br['declining']:,} down.",
         {"kind": "screen", "shot": s_snap, "scroll": [0.12, 0.26],
