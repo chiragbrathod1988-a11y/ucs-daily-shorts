@@ -2,5 +2,5 @@
 ok snapshot
 ok heatmap
 ok feature
-chart miss nifty NIFTYFUT
+chart ok nifty NIFTY26NOVFUT 2026-11-05 77
 OK 2026-11-06:morning
