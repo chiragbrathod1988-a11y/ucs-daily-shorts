@@ -1,0 +1,224 @@
+{
+ "date": "2026-11-06",
+ "slot": "morning",
+ "mode": "morning",
+ "feature": "Build Your Algo",
+ "lines": [
+  {
+   "tag": "hook",
+   "text": "Market खुलने से पहले, ये एक screen देख लो, बाकी traders से आगे रहोगे।",
+   "en": "Check this ONE screen before 9:15 — stay ahead of other traders."
+  },
+  {
+   "tag": "nifty",
+   "text": "पिछले session में Nifty zero पे close हुआ, और Bank Nifty zero पे।",
+   "en": "Last session: Nifty closed at 0, Bank Nifty at 0."
+  },
+  {
+   "tag": "breadth",
+   "text": "Market breadth रहा Neutral, one thousand four hundred seventy one stocks ऊपर, और six hundred sixty six नीचे।",
+   "en": "Breadth: Neutral — 1,471 up, 666 down."
+  },
+  {
+   "tag": "sectors",
+   "text": "सबसे strong sector रहा Financial Services, और सबसे weak रहा Aerospace & Defence।",
+   "en": "Strongest: Financial Services (+3.08%) · Weakest: Aerospace & Defence (-2.01%)."
+  },
+  {
+   "tag": "ahead",
+   "text": "नौ पंद्रह के बाद यही सब live update होता है, तो आप market के साथ नहीं, market से आगे चलते हो।",
+   "en": "After 9:15 it all updates live — you move ahead of the market, not behind it."
+  },
+  {
+   "tag": "feat1",
+   "text": "आज का feature: Algo Trade में, अपनी strategy simple English में लिखो।",
+   "en": "Feature of the day — Algo Trade: describe your strategy in plain English."
+  },
+  {
+   "tag": "feat2",
+   "text": "Backtest seconds में, फिर paper पे forward test।",
+   "en": "Backtest in seconds, then forward-test on paper."
+  },
+  {
+   "tag": "cta",
+   "text": "बाकी traders से आगे रहना है? AI Dashboard का link description में है। Follow करो, Upper Circuit Stocks।",
+   "en": "Want to stay ahead? AI Dashboard link in the description. Follow UpperCircuitStocks!"
+  }
+ ],
+ "scenes": [
+  {
+   "kind": "hook",
+   "title": "9:15 SE PEHLE",
+   "sub": "Nifty + Sectors · ek screen",
+   "tags": [
+    "hook"
+   ]
+  },
+  {
+   "kind": "chart",
+   "chart": "nifty",
+   "title": "NIFTY FUTURES · 5 MIN",
+   "mode": "session",
+   "stats": [
+    [
+     "NIFTY 50",
+     "0",
+     "+0.00%"
+    ],
+    [
+     "BANK NIFTY",
+     "0",
+     "+0.00%"
+    ],
+    [
+     "INDIA VIX",
+     "0.00",
+     "+0.00%"
+    ]
+   ],
+   "tags": [
+    "nifty"
+   ]
+  },
+  {
+   "kind": "screen",
+   "shot": "snapshot.png",
+   "scroll": [
+    0.12,
+    0.26
+   ],
+   "badge": [
+    "NEUTRAL",
+    "1,471 ▲  ·  666 ▼"
+   ],
+   "tags": [
+    "breadth"
+   ]
+  },
+  {
+   "kind": "screen",
+   "shot": "heatmap.png",
+   "scroll": [
+    0.1,
+    0.35
+   ],
+   "sectors": [
+    [
+     "Financial Services",
+     "+3.08%"
+    ],
+    [
+     "Aerospace & Defence",
+     "-2.01%"
+    ]
+   ],
+   "tags": [
+    "sectors"
+   ]
+  },
+  {
+   "kind": "clipscreen",
+   "clip": "03.mp4",
+   "clipStart": 6,
+   "label": "LIVE AFTER 9:15",
+   "tags": [
+    "ahead"
+   ]
+  },
+  {
+   "kind": "feature",
+   "shot": "feature.png",
+   "name": "Build Your Algo",
+   "scroll": [
+    0.0,
+    0.25
+   ],
+   "clip": "09.mp4",
+   "clipStart": 3,
+   "tags": [
+    "feat1"
+   ]
+  },
+  {
+   "kind": "feature",
+   "shot": "feature.png",
+   "name": "Build Your Algo",
+   "scroll": [
+    0.25,
+    0.45
+   ],
+   "clip": "09.mp4",
+   "clipStart": 3,
+   "tags": [
+    "feat2"
+   ]
+  },
+  {
+   "kind": "cta",
+   "tags": [
+    "cta"
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "name": "snapshot",
+   "url": "https://app.uppercircuitstocks.com/snapshot.html",
+   "kind": "page",
+   "match": [],
+   "clip": null
+  },
+  {
+   "name": "heatmap",
+   "url": "https://app.uppercircuitstocks.com/research.html?p=heatmap",
+   "kind": "page",
+   "match": [],
+   "clip": null
+  },
+  {
+   "name": "feature",
+   "url": "https://app.uppercircuitstocks.com/research.html?p=algo",
+   "kind": "page",
+   "match": [],
+   "clip": null
+  }
+ ],
+ "charts": [
+  {
+   "key": "nifty",
+   "symbol": "NIFTYFUT",
+   "when": "prev"
+  }
+ ],
+ "meta": {
+  "nifty": {
+   "ltp": 0,
+   "chp": 0,
+   "ch": 0
+  },
+  "bankNifty": {
+   "ltp": 0,
+   "chp": 0,
+   "ch": 0
+  },
+  "vix": {
+   "ltp": 0,
+   "chp": 0
+  },
+  "breadth": {
+   "advancing": 1471,
+   "declining": 666,
+   "mood_label": "Neutral"
+  },
+  "strong": [
+   "Financial Services",
+   "3.08"
+  ],
+  "weak": [
+   "Aerospace & Defence",
+   "-2.01"
+  ],
+  "feature": "Build Your Algo",
+  "marketDate": "2026-11-05"
+ }
+}
