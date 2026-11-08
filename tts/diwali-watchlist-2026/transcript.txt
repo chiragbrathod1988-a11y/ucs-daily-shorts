@@ -1,0 +1,48 @@
+hook
+  script: Diwali पे दो बड़े Bank stocks ने, monthly chart पे लंबा consolidation तोड़ दिया है!
+  heard:  दिवाली पे डो बड़े बांक स्टोक्स ने मंतली चाट पे लंबा कंसोलिटेशन तोड दिया है.
+hook2
+  script: Upper Circuit Stocks की Diwali Breakout Watchlist, अंत तक ज़रूर देखना।
+  heard:  अप्र सर्किट स्टोक्स की दिवाली ब्रेकाउत वाच्लिस्ट अंप तक जरूर देखना.
+i1
+  script: पहला, ICICI Bank। Monthly chart पे stock कई महीनों तक, eleven ninety five और fifteen hundred five के बीच range में रहा।
+  heard:  पहला, ICICIBANK मंद्ली चाथ पेश टोक कै रहीनो तक, 1195 और 1505 के भीच रेईज में रहा.
+i2
+  script: अब इस महीने की candle ने fifteen hundred five का top तोड़ा, और fifteen seventy six के पास है, twelve point seven percent ऊपर।
+  heard:  अब इस महीने की कन्डल ने 1505 का तोडा और 1576 के पास है, 12.7% उपर.
+i3
+  script: Chart पे upside projection zone, twenty three fifty eight तक marked है। ये chart study है, कोई guarantee नहीं।
+  heard:  चाट पे अपसाइट प्रजेक्षन जोन, 2358 तक माक्त है. ये चाट स्टडी है, कोई गारन्टी नहीं.
+if1
+  script: Fundamentals देखो। Q2 में net profit twenty percent बढ़कर, fourteen thousand eight hundred forty three crore।
+  heard:  अपन्दा मेंटल्स देखो क्यु दो में नेट प्रोफित 20% बड़ुकर 14,843 क्रोल
+if2
+  script: Net Interest Margin four point one eight percent, और Net NPA सिर्फ zero point three percent।
+  heard:  Net interest margin 4.18%, or net NPA only 0.3%.
+if3
+  script: Mutual funds के पास करीब twenty nine percent हिस्सा, और FII ने इस quarter अपना stake बढ़ाया।
+  heard:  मूँछ्वल पन्तउच्सके पाईसकिरीप 29 पसवंद होगी स्रोई पंँदाों आदानीा वाछष्या।
+k1
+  script: दूसरा, Kotak Mahindra Bank। Monthly chart पे, three seventeen और four fifty के बीच लंबा consolidation।
+  heard:  2. कोटक महिन्द्रा बांक मन्त्ली चार्ट पे, 317 और 450 के भीछ लंभा कन्सुलिटेशन
+k2
+  script: अब four fifty के ऊपर breakout, और stock four eighty के पास। Projection zone, six ninety nine तक marked है।
+  heard:  अप 450 के उपर ब्रेकाूट और श्टोक 480 के पास प्रजेक्षन जोन 699 तक माक्त है
+kf1
+  script: Q2 में Kotak का net profit twenty nine percent बढ़कर, four thousand two hundred twelve crore।
+  heard:  क्यो दो में कोटर का नेट प्रोफित 29% बडखर 4212 क्रोर
+kf2
+  script: NIM four point three one percent, Net NPA zero point two four percent, और capital adequacy करीब twenty two percent।
+  heard:  NIM 4.31%, NET NPA 0.24%, OR CAPITAL ADDICUESY 22%.
+kf3
+  script: DII holding बढ़कर thirty eight point five percent, और promoter के पास करीब twenty six percent।
+  heard:  दियाई होल्टिंग बदकर 38.5% और प्रमोटर के पास करीब 26%
+risk
+  script: याद रखो, monthly breakout तभी मज़बूत है, जब price breakout level के ऊपर टिका रहे।
+  heard:  याद रख हो, मन्तली ब्रेकाउट तभी मस्वूथ है, जब प्राइस ब्रेकाउट लेविल के उपर तिका रहें.
+cta
+  script: ऐसे breakout stocks खुद ढूँढने के लिए, AI Dashboard के Stock Screeners देखो, link description में है।
+  heard:  आज़े ब्रेकाउट स्तोक्स कुछ भूँँडने के लिए आई डश्बोर्ट के स्तोक्स्क्रीनाज देखो लिंक दिस्क्रिप्षन मेहें
+cta2
+  script: आप सभी को Diwali की ढेर सारी शुभकामनाएँ! Save करो, share करो, और follow करो Upper Circuit Stocks।
+  heard:  आप सभी को दिवाली की देर सारी शुबकाम नाए. सेव करो, शेर करो, और फोलो करो अपर सर्किट स्वाख्स.
