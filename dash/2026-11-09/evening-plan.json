@@ -1,0 +1,419 @@
+{
+ "date": "2026-11-09",
+ "slot": "evening",
+ "mode": "evening",
+ "feature": "IPO Centre",
+ "lines": [
+  {
+   "tag": "hook",
+   "text": "आज AI Dashboard ने क्या पकड़ा? कुछ selected signals देखो।",
+   "en": "What did the AI Dashboard catch today? A few selected signals."
+  },
+  {
+   "tag": "s1a",
+   "text": "Amber Enterprises India Put, पाँच दिन और पाँच घंटे का low break और price बीस SMA के नीचे।",
+   "en": "AMBER 6,100 PE — 5-day & 5-hour low break + price below 20 SMA."
+  },
+  {
+   "tag": "s1b",
+   "text": "Trailing stop से move पकड़ा।",
+   "en": "Move captured with a trailing stop."
+  },
+  {
+   "tag": "s2a",
+   "text": "Fin Nifty Put, gap के बाद candle और volume में mismatch।",
+   "en": "FINNIFTY 27,300 PE — Gap + candle/volume mismatch."
+  },
+  {
+   "tag": "s2b",
+   "text": "Target two तक गया।",
+   "en": "Target 2 hit."
+  },
+  {
+   "tag": "s3a",
+   "text": "Britannia Industries Call, एक घंटे पे Bear Trap, breakdown fail हुआ।",
+   "en": "BRITANNIA 4,850 CE — Bear Trap on 1-hour — breakdown failed."
+  },
+  {
+   "tag": "s3b",
+   "text": "Target two तक गया।",
+   "en": "Target 2 hit."
+  },
+  {
+   "tag": "s4a",
+   "text": "Divi's Laboratories Call, पाँच दिन और पाँच घंटे का high break और price बीस SMA के ऊपर।",
+   "en": "DIVISLAB 11,700 CE — 5-day & 5-hour high break + price above 20 SMA."
+  },
+  {
+   "tag": "s4b",
+   "text": "ये वाला स्टॉप लॉस हिट हुआ, इसीलिए स्टॉप लॉस हमेशा ज़रूरी है।",
+   "en": "This one hit SL — that's why SL always matters."
+  },
+  {
+   "tag": "ahead",
+   "text": "Signal आते ही phone पे alert आता है, और एक tap में अपने broker पे order, Fyers, Zerodha या Dhan।",
+   "en": "Instant phone alert the moment a signal appears — one tap to your broker: Fyers, Zerodha or Dhan."
+  },
+  {
+   "tag": "cta",
+   "text": "बाकी traders से आगे रहना है? AI Dashboard का link description में है। Follow करो, Upper Circuit Stocks।",
+   "en": "Want to stay ahead? AI Dashboard link in the description. Follow UpperCircuitStocks!"
+  }
+ ],
+ "scenes": [
+  {
+   "kind": "hook",
+   "title": "AAJ KE SIGNALS",
+   "sub": "Selected signals · 9 Nov",
+   "chips": [
+    "✅",
+    "✅",
+    "✅",
+    "❌"
+   ],
+   "tags": [
+    "hook"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig1.png",
+   "n": 1,
+   "name": "AMBER",
+   "contract": "AMBER 6,100 PE",
+   "time": "09:35",
+   "logic": "5-day & 5-hour low break + price below 20 SMA",
+   "label": "TRAILING EXIT ✅",
+   "win": true,
+   "scanner": "Star Setup",
+   "entry": "219.15",
+   "sl": "248.95",
+   "tgt": [
+    "256.7",
+    "294.25"
+   ],
+   "chart": "sig1",
+   "mode": "signal",
+   "title": "SIGNAL 1 · STAR SETUP · 09:35",
+   "sigTs": "2026-11-09T04:05:10.267Z",
+   "exitTs": "2026-11-09T04:34:09.189Z",
+   "side": "PE",
+   "tags": [
+    "s1a"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig1.png",
+   "n": 1,
+   "name": "AMBER",
+   "contract": "AMBER 6,100 PE",
+   "time": "09:35",
+   "logic": "5-day & 5-hour low break + price below 20 SMA",
+   "label": "TRAILING EXIT ✅",
+   "win": true,
+   "scanner": "Star Setup",
+   "entry": "219.15",
+   "sl": "248.95",
+   "tgt": [
+    "256.7",
+    "294.25"
+   ],
+   "chart": "sig1",
+   "mode": "signal",
+   "title": "SIGNAL 1 · STAR SETUP · 09:35",
+   "sigTs": "2026-11-09T04:05:10.267Z",
+   "exitTs": "2026-11-09T04:34:09.189Z",
+   "side": "PE",
+   "phase": "result",
+   "tags": [
+    "s1b"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig2.png",
+   "n": 2,
+   "name": "FINNIFTY",
+   "contract": "FINNIFTY 27,300 PE",
+   "time": "09:46",
+   "logic": "Gap + candle/volume mismatch",
+   "label": "TARGET 2 HIT ✅",
+   "win": true,
+   "scanner": "Index Options",
+   "entry": "443.35",
+   "sl": "27276.3",
+   "tgt": [
+    "27193.6",
+    "27157.1"
+   ],
+   "chart": "sig2",
+   "mode": "signal",
+   "title": "SIGNAL 2 · INDEX OPTIONS · 09:46",
+   "sigTs": "2026-11-09T04:16:04.304Z",
+   "exitTs": "2026-11-09T05:15:05.142Z",
+   "side": "PE",
+   "tags": [
+    "s2a"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig2.png",
+   "n": 2,
+   "name": "FINNIFTY",
+   "contract": "FINNIFTY 27,300 PE",
+   "time": "09:46",
+   "logic": "Gap + candle/volume mismatch",
+   "label": "TARGET 2 HIT ✅",
+   "win": true,
+   "scanner": "Index Options",
+   "entry": "443.35",
+   "sl": "27276.3",
+   "tgt": [
+    "27193.6",
+    "27157.1"
+   ],
+   "chart": "sig2",
+   "mode": "signal",
+   "title": "SIGNAL 2 · INDEX OPTIONS · 09:46",
+   "sigTs": "2026-11-09T04:16:04.304Z",
+   "exitTs": "2026-11-09T05:15:05.142Z",
+   "side": "PE",
+   "phase": "result",
+   "tags": [
+    "s2b"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig3.png",
+   "n": 3,
+   "name": "BRITANNIA",
+   "contract": "BRITANNIA 4,850 CE",
+   "time": "11:15",
+   "logic": "Bear Trap on 1-hour — breakdown failed",
+   "label": "TARGET 2 HIT ✅",
+   "win": true,
+   "scanner": "Intraday Trap",
+   "entry": "91.95",
+   "sl": "4742.1",
+   "tgt": [],
+   "chart": "sig3",
+   "mode": "signal",
+   "title": "SIGNAL 3 · INTRADAY TRAP · 11:15",
+   "sigTs": "2026-11-09T05:45:00.000Z",
+   "exitTs": "2026-11-09T06:00:00.000Z",
+   "side": "CE",
+   "tags": [
+    "s3a"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig3.png",
+   "n": 3,
+   "name": "BRITANNIA",
+   "contract": "BRITANNIA 4,850 CE",
+   "time": "11:15",
+   "logic": "Bear Trap on 1-hour — breakdown failed",
+   "label": "TARGET 2 HIT ✅",
+   "win": true,
+   "scanner": "Intraday Trap",
+   "entry": "91.95",
+   "sl": "4742.1",
+   "tgt": [],
+   "chart": "sig3",
+   "mode": "signal",
+   "title": "SIGNAL 3 · INTRADAY TRAP · 11:15",
+   "sigTs": "2026-11-09T05:45:00.000Z",
+   "exitTs": "2026-11-09T06:00:00.000Z",
+   "side": "CE",
+   "phase": "result",
+   "tags": [
+    "s3b"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig4.png",
+   "n": 4,
+   "name": "DIVISLAB",
+   "contract": "DIVISLAB 11,700 CE",
+   "time": "09:25",
+   "logic": "5-day & 5-hour high break + price above 20 SMA",
+   "label": "SL HIT ❌",
+   "win": false,
+   "scanner": "Star Setup",
+   "entry": "371.05",
+   "sl": "326.05",
+   "tgt": [
+    "416.05",
+    "461.05"
+   ],
+   "chart": "sig4",
+   "mode": "signal",
+   "title": "SIGNAL 4 · STAR SETUP · 09:25",
+   "sigTs": "2026-11-09T03:55:08.098Z",
+   "exitTs": "2026-11-09T03:55:21.697Z",
+   "side": "CE",
+   "tags": [
+    "s4a"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig4.png",
+   "n": 4,
+   "name": "DIVISLAB",
+   "contract": "DIVISLAB 11,700 CE",
+   "time": "09:25",
+   "logic": "5-day & 5-hour high break + price above 20 SMA",
+   "label": "SL HIT ❌",
+   "win": false,
+   "scanner": "Star Setup",
+   "entry": "371.05",
+   "sl": "326.05",
+   "tgt": [
+    "416.05",
+    "461.05"
+   ],
+   "chart": "sig4",
+   "mode": "signal",
+   "title": "SIGNAL 4 · STAR SETUP · 09:25",
+   "sigTs": "2026-11-09T03:55:08.098Z",
+   "exitTs": "2026-11-09T03:55:21.697Z",
+   "side": "CE",
+   "phase": "result",
+   "tags": [
+    "s4b"
+   ]
+  },
+  {
+   "kind": "ahead",
+   "shot": "brokers.png",
+   "clip": "21.mp4",
+   "clipStart": 8,
+   "tags": [
+    "ahead"
+   ]
+  },
+  {
+   "kind": "cta",
+   "tags": [
+    "cta"
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "name": "brokers",
+   "url": "https://app.uppercircuitstocks.com/home.html",
+   "kind": "match",
+   "match": [
+    "TRADE FROM SIGNAL CARDS"
+   ],
+   "clip": null
+  },
+  {
+   "name": "sig1",
+   "url": "https://app.uppercircuitstocks.com/research.html?page=star",
+   "kind": "card",
+   "match": [
+    "AMBER",
+    "ENTRY"
+   ],
+   "clip": null
+  },
+  {
+   "name": "sig2",
+   "url": "https://app.uppercircuitstocks.com/research.html?page=idx",
+   "kind": "card",
+   "match": [
+    "FINNIFTY",
+    "ENTRY"
+   ],
+   "clip": null
+  },
+  {
+   "name": "sig3",
+   "url": "https://app.uppercircuitstocks.com/research.html?page=trap",
+   "kind": "card",
+   "match": [
+    "BRITANNIA"
+   ],
+   "clip": null
+  },
+  {
+   "name": "sig4",
+   "url": "https://app.uppercircuitstocks.com/research.html?page=star",
+   "kind": "card",
+   "match": [
+    "DIVISLAB",
+    "ENTRY"
+   ],
+   "clip": null
+  }
+ ],
+ "charts": [
+  {
+   "key": "sig1",
+   "symbol": "AMBER",
+   "when": "day"
+  },
+  {
+   "key": "sig2",
+   "symbol": "FINNIFTYFUT",
+   "when": "day"
+  },
+  {
+   "key": "sig3",
+   "symbol": "BRITANNIA",
+   "when": "day"
+  },
+  {
+   "key": "sig4",
+   "symbol": "DIVISLAB",
+   "when": "day"
+  }
+ ],
+ "meta": {
+  "poolSize": 65,
+  "winners": 3,
+  "slHits": 18,
+  "picks": [
+   {
+    "src": "star",
+    "name": "AMBER",
+    "side": "PE",
+    "strike": "6100",
+    "outcome": "TRAIL",
+    "ts": "2026-11-09T04:05:10.267Z"
+   },
+   {
+    "src": "index",
+    "name": "FINNIFTY",
+    "side": "PE",
+    "strike": "27300",
+    "outcome": "T2",
+    "ts": "2026-11-09T04:16:04.304Z"
+   },
+   {
+    "src": "trap",
+    "name": "BRITANNIA",
+    "side": "CE",
+    "strike": "4850",
+    "outcome": "T2",
+    "ts": "2026-11-09T05:45:00.000Z"
+   },
+   {
+    "src": "star",
+    "name": "DIVISLAB",
+    "side": "CE",
+    "strike": "11700",
+    "outcome": "SL",
+    "ts": "2026-11-09T03:55:08.098Z"
+   }
+  ]
+ }
+}

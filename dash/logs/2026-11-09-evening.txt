@@ -1,0 +1,12 @@
+saved dash/2026-11-09/evening-raw.json
+{"mode": "evening", "lines": 11, "shots": ["brokers", "sig1", "sig2", "sig3", "sig4"], "meta": {"poolSize": 65, "winners": 3, "slHits": 18, "picks": [{"src": "star", "name": "AMBER", "side": "PE", "strike": "6100", "outcome": "TRAIL", "ts": "2026-11-09T04:05:10.267Z"}, {"src": "index", "name": "FINNIFTY", "side": "PE", "strike": "27300", "outcome": "T2", "ts": "2026-11-09T04:16:04.304Z"}, {"src": "trap", "name": "BRITANNIA", "side": "CE", "strike": "4850", "outcome": "T2", "ts": "2026-11-09T05:45:00.000Z"}, {"src": "star", "name": "DIVISLAB", "side": "CE", "strike": "11700", "outcome": "SL", "ts": "2026-11-09T03:55:08.098Z"}]}}
+ok brokers
+ok sig1
+ok sig2
+miss sig3 Error: not found: BRITANNIA
+ok sig4
+chart ok sig1 AMBER 2026-11-09 75
+chart ok sig2 FINNIFTY26NOVFUT 2026-11-09 77
+chart ok sig3 BRITANNIA 2026-11-09 75
+chart ok sig4 DIVISLAB 2026-11-09 75
+OK 2026-11-09:evening
