@@ -1,0 +1,412 @@
+{
+ "date": "2026-11-11",
+ "slot": "evening",
+ "mode": "evening",
+ "feature": "Commodities Scanner",
+ "lines": [
+  {
+   "tag": "hook",
+   "text": "आज AI Dashboard ने क्या पकड़ा? कुछ selected signals देखो।",
+   "en": "What did the AI Dashboard catch today? A few selected signals."
+  },
+  {
+   "tag": "s1a",
+   "text": "Kalyan Jewellers India Call, पाँच दिन और पाँच घंटे का high break और price बीस SMA के ऊपर।",
+   "en": "KALYANKJIL 670 CE — 5-day & 5-hour high break + price above 20 SMA."
+  },
+  {
+   "tag": "s1b",
+   "text": "Trailing stop से move पकड़ा।",
+   "en": "Move captured with a trailing stop."
+  },
+  {
+   "tag": "s2a",
+   "text": "Adani Green Energy Put, पंद्रह minute पे Bull Trap, breakout fail हुआ।",
+   "en": "ADANIGREEN 1,460 PE — Bull Trap on 15-min — breakout failed."
+  },
+  {
+   "tag": "s2b",
+   "text": "Trailing stop से move पकड़ा।",
+   "en": "Move captured with a trailing stop."
+  },
+  {
+   "tag": "s3a",
+   "text": "Fin Nifty Put, gap के बाद candle और volume में mismatch।",
+   "en": "FINNIFTY 27,800 PE — Gap + candle/volume mismatch."
+  },
+  {
+   "tag": "s3b",
+   "text": "Target two तक गया।",
+   "en": "Target 2 hit."
+  },
+  {
+   "tag": "s4a",
+   "text": "SRF Put, एक घंटे पे Bull Trap, breakout fail हुआ।",
+   "en": "SRF 2,460 PE — Bull Trap on 1-hour — breakout failed."
+  },
+  {
+   "tag": "s4b",
+   "text": "ये वाला स्टॉप लॉस हिट हुआ, इसीलिए स्टॉप लॉस हमेशा ज़रूरी है।",
+   "en": "This one hit SL — that's why SL always matters."
+  },
+  {
+   "tag": "ahead",
+   "text": "Signal आते ही phone पे alert आता है, और एक tap में अपने broker पे order, Fyers, Zerodha या Dhan।",
+   "en": "Instant phone alert the moment a signal appears — one tap to your broker: Fyers, Zerodha or Dhan."
+  },
+  {
+   "tag": "cta",
+   "text": "बाकी traders से आगे रहना है? AI Dashboard का link description में है। Follow करो, Upper Circuit Stocks।",
+   "en": "Want to stay ahead? AI Dashboard link in the description. Follow UpperCircuitStocks!"
+  }
+ ],
+ "scenes": [
+  {
+   "kind": "hook",
+   "title": "AAJ KE SIGNALS",
+   "sub": "Selected signals · 11 Nov",
+   "chips": [
+    "✅",
+    "✅",
+    "✅",
+    "❌"
+   ],
+   "tags": [
+    "hook"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig1.png",
+   "n": 1,
+   "name": "KALYANKJIL",
+   "contract": "KALYANKJIL 670 CE",
+   "time": "09:20",
+   "logic": "5-day & 5-hour high break + price above 20 SMA",
+   "label": "TRAILING EXIT ✅",
+   "win": true,
+   "scanner": "Star Setup",
+   "entry": "29.2",
+   "sl": "31.64",
+   "tgt": [
+    "32.53",
+    "35.86"
+   ],
+   "chart": "sig1",
+   "mode": "signal",
+   "title": "SIGNAL 1 · STAR SETUP · 09:20",
+   "sigTs": "2026-11-11T03:50:10.077Z",
+   "exitTs": "2026-11-11T03:52:21.873Z",
+   "side": "CE",
+   "tags": [
+    "s1a"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig1.png",
+   "n": 1,
+   "name": "KALYANKJIL",
+   "contract": "KALYANKJIL 670 CE",
+   "time": "09:20",
+   "logic": "5-day & 5-hour high break + price above 20 SMA",
+   "label": "TRAILING EXIT ✅",
+   "win": true,
+   "scanner": "Star Setup",
+   "entry": "29.2",
+   "sl": "31.64",
+   "tgt": [
+    "32.53",
+    "35.86"
+   ],
+   "chart": "sig1",
+   "mode": "signal",
+   "title": "SIGNAL 1 · STAR SETUP · 09:20",
+   "sigTs": "2026-11-11T03:50:10.077Z",
+   "exitTs": "2026-11-11T03:52:21.873Z",
+   "side": "CE",
+   "phase": "result",
+   "tags": [
+    "s1b"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig2.png",
+   "n": 2,
+   "name": "ADANIGREEN",
+   "contract": "ADANIGREEN 1,460 PE",
+   "time": "09:45",
+   "logic": "Bull Trap on 15-min — breakout failed",
+   "label": "TRAILING EXIT ✅",
+   "win": true,
+   "scanner": "Intraday Trap",
+   "entry": "32.65",
+   "sl": "1478.5",
+   "tgt": [],
+   "chart": "sig2",
+   "mode": "signal",
+   "title": "SIGNAL 2 · INTRADAY TRAP · 09:45",
+   "sigTs": "2026-11-11T04:15:00.000Z",
+   "exitTs": "2026-11-11T09:30:00.000Z",
+   "side": "PE",
+   "tags": [
+    "s2a"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig2.png",
+   "n": 2,
+   "name": "ADANIGREEN",
+   "contract": "ADANIGREEN 1,460 PE",
+   "time": "09:45",
+   "logic": "Bull Trap on 15-min — breakout failed",
+   "label": "TRAILING EXIT ✅",
+   "win": true,
+   "scanner": "Intraday Trap",
+   "entry": "32.65",
+   "sl": "1478.5",
+   "tgt": [],
+   "chart": "sig2",
+   "mode": "signal",
+   "title": "SIGNAL 2 · INTRADAY TRAP · 09:45",
+   "sigTs": "2026-11-11T04:15:00.000Z",
+   "exitTs": "2026-11-11T09:30:00.000Z",
+   "side": "PE",
+   "phase": "result",
+   "tags": [
+    "s2b"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig3.png",
+   "n": 3,
+   "name": "FINNIFTY",
+   "contract": "FINNIFTY 27,800 PE",
+   "time": "10:00",
+   "logic": "Gap + candle/volume mismatch",
+   "label": "TARGET 2 HIT ✅",
+   "win": true,
+   "scanner": "Index Options",
+   "entry": "398.75",
+   "sl": "27856.8",
+   "tgt": [
+    "27817.8",
+    "27786.8"
+   ],
+   "chart": "sig3",
+   "mode": "signal",
+   "title": "SIGNAL 3 · INDEX OPTIONS · 10:00",
+   "sigTs": "2026-11-11T04:30:07.266Z",
+   "exitTs": "2026-11-11T04:39:04.104Z",
+   "side": "PE",
+   "tags": [
+    "s3a"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig3.png",
+   "n": 3,
+   "name": "FINNIFTY",
+   "contract": "FINNIFTY 27,800 PE",
+   "time": "10:00",
+   "logic": "Gap + candle/volume mismatch",
+   "label": "TARGET 2 HIT ✅",
+   "win": true,
+   "scanner": "Index Options",
+   "entry": "398.75",
+   "sl": "27856.8",
+   "tgt": [
+    "27817.8",
+    "27786.8"
+   ],
+   "chart": "sig3",
+   "mode": "signal",
+   "title": "SIGNAL 3 · INDEX OPTIONS · 10:00",
+   "sigTs": "2026-11-11T04:30:07.266Z",
+   "exitTs": "2026-11-11T04:39:04.104Z",
+   "side": "PE",
+   "phase": "result",
+   "tags": [
+    "s3b"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig4.png",
+   "n": 4,
+   "name": "SRF",
+   "contract": "SRF 2,460 PE",
+   "time": "11:15",
+   "logic": "Bull Trap on 1-hour — breakout failed",
+   "label": "SL HIT ❌",
+   "win": false,
+   "scanner": "Intraday Trap",
+   "entry": "33.8",
+   "sl": "2480.2",
+   "tgt": [],
+   "chart": "sig4",
+   "mode": "signal",
+   "title": "SIGNAL 4 · INTRADAY TRAP · 11:15",
+   "sigTs": "2026-11-11T05:45:00.000Z",
+   "exitTs": "2026-11-11T06:45:00.000Z",
+   "side": "PE",
+   "tags": [
+    "s4a"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig4.png",
+   "n": 4,
+   "name": "SRF",
+   "contract": "SRF 2,460 PE",
+   "time": "11:15",
+   "logic": "Bull Trap on 1-hour — breakout failed",
+   "label": "SL HIT ❌",
+   "win": false,
+   "scanner": "Intraday Trap",
+   "entry": "33.8",
+   "sl": "2480.2",
+   "tgt": [],
+   "chart": "sig4",
+   "mode": "signal",
+   "title": "SIGNAL 4 · INTRADAY TRAP · 11:15",
+   "sigTs": "2026-11-11T05:45:00.000Z",
+   "exitTs": "2026-11-11T06:45:00.000Z",
+   "side": "PE",
+   "phase": "result",
+   "tags": [
+    "s4b"
+   ]
+  },
+  {
+   "kind": "ahead",
+   "shot": "brokers.png",
+   "clip": "21.mp4",
+   "clipStart": 8,
+   "tags": [
+    "ahead"
+   ]
+  },
+  {
+   "kind": "cta",
+   "tags": [
+    "cta"
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "name": "brokers",
+   "url": "https://app.uppercircuitstocks.com/home.html",
+   "kind": "match",
+   "match": [
+    "TRADE FROM SIGNAL CARDS"
+   ],
+   "clip": null
+  },
+  {
+   "name": "sig1",
+   "url": "https://app.uppercircuitstocks.com/research.html?page=star",
+   "kind": "card",
+   "match": [
+    "KALYANKJIL",
+    "ENTRY"
+   ],
+   "clip": null
+  },
+  {
+   "name": "sig2",
+   "url": "https://app.uppercircuitstocks.com/research.html?page=trap",
+   "kind": "card",
+   "match": [
+    "ADANIGREEN"
+   ],
+   "clip": null
+  },
+  {
+   "name": "sig3",
+   "url": "https://app.uppercircuitstocks.com/research.html?page=idx",
+   "kind": "card",
+   "match": [
+    "FINNIFTY",
+    "ENTRY"
+   ],
+   "clip": null
+  },
+  {
+   "name": "sig4",
+   "url": "https://app.uppercircuitstocks.com/research.html?page=trap",
+   "kind": "card",
+   "match": [
+    "SRF"
+   ],
+   "clip": null
+  }
+ ],
+ "charts": [
+  {
+   "key": "sig1",
+   "symbol": "KALYANKJIL",
+   "when": "day"
+  },
+  {
+   "key": "sig2",
+   "symbol": "ADANIGREEN",
+   "when": "day"
+  },
+  {
+   "key": "sig3",
+   "symbol": "FINNIFTYFUT",
+   "when": "day"
+  },
+  {
+   "key": "sig4",
+   "symbol": "SRF",
+   "when": "day"
+  }
+ ],
+ "meta": {
+  "poolSize": 70,
+  "winners": 3,
+  "slHits": 22,
+  "picks": [
+   {
+    "src": "star",
+    "name": "KALYANKJIL",
+    "side": "CE",
+    "strike": "670",
+    "outcome": "TRAIL",
+    "ts": "2026-11-11T03:50:10.077Z"
+   },
+   {
+    "src": "trap",
+    "name": "ADANIGREEN",
+    "side": "PE",
+    "strike": "1460",
+    "outcome": "TRAIL",
+    "ts": "2026-11-11T04:15:00.000Z"
+   },
+   {
+    "src": "index",
+    "name": "FINNIFTY",
+    "side": "PE",
+    "strike": "27800",
+    "outcome": "T2",
+    "ts": "2026-11-11T04:30:07.266Z"
+   },
+   {
+    "src": "trap",
+    "name": "SRF",
+    "side": "PE",
+    "strike": "2460",
+    "outcome": "SL",
+    "ts": "2026-11-11T05:45:00.000Z"
+   }
+  ]
+ }
+}
