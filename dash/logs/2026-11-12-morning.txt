@@ -1,0 +1,7 @@
+saved dash/2026-11-12/morning-raw.json
+{"mode": "morning", "lines": 8, "shots": ["snapshot", "heatmap", "feature"], "meta": {"nifty": {"ltp": 0, "chp": 0, "ch": 0}, "bankNifty": {"ltp": 0, "chp": 0, "ch": 0}, "vix": {"ltp": 0, "chp": 0}, "breadth": {"advancing": 1532, "declining": 631, "mood_label": "Bullish"}, "strong": ["Materials", "1.75"], "weak": ["Information Technology", "-0.29"], "feature": "My Scanners", "marketDate": "2026-11-11"}}
+ok snapshot
+ok heatmap
+ok feature
+chart miss nifty NIFTYFUT
+OK 2026-11-12:morning
