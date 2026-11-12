@@ -1,0 +1,412 @@
+{
+ "date": "2026-11-12",
+ "slot": "evening",
+ "mode": "evening",
+ "feature": "Trade Journal",
+ "lines": [
+  {
+   "tag": "hook",
+   "text": "आज AI Dashboard ने क्या पकड़ा? कुछ selected signals देखो।",
+   "en": "What did the AI Dashboard catch today? A few selected signals."
+  },
+  {
+   "tag": "s1a",
+   "text": "Central Depository Services (India) Call, पाँच दिन और पाँच घंटे का high break और price बीस SMA के ऊपर।",
+   "en": "CDSL 1,440 CE — 5-day & 5-hour high break + price above 20 SMA."
+  },
+  {
+   "tag": "s1b",
+   "text": "Trailing stop से move पकड़ा।",
+   "en": "Move captured with a trailing stop."
+  },
+  {
+   "tag": "s2a",
+   "text": "Tata Motors Passenger Vehicles Put, एक घंटे पे Bull Trap, breakout fail हुआ।",
+   "en": "TMPV 295 PE — Bull Trap on 1-hour — breakout failed."
+  },
+  {
+   "tag": "s2b",
+   "text": "Trailing stop से move पकड़ा।",
+   "en": "Move captured with a trailing stop."
+  },
+  {
+   "tag": "s3a",
+   "text": "Page Industries Put, पाँच दिन और पाँच घंटे का low break और price बीस SMA के नीचे।",
+   "en": "PAGEIND 32,500 PE — 5-day & 5-hour low break + price below 20 SMA."
+  },
+  {
+   "tag": "s3b",
+   "text": "Target two तक गया।",
+   "en": "Target 2 hit."
+  },
+  {
+   "tag": "s4a",
+   "text": "Solar Industries India Put, पंद्रह minute पे Bull Trap, breakout fail हुआ।",
+   "en": "SOLARINDS 19,000 PE — Bull Trap on 15-min — breakout failed."
+  },
+  {
+   "tag": "s4b",
+   "text": "ये वाला स्टॉप लॉस हिट हुआ, इसीलिए स्टॉप लॉस हमेशा ज़रूरी है।",
+   "en": "This one hit SL — that's why SL always matters."
+  },
+  {
+   "tag": "ahead",
+   "text": "Signal आते ही phone पे alert आता है, और एक tap में अपने broker पे order, Fyers, Zerodha या Dhan।",
+   "en": "Instant phone alert the moment a signal appears — one tap to your broker: Fyers, Zerodha or Dhan."
+  },
+  {
+   "tag": "cta",
+   "text": "बाकी traders से आगे रहना है? AI Dashboard का link description में है। Follow करो, Upper Circuit Stocks।",
+   "en": "Want to stay ahead? AI Dashboard link in the description. Follow UpperCircuitStocks!"
+  }
+ ],
+ "scenes": [
+  {
+   "kind": "hook",
+   "title": "AAJ KE SIGNALS",
+   "sub": "Selected signals · 12 Nov",
+   "chips": [
+    "✅",
+    "✅",
+    "✅",
+    "❌"
+   ],
+   "tags": [
+    "hook"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig1.png",
+   "n": 1,
+   "name": "CDSL",
+   "contract": "CDSL 1,440 CE",
+   "time": "09:31",
+   "logic": "5-day & 5-hour high break + price above 20 SMA",
+   "label": "TRAILING EXIT ✅",
+   "win": true,
+   "scanner": "Star Setup",
+   "entry": "33.3",
+   "sl": "38.39",
+   "tgt": [
+    "42.77",
+    "52.24"
+   ],
+   "chart": "sig1",
+   "mode": "signal",
+   "title": "SIGNAL 1 · STAR SETUP · 09:31",
+   "sigTs": "2026-11-12T04:01:08.242Z",
+   "exitTs": "2026-11-12T04:10:00.243Z",
+   "side": "CE",
+   "tags": [
+    "s1a"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig1.png",
+   "n": 1,
+   "name": "CDSL",
+   "contract": "CDSL 1,440 CE",
+   "time": "09:31",
+   "logic": "5-day & 5-hour high break + price above 20 SMA",
+   "label": "TRAILING EXIT ✅",
+   "win": true,
+   "scanner": "Star Setup",
+   "entry": "33.3",
+   "sl": "38.39",
+   "tgt": [
+    "42.77",
+    "52.24"
+   ],
+   "chart": "sig1",
+   "mode": "signal",
+   "title": "SIGNAL 1 · STAR SETUP · 09:31",
+   "sigTs": "2026-11-12T04:01:08.242Z",
+   "exitTs": "2026-11-12T04:10:00.243Z",
+   "side": "CE",
+   "phase": "result",
+   "tags": [
+    "s1b"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig2.png",
+   "n": 2,
+   "name": "TMPV",
+   "contract": "TMPV 295 PE",
+   "time": "11:15",
+   "logic": "Bull Trap on 1-hour — breakout failed",
+   "label": "TRAILING EXIT ✅",
+   "win": true,
+   "scanner": "Intraday Trap",
+   "entry": "8",
+   "sl": "301.85",
+   "tgt": [],
+   "chart": "sig2",
+   "mode": "signal",
+   "title": "SIGNAL 2 · INTRADAY TRAP · 11:15",
+   "sigTs": "2026-11-12T05:45:00.000Z",
+   "exitTs": "2026-11-12T07:15:00.000Z",
+   "side": "PE",
+   "tags": [
+    "s2a"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig2.png",
+   "n": 2,
+   "name": "TMPV",
+   "contract": "TMPV 295 PE",
+   "time": "11:15",
+   "logic": "Bull Trap on 1-hour — breakout failed",
+   "label": "TRAILING EXIT ✅",
+   "win": true,
+   "scanner": "Intraday Trap",
+   "entry": "8",
+   "sl": "301.85",
+   "tgt": [],
+   "chart": "sig2",
+   "mode": "signal",
+   "title": "SIGNAL 2 · INTRADAY TRAP · 11:15",
+   "sigTs": "2026-11-12T05:45:00.000Z",
+   "exitTs": "2026-11-12T07:15:00.000Z",
+   "side": "PE",
+   "phase": "result",
+   "tags": [
+    "s2b"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig3.png",
+   "n": 3,
+   "name": "PAGEIND",
+   "contract": "PAGEIND 32,500 PE",
+   "time": "14:45",
+   "logic": "5-day & 5-hour low break + price below 20 SMA",
+   "label": "TARGET 2 HIT ✅",
+   "win": true,
+   "scanner": "Star Setup",
+   "entry": "999.9",
+   "sl": "1436.8",
+   "tgt": [
+    "1199.9",
+    "1399.9"
+   ],
+   "chart": "sig3",
+   "mode": "signal",
+   "title": "SIGNAL 3 · STAR SETUP · 14:45",
+   "sigTs": "2026-11-12T09:15:08.444Z",
+   "exitTs": "2026-11-12T09:23:22.354Z",
+   "side": "PE",
+   "tags": [
+    "s3a"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig3.png",
+   "n": 3,
+   "name": "PAGEIND",
+   "contract": "PAGEIND 32,500 PE",
+   "time": "14:45",
+   "logic": "5-day & 5-hour low break + price below 20 SMA",
+   "label": "TARGET 2 HIT ✅",
+   "win": true,
+   "scanner": "Star Setup",
+   "entry": "999.9",
+   "sl": "1436.8",
+   "tgt": [
+    "1199.9",
+    "1399.9"
+   ],
+   "chart": "sig3",
+   "mode": "signal",
+   "title": "SIGNAL 3 · STAR SETUP · 14:45",
+   "sigTs": "2026-11-12T09:15:08.444Z",
+   "exitTs": "2026-11-12T09:23:22.354Z",
+   "side": "PE",
+   "phase": "result",
+   "tags": [
+    "s3b"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig4.png",
+   "n": 4,
+   "name": "SOLARINDS",
+   "contract": "SOLARINDS 19,000 PE",
+   "time": "09:45",
+   "logic": "Bull Trap on 15-min — breakout failed",
+   "label": "SL HIT ❌",
+   "win": false,
+   "scanner": "Intraday Trap",
+   "entry": "424.6",
+   "sl": "19286",
+   "tgt": [],
+   "chart": "sig4",
+   "mode": "signal",
+   "title": "SIGNAL 4 · INTRADAY TRAP · 09:45",
+   "sigTs": "2026-11-12T04:15:00.000Z",
+   "exitTs": "2026-11-12T04:30:00.000Z",
+   "side": "PE",
+   "tags": [
+    "s4a"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig4.png",
+   "n": 4,
+   "name": "SOLARINDS",
+   "contract": "SOLARINDS 19,000 PE",
+   "time": "09:45",
+   "logic": "Bull Trap on 15-min — breakout failed",
+   "label": "SL HIT ❌",
+   "win": false,
+   "scanner": "Intraday Trap",
+   "entry": "424.6",
+   "sl": "19286",
+   "tgt": [],
+   "chart": "sig4",
+   "mode": "signal",
+   "title": "SIGNAL 4 · INTRADAY TRAP · 09:45",
+   "sigTs": "2026-11-12T04:15:00.000Z",
+   "exitTs": "2026-11-12T04:30:00.000Z",
+   "side": "PE",
+   "phase": "result",
+   "tags": [
+    "s4b"
+   ]
+  },
+  {
+   "kind": "ahead",
+   "shot": "brokers.png",
+   "clip": "21.mp4",
+   "clipStart": 8,
+   "tags": [
+    "ahead"
+   ]
+  },
+  {
+   "kind": "cta",
+   "tags": [
+    "cta"
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "name": "brokers",
+   "url": "https://app.uppercircuitstocks.com/home.html",
+   "kind": "match",
+   "match": [
+    "TRADE FROM SIGNAL CARDS"
+   ],
+   "clip": null
+  },
+  {
+   "name": "sig1",
+   "url": "https://app.uppercircuitstocks.com/research.html?page=star",
+   "kind": "card",
+   "match": [
+    "CDSL",
+    "ENTRY"
+   ],
+   "clip": null
+  },
+  {
+   "name": "sig2",
+   "url": "https://app.uppercircuitstocks.com/research.html?page=trap",
+   "kind": "card",
+   "match": [
+    "TMPV"
+   ],
+   "clip": null
+  },
+  {
+   "name": "sig3",
+   "url": "https://app.uppercircuitstocks.com/research.html?page=star",
+   "kind": "card",
+   "match": [
+    "PAGEIND",
+    "ENTRY"
+   ],
+   "clip": null
+  },
+  {
+   "name": "sig4",
+   "url": "https://app.uppercircuitstocks.com/research.html?page=trap",
+   "kind": "card",
+   "match": [
+    "SOLARINDS"
+   ],
+   "clip": null
+  }
+ ],
+ "charts": [
+  {
+   "key": "sig1",
+   "symbol": "CDSL",
+   "when": "day"
+  },
+  {
+   "key": "sig2",
+   "symbol": "TMPV",
+   "when": "day"
+  },
+  {
+   "key": "sig3",
+   "symbol": "PAGEIND",
+   "when": "day"
+  },
+  {
+   "key": "sig4",
+   "symbol": "SOLARINDS",
+   "when": "day"
+  }
+ ],
+ "meta": {
+  "poolSize": 80,
+  "winners": 3,
+  "slHits": 22,
+  "picks": [
+   {
+    "src": "star",
+    "name": "CDSL",
+    "side": "CE",
+    "strike": "1440",
+    "outcome": "TRAIL",
+    "ts": "2026-11-12T04:01:08.242Z"
+   },
+   {
+    "src": "trap",
+    "name": "TMPV",
+    "side": "PE",
+    "strike": "295",
+    "outcome": "TRAIL",
+    "ts": "2026-11-12T05:45:00.000Z"
+   },
+   {
+    "src": "star",
+    "name": "PAGEIND",
+    "side": "PE",
+    "strike": "32500",
+    "outcome": "T2",
+    "ts": "2026-11-12T09:15:08.444Z"
+   },
+   {
+    "src": "trap",
+    "name": "SOLARINDS",
+    "side": "PE",
+    "strike": "19000",
+    "outcome": "SL",
+    "ts": "2026-11-12T04:15:00.000Z"
+   }
+  ]
+ }
+}
