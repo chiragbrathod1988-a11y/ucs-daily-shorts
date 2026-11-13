@@ -291,6 +291,16 @@ const ChartScene: React.FC<{ b: Block; t: number }> = ({ b, t }) => {
   const p = interpolate(t, [b.start, b.start + 0.4], [0, 1], { ...clamp, easing: outExpo });
   if (!ch) {
     if (sc.mode === "signal") return <SignalScene b={b} t={t} />;
+    if (sc.stats) {   // no candles fetched -> show the real index quotes, never an empty chart
+      return (
+        <>
+          <Pill t={t} at={b.start} top={560}>{sc.mode === "session" ? "LAST SESSION CLOSE" : sc.title}</Pill>
+          <div style={{ position: "absolute", left: 0, right: 0, top: -480 }}>
+            <StatRow stats={sc.stats} t={t} at={b.start + 0.3} />
+          </div>
+        </>
+      );
+    }
     return <Pill t={t} at={b.start} top={700}>{sc.title}</Pill>;
   }
   const cs: number[][] = ch.candles;
