@@ -1,0 +1,12 @@
+saved dash/2026-11-13/evening-raw.json
+{"mode": "evening", "lines": 11, "shots": ["brokers", "sig1", "sig2", "sig3", "sig4"], "meta": {"poolSize": 53, "winners": 3, "slHits": 34, "picks": [{"src": "trap", "name": "RELIANCE", "side": "CE", "strike": "1340", "outcome": "TRAIL", "ts": "2026-11-13T04:15:00.000Z"}, {"src": "star", "name": "MCX", "side": "CE", "strike": "3750", "outcome": "TRAIL", "ts": "2026-11-13T04:22:02.171Z"}, {"src": "index", "name": "FINNIFTY", "side": "CE", "strike": "27750", "outcome": "T2", "ts": "2026-11-13T08:40:17.099Z"}, {"src": "trap", "name": "CUB", "side": "CE", "strike": "235", "outcome": "SL", "ts": "2026-11-13T05:45:00.000Z"}]}}
+ok brokers
+miss sig1 Error: not found: RELIANCE
+ok sig2
+ok sig3
+miss sig4 Error: not found: CUB
+chart ok sig1 RELIANCE 2026-11-13 150
+chart ok sig2 MCX 2026-11-13 150
+chart ok sig3 FINNIFTY26NOVFUT 2026-11-13 76
+chart ok sig4 CUB 2026-11-13 150
+OK 2026-11-13:evening
