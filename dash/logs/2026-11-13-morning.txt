@@ -1,0 +1,7 @@
+saved dash/2026-11-13/morning-raw.json
+{"mode": "morning", "lines": 8, "shots": ["snapshot", "heatmap", "feature"], "meta": {"nifty": {"ltp": 25299.35, "chp": 0.18, "ch": 44.3}, "bankNifty": {"ltp": 61518.5, "chp": 1.19, "ch": 726.1}, "vix": {"ltp": 16.62, "chp": -5.35}, "breadth": {"advancing": 1178, "declining": 961, "mood_label": "Neutral"}, "strong": ["Communication Services", "1.58"], "weak": ["Energy", "-1.08"], "feature": "My Algos", "marketDate": "2026-11-12"}}
+ok snapshot
+ok heatmap
+ok feature
+chart miss nifty NIFTYFUT
+OK 2026-11-13:morning

@@ -1,0 +1,224 @@
+{
+ "date": "2026-11-13",
+ "slot": "morning",
+ "mode": "morning",
+ "feature": "My Algos",
+ "lines": [
+  {
+   "tag": "hook",
+   "text": "Market खुलने से पहले, ये एक screen देख लो, बाकी traders से आगे रहोगे।",
+   "en": "Check this ONE screen before 9:15 — stay ahead of other traders."
+  },
+  {
+   "tag": "nifty",
+   "text": "पिछले session में Nifty twenty five thousand two hundred ninety nine पे close हुआ, और Bank Nifty sixty one thousand five hundred eighteen पे।",
+   "en": "Last session: Nifty closed at 25,299, Bank Nifty at 61,518."
+  },
+  {
+   "tag": "breadth",
+   "text": "Market breadth रहा Neutral, one thousand one hundred seventy eight stocks ऊपर, और nine hundred sixty one नीचे।",
+   "en": "Breadth: Neutral — 1,178 up, 961 down."
+  },
+  {
+   "tag": "sectors",
+   "text": "सबसे strong sector रहा Communication Services, और सबसे weak रहा Energy।",
+   "en": "Strongest: Communication Services (+1.58%) · Weakest: Energy (-1.08%)."
+  },
+  {
+   "tag": "ahead",
+   "text": "नौ पंद्रह के बाद यही सब live update होता है, तो आप market के साथ नहीं, market से आगे चलते हो।",
+   "en": "After 9:15 it all updates live — you move ahead of the market, not behind it."
+  },
+  {
+   "tag": "feat1",
+   "text": "आज का feature: My Algos में अपनी strategy save करो, backtest करो, और paper पे चलाओ।",
+   "en": "Feature of the day — My Algos: save, backtest and paper-run your strategy."
+  },
+  {
+   "tag": "feat2",
+   "text": "पहले test, फिर trade, यही सही तरीका है।",
+   "en": "Test first, trade later — the right way."
+  },
+  {
+   "tag": "cta",
+   "text": "बाकी traders से आगे रहना है? AI Dashboard का link description में है। Follow करो, Upper Circuit Stocks।",
+   "en": "Want to stay ahead? AI Dashboard link in the description. Follow UpperCircuitStocks!"
+  }
+ ],
+ "scenes": [
+  {
+   "kind": "hook",
+   "title": "9:15 SE PEHLE",
+   "sub": "Nifty + Sectors · ek screen",
+   "tags": [
+    "hook"
+   ]
+  },
+  {
+   "kind": "chart",
+   "chart": "nifty",
+   "title": "NIFTY FUTURES · 5 MIN",
+   "mode": "session",
+   "stats": [
+    [
+     "NIFTY 50",
+     "25,299",
+     "+0.18%"
+    ],
+    [
+     "BANK NIFTY",
+     "61,518",
+     "+1.19%"
+    ],
+    [
+     "INDIA VIX",
+     "16.62",
+     "-5.35%"
+    ]
+   ],
+   "tags": [
+    "nifty"
+   ]
+  },
+  {
+   "kind": "screen",
+   "shot": "snapshot.png",
+   "scroll": [
+    0.12,
+    0.26
+   ],
+   "badge": [
+    "NEUTRAL",
+    "1,178 ▲  ·  961 ▼"
+   ],
+   "tags": [
+    "breadth"
+   ]
+  },
+  {
+   "kind": "screen",
+   "shot": "heatmap.png",
+   "scroll": [
+    0.1,
+    0.35
+   ],
+   "sectors": [
+    [
+     "Communication Services",
+     "+1.58%"
+    ],
+    [
+     "Energy",
+     "-1.08%"
+    ]
+   ],
+   "tags": [
+    "sectors"
+   ]
+  },
+  {
+   "kind": "clipscreen",
+   "clip": "03.mp4",
+   "clipStart": 6,
+   "label": "LIVE AFTER 9:15",
+   "tags": [
+    "ahead"
+   ]
+  },
+  {
+   "kind": "feature",
+   "shot": "feature.png",
+   "name": "My Algos",
+   "scroll": [
+    0.0,
+    0.25
+   ],
+   "clip": "10.mp4",
+   "clipStart": 3,
+   "tags": [
+    "feat1"
+   ]
+  },
+  {
+   "kind": "feature",
+   "shot": "feature.png",
+   "name": "My Algos",
+   "scroll": [
+    0.25,
+    0.45
+   ],
+   "clip": "10.mp4",
+   "clipStart": 3,
+   "tags": [
+    "feat2"
+   ]
+  },
+  {
+   "kind": "cta",
+   "tags": [
+    "cta"
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "name": "snapshot",
+   "url": "https://app.uppercircuitstocks.com/snapshot.html",
+   "kind": "page",
+   "match": [],
+   "clip": null
+  },
+  {
+   "name": "heatmap",
+   "url": "https://app.uppercircuitstocks.com/research.html?p=heatmap",
+   "kind": "page",
+   "match": [],
+   "clip": null
+  },
+  {
+   "name": "feature",
+   "url": "https://app.uppercircuitstocks.com/research.html?p=algo",
+   "kind": "page",
+   "match": [],
+   "clip": null
+  }
+ ],
+ "charts": [
+  {
+   "key": "nifty",
+   "symbol": "NIFTYFUT",
+   "when": "prev"
+  }
+ ],
+ "meta": {
+  "nifty": {
+   "ltp": 25299.35,
+   "chp": 0.18,
+   "ch": 44.3
+  },
+  "bankNifty": {
+   "ltp": 61518.5,
+   "chp": 1.19,
+   "ch": 726.1
+  },
+  "vix": {
+   "ltp": 16.62,
+   "chp": -5.35
+  },
+  "breadth": {
+   "advancing": 1178,
+   "declining": 961,
+   "mood_label": "Neutral"
+  },
+  "strong": [
+   "Communication Services",
+   "1.58"
+  ],
+  "weak": [
+   "Energy",
+   "-1.08"
+  ],
+  "feature": "My Algos",
+  "marketDate": "2026-11-12"
+ }
+}
