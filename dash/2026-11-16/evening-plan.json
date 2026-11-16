@@ -1,0 +1,412 @@
+{
+ "date": "2026-11-16",
+ "slot": "evening",
+ "mode": "evening",
+ "feature": "Market Dashboard",
+ "lines": [
+  {
+   "tag": "hook",
+   "text": "आज AI Dashboard ने क्या पकड़ा? कुछ selected signals देखो।",
+   "en": "What did the AI Dashboard catch today? A few selected signals."
+  },
+  {
+   "tag": "s1a",
+   "text": "Bharti Airtel Call, पाँच दिन और पाँच घंटे का high break और price बीस SMA के ऊपर।",
+   "en": "BHARTIARTL 2,160 CE — 5-day & 5-hour high break + price above 20 SMA."
+  },
+  {
+   "tag": "s1b",
+   "text": "Trailing stop से move पकड़ा।",
+   "en": "Move captured with a trailing stop."
+  },
+  {
+   "tag": "s2a",
+   "text": "Wipro Put, पंद्रह minute पे Bull Trap, breakout fail हुआ।",
+   "en": "WIPRO 195 PE — Bull Trap on 15-min — breakout failed."
+  },
+  {
+   "tag": "s2b",
+   "text": "Trailing stop से move पकड़ा।",
+   "en": "Move captured with a trailing stop."
+  },
+  {
+   "tag": "s3a",
+   "text": "Fin Nifty Put, gap के बाद candle और volume में mismatch।",
+   "en": "FINNIFTY 28,000 PE — Gap + candle/volume mismatch."
+  },
+  {
+   "tag": "s3b",
+   "text": "Target two तक गया।",
+   "en": "Target 2 hit."
+  },
+  {
+   "tag": "s4a",
+   "text": "Manappuram Finance Call, पंद्रह minute पे Bear Trap, breakdown fail हुआ।",
+   "en": "MANAPPURAM 305 CE — Bear Trap on 15-min — breakdown failed."
+  },
+  {
+   "tag": "s4b",
+   "text": "ये वाला स्टॉप लॉस हिट हुआ, इसीलिए स्टॉप लॉस हमेशा ज़रूरी है।",
+   "en": "This one hit SL — that's why SL always matters."
+  },
+  {
+   "tag": "ahead",
+   "text": "Signal आते ही phone पे alert आता है, और एक tap में अपने broker पे order, Fyers, Zerodha या Dhan।",
+   "en": "Instant phone alert the moment a signal appears — one tap to your broker: Fyers, Zerodha or Dhan."
+  },
+  {
+   "tag": "cta",
+   "text": "बाकी traders से आगे रहना है? AI Dashboard का link description में है। Follow करो, Upper Circuit Stocks।",
+   "en": "Want to stay ahead? AI Dashboard link in the description. Follow UpperCircuitStocks!"
+  }
+ ],
+ "scenes": [
+  {
+   "kind": "hook",
+   "title": "AAJ KE SIGNALS",
+   "sub": "Selected signals · 16 Nov",
+   "chips": [
+    "✅",
+    "✅",
+    "✅",
+    "❌"
+   ],
+   "tags": [
+    "hook"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig1.png",
+   "n": 1,
+   "name": "BHARTIARTL",
+   "contract": "BHARTIARTL 2,160 CE",
+   "time": "09:28",
+   "logic": "5-day & 5-hour high break + price above 20 SMA",
+   "label": "TRAILING EXIT ✅",
+   "win": true,
+   "scanner": "Star Setup",
+   "entry": "19.85",
+   "sl": "26.64",
+   "tgt": [
+    "29.32",
+    "38.79"
+   ],
+   "chart": "sig1",
+   "mode": "signal",
+   "title": "SIGNAL 1 · STAR SETUP · 09:28",
+   "sigTs": "2026-11-16T03:58:05.331Z",
+   "exitTs": "2026-11-16T04:23:07.303Z",
+   "side": "CE",
+   "tags": [
+    "s1a"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig1.png",
+   "n": 1,
+   "name": "BHARTIARTL",
+   "contract": "BHARTIARTL 2,160 CE",
+   "time": "09:28",
+   "logic": "5-day & 5-hour high break + price above 20 SMA",
+   "label": "TRAILING EXIT ✅",
+   "win": true,
+   "scanner": "Star Setup",
+   "entry": "19.85",
+   "sl": "26.64",
+   "tgt": [
+    "29.32",
+    "38.79"
+   ],
+   "chart": "sig1",
+   "mode": "signal",
+   "title": "SIGNAL 1 · STAR SETUP · 09:28",
+   "sigTs": "2026-11-16T03:58:05.331Z",
+   "exitTs": "2026-11-16T04:23:07.303Z",
+   "side": "CE",
+   "phase": "result",
+   "tags": [
+    "s1b"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig2.png",
+   "n": 2,
+   "name": "WIPRO",
+   "contract": "WIPRO 195 PE",
+   "time": "09:45",
+   "logic": "Bull Trap on 15-min — breakout failed",
+   "label": "TRAILING EXIT ✅",
+   "win": true,
+   "scanner": "Intraday Trap",
+   "entry": "2.78",
+   "sl": "197.83",
+   "tgt": [],
+   "chart": "sig2",
+   "mode": "signal",
+   "title": "SIGNAL 2 · INTRADAY TRAP · 09:45",
+   "sigTs": "2026-11-16T04:15:00.000Z",
+   "exitTs": "2026-11-16T08:45:00.000Z",
+   "side": "PE",
+   "tags": [
+    "s2a"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig2.png",
+   "n": 2,
+   "name": "WIPRO",
+   "contract": "WIPRO 195 PE",
+   "time": "09:45",
+   "logic": "Bull Trap on 15-min — breakout failed",
+   "label": "TRAILING EXIT ✅",
+   "win": true,
+   "scanner": "Intraday Trap",
+   "entry": "2.78",
+   "sl": "197.83",
+   "tgt": [],
+   "chart": "sig2",
+   "mode": "signal",
+   "title": "SIGNAL 2 · INTRADAY TRAP · 09:45",
+   "sigTs": "2026-11-16T04:15:00.000Z",
+   "exitTs": "2026-11-16T08:45:00.000Z",
+   "side": "PE",
+   "phase": "result",
+   "tags": [
+    "s2b"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig3.png",
+   "n": 3,
+   "name": "FINNIFTY",
+   "contract": "FINNIFTY 28,000 PE",
+   "time": "12:58",
+   "logic": "Gap + candle/volume mismatch",
+   "label": "TARGET 2 HIT ✅",
+   "win": true,
+   "scanner": "Index Options",
+   "entry": "298.5",
+   "sl": "28008.6",
+   "tgt": [
+    "27933.3",
+    "27911"
+   ],
+   "chart": "sig3",
+   "mode": "signal",
+   "title": "SIGNAL 3 · INDEX OPTIONS · 12:58",
+   "sigTs": "2026-11-16T07:28:00.146Z",
+   "exitTs": "2026-11-16T09:28:11.099Z",
+   "side": "PE",
+   "tags": [
+    "s3a"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig3.png",
+   "n": 3,
+   "name": "FINNIFTY",
+   "contract": "FINNIFTY 28,000 PE",
+   "time": "12:58",
+   "logic": "Gap + candle/volume mismatch",
+   "label": "TARGET 2 HIT ✅",
+   "win": true,
+   "scanner": "Index Options",
+   "entry": "298.5",
+   "sl": "28008.6",
+   "tgt": [
+    "27933.3",
+    "27911"
+   ],
+   "chart": "sig3",
+   "mode": "signal",
+   "title": "SIGNAL 3 · INDEX OPTIONS · 12:58",
+   "sigTs": "2026-11-16T07:28:00.146Z",
+   "exitTs": "2026-11-16T09:28:11.099Z",
+   "side": "PE",
+   "phase": "result",
+   "tags": [
+    "s3b"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig4.png",
+   "n": 4,
+   "name": "MANAPPURAM",
+   "contract": "MANAPPURAM 305 CE",
+   "time": "09:45",
+   "logic": "Bear Trap on 15-min — breakdown failed",
+   "label": "SL HIT ❌",
+   "win": false,
+   "scanner": "Intraday Trap",
+   "entry": "6.7",
+   "sl": "301",
+   "tgt": [],
+   "chart": "sig4",
+   "mode": "signal",
+   "title": "SIGNAL 4 · INTRADAY TRAP · 09:45",
+   "sigTs": "2026-11-16T04:15:00.000Z",
+   "exitTs": "2026-11-16T05:15:00.000Z",
+   "side": "CE",
+   "tags": [
+    "s4a"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig4.png",
+   "n": 4,
+   "name": "MANAPPURAM",
+   "contract": "MANAPPURAM 305 CE",
+   "time": "09:45",
+   "logic": "Bear Trap on 15-min — breakdown failed",
+   "label": "SL HIT ❌",
+   "win": false,
+   "scanner": "Intraday Trap",
+   "entry": "6.7",
+   "sl": "301",
+   "tgt": [],
+   "chart": "sig4",
+   "mode": "signal",
+   "title": "SIGNAL 4 · INTRADAY TRAP · 09:45",
+   "sigTs": "2026-11-16T04:15:00.000Z",
+   "exitTs": "2026-11-16T05:15:00.000Z",
+   "side": "CE",
+   "phase": "result",
+   "tags": [
+    "s4b"
+   ]
+  },
+  {
+   "kind": "ahead",
+   "shot": "brokers.png",
+   "clip": "21.mp4",
+   "clipStart": 8,
+   "tags": [
+    "ahead"
+   ]
+  },
+  {
+   "kind": "cta",
+   "tags": [
+    "cta"
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "name": "brokers",
+   "url": "https://app.uppercircuitstocks.com/home.html",
+   "kind": "match",
+   "match": [
+    "TRADE FROM SIGNAL CARDS"
+   ],
+   "clip": null
+  },
+  {
+   "name": "sig1",
+   "url": "https://app.uppercircuitstocks.com/research.html?page=star",
+   "kind": "card",
+   "match": [
+    "BHARTIARTL",
+    "ENTRY"
+   ],
+   "clip": null
+  },
+  {
+   "name": "sig2",
+   "url": "https://app.uppercircuitstocks.com/research.html?page=trap",
+   "kind": "card",
+   "match": [
+    "WIPRO"
+   ],
+   "clip": null
+  },
+  {
+   "name": "sig3",
+   "url": "https://app.uppercircuitstocks.com/research.html?page=idx",
+   "kind": "card",
+   "match": [
+    "FINNIFTY",
+    "ENTRY"
+   ],
+   "clip": null
+  },
+  {
+   "name": "sig4",
+   "url": "https://app.uppercircuitstocks.com/research.html?page=trap",
+   "kind": "card",
+   "match": [
+    "MANAPPURAM"
+   ],
+   "clip": null
+  }
+ ],
+ "charts": [
+  {
+   "key": "sig1",
+   "symbol": "BHARTIARTL",
+   "when": "day"
+  },
+  {
+   "key": "sig2",
+   "symbol": "WIPRO",
+   "when": "day"
+  },
+  {
+   "key": "sig3",
+   "symbol": "FINNIFTYFUT",
+   "when": "day"
+  },
+  {
+   "key": "sig4",
+   "symbol": "MANAPPURAM",
+   "when": "day"
+  }
+ ],
+ "meta": {
+  "poolSize": 31,
+  "winners": 3,
+  "slHits": 7,
+  "picks": [
+   {
+    "src": "star",
+    "name": "BHARTIARTL",
+    "side": "CE",
+    "strike": "2160",
+    "outcome": "TRAIL",
+    "ts": "2026-11-16T03:58:05.331Z"
+   },
+   {
+    "src": "trap",
+    "name": "WIPRO",
+    "side": "PE",
+    "strike": "195",
+    "outcome": "TRAIL",
+    "ts": "2026-11-16T04:15:00.000Z"
+   },
+   {
+    "src": "index",
+    "name": "FINNIFTY",
+    "side": "PE",
+    "strike": "28000",
+    "outcome": "T2",
+    "ts": "2026-11-16T07:28:00.146Z"
+   },
+   {
+    "src": "trap",
+    "name": "MANAPPURAM",
+    "side": "CE",
+    "strike": "305",
+    "outcome": "SL",
+    "ts": "2026-11-16T04:15:00.000Z"
+   }
+  ]
+ }
+}
