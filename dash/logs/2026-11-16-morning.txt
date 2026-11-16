@@ -1,0 +1,49 @@
+file:///tmp/pw/fetch.mjs:16
+  throw new Error("API failed: " + p);
+        ^
+
+Error: API failed: heatmap/sectors
+    at get (file:///tmp/pw/fetch.mjs:16:9)
+    at async file:///tmp/pw/fetch.mjs:23:17
+
+Node.js v20.20.2
+Traceback (most recent call last):
+  File "/home/runner/work/ucs-daily-shorts/ucs-daily-shorts/scripts/dash/script.py", line 16, in <module>
+    raw = json.load(open(raw_path))
+                    ^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'dash/2026-11-16/morning-raw.json'
+node:fs:448
+    return binding.readFileUtf8(path, stringToFlags(options.flag));
+                   ^
+
+Error: ENOENT: no such file or directory, open 'dash/2026-11-16/morning-plan.json'
+    at Object.readFileSync (node:fs:448:20)
+    at file:///tmp/pw/shots.mjs:8:28
+    at ModuleJob.run (node:internal/modules/esm/module_job:325:25)
+    at async ModuleLoader.import (node:internal/modules/esm/loader:606:24)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'dash/2026-11-16/morning-plan.json'
+}
+
+Node.js v20.20.2
+node:fs:448
+    return binding.readFileUtf8(path, stringToFlags(options.flag));
+                   ^
+
+Error: ENOENT: no such file or directory, open 'dash/2026-11-16/morning-plan.json'
+    at Object.readFileSync (node:fs:448:20)
+    at file:///tmp/pw/charts.mjs:7:28
+    at ModuleJob.run (node:internal/modules/esm/module_job:325:25)
+    at async ModuleLoader.import (node:internal/modules/esm/loader:606:24)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'dash/2026-11-16/morning-plan.json'
+}
+
+Node.js v20.20.2
+FAILED 2026-11-16:morning
