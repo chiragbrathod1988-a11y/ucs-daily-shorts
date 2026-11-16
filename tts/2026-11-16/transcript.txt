@@ -1,0 +1,36 @@
+intro
+  script: Hello traders! sixteen November के Nifty levels, चलो देखते हैं।
+  heard:  16.November के Nifty Levels चलो देखते हैं
+prev
+  script: लास्ट सेशन में Nifty one hundred fifty five points नीचे, twenty five thousand one hundred forty four पे close हुआ।
+  heard:  last session me nifty 155 pts nichae 25144 pe close hua
+pivot
+  script: आज का pivot है, twenty five thousand one hundred forty eight।
+  heard:  आज का पाई वोट है, 25148
+r1
+  script: ऊपर first resistance है, twenty five thousand two hundred forty two,
+  heard:  उपर फर्स्ट्रिस्टिन्स है, 25,242
+r2
+  script: उसके बाद, twenty five thousand three hundred forty।
+  heard:  उसके बाद 25,340
+s1
+  script: नीचे first support, twenty five thousand fifty,
+  heard:  नीचे फिर्स सबच्वोट 25,050
+s2
+  script: और फिर, twenty four thousand nine hundred fifty six।
+  heard:  और फेर, 24,956.
+bear
+  script: अगर Nifty twenty five thousand one hundred forty eight के नीचे ही रहता है, तो pressure बना रहेगा, और twenty five thousand fifty test हो सकता है।
+  heard:  अगर निप्ती 25148 के नीचे ही रहता है, तो प्रेशा बना रहेगा, और 25,050 तेस्त हो सकता है.
+bull
+  script: लेकिन अगर twenty five thousand one hundred fifty के ऊपर निकला, तो twenty five thousand two hundred forty two तक recovery आ सकती है।
+  heard:  लेकिन अगर 25,150 के उपर निकला, तो 25,240 तो तक रेगावरी आसकती है.
+dash
+  script: और हाँ, Upper Circuit Stocks के AI Dashboard पे मिलेंगे, Stock Screeners, Heat Map, Nifty Overview, और detailed Stock Research।
+  heard:  और हा, अपर स wrekid stocks ke Ai dashboard pe melenge, stock screeners, heat map, nifty overview, & detailed stock research.
+dash2
+  script: Link description में है, एक बार ज़रूर check करो।
+  heard:  लिंक दिस्क्रिठ्षन में है, एक बार ज़ुर चेक करो.
+cta
+  script: Levels save कर लो, और रोज़ सुबह के लिए follow करो, Upper Circuit Stocks।
+  heard:  लेवल सेव कर लो, और रो सुभा के लिए फोलो करो, अपर सर्किट स्टोक्स.
