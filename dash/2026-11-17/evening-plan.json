@@ -1,0 +1,412 @@
+{
+ "date": "2026-11-17",
+ "slot": "evening",
+ "mode": "evening",
+ "feature": "Equity Scanner",
+ "lines": [
+  {
+   "tag": "hook",
+   "text": "आज AI Dashboard ने क्या पकड़ा? कुछ selected signals देखो।",
+   "en": "What did the AI Dashboard catch today? A few selected signals."
+  },
+  {
+   "tag": "s1a",
+   "text": "Delhivery Call, पाँच दिन और पाँच घंटे का high break और price बीस SMA के ऊपर।",
+   "en": "DELHIVERY 455 CE — 5-day & 5-hour high break + price above 20 SMA."
+  },
+  {
+   "tag": "s1b",
+   "text": "Trailing stop से move पकड़ा।",
+   "en": "Move captured with a trailing stop."
+  },
+  {
+   "tag": "s2a",
+   "text": "Angel One Call, पाँच दिन और पाँच घंटे का high break और price बीस SMA के ऊपर।",
+   "en": "ANGELONE 360 CE — 5-day & 5-hour high break + price above 20 SMA."
+  },
+  {
+   "tag": "s2b",
+   "text": "Trailing stop से move पकड़ा।",
+   "en": "Move captured with a trailing stop."
+  },
+  {
+   "tag": "s3a",
+   "text": "Astral Put, एक घंटे पे Bull Trap, breakout fail हुआ।",
+   "en": "ASTRAL 1,240 PE — Bull Trap on 1-hour — breakout failed."
+  },
+  {
+   "tag": "s3b",
+   "text": "Trailing stop से move पकड़ा।",
+   "en": "Move captured with a trailing stop."
+  },
+  {
+   "tag": "s4a",
+   "text": "Adani Green Energy Put, पंद्रह minute पे Bull Trap, breakout fail हुआ।",
+   "en": "ADANIGREEN 1,400 PE — Bull Trap on 15-min — breakout failed."
+  },
+  {
+   "tag": "s4b",
+   "text": "ये वाला स्टॉप लॉस हिट हुआ, इसीलिए स्टॉप लॉस हमेशा ज़रूरी है।",
+   "en": "This one hit SL — that's why SL always matters."
+  },
+  {
+   "tag": "ahead",
+   "text": "Signal आते ही phone पे alert आता है, और एक tap में अपने broker पे order, Fyers, Zerodha या Dhan।",
+   "en": "Instant phone alert the moment a signal appears — one tap to your broker: Fyers, Zerodha or Dhan."
+  },
+  {
+   "tag": "cta",
+   "text": "बाकी traders से आगे रहना है? AI Dashboard का link description में है। Follow करो, Upper Circuit Stocks।",
+   "en": "Want to stay ahead? AI Dashboard link in the description. Follow UpperCircuitStocks!"
+  }
+ ],
+ "scenes": [
+  {
+   "kind": "hook",
+   "title": "AAJ KE SIGNALS",
+   "sub": "Selected signals · 17 Nov",
+   "chips": [
+    "✅",
+    "✅",
+    "✅",
+    "❌"
+   ],
+   "tags": [
+    "hook"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig1.png",
+   "n": 1,
+   "name": "DELHIVERY",
+   "contract": "DELHIVERY 455 CE",
+   "time": "09:45",
+   "logic": "5-day & 5-hour high break + price above 20 SMA",
+   "label": "TRAILING EXIT ✅",
+   "win": true,
+   "scanner": "Star Setup",
+   "entry": "6.65",
+   "sl": "7.88",
+   "tgt": [
+    "8.82",
+    "10.99"
+   ],
+   "chart": "sig1",
+   "mode": "signal",
+   "title": "SIGNAL 1 · STAR SETUP · 09:45",
+   "sigTs": "2026-11-17T04:15:02.423Z",
+   "exitTs": "2026-11-17T04:24:03.229Z",
+   "side": "CE",
+   "tags": [
+    "s1a"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig1.png",
+   "n": 1,
+   "name": "DELHIVERY",
+   "contract": "DELHIVERY 455 CE",
+   "time": "09:45",
+   "logic": "5-day & 5-hour high break + price above 20 SMA",
+   "label": "TRAILING EXIT ✅",
+   "win": true,
+   "scanner": "Star Setup",
+   "entry": "6.65",
+   "sl": "7.88",
+   "tgt": [
+    "8.82",
+    "10.99"
+   ],
+   "chart": "sig1",
+   "mode": "signal",
+   "title": "SIGNAL 1 · STAR SETUP · 09:45",
+   "sigTs": "2026-11-17T04:15:02.423Z",
+   "exitTs": "2026-11-17T04:24:03.229Z",
+   "side": "CE",
+   "phase": "result",
+   "tags": [
+    "s1b"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig2.png",
+   "n": 2,
+   "name": "ANGELONE",
+   "contract": "ANGELONE 360 CE",
+   "time": "09:57",
+   "logic": "5-day & 5-hour high break + price above 20 SMA",
+   "label": "TRAILING EXIT ✅",
+   "win": true,
+   "scanner": "Star Setup",
+   "entry": "6.35",
+   "sl": "8.45",
+   "tgt": [
+    "8.15",
+    "9.95"
+   ],
+   "chart": "sig2",
+   "mode": "signal",
+   "title": "SIGNAL 2 · STAR SETUP · 09:57",
+   "sigTs": "2026-11-17T04:27:08.094Z",
+   "exitTs": "2026-11-17T04:55:03.504Z",
+   "side": "CE",
+   "tags": [
+    "s2a"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig2.png",
+   "n": 2,
+   "name": "ANGELONE",
+   "contract": "ANGELONE 360 CE",
+   "time": "09:57",
+   "logic": "5-day & 5-hour high break + price above 20 SMA",
+   "label": "TRAILING EXIT ✅",
+   "win": true,
+   "scanner": "Star Setup",
+   "entry": "6.35",
+   "sl": "8.45",
+   "tgt": [
+    "8.15",
+    "9.95"
+   ],
+   "chart": "sig2",
+   "mode": "signal",
+   "title": "SIGNAL 2 · STAR SETUP · 09:57",
+   "sigTs": "2026-11-17T04:27:08.094Z",
+   "exitTs": "2026-11-17T04:55:03.504Z",
+   "side": "CE",
+   "phase": "result",
+   "tags": [
+    "s2b"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig3.png",
+   "n": 3,
+   "name": "ASTRAL",
+   "contract": "ASTRAL 1,240 PE",
+   "time": "11:15",
+   "logic": "Bull Trap on 1-hour — breakout failed",
+   "label": "TRAILING EXIT ✅",
+   "win": true,
+   "scanner": "Intraday Trap",
+   "entry": "11.3",
+   "sl": "1267.5",
+   "tgt": [],
+   "chart": "sig3",
+   "mode": "signal",
+   "title": "SIGNAL 3 · INTRADAY TRAP · 11:15",
+   "sigTs": "2026-11-17T05:45:00.000Z",
+   "exitTs": "2026-11-17T07:45:00.000Z",
+   "side": "PE",
+   "tags": [
+    "s3a"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig3.png",
+   "n": 3,
+   "name": "ASTRAL",
+   "contract": "ASTRAL 1,240 PE",
+   "time": "11:15",
+   "logic": "Bull Trap on 1-hour — breakout failed",
+   "label": "TRAILING EXIT ✅",
+   "win": true,
+   "scanner": "Intraday Trap",
+   "entry": "11.3",
+   "sl": "1267.5",
+   "tgt": [],
+   "chart": "sig3",
+   "mode": "signal",
+   "title": "SIGNAL 3 · INTRADAY TRAP · 11:15",
+   "sigTs": "2026-11-17T05:45:00.000Z",
+   "exitTs": "2026-11-17T07:45:00.000Z",
+   "side": "PE",
+   "phase": "result",
+   "tags": [
+    "s3b"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig4.png",
+   "n": 4,
+   "name": "ADANIGREEN",
+   "contract": "ADANIGREEN 1,400 PE",
+   "time": "10:30",
+   "logic": "Bull Trap on 15-min — breakout failed",
+   "label": "SL HIT ❌",
+   "win": false,
+   "scanner": "Intraday Trap",
+   "entry": "19.9",
+   "sl": "1415.4",
+   "tgt": [],
+   "chart": "sig4",
+   "mode": "signal",
+   "title": "SIGNAL 4 · INTRADAY TRAP · 10:30",
+   "sigTs": "2026-11-17T05:00:00.000Z",
+   "exitTs": "2026-11-17T05:15:00.000Z",
+   "side": "PE",
+   "tags": [
+    "s4a"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig4.png",
+   "n": 4,
+   "name": "ADANIGREEN",
+   "contract": "ADANIGREEN 1,400 PE",
+   "time": "10:30",
+   "logic": "Bull Trap on 15-min — breakout failed",
+   "label": "SL HIT ❌",
+   "win": false,
+   "scanner": "Intraday Trap",
+   "entry": "19.9",
+   "sl": "1415.4",
+   "tgt": [],
+   "chart": "sig4",
+   "mode": "signal",
+   "title": "SIGNAL 4 · INTRADAY TRAP · 10:30",
+   "sigTs": "2026-11-17T05:00:00.000Z",
+   "exitTs": "2026-11-17T05:15:00.000Z",
+   "side": "PE",
+   "phase": "result",
+   "tags": [
+    "s4b"
+   ]
+  },
+  {
+   "kind": "ahead",
+   "shot": "brokers.png",
+   "clip": "21.mp4",
+   "clipStart": 8,
+   "tags": [
+    "ahead"
+   ]
+  },
+  {
+   "kind": "cta",
+   "tags": [
+    "cta"
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "name": "brokers",
+   "url": "https://app.uppercircuitstocks.com/home.html",
+   "kind": "match",
+   "match": [
+    "TRADE FROM SIGNAL CARDS"
+   ],
+   "clip": null
+  },
+  {
+   "name": "sig1",
+   "url": "https://app.uppercircuitstocks.com/research.html?page=star",
+   "kind": "card",
+   "match": [
+    "DELHIVERY",
+    "ENTRY"
+   ],
+   "clip": null
+  },
+  {
+   "name": "sig2",
+   "url": "https://app.uppercircuitstocks.com/research.html?page=star",
+   "kind": "card",
+   "match": [
+    "ANGELONE",
+    "ENTRY"
+   ],
+   "clip": null
+  },
+  {
+   "name": "sig3",
+   "url": "https://app.uppercircuitstocks.com/research.html?page=trap",
+   "kind": "card",
+   "match": [
+    "ASTRAL"
+   ],
+   "clip": null
+  },
+  {
+   "name": "sig4",
+   "url": "https://app.uppercircuitstocks.com/research.html?page=trap",
+   "kind": "card",
+   "match": [
+    "ADANIGREEN"
+   ],
+   "clip": null
+  }
+ ],
+ "charts": [
+  {
+   "key": "sig1",
+   "symbol": "DELHIVERY",
+   "when": "day"
+  },
+  {
+   "key": "sig2",
+   "symbol": "ANGELONE",
+   "when": "day"
+  },
+  {
+   "key": "sig3",
+   "symbol": "ASTRAL",
+   "when": "day"
+  },
+  {
+   "key": "sig4",
+   "symbol": "ADANIGREEN",
+   "when": "day"
+  }
+ ],
+ "meta": {
+  "poolSize": 28,
+  "winners": 3,
+  "slHits": 3,
+  "picks": [
+   {
+    "src": "star",
+    "name": "DELHIVERY",
+    "side": "CE",
+    "strike": "455",
+    "outcome": "TRAIL",
+    "ts": "2026-11-17T04:15:02.423Z"
+   },
+   {
+    "src": "star",
+    "name": "ANGELONE",
+    "side": "CE",
+    "strike": "360",
+    "outcome": "TRAIL",
+    "ts": "2026-11-17T04:27:08.094Z"
+   },
+   {
+    "src": "trap",
+    "name": "ASTRAL",
+    "side": "PE",
+    "strike": "1240",
+    "outcome": "TRAIL",
+    "ts": "2026-11-17T05:45:00.000Z"
+   },
+   {
+    "src": "trap",
+    "name": "ADANIGREEN",
+    "side": "PE",
+    "strike": "1400",
+    "outcome": "SL",
+    "ts": "2026-11-17T05:00:00.000Z"
+   }
+  ]
+ }
+}
