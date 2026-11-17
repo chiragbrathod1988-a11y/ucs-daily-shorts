@@ -1,0 +1,7 @@
+saved dash/2026-11-17/morning-raw.json
+{"mode": "morning", "lines": 8, "shots": ["snapshot", "heatmap", "feature"], "meta": {"nifty": {"ltp": 25291.1, "chp": 0.58, "ch": 146.8}, "bankNifty": {"ltp": 61575.9, "chp": 0.89, "ch": 541.8}, "vix": {"ltp": 15.68, "chp": 1.16}, "breadth": {"advancing": 598, "declining": 1571, "mood_label": "Bearish"}, "strong": ["Consumer Staples", "1.41"], "weak": ["Automobile", "-1.25"], "feature": "AI Stock Reports", "marketDate": "2026-11-16"}}
+ok snapshot
+ok heatmap
+ok feature
+chart miss nifty NIFTYFUT
+OK 2026-11-17:morning
