@@ -1,0 +1,419 @@
+{
+ "date": "2026-11-19",
+ "slot": "evening",
+ "mode": "evening",
+ "feature": "Intraday Trap",
+ "lines": [
+  {
+   "tag": "hook",
+   "text": "आज AI Dashboard ने क्या पकड़ा? कुछ selected signals देखो।",
+   "en": "What did the AI Dashboard catch today? A few selected signals."
+  },
+  {
+   "tag": "s1a",
+   "text": "Maruti Suzuki India Call, पाँच दिन और पाँच घंटे का high break और price बीस SMA के ऊपर।",
+   "en": "MARUTI 13,300 CE — 5-day & 5-hour high break + price above 20 SMA."
+  },
+  {
+   "tag": "s1b",
+   "text": "Trailing stop से move पकड़ा।",
+   "en": "Move captured with a trailing stop."
+  },
+  {
+   "tag": "s2a",
+   "text": "Mahindra & Mahindra Call, पाँच दिन और पाँच घंटे का high break और price बीस SMA के ऊपर।",
+   "en": "M&M 3,500 CE — 5-day & 5-hour high break + price above 20 SMA."
+  },
+  {
+   "tag": "s2b",
+   "text": "Trailing stop से move पकड़ा।",
+   "en": "Move captured with a trailing stop."
+  },
+  {
+   "tag": "s3a",
+   "text": "Oracle Financial Services Software Call, एक घंटे पे Bear Trap, breakdown fail हुआ।",
+   "en": "OFSS 9,750 CE — Bear Trap on 1-hour — breakdown failed."
+  },
+  {
+   "tag": "s3b",
+   "text": "Trailing stop से move पकड़ा।",
+   "en": "Move captured with a trailing stop."
+  },
+  {
+   "tag": "s4a",
+   "text": "Titan Company Put, पाँच दिन और पाँच घंटे का low break और price बीस SMA के नीचे।",
+   "en": "TITAN 4,550 PE — 5-day & 5-hour low break + price below 20 SMA."
+  },
+  {
+   "tag": "s4b",
+   "text": "ये वाला स्टॉप लॉस हिट हुआ, इसीलिए स्टॉप लॉस हमेशा ज़रूरी है।",
+   "en": "This one hit SL — that's why SL always matters."
+  },
+  {
+   "tag": "ahead",
+   "text": "Signal आते ही phone पे alert आता है, और एक tap में अपने broker पे order, Fyers, Zerodha या Dhan।",
+   "en": "Instant phone alert the moment a signal appears — one tap to your broker: Fyers, Zerodha or Dhan."
+  },
+  {
+   "tag": "cta",
+   "text": "बाकी traders से आगे रहना है? AI Dashboard का link description में है। Follow करो, Upper Circuit Stocks।",
+   "en": "Want to stay ahead? AI Dashboard link in the description. Follow UpperCircuitStocks!"
+  }
+ ],
+ "scenes": [
+  {
+   "kind": "hook",
+   "title": "AAJ KE SIGNALS",
+   "sub": "Selected signals · 19 Nov",
+   "chips": [
+    "✅",
+    "✅",
+    "✅",
+    "❌"
+   ],
+   "tags": [
+    "hook"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig1.png",
+   "n": 1,
+   "name": "MARUTI",
+   "contract": "MARUTI 13,300 CE",
+   "time": "09:55",
+   "logic": "5-day & 5-hour high break + price above 20 SMA",
+   "label": "TRAILING EXIT ✅",
+   "win": true,
+   "scanner": "Star Setup",
+   "entry": "178.2",
+   "sl": "223.9",
+   "tgt": [
+    "268.2",
+    "358.2"
+   ],
+   "chart": "sig1",
+   "mode": "signal",
+   "title": "SIGNAL 1 · STAR SETUP · 09:55",
+   "sigTs": "2026-11-19T04:25:10.957Z",
+   "exitTs": "2026-11-19T05:32:04.265Z",
+   "side": "CE",
+   "tags": [
+    "s1a"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig1.png",
+   "n": 1,
+   "name": "MARUTI",
+   "contract": "MARUTI 13,300 CE",
+   "time": "09:55",
+   "logic": "5-day & 5-hour high break + price above 20 SMA",
+   "label": "TRAILING EXIT ✅",
+   "win": true,
+   "scanner": "Star Setup",
+   "entry": "178.2",
+   "sl": "223.9",
+   "tgt": [
+    "268.2",
+    "358.2"
+   ],
+   "chart": "sig1",
+   "mode": "signal",
+   "title": "SIGNAL 1 · STAR SETUP · 09:55",
+   "sigTs": "2026-11-19T04:25:10.957Z",
+   "exitTs": "2026-11-19T05:32:04.265Z",
+   "side": "CE",
+   "phase": "result",
+   "tags": [
+    "s1b"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig2.png",
+   "n": 2,
+   "name": "M&M",
+   "contract": "M&M 3,500 CE",
+   "time": "10:16",
+   "logic": "5-day & 5-hour high break + price above 20 SMA",
+   "label": "TRAILING EXIT ✅",
+   "win": true,
+   "scanner": "Star Setup",
+   "entry": "28",
+   "sl": "42.15",
+   "tgt": [
+    "48",
+    "68"
+   ],
+   "chart": "sig2",
+   "mode": "signal",
+   "title": "SIGNAL 2 · STAR SETUP · 10:16",
+   "sigTs": "2026-11-19T04:46:01.073Z",
+   "exitTs": "2026-11-19T05:29:00.265Z",
+   "side": "CE",
+   "tags": [
+    "s2a"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig2.png",
+   "n": 2,
+   "name": "M&M",
+   "contract": "M&M 3,500 CE",
+   "time": "10:16",
+   "logic": "5-day & 5-hour high break + price above 20 SMA",
+   "label": "TRAILING EXIT ✅",
+   "win": true,
+   "scanner": "Star Setup",
+   "entry": "28",
+   "sl": "42.15",
+   "tgt": [
+    "48",
+    "68"
+   ],
+   "chart": "sig2",
+   "mode": "signal",
+   "title": "SIGNAL 2 · STAR SETUP · 10:16",
+   "sigTs": "2026-11-19T04:46:01.073Z",
+   "exitTs": "2026-11-19T05:29:00.265Z",
+   "side": "CE",
+   "phase": "result",
+   "tags": [
+    "s2b"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig3.png",
+   "n": 3,
+   "name": "OFSS",
+   "contract": "OFSS 9,750 CE",
+   "time": "11:15",
+   "logic": "Bear Trap on 1-hour — breakdown failed",
+   "label": "TRAILING EXIT ✅",
+   "win": true,
+   "scanner": "Intraday Trap",
+   "entry": "150.2",
+   "sl": "9607.5",
+   "tgt": [],
+   "chart": "sig3",
+   "mode": "signal",
+   "title": "SIGNAL 3 · INTRADAY TRAP · 11:15",
+   "sigTs": "2026-11-19T05:45:00.000Z",
+   "exitTs": "2026-11-19T06:15:00.000Z",
+   "side": "CE",
+   "tags": [
+    "s3a"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig3.png",
+   "n": 3,
+   "name": "OFSS",
+   "contract": "OFSS 9,750 CE",
+   "time": "11:15",
+   "logic": "Bear Trap on 1-hour — breakdown failed",
+   "label": "TRAILING EXIT ✅",
+   "win": true,
+   "scanner": "Intraday Trap",
+   "entry": "150.2",
+   "sl": "9607.5",
+   "tgt": [],
+   "chart": "sig3",
+   "mode": "signal",
+   "title": "SIGNAL 3 · INTRADAY TRAP · 11:15",
+   "sigTs": "2026-11-19T05:45:00.000Z",
+   "exitTs": "2026-11-19T06:15:00.000Z",
+   "side": "CE",
+   "phase": "result",
+   "tags": [
+    "s3b"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig4.png",
+   "n": 4,
+   "name": "TITAN",
+   "contract": "TITAN 4,550 PE",
+   "time": "09:30",
+   "logic": "5-day & 5-hour low break + price below 20 SMA",
+   "label": "SL HIT ❌",
+   "win": false,
+   "scanner": "Star Setup",
+   "entry": "52.55",
+   "sl": "26.84",
+   "tgt": [
+    "78.26",
+    "103.97"
+   ],
+   "chart": "sig4",
+   "mode": "signal",
+   "title": "SIGNAL 4 · STAR SETUP · 09:30",
+   "sigTs": "2026-11-19T04:00:13.140Z",
+   "exitTs": "2026-11-19T04:06:00.245Z",
+   "side": "PE",
+   "tags": [
+    "s4a"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig4.png",
+   "n": 4,
+   "name": "TITAN",
+   "contract": "TITAN 4,550 PE",
+   "time": "09:30",
+   "logic": "5-day & 5-hour low break + price below 20 SMA",
+   "label": "SL HIT ❌",
+   "win": false,
+   "scanner": "Star Setup",
+   "entry": "52.55",
+   "sl": "26.84",
+   "tgt": [
+    "78.26",
+    "103.97"
+   ],
+   "chart": "sig4",
+   "mode": "signal",
+   "title": "SIGNAL 4 · STAR SETUP · 09:30",
+   "sigTs": "2026-11-19T04:00:13.140Z",
+   "exitTs": "2026-11-19T04:06:00.245Z",
+   "side": "PE",
+   "phase": "result",
+   "tags": [
+    "s4b"
+   ]
+  },
+  {
+   "kind": "ahead",
+   "shot": "brokers.png",
+   "clip": "21.mp4",
+   "clipStart": 8,
+   "tags": [
+    "ahead"
+   ]
+  },
+  {
+   "kind": "cta",
+   "tags": [
+    "cta"
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "name": "brokers",
+   "url": "https://app.uppercircuitstocks.com/home.html",
+   "kind": "match",
+   "match": [
+    "TRADE FROM SIGNAL CARDS"
+   ],
+   "clip": null
+  },
+  {
+   "name": "sig1",
+   "url": "https://app.uppercircuitstocks.com/research.html?page=star",
+   "kind": "card",
+   "match": [
+    "MARUTI",
+    "ENTRY"
+   ],
+   "clip": null
+  },
+  {
+   "name": "sig2",
+   "url": "https://app.uppercircuitstocks.com/research.html?page=star",
+   "kind": "card",
+   "match": [
+    "M&M",
+    "ENTRY"
+   ],
+   "clip": null
+  },
+  {
+   "name": "sig3",
+   "url": "https://app.uppercircuitstocks.com/research.html?page=trap",
+   "kind": "card",
+   "match": [
+    "OFSS"
+   ],
+   "clip": null
+  },
+  {
+   "name": "sig4",
+   "url": "https://app.uppercircuitstocks.com/research.html?page=star",
+   "kind": "card",
+   "match": [
+    "TITAN",
+    "ENTRY"
+   ],
+   "clip": null
+  }
+ ],
+ "charts": [
+  {
+   "key": "sig1",
+   "symbol": "MARUTI",
+   "when": "day"
+  },
+  {
+   "key": "sig2",
+   "symbol": "M&M",
+   "when": "day"
+  },
+  {
+   "key": "sig3",
+   "symbol": "OFSS",
+   "when": "day"
+  },
+  {
+   "key": "sig4",
+   "symbol": "TITAN",
+   "when": "day"
+  }
+ ],
+ "meta": {
+  "poolSize": 17,
+  "winners": 3,
+  "slHits": 3,
+  "picks": [
+   {
+    "src": "star",
+    "name": "MARUTI",
+    "side": "CE",
+    "strike": "13300",
+    "outcome": "TRAIL",
+    "ts": "2026-11-19T04:25:10.957Z"
+   },
+   {
+    "src": "star",
+    "name": "M&M",
+    "side": "CE",
+    "strike": "3500",
+    "outcome": "TRAIL",
+    "ts": "2026-11-19T04:46:01.073Z"
+   },
+   {
+    "src": "trap",
+    "name": "OFSS",
+    "side": "CE",
+    "strike": "9750",
+    "outcome": "TRAIL",
+    "ts": "2026-11-19T05:45:00.000Z"
+   },
+   {
+    "src": "star",
+    "name": "TITAN",
+    "side": "PE",
+    "strike": "4550",
+    "outcome": "SL",
+    "ts": "2026-11-19T04:00:13.140Z"
+   }
+  ]
+ }
+}
