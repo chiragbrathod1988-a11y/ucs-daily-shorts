@@ -273,9 +273,10 @@ else:
             opt_hi = ("Call" if p["side"] == "CE" else "Put")
             lhi, len_ = logic_of(p)
             label, out_hi, out_en = OUT[p["outcome"]]
-            card = shot(f"sig{i}", p["page"], kind="card", match=[p["name"], "ENTRY"]) if p["src"] in ("star", "index") else \
-                   shot(f"sig{i}", p["page"], kind="card", match=[p["name"]])
             sk = f"{fmt(p['strike'])}" if float(p["strike"]) == int(float(p["strike"])) else str(p["strike"])
+            # match the exact contract so a same-name card (another strike / outcome) is never captured
+            card = shot(f"sig{i}", p["page"], kind="card", match=[f"{p['name']} {sk} {p['side']}", "ENTRY"]) if p["src"] in ("star", "index") else \
+                   shot(f"sig{i}", p["page"], kind="card", match=[f"{p['name']} {sk} {p['side']}"])
             sc = {"kind": "signal", "shot": card, "n": i, "name": p["name"], "contract": f"{p['name']} {sk} {p['side']}",
                   "time": tm, "logic": len_, "label": label, "win": p["outcome"] != "SL", "scanner": {"star": "Star Setup", "trap": "Intraday Trap", "index": "Index Options"}[p["src"]],
                   "entry": p.get("entry"), "sl": p.get("sl"), "tgt": [t for t in p.get("tgt", []) if t]}
