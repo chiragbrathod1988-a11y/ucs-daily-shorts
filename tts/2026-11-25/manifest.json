@@ -1,0 +1,55 @@
+{
+ "voice": "hi-IN-SwaraNeural",
+ "rate": "+4%",
+ "pitch": "-2Hz",
+ "lines": [
+  {
+   "tag": "intro",
+   "text": "Hello traders! twenty five November के Nifty levels, चलो देखते हैं।"
+  },
+  {
+   "tag": "prev",
+   "text": "लास्ट सेशन में Nifty four hundred fifty one points नीचे, twenty five thousand three hundred fifty पे close हुआ।"
+  },
+  {
+   "tag": "pivot",
+   "text": "आज का pivot है, twenty five thousand five hundred sixty two।"
+  },
+  {
+   "tag": "r1",
+   "text": "ऊपर first resistance है, twenty five thousand seven hundred eighty,"
+  },
+  {
+   "tag": "r2",
+   "text": "उसके बाद, twenty six thousand two hundred eleven।"
+  },
+  {
+   "tag": "s1",
+   "text": "नीचे first support, twenty five thousand one hundred thirty one,"
+  },
+  {
+   "tag": "s2",
+   "text": "और फिर, twenty four thousand nine hundred thirteen।"
+  },
+  {
+   "tag": "bear",
+   "text": "अगर Nifty twenty five thousand five hundred sixty two के नीचे ही रहता है, तो pressure बना रहेगा, और twenty five thousand one hundred thirty one test हो सकता है।"
+  },
+  {
+   "tag": "bull",
+   "text": "लेकिन अगर twenty five thousand six hundred sixty eight के ऊपर निकला, तो twenty five thousand seven hundred eighty तक recovery आ सकती है।"
+  },
+  {
+   "tag": "dash",
+   "text": "और हाँ, Upper Circuit Stocks के AI Dashboard पे मिलेंगे, Stock Screeners, Heat Map, Nifty Overview, और detailed Stock Research।"
+  },
+  {
+   "tag": "dash2",
+   "text": "Link description में है, एक बार ज़रूर check करो।"
+  },
+  {
+   "tag": "cta",
+   "text": "Levels save कर लो, और रोज़ सुबह के लिए follow करो, Upper Circuit Stocks।"
+  }
+ ]
+}
