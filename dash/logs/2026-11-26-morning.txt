@@ -1,0 +1,7 @@
+saved dash/2026-11-26/morning-raw.json
+{"mode": "morning", "lines": 8, "shots": ["snapshot", "heatmap", "feature"], "meta": {"nifty": {"ltp": 0, "chp": 0, "ch": 0}, "bankNifty": {"ltp": 0, "chp": 0, "ch": 0}, "vix": {"ltp": 0, "chp": 0}, "breadth": {"advancing": 869, "declining": 1306, "mood_label": "Bearish"}, "strong": ["Consumer Staples", "4.32"], "weak": ["Communication Services", "-3.39"], "feature": "My Scanners", "marketDate": "2026-11-25"}}
+ok snapshot
+ok heatmap
+ok feature
+chart miss nifty NIFTYFUT
+OK 2026-11-26:morning
