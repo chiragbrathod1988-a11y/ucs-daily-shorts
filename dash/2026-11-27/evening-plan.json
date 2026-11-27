@@ -1,0 +1,419 @@
+{
+ "date": "2026-11-27",
+ "slot": "evening",
+ "mode": "evening",
+ "feature": "Options Analytics",
+ "lines": [
+  {
+   "tag": "hook",
+   "text": "आज AI Dashboard ने क्या पकड़ा? कुछ selected signals देखो।",
+   "en": "What did the AI Dashboard catch today? A few selected signals."
+  },
+  {
+   "tag": "s1a",
+   "text": "Bank of India Call, पाँच दिन और पाँच घंटे का high break और price बीस SMA के ऊपर।",
+   "en": "BANKINDIA 167.5 CE — 5-day & 5-hour high break + price above 20 SMA."
+  },
+  {
+   "tag": "s1b",
+   "text": "Trailing stop से move पकड़ा।",
+   "en": "Move captured with a trailing stop."
+  },
+  {
+   "tag": "s2a",
+   "text": "Angel One Call, पाँच दिन और पाँच घंटे का high break और price बीस SMA के ऊपर।",
+   "en": "ANGELONE 375 CE — 5-day & 5-hour high break + price above 20 SMA."
+  },
+  {
+   "tag": "s2b",
+   "text": "Trailing stop से move पकड़ा।",
+   "en": "Move captured with a trailing stop."
+  },
+  {
+   "tag": "s3a",
+   "text": "Shriram Finance Put, पाँच दिन और पाँच घंटे का low break और price बीस SMA के नीचे।",
+   "en": "SHRIRAMFIN 920 PE — 5-day & 5-hour low break + price below 20 SMA."
+  },
+  {
+   "tag": "s3b",
+   "text": "Trailing stop से move पकड़ा।",
+   "en": "Move captured with a trailing stop."
+  },
+  {
+   "tag": "s4a",
+   "text": "Indian Oil Corporation Call, पंद्रह minute पे Bear Trap, breakdown fail हुआ।",
+   "en": "IOC 145 CE — Bear Trap on 15-min — breakdown failed."
+  },
+  {
+   "tag": "s4b",
+   "text": "ये वाला स्टॉप लॉस हिट हुआ, इसीलिए स्टॉप लॉस हमेशा ज़रूरी है।",
+   "en": "This one hit SL — that's why SL always matters."
+  },
+  {
+   "tag": "ahead",
+   "text": "Signal आते ही phone पे alert आता है, और एक tap में अपने broker पे order, Fyers, Zerodha या Dhan।",
+   "en": "Instant phone alert the moment a signal appears — one tap to your broker: Fyers, Zerodha or Dhan."
+  },
+  {
+   "tag": "cta",
+   "text": "बाकी traders से आगे रहना है? AI Dashboard का link description में है। Follow करो, Upper Circuit Stocks।",
+   "en": "Want to stay ahead? AI Dashboard link in the description. Follow UpperCircuitStocks!"
+  }
+ ],
+ "scenes": [
+  {
+   "kind": "hook",
+   "title": "AAJ KE SIGNALS",
+   "sub": "Selected signals · 27 Nov",
+   "chips": [
+    "✅",
+    "✅",
+    "✅",
+    "❌"
+   ],
+   "tags": [
+    "hook"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig1.png",
+   "n": 1,
+   "name": "BANKINDIA",
+   "contract": "BANKINDIA 167.5 CE",
+   "time": "09:40",
+   "logic": "5-day & 5-hour high break + price above 20 SMA",
+   "label": "TRAILING EXIT ✅",
+   "win": true,
+   "scanner": "Star Setup",
+   "entry": "8.15",
+   "sl": "8.49",
+   "tgt": [
+    "9.02",
+    "9.89"
+   ],
+   "chart": "sig1",
+   "mode": "signal",
+   "title": "SIGNAL 1 · STAR SETUP · 09:40",
+   "sigTs": "2026-11-27T04:10:10.030Z",
+   "exitTs": "2026-11-27T04:13:22.226Z",
+   "side": "CE",
+   "tags": [
+    "s1a"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig1.png",
+   "n": 1,
+   "name": "BANKINDIA",
+   "contract": "BANKINDIA 167.5 CE",
+   "time": "09:40",
+   "logic": "5-day & 5-hour high break + price above 20 SMA",
+   "label": "TRAILING EXIT ✅",
+   "win": true,
+   "scanner": "Star Setup",
+   "entry": "8.15",
+   "sl": "8.49",
+   "tgt": [
+    "9.02",
+    "9.89"
+   ],
+   "chart": "sig1",
+   "mode": "signal",
+   "title": "SIGNAL 1 · STAR SETUP · 09:40",
+   "sigTs": "2026-11-27T04:10:10.030Z",
+   "exitTs": "2026-11-27T04:13:22.226Z",
+   "side": "CE",
+   "phase": "result",
+   "tags": [
+    "s1b"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig2.png",
+   "n": 2,
+   "name": "ANGELONE",
+   "contract": "ANGELONE 375 CE",
+   "time": "10:15",
+   "logic": "5-day & 5-hour high break + price above 20 SMA",
+   "label": "TRAILING EXIT ✅",
+   "win": true,
+   "scanner": "Star Setup",
+   "entry": "16.65",
+   "sl": "19.05",
+   "tgt": [
+    "18.25",
+    "19.85"
+   ],
+   "chart": "sig2",
+   "mode": "signal",
+   "title": "SIGNAL 2 · STAR SETUP · 10:15",
+   "sigTs": "2026-11-27T04:45:51.876Z",
+   "exitTs": "2026-11-27T05:06:00.254Z",
+   "side": "CE",
+   "tags": [
+    "s2a"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig2.png",
+   "n": 2,
+   "name": "ANGELONE",
+   "contract": "ANGELONE 375 CE",
+   "time": "10:15",
+   "logic": "5-day & 5-hour high break + price above 20 SMA",
+   "label": "TRAILING EXIT ✅",
+   "win": true,
+   "scanner": "Star Setup",
+   "entry": "16.65",
+   "sl": "19.05",
+   "tgt": [
+    "18.25",
+    "19.85"
+   ],
+   "chart": "sig2",
+   "mode": "signal",
+   "title": "SIGNAL 2 · STAR SETUP · 10:15",
+   "sigTs": "2026-11-27T04:45:51.876Z",
+   "exitTs": "2026-11-27T05:06:00.254Z",
+   "side": "CE",
+   "phase": "result",
+   "tags": [
+    "s2b"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig3.png",
+   "n": 3,
+   "name": "SHRIRAMFIN",
+   "contract": "SHRIRAMFIN 920 PE",
+   "time": "10:16",
+   "logic": "5-day & 5-hour low break + price below 20 SMA",
+   "label": "TRAILING EXIT ✅",
+   "win": true,
+   "scanner": "Star Setup",
+   "entry": "28.8",
+   "sl": "33.68",
+   "tgt": [
+    "33.65",
+    "38.5"
+   ],
+   "chart": "sig3",
+   "mode": "signal",
+   "title": "SIGNAL 3 · STAR SETUP · 10:16",
+   "sigTs": "2026-11-27T04:46:01.108Z",
+   "exitTs": "2026-11-27T06:05:02.331Z",
+   "side": "PE",
+   "tags": [
+    "s3a"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig3.png",
+   "n": 3,
+   "name": "SHRIRAMFIN",
+   "contract": "SHRIRAMFIN 920 PE",
+   "time": "10:16",
+   "logic": "5-day & 5-hour low break + price below 20 SMA",
+   "label": "TRAILING EXIT ✅",
+   "win": true,
+   "scanner": "Star Setup",
+   "entry": "28.8",
+   "sl": "33.68",
+   "tgt": [
+    "33.65",
+    "38.5"
+   ],
+   "chart": "sig3",
+   "mode": "signal",
+   "title": "SIGNAL 3 · STAR SETUP · 10:16",
+   "sigTs": "2026-11-27T04:46:01.108Z",
+   "exitTs": "2026-11-27T06:05:02.331Z",
+   "side": "PE",
+   "phase": "result",
+   "tags": [
+    "s3b"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig4.png",
+   "n": 4,
+   "name": "IOC",
+   "contract": "IOC 145 CE",
+   "time": "09:45",
+   "logic": "Bear Trap on 15-min — breakdown failed",
+   "label": "SL HIT ❌",
+   "win": false,
+   "scanner": "Intraday Trap",
+   "entry": "4.69",
+   "sl": "143.2",
+   "tgt": [],
+   "chart": "sig4",
+   "mode": "signal",
+   "title": "SIGNAL 4 · INTRADAY TRAP · 09:45",
+   "sigTs": "2026-11-27T04:15:00.000Z",
+   "exitTs": "2026-11-27T07:15:00.000Z",
+   "side": "CE",
+   "tags": [
+    "s4a"
+   ]
+  },
+  {
+   "kind": "chart",
+   "shot": "sig4.png",
+   "n": 4,
+   "name": "IOC",
+   "contract": "IOC 145 CE",
+   "time": "09:45",
+   "logic": "Bear Trap on 15-min — breakdown failed",
+   "label": "SL HIT ❌",
+   "win": false,
+   "scanner": "Intraday Trap",
+   "entry": "4.69",
+   "sl": "143.2",
+   "tgt": [],
+   "chart": "sig4",
+   "mode": "signal",
+   "title": "SIGNAL 4 · INTRADAY TRAP · 09:45",
+   "sigTs": "2026-11-27T04:15:00.000Z",
+   "exitTs": "2026-11-27T07:15:00.000Z",
+   "side": "CE",
+   "phase": "result",
+   "tags": [
+    "s4b"
+   ]
+  },
+  {
+   "kind": "ahead",
+   "shot": "brokers.png",
+   "clip": "21.mp4",
+   "clipStart": 8,
+   "tags": [
+    "ahead"
+   ]
+  },
+  {
+   "kind": "cta",
+   "tags": [
+    "cta"
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "name": "brokers",
+   "url": "https://app.uppercircuitstocks.com/home.html",
+   "kind": "match",
+   "match": [
+    "TRADE FROM SIGNAL CARDS"
+   ],
+   "clip": null
+  },
+  {
+   "name": "sig1",
+   "url": "https://app.uppercircuitstocks.com/research.html?page=star",
+   "kind": "card",
+   "match": [
+    "BANKINDIA 167.5 CE",
+    "ENTRY"
+   ],
+   "clip": null
+  },
+  {
+   "name": "sig2",
+   "url": "https://app.uppercircuitstocks.com/research.html?page=star",
+   "kind": "card",
+   "match": [
+    "ANGELONE 375 CE",
+    "ENTRY"
+   ],
+   "clip": null
+  },
+  {
+   "name": "sig3",
+   "url": "https://app.uppercircuitstocks.com/research.html?page=star",
+   "kind": "card",
+   "match": [
+    "SHRIRAMFIN 920 PE",
+    "ENTRY"
+   ],
+   "clip": null
+  },
+  {
+   "name": "sig4",
+   "url": "https://app.uppercircuitstocks.com/research.html?page=trap",
+   "kind": "card",
+   "match": [
+    "IOC 145 CE"
+   ],
+   "clip": null
+  }
+ ],
+ "charts": [
+  {
+   "key": "sig1",
+   "symbol": "BANKINDIA",
+   "when": "day"
+  },
+  {
+   "key": "sig2",
+   "symbol": "ANGELONE",
+   "when": "day"
+  },
+  {
+   "key": "sig3",
+   "symbol": "SHRIRAMFIN",
+   "when": "day"
+  },
+  {
+   "key": "sig4",
+   "symbol": "IOC",
+   "when": "day"
+  }
+ ],
+ "meta": {
+  "poolSize": 41,
+  "winners": 3,
+  "slHits": 9,
+  "picks": [
+   {
+    "src": "star",
+    "name": "BANKINDIA",
+    "side": "CE",
+    "strike": "167.5",
+    "outcome": "TRAIL",
+    "ts": "2026-11-27T04:10:10.030Z"
+   },
+   {
+    "src": "star",
+    "name": "ANGELONE",
+    "side": "CE",
+    "strike": "375",
+    "outcome": "TRAIL",
+    "ts": "2026-11-27T04:45:51.876Z"
+   },
+   {
+    "src": "star",
+    "name": "SHRIRAMFIN",
+    "side": "PE",
+    "strike": "920",
+    "outcome": "TRAIL",
+    "ts": "2026-11-27T04:46:01.108Z"
+   },
+   {
+    "src": "trap",
+    "name": "IOC",
+    "side": "CE",
+    "strike": "145",
+    "outcome": "SL",
+    "ts": "2026-11-27T04:15:00.000Z"
+   }
+  ]
+ }
+}
